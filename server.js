@@ -9,6 +9,60 @@ app.locals.data;
 app.locals.firstName;
 app.locals.lastName;
 
+function scoreCalculator(data)
+{
+  let c_at =  0;
+  let c_rain = 0;
+  let c_snow = 0;
+  let c_emp = 0;
+  let c_tui = 0;
+  let c_col = 0;
+  let c_rank = 0;
+  let o_w = 0;
+  let o_col = 0;
+  let o_tui = 0;
+  let o_rank = 0;
+  let o_emp = 0;
+  let o_at = 0;
+  let o_rain = 0;
+  let o_snow = 0;
+
+  console.log(data);
+  for (let record of data)
+  {
+    c_at = parseFloat(record.c_at);
+    c_rain = parseFloat(record.c_rain);
+    c_snow = parseFloat(record.c_snow);
+    c_emp = parseFloat(record.c_emp);
+    c_tui = parseFloat(record.c_tui);
+    c_col = parseFloat(record.c_col);
+    c_rank = parseFloat(record.c_rank);
+    o_w = parseFloat(record.o_w);
+    o_col = parseFloat(record.o_col);
+    o_tui = parseFloat(record.o_tui);
+    o_rank = parseFloat(record.o_rank);
+    o_emp = parseFloat(record.o_emp);
+    o_at = parseFloat(record.o_at);
+    o_rain = parseFloat(record.o_rain);
+    o_snow = parseFloat(record.o_snow);
+  }
+
+
+  console.log(o_snow);
+
+  let weather_score = (c_at * Math.pow(2, o_at)) + (c_rain * Math.pow(2, o_rain)) + (c_snow * Math.pow(2, o_snow));
+
+  let weather_score2 = (c_at * 0.5) + (c_rain * 0.3) + (c_snow * 0.2);
+
+  let total_score = (weather_score2 * Math.pow(2, o_w)) + (c_emp * Math.pow(2, o_emp)) + (c_tui * Math.pow(2, o_tui)) + (c_col * Math.pow(2, o_col)) + (c_rank * Math.pow(2, o_rank));
+
+  console.log(weather_score2);
+
+  console.log(total_score);
+
+  return total_score;
+}
+
 app.get('/api/customers', (req, res) => {
     let rows = "";
 
@@ -19,6 +73,21 @@ app.get('/api/customers', (req, res) => {
       app.locals.firstName = rows.first_name;
       app.locals.lastName = rows.last_name;
       res.json(rows);
+
+    });
+});
+
+app.get('/api/rankings', (req, res) => {
+    let rows = "";
+
+    db.all("SELECT * FROM profile_advanced WHERE id = 1", function(err, rows)
+    {
+      //console.log(rows);
+      app.locals.data = rows;
+      app.locals.firstName = rows.first_name;
+      app.locals.lastName = rows.last_name;
+      let total_score = scoreCalculator(rows);
+      res.json(total_score);
 
     });
 });
