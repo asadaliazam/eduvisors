@@ -63,15 +63,18 @@ function scoreCalculator(data)
   return total_score;
 }
 
-app.get('/api/customers', (req, res) => {
+app.get('/api/profile', (req, res) => {
     let rows = "";
 
-    db.all("SELECT * FROM profile", function(err, rows)
+    db.all("SELECT * FROM profile where id=1", function(err, rows)
     {
       console.log(rows);
       app.locals.data = rows;
       app.locals.firstName = rows.first_name;
       app.locals.lastName = rows.last_name;
+      app.locals.email = rows.email;
+      app.locals.field_study = rows.field_study;
+      app.locals.lvl_educ = rows.lvl_educ;
       res.json(rows);
 
     });
@@ -91,6 +94,9 @@ app.get('/api/rankings', (req, res) => {
 
     });
 });
+
+
+
 
 const port = 5000;
 

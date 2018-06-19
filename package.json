@@ -20,6 +20,7 @@
     "concurrently": "^3.5.1",
     "express": "^4.16.2",
     "react-chartjs-2": "^2.7.2",
+    "react-chartjs2": "^1.2.1",
     "sqlite3": "^4.0.0"
   }
 }
