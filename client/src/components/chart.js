@@ -5,6 +5,8 @@ import './chart.css';
 class Chart extends Component {
   constructor(props) {
     super(props);
+  constructor() {
+    super();
     this.state = {
       chartData :
       {
