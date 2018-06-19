@@ -3,8 +3,8 @@ import {Bar, Line, Pie} from 'react-chartjs-2';
 import './chart.css';
 
 class Chart extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       chartData :
       {
