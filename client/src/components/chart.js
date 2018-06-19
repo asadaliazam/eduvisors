@@ -20,7 +20,9 @@ class Chart extends Component {
     };
   }
 
+  
 
+  
 
   render() {
     return (
