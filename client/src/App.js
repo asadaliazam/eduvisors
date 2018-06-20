@@ -3,6 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import Customers from './components/customers';
 import Costs from './components/cost';
+import Profile from './components/profile';
+import Engine from './components/engine';
+import Chart from './components/chart';
+import ProfileCompletion from './components/profileCompletion';
 
 class App extends Component {
   render() {
@@ -14,6 +18,10 @@ class App extends Component {
         </header>
         <Customers />
         <Costs />
+        <Profile />
+        <ProfileCompletion />
+        <Engine />
+        <Chart />
       </div>
     );
   }
