@@ -23,6 +23,17 @@ app.get('/api/customers', (req, res) => {
     });
 });
 
+app.get('/api/costoftuition', (req, res) => {
+    let rows = "";
+
+    db.all("select id, province, education from cost_living", function(err, rows)
+    {
+      console.log(rows);
+
+      res.json(rows);
+
+    });
+});
 const port = 5000;
 
 app.listen(port, () => `Server running on port ${port}`);
