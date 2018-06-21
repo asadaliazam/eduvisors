@@ -1,14 +1,21 @@
 const express = require('express');
-
 const app = express();
 
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('eduvisors.db');
 
+// ====================================================
+//          VARIABLE DECLARATION
+// ====================================================
 app.locals.data;
 app.locals.firstName;
 app.locals.lastName;
 
+
+
+// ====================================================
+//          SCORE CALCULATOR
+// ====================================================
 function scoreCalculator(data)
 {
   let c_at =  0;
@@ -48,27 +55,25 @@ function scoreCalculator(data)
   }
 
 
-  console.log(o_snow);
-
+  //console.log(o_snow);
   let weather_score = (c_at * Math.pow(2, o_at)) + (c_rain * Math.pow(2, o_rain)) + (c_snow * Math.pow(2, o_snow));
-
   let weather_score2 = (c_at * 0.5) + (c_rain * 0.3) + (c_snow * 0.2);
-
   let total_score = (weather_score2 * Math.pow(2, o_w)) + (c_emp * Math.pow(2, o_emp)) + (c_tui * Math.pow(2, o_tui)) + (c_col * Math.pow(2, o_col)) + (c_rank * Math.pow(2, o_rank));
-
-  console.log(weather_score2);
-
-  console.log(total_score);
-
+  //console.log(weather_score2);
+  //console.log(total_score);
   return total_score;
 }
 
+
+// ====================================================
+//              PROFILE Component
+// ====================================================
 app.get('/api/profile', (req, res) => {
     let rows = "";
 
     db.all("SELECT * FROM profile where id=1", function(err, rows)
     {
-      console.log(rows);
+      //console.log(rows);
       app.locals.data = rows;
       app.locals.firstName = rows.first_name;
       app.locals.lastName = rows.last_name;
@@ -80,17 +85,23 @@ app.get('/api/profile', (req, res) => {
     });
 });
 
+// ====================================================
+//              COST of TUITION Component
+// ====================================================
 app.get('/api/costoftuition', (req, res) => {
     let rows = "";
 
     db.all("select id, province, education from cost_living", function(err, rows)
     {
-      console.log(rows);
+      //console.log(rows);
 
       res.json(rows);
 
     });
 });
+// ====================================================
+//              RANKINGS Component
+// ====================================================
 app.get('/api/rankings', (req, res) => {
     let rows = "";
 
@@ -106,9 +117,9 @@ app.get('/api/rankings', (req, res) => {
     });
 });
 
-const port = 5000;
-// ==================================
-// new local variable
+// ====================================================
+//              WEATHER Component
+// ====================================================
 app.locals.snowfall;
 app.locals.province;
 
@@ -121,10 +132,9 @@ app.get('/api/snow', (req, res) => {
           app.locals.province = rows.province;
           // console.log(rows);
           res.json(rows);
-          //res.send(JSON.stringify(results));
         });
 });
 
-
+// ====================================================
 const port = 5000;
 app.listen(port, () => `Server running on port ${port}`);
