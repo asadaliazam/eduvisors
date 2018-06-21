@@ -107,5 +107,24 @@ app.get('/api/rankings', (req, res) => {
 });
 
 const port = 5000;
+// ==================================
+// new local variable
+app.locals.snowfall;
+app.locals.province;
 
+app.get('/api/snow', (req, res) => {
+    let rows = "";
+
+    db.all("SELECT * FROM weather WHERE info = 'Snow';", function(err,rows)
+    {
+          //app.locals.snowfall = rows;
+          app.locals.province = rows.province;
+          // console.log(rows);
+          res.json(rows);
+          //res.send(JSON.stringify(results));
+        });
+});
+
+
+const port = 5000;
 app.listen(port, () => `Server running on port ${port}`);
