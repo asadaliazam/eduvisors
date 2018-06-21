@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Customers from './components/customers';
+
 import Costs from './components/cost';
 import Profile from './components/profile';
 import Engine from './components/engine';
@@ -15,18 +15,14 @@ class App extends Component {
     return (
       <div className="App">
 
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">React Express Starter</h1>
-        </header>
-        <Customers />
         <Costs />
         <Profile />
         <ProfileCompletion />
         <Engine />
         <Chart />
-          <Snowfall />
-          <div className="Graph"></div>
+        <Snowfall />
+        <div className="Graph"></div>
+        
       </div>
     );
   }
