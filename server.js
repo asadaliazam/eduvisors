@@ -187,6 +187,21 @@ app.get('/api/profile', (req, res) => {
     });
 });
 
+
+// ====================================================
+//             School Profile  Component
+// ====================================================
+
+app.get('/api/schoolProfile', (req, res) => {
+
+    db.all("SELECT * FROM institute_name where id=1", function(err, rows)
+    {
+      //console.log(rows);
+      app.locals.data = rows;
+      res.json(rows);
+    });
+});
+
 // ====================================================
 //              COST of TUITION Component
 // ====================================================
