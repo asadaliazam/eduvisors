@@ -175,6 +175,25 @@ return test;
 //console.log(1400, test);
 }
 
+app.get('/api/cost_living', (req, res) => {
+
+    db.all("SELECT * FROM cost_living", function(err, rows)
+    {
+      //console.log(rows);
+      res.json(rows);
+
+    });
+});
+
+app.get('/api/field_study', (req, res) => {
+    let rows = "";
+
+    db.all("SELECT * FROM field_study", function(err, rows)
+    {
+      //console.log(rows);
+      res.json(rows);
+    });
+});
 
 
 app.get('/api/profile', (req, res) => {
