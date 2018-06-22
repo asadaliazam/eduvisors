@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RC2 from 'react-chartjs2';
-import './chart.css';
+import '../styles/chart.css';
 
 class ProfileCompletion extends Component {
   constructor() {
@@ -10,7 +10,7 @@ class ProfileCompletion extends Component {
       {
         labels: ["Profile"],
         datasets: [{
-        label: null,
+        label: false,
         backgroundColor: ['rgb(255, 255, 132)','rgb(255, 108, 132)'],
         borderColor: 'rgb(255, 255, 255)',
         data: [70,30],
@@ -32,6 +32,9 @@ class ProfileCompletion extends Component {
             options={{
          maintainAspectRatio: false,
          scaleShowVerticalLines: false,
+         legend: {
+              display: false
+          },
          tooltips: {
             mode: 'index',
             axis: 'y'

@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
-import './engine.css';
+import '../styles/engine.css';
 
 class Engine extends Component {
   constructor() {
     super();
     this.state = {
-      total_score: 0
-
+      schoolNames: []
     };
   }
 
   componentDidMount() {
     fetch('/api/rankings')
       .then(res => res.json())
-      .then(total_score => this.setState({total_score}, () => console.log('Score fetched...', total_score)));
+      .then(schoolNames => this.setState({schoolNames}, () => console.log('SchoolNames fetched...', schoolNames)));
   }
 
   render() {
     return (
       <div className = "score">
         <h2>Score</h2>
-        <p> {this.state.total_score} </p>
+        <ul>
+        {this.state.schoolNames.map(schoolNames =>
+          <li> {schoolNames.institutionName} - {schoolNames.province} - {schoolNames.calculatedScore}</li>
+        )}
+        </ul>
       </div>
     );
   }
