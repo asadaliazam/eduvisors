@@ -1,5 +1,4 @@
 const express = require('express');
-
 const app = express();
 
 app.use(function(req, res, next){
@@ -19,6 +18,9 @@ const db = new sqlite3.Database('eduvisors.db');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+// ====================================================
+//          VARIABLE DECLARATION
+// ====================================================
 app.locals.data;
 app.locals.firstName;
 app.locals.lastName;
@@ -185,6 +187,9 @@ app.get('/api/profile', (req, res) => {
     });
 });
 
+// ====================================================
+//              COST of TUITION Component
+// ====================================================
 app.get('/api/costoftuition', (req, res) => {
 
     db.all("select id, province, education from cost_living", function(err, rows)
@@ -233,6 +238,24 @@ db.each("SELECT * FROM profile_advanced WHERE id = 1", function(err, row) {
 
 });
 
-const port = 5000;
+// ====================================================
+//              WEATHER Component
+// ====================================================
+app.locals.snowfall;
+app.locals.province;
 
+app.get('/api/snow', (req, res) => {
+    let rows = "";
+
+    db.all("SELECT * FROM weather WHERE info = 'Snow';", function(err,rows)
+    {
+          //app.locals.snowfall = rows;
+          app.locals.province = rows.province;
+          // console.log(rows);
+          res.json(rows);
+        });
+});
+
+// ====================================================
+const port = 5000;
 app.listen(port, () => `Server running on port ${port}`);
