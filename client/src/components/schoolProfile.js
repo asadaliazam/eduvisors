@@ -26,7 +26,7 @@ class SchoolProfile extends Component {
         </div>
         <ul>
         {this.state.schoolProfile.map(customer =>
-          <ul key={customer.id}><li>Name : {customer.id} {customer.ca_ranking}</li><li>Email: {customer.wd_rank}</li><li>Field of Study: {customer.institute_name}</li><li>Level of Education: {customer.url}</li><li>Level of Education: {customer.province}</li><li>Level of Education: {customer.two_letter}</li></ul>
+          <ul key={customer.id}><li>id : {customer.id}</li><li> Canadian Ranking: {customer.ca_ranking}</li><li>World Ranking: {customer.wd_rank}</li><li>Institute Name: {customer.institution_name}</li><li>Url: {customer.url}</li><li>Province: {customer.province}</li><li>Short: {customer.two_letter}</li></ul>
         )}
         </ul>
       </div>
