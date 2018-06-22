@@ -12,16 +12,21 @@ class SchoolProfile extends Component {
   componentDidMount() {
     fetch('/api/schoolProfile')
       .then(res => res.json())
-      .then( => this.setState({schoolProfile}, () => console.log('schoolProfile fetched...', schoolProfile)));
+      .then(schoolProfile => this.setState({schoolProfile}, () => console.log('schoolProfile fetched...', schoolProfile)));
   }
 
   render() {
     return (
       <div>
         <h2>schoolProfile</h2>
+        <div>
+
+          <img src="https://picsum.photos/200/300
+"/>
+        </div>
         <ul>
         {this.state.schoolProfile.map(customer =>
-          <ul key={customer.id}><li>Name : {customer.first_name} {customer.last_name}</li><li>Email: {customer.email}</li><li>Field of Study: {customer.field_study}</li><li>Level of Education: {customer.lvl_educ}</li></ul>
+          <ul key={customer.id}><li>Name : {customer.id} {customer.ca_ranking}</li><li>Email: {customer.wd_rank}</li><li>Field of Study: {customer.institute_name}</li><li>Level of Education: {customer.url}</li><li>Level of Education: {customer.province}</li><li>Level of Education: {customer.two_letter}</li></ul>
         )}
         </ul>
       </div>
@@ -29,4 +34,4 @@ class SchoolProfile extends Component {
   }
 }
 
-export default schoolProfile;
+export default SchoolProfile;

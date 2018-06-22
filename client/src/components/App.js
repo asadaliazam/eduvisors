@@ -16,6 +16,7 @@ import Engine from './engine';
 import Chart from './chart';
 import Register from './form';
 import ProfileCompletion from './profileCompletion';
+import SchoolProfile from './schoolProfile';
 
 class App extends Component {
   render() {
@@ -34,6 +35,7 @@ class App extends Component {
         <li><Link to="/form">Form</Link></li>
         <li><Link to="/profile">Profile</Link></li>
         <li><Link to="/profileCompletion">ProfileCompletion</Link></li>
+          <li><Link to="/schoolProfile">School Profile</Link></li>
       </ul>
         <hr/>
         <Route path="/chart" component={Chart} />
@@ -42,6 +44,7 @@ class App extends Component {
         <Route path="/form" component={Register} />
         <Route path="/profile" component={Profile} />
         <Route path="/profileCompletion" component={ProfileCompletion} />
+        <Route path="/schoolProfile" component={SchoolProfile} />
     </div>
     </Router>
       </div>

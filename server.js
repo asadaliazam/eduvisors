@@ -194,11 +194,12 @@ app.get('/api/profile', (req, res) => {
 
 app.get('/api/schoolProfile', (req, res) => {
 
-    db.all("SELECT * FROM institute_name where id=1", function(err, rows)
+    db.all("SELECT * FROM institute_rank WHERE id=1", function(err, rows)
     {
       //console.log(rows);
       app.locals.data = rows;
       res.json(rows);
+      console.log(100,rows);
     });
 });
 

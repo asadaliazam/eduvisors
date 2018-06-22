@@ -8,6 +8,7 @@ import Engine from './components/engine';
 import Chart from './components/chart';
 import ProfileCompletion from './components/profileCompletion';
 import Snowfall from './components/snowfall';
+import SchoolProfile from './components/schoolProfile';
 
 class App extends Component {
 
@@ -18,11 +19,12 @@ class App extends Component {
         <Costs />
         <Profile />
         <ProfileCompletion />
+        <SchoolProfile />
         <Engine />
         <Chart />
         <Snowfall />
         <div className="Graph"></div>
-        
+
       </div>
     );
   }
