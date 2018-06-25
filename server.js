@@ -276,20 +276,23 @@ db.each("SELECT * FROM profile_advanced WHERE id = 1", function(err, row) {
 // ====================================================
 //              WEATHER Component
 // ====================================================
-app.locals.snowfall;
-app.locals.province;
+app.locals.conta = 0;
 
 app.get('/api/snow', (req, res) => {
     let rows = "";
 
-    db.all("SELECT * FROM weather WHERE info = 'Snow';", function(err,rows)
+    db.all("SELECT jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec FROM weather WHERE type = 'Snow' AND province='AB';", function(err,rows)
     {
           //app.locals.snowfall = rows;
-          app.locals.province = rows.province;
-          // console.log(rows);
+          //app.locals.province = rows.province;
+        //  console.log(rows);
+        app.locals.conta = app.locals.conta + 1;
+        console.log(`data fetched > ${app.locals.conta}`)
+
           res.json(rows);
         });
 });
+
 
 // ====================================================
 const port = 5000;
