@@ -198,7 +198,6 @@ app.get('/api/field_study', (req, res) => {
 
 app.get('/api/profile', (req, res) => {
 
-    db.all("SELECT * FROM profile where id=1", function(err, rows)
     {
       //console.log(rows);
       app.locals.data = rows;
@@ -290,6 +289,24 @@ app.get('/api/snow', (req, res) => {
           res.json(rows);
         });
 });
+
+
+
+
+app.post('/api/signup', (req, res) => {
+  console.log('you posted to /signup'); //appears in console as expected
+  console.log(req.body); // {} -- always empty? cant figre out why
+
+  res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
+});
+
+
+
+
+
+
+
+
 
 // ====================================================
 const port = 5000;
