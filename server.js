@@ -198,7 +198,6 @@ app.get('/api/field_study', (req, res) => {
 
 app.get('/api/profile', (req, res) => {
 
-    db.all("SELECT * FROM profile where id=1", function(err, rows)
     {
       //console.log(rows);
       app.locals.data = rows;
@@ -294,12 +293,21 @@ app.get('/api/snow', (req, res) => {
 });
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+>>>>>>> 38112c3279d39714a143deb2254d98df79034bf3
 
 app.post('/api/signup', (req, res) => {
   console.log('you posted to /signup'); //appears in console as expected
   console.log(req.body); // {} -- always empty? cant figre out why
+<<<<<<< HEAD
   console.log(typeof req.body); //"object"
   console.log(req.method); // "POST"
+=======
+
+>>>>>>> 38112c3279d39714a143deb2254d98df79034bf3
   res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
 });
 
@@ -307,6 +315,15 @@ app.post('/api/signup', (req, res) => {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+=======
+>>>>>>> 65f2d71bc228bcdb353e82e5817d9c2045c0f15a
+>>>>>>> 38112c3279d39714a143deb2254d98df79034bf3
 // ====================================================
 const port = 5000;
 app.listen(port, () => `Server running on port ${port}`);
