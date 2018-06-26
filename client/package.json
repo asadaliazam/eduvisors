@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
     "ajv": "^6.5.1",
-    "chart.js": "^2.3.0",
+    "axios": "^0.18.0",
+    "chart.js": "^2.7.2",
     "react": "^16.2.0",
+    "react-chartjs-2": "^2.7.2",
     "react-chartjs2": "^1.2.1",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.3.1",
