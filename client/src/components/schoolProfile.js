@@ -21,8 +21,7 @@ class SchoolProfile extends Component {
         <h2>schoolProfile</h2>
         <div>
 
-          <img src="https://picsum.photos/200/300
-"/>
+          <img src="https://picsum.photos/200/300"/>
         </div>
         <ul>
         {this.state.schoolProfile.map(customer =>

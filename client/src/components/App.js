@@ -19,6 +19,7 @@ import ProfileCompletion from './profileCompletion';
 import SchoolProfile from './schoolProfile';
 import CostLiving from './cost_living';
 import FieldStudy from './field_study';
+import Selector from './selector';
 
 class App extends Component {
   render() {
@@ -40,6 +41,7 @@ class App extends Component {
         <li><Link to="/schoolProfile">School Profile</Link></li>
         <li><Link to="/cost_living">Cost Living</Link></li>
         <li><Link to="/field_study">Field Study</Link></li>
+        <li><Link to="/selector">Selector</Link></li>
       </ul>
 
         <hr/>
@@ -52,7 +54,7 @@ class App extends Component {
         <Route path="/profileCompletion" component={ProfileCompletion} />
         <Route path="/schoolProfile" component={SchoolProfile} />
         <Route path="/cost_living" component={CostLiving} />
-        <Route path="/field_study" component={FieldStudy} />
+        <Route path="/selector" component={Selector} />
     </div>
     </Router>
       </div>
