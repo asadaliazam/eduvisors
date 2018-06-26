@@ -6,7 +6,7 @@ class Profile extends Component {
     super();
     this.state = {
       profile: [],
-      schoolName = "University of British Columbia"
+      schoolName : "University of British Columbia"
     };
   }
 
