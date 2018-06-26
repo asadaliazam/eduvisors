@@ -5,7 +5,8 @@ class Profile extends Component {
   constructor() {
     super();
     this.state = {
-      profile: []
+      profile: [],
+      schoolName = "University of British Columbia"
     };
   }
 
@@ -16,8 +17,7 @@ class Profile extends Component {
 
 
       let reqBody = {
-      email: "hi",
-      password: "hello1"
+      schoolName: this.state.schoolName
     };
 
     fetch("/api/signup", {
