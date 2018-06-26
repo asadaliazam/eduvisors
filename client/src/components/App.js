@@ -17,8 +17,7 @@ import Chart from './chart';
 import Register from './form';
 import ProfileCompletion from './profileCompletion';
 import SchoolProfile from './schoolProfile';
-import CostLiving from './cost_living';
-import FieldStudy from './field_study';
+import Snowfall from './snowfall';
 
 class App extends Component {
   render() {
@@ -38,12 +37,9 @@ class App extends Component {
         <li><Link to="/profile">Profile</Link></li>
         <li><Link to="/profileCompletion">ProfileCompletion</Link></li>
         <li><Link to="/schoolProfile">School Profile</Link></li>
-        <li><Link to="/cost_living">Cost Living</Link></li>
-        <li><Link to="/field_study">Field Study</Link></li>
+        <li><Link to="/snowfall">Snowfall</Link></li>
       </ul>
-
         <hr/>
-
         <Route path="/chart" component={Chart} />
         <Route path="/cost" component={Costs} />
         <Route path="/engine" component={Engine} />
@@ -51,8 +47,7 @@ class App extends Component {
         <Route path="/profile" component={Profile} />
         <Route path="/profileCompletion" component={ProfileCompletion} />
         <Route path="/schoolProfile" component={SchoolProfile} />
-        <Route path="/cost_living" component={CostLiving} />
-        <Route path="/field_study" component={FieldStudy} />
+        <Route path="/snowfall" component={Snowfall} />
     </div>
     </Router>
       </div>
