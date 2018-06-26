@@ -14,7 +14,7 @@ class Profile extends Component {
       .then(res => res.json())
       .then(profile => this.setState({profile}, () => console.log('profile fetched...', profile)));
 
-<<<<<<< HEAD
+
       let reqBody = {
       email: "hi",
       password: "hello1"
@@ -26,8 +26,7 @@ class Profile extends Component {
       headers: {
                 "Content-Type": "application/json"
             }
-    })
-      .then((res) => {
+    }).then((res) => {
         if (res.ok){
           return res.json();
         } else {
@@ -36,40 +35,8 @@ class Profile extends Component {
       }).then((json) => {
         console.log(json);
       })
-=======
 
 
-            .then(res => res.json())
-            .then(profile => this.setState({profile}, () => console.log('profile fetched...', profile)));
-
-            let reqBody = {
-                 email: "hello",
-                 password: "hey"
-               };
-
-            fetch("/api/signup", {
-                  method: "POST",
-                  body: JSON.stringify(reqBody),
-                  headers: {
-                              "Content-Type": "application/json"
-                            }
-                })
-                  .then((res) => {
-                    if (res.ok){
-                      return res.json();
-                    } else {
-                      throw new Error ('Something went wrong with your fetch');
-                    }
-                  }).then((json) => {
-                    console.log(json);
-                  })
-
-
-
-
-
-
->>>>>>> 38112c3279d39714a143deb2254d98df79034bf3
   }
 
   render() {
