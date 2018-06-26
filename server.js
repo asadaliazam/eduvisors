@@ -197,10 +197,9 @@ app.get('/api/field_study', (req, res) => {
 
 
 app.get('/api/profile', (req, res) => {
-
-    db.all("SELECT * FROM profile where id=1", function(err, rows)
+db.all("SELECT * FROM profile WHERE id=1", function(err, rows)
     {
-      //console.log(rows);
+      console.log(rows);
       app.locals.data = rows;
       res.json(rows);
     });
@@ -276,19 +275,31 @@ db.each("SELECT * FROM profile_advanced WHERE id = 1", function(err, row) {
 // ====================================================
 //              WEATHER Component
 // ====================================================
-app.locals.snowfall;
-app.locals.province;
+app.locals.conta = 0;
 
 app.get('/api/snow', (req, res) => {
     let rows = "";
 
-    db.all("SELECT * FROM weather WHERE info = 'Snow';", function(err,rows)
+    db.all("SELECT jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec FROM weather WHERE type = 'Snow' AND province='AB';", function(err,rows)
     {
           //app.locals.snowfall = rows;
-          app.locals.province = rows.province;
-          // console.log(rows);
+          //app.locals.province = rows.province;
+        //  console.log(rows);
+        app.locals.conta = app.locals.conta + 1;
+        console.log(`data fetched > ${app.locals.conta}`)
+
           res.json(rows);
         });
+});
+
+
+
+app.post('/api/signup', (req, res) => {
+  console.log('you posted to /signup'); //appears in console as expected
+  console.log(req.body); // {} -- always empty? cant figre out why
+  console.log(typeof req.body); //"object"
+  console.log(req.method); // "POST"
+  res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
 });
 
 // ====================================================
