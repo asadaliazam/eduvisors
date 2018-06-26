@@ -294,6 +294,19 @@ app.get('/api/snow', (req, res) => {
 });
 
 
+
+app.post('/api/signup', (req, res) => {
+  console.log('you posted to /signup'); //appears in console as expected
+  console.log(req.body); // {} -- always empty? cant figre out why
+  console.log(typeof req.body); //"object"
+  console.log(req.method); // "POST"
+  res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
+});
+
+
+
+
+
 // ====================================================
 const port = 5000;
 app.listen(port, () => `Server running on port ${port}`);
