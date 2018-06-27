@@ -6,15 +6,18 @@ class Snowfall extends Component {
 
   // MODEL
   constructor(props) {
+    //console.log(props);
     super(props);
     this.state = {
+      province: props.match.params.province,
+      type: props.match.params.type,
       snowfall: [],
       chartData :
       {
         labels: [],
         datasets: [{
         label: "Snowfall",
-        backgroundColor: 'rgb(255, 255, 132)',
+        backgroundColor: 'rgb(255, 0, 132)',
         borderColor: 'rgb(255, 255, 255)',
         data: [],
         }]
@@ -25,10 +28,11 @@ class Snowfall extends Component {
   // CONTROLLER
   componentDidMount() {
 
-    fetch('/api/snow')
+    fetch(`/api/weather/${this.state.province}/${this.state.type}`)
       .then(res => res.json())
       .then(snowfall => this.setState({snowfall}, function (){
-        //console.log(snowfall);
+        console.log(999, snowfall);
+        console.log(111, this.state.snowfall);
         //this.setState();
         //console.log(this.state.chartData);
         for (let key in snowfall[0])
@@ -39,13 +43,14 @@ class Snowfall extends Component {
           //this.state.chartData.datasets[0].data.setState({parseFloat(snowfall[0][key])});
           //console.log(snowfall[0][key]);
         }
-        this.state.chartData.labels = ["asad", "rod"];
+        //this.state.chartData.labels = ["asad", "rod"];
         //console.log(snowfall[6].jan);
         console.log(this.state.chartData.labels)
         console.log(this.state.chartData.datasets[0].data)
         //console.log(this.state.chartData)
 
       }));
+
   }
 
   // VIEW

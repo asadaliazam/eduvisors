@@ -277,7 +277,7 @@ db.each("SELECT * FROM profile_advanced WHERE id = 1", function(err, row) {
 // ====================================================
 app.locals.conta = 0;
 
-app.get('/api/snow', (req, res) => {
+app.get('/api/snow/', (req, res) => {
     let rows = "";
 
     db.all("SELECT jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec FROM weather WHERE type = 'Snow' AND province='AB';", function(err,rows)
@@ -287,12 +287,40 @@ app.get('/api/snow', (req, res) => {
         //  console.log(rows);
         app.locals.conta = app.locals.conta + 1;
         console.log(`data fetched > ${app.locals.conta}`)
-
           res.json(rows);
         });
 });
 
+// ====================================================
+app.get('/api/weather/:province/:type', (req, res) => {
+    let rows = "";
 
+    // PROVINCE in all CAPITAL LETTERS
+    req.params.province = req.params.province.toUpperCase();
+
+    // TYPE - capitalize only FIRST letter
+    req.params.type = req.params.type.toLowerCase();
+
+    // TABLE in all LOWER CASE
+    //req.params.table = req.params.table.toLowerCase();
+
+    console.log(req.params.type);
+
+    db.all(`SELECT jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec FROM weather WHERE type = '${req.params.type}' AND province='${req.params.province}';`, function(err,rows)
+    {
+          //app.locals.snowfall = rows;
+          //app.locals.province = rows.province;
+        //console.log(rows);
+        //console.log(err);
+        app.locals.conta = app.locals.conta + 1;
+        console.log(`data fetched > ${app.locals.conta}`)
+          res.json(rows);
+        });
+});
+
+// ====================================================
+//              SIGNUP Component
+// ====================================================
 
 app.post('/api/signup', (req, res) => {
   console.log('you posted to /signup'); //appears in console as expected

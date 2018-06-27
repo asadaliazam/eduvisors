@@ -43,7 +43,7 @@ class App extends Component {
         <li><Link to="/cost_living">Cost Living</Link></li>
         <li><Link to="/field_study">Field Study</Link></li>
         <li><Link to="/selector">Selector</Link></li>
-        <li><Link to="/snowfall">Snowfall</Link></li>
+        <li><Link to="/snowfall/AB/snow">Snowfall</Link></li>
       </ul>
         <hr/>
         <Route path="/chart" component={Chart} />
@@ -55,7 +55,7 @@ class App extends Component {
         <Route path="/schoolProfile" component={SchoolProfile} />
         <Route path="/cost_living" component={CostLiving} />
         <Route path="/selector" component={Selector} />
-        <Route path="/snowfall" component={Snowfall} />
+        <Route path="/snowfall/:province/:type" component={Snowfall} />
     </div>
     </Router>
       </div>
