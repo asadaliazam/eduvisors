@@ -43,7 +43,7 @@ class App extends Component {
         <li><Link to="/cost_living">Cost Living</Link></li>
         <li><Link to="/field_study">Field Study</Link></li>
         <li><Link to="/selector">Selector</Link></li>
-        <li><Link to="/snowfall/AB/snow">Snowfall</Link></li>
+        <li><Link to="/snowfall/BC/snow">Snowfall</Link></li>
       </ul>
         <hr/>
         <Route path="/chart" component={Chart} />
