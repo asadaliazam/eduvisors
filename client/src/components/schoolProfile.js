@@ -11,7 +11,11 @@ class SchoolProfile extends Component {
       school: props.match.params.institutionName
     };
   }
-
+  componentWillReceiveProps(nextProps)
+  {
+    this.state.school = nextProps.match.params.institutionName;
+    console.log(this.state.schoolName);
+  }
   componentDidMount() {
 
             let reqBody = {
