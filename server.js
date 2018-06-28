@@ -316,10 +316,12 @@ db.each("SELECT * FROM profile_advanced WHERE id = 1", function(err, row) {
 // ====================================================
 app.locals.conta = 0;
 
-app.get('/api/snow/', (req, res) => {
+app.post('/api/snow2', (req, res) => {
     let rows = "";
+    console.log(req.body.province);
+    let provinceName = req.body.province;
 
-    db.all("SELECT jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec FROM weather WHERE type = 'Snow' AND province='AB';", function(err,rows)
+    db.all("SELECT jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec FROM weather WHERE type = 'Snow' AND province='"+req.body.province+"';", function(err,rows)
     {
           //app.locals.snowfall = rows;
           //app.locals.province = rows.province;
