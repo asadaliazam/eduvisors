@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+
+
 app.use(function(req, res, next){
 
   res.header("Access-Control-Allow-Origin", "*");
@@ -199,7 +201,7 @@ app.get('/api/field_study', (req, res) => {
 app.get('/api/profile', (req, res) => {
 db.all("SELECT * FROM profile WHERE id=1", function(err, rows)
     {
-      console.log(rows);
+      // console.log(rows);
       app.locals.data = rows;
       res.json(rows);
     });
@@ -210,16 +212,53 @@ db.all("SELECT * FROM profile WHERE id=1", function(err, rows)
 //             School Profile  Component
 // ====================================================
 
-app.get('/api/schoolProfile', (req, res) => {
 
-    db.all("SELECT * FROM institute_rank WHERE id=1", function(err, rows)
+var name;
+
+
+
+
+
+app.post('/api/schoolProfile', (req, res) => {
+
+  var name_obj= req.body;
+  var name_school = name_obj.schoolName;
+  name = name_school;
+  // console.log('you posted to /signup'); //appears in console as expected
+
+
+
+  res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
+
+
+  app.get('/api/signup', (req, res) => {
+
+  var id=1;
+
+
+
+    db.all("SELECT * FROM institute_rank WHERE institution_name='"+name+"'", function(err, rows)
     {
+      console.log(name);
       //console.log(rows);
       app.locals.data = rows;
+      // console.log(100,rows);
       res.json(rows);
-      console.log(100,rows);
     });
+
+
+
+  });
+
+
+
 });
+
+
+
+
+
+
 
 // ====================================================
 //              COST of TUITION Component
@@ -277,32 +316,51 @@ db.each("SELECT * FROM profile_advanced WHERE id = 1", function(err, row) {
 // ====================================================
 app.locals.conta = 0;
 
-app.post('/api/snow2', (req, res) => {
+app.get('/api/snow/', (req, res) => {
     let rows = "";
-    console.log(req.body.province);
-    let provinceName = req.body.province;
 
-    db.all("SELECT jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec FROM weather WHERE type = 'Snow' AND province='"+req.body.province+"';", function(err,rows)
+    db.all("SELECT jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec FROM weather WHERE type = 'Snow' AND province='AB';", function(err,rows)
     {
           //app.locals.snowfall = rows;
           //app.locals.province = rows.province;
         //  console.log(rows);
         app.locals.conta = app.locals.conta + 1;
         console.log(`data fetched > ${app.locals.conta}`)
-
           res.json(rows);
         });
 });
 
+// ====================================================
+app.get('/api/weather/:province/:type', (req, res) => {
+    let rows = "";
 
+    // PROVINCE in all CAPITAL LETTERS
+    req.params.province = req.params.province.toUpperCase();
 
-app.post('/api/signup', (req, res) => {
-  console.log('you posted to /signup'); //appears in console as expected
-  console.log(req.body); // {} -- always empty? cant figre out why
-  console.log(typeof req.body); //"object"
-  console.log(req.method); // "POST"
-  res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
+    // TYPE - capitalize only FIRST letter
+    req.params.type = req.params.type.toLowerCase();
+
+    // TABLE in all LOWER CASE
+    //req.params.table = req.params.table.toLowerCase();
+
+    console.log(req.params.type);
+
+    db.all(`SELECT jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec FROM weather WHERE type = '${req.params.type}' AND province='${req.params.province}';`, function(err,rows)
+    {
+          //app.locals.snowfall = rows;
+          //app.locals.province = rows.province;
+        //console.log(rows);
+        //console.log(err);
+        app.locals.conta = app.locals.conta + 1;
+        console.log(`data fetched > ${app.locals.conta}`)
+          res.json(rows);
+        });
 });
+
+// ====================================================
+//              SIGNUP Component
+// ====================================================
+
 
 // ====================================================
 const port = 5000;

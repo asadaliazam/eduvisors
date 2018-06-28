@@ -5,8 +5,7 @@ class Profile extends Component {
   constructor() {
     super();
     this.state = {
-      profile: [],
-      schoolName : "University of British Columbia"
+      profile: []
     };
   }
 
@@ -14,27 +13,6 @@ class Profile extends Component {
     fetch('/api/profile')
       .then(res => res.json())
       .then(profile => this.setState({profile}, () => console.log('profile fetched...', profile)));
-
-
-      let reqBody = {
-      schoolName: this.state.schoolName
-    };
-
-    fetch("/api/signup", {
-      method: "POST",
-      body: JSON.stringify(reqBody),
-      headers: {
-                "Content-Type": "application/json"
-            }
-    }).then((res) => {
-        if (res.ok){
-          return res.json();
-        } else {
-          throw new Error ('Something went wrong with your fetch');
-        }
-      }).then((json) => {
-        console.log(json);
-      })
 
 
   }
