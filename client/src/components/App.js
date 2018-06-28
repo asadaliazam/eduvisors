@@ -20,7 +20,7 @@ import SchoolProfile from './schoolProfile';
 import CostLiving from './cost_living';
 import FieldStudy from './field_study';
 import Selector from './selector';
-//import Snowfall from './snowfall';
+import Snowfall from './snowfall';
 
 class App extends Component {
   render() {
