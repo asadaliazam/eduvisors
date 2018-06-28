@@ -5,61 +5,83 @@ class SchoolProfile extends Component {
   constructor(props) {
     super(props);
     console.log(props.match);
+     this.schoolProfile = this.schoolProfile.bind(this);
     this.state = {
       schoolProfile: [],
       schoolName : props.match.params.institutionName,
-      school: props.match.params.institutionName
+
+      school: props.match.params.institutionName,
+
+
+
     };
   }
   componentWillReceiveProps(nextProps)
   {
     this.state.schoolName = nextProps.match.params.institutionName;
     console.log(this.state.schoolName);
+    this.schoolProfile();
+
   }
+
+
+  schoolProfile(){
+
+
+    let reqBody = {
+    schoolName: this.state.schoolName
+  };
+
+
+
+  fetch("/api/schoolProfile", {
+    method: "POST",
+    body: JSON.stringify(reqBody),
+    headers: {
+              "Content-Type": "application/json"
+          }
+  }).then((res) => {
+      if (res.ok){
+        return res.json();
+      } else {
+        throw new Error ('Something went wrong with your fetch');
+      }
+    }).then((json) => {
+      console.log(json);
+    })
+
+
+
+    setTimeout(function() {
+
+      fetch('/api/signup')
+        .then(res => res.json())
+        .then(schoolProfile => this.setState({schoolProfile}, () => console.log('schoolProfile fetched...', schoolProfile)));
+
+
+
+
+
+       //Start the timer
+          this.setState({render: true}) //After 1 second, set render to true
+      }.bind(this), 1000)
+
+
+  }
+
+
+
+
+
   componentDidMount() {
 
-            let reqBody = {
-            schoolName: this.state.schoolName
-          };
 
-          console.log(this.state.school);
-
-          fetch("/api/schoolProfile", {
-            method: "POST",
-            body: JSON.stringify(reqBody),
-            headers: {
-                      "Content-Type": "application/json"
-                  }
-          }).then((res) => {
-              if (res.ok){
-                return res.json();
-              } else {
-                throw new Error ('Something went wrong with your fetch');
-              }
-            }).then((json) => {
-              console.log(json);
-            })
-
-
-
-            setTimeout(function() {
-
-              fetch('/api/signup')
-                .then(res => res.json())
-                .then(schoolProfile => this.setState({schoolProfile}, () => console.log('schoolProfile fetched...', schoolProfile)));
-
-
-
-
-
-               //Start the timer
-                  this.setState({render: true}) //After 1 second, set render to true
-              }.bind(this), 1000)
-
-
+    this.schoolProfile();
 
 
   }
+
+
 
   render() {
     return (
@@ -78,6 +100,7 @@ class SchoolProfile extends Component {
     )}
     </ul>
     <p> {this.state.school} </p>
+    
 
 
 </div>
