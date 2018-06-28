@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import {Line} from 'react-chartjs-2';
-import './snowfall.css';
+import '../styles/snowfall.css';
+
+// MAP
+//https://reactjs.org/docs/lists-and-keys.html
 
 class Snowfall extends Component {
+    // static defaultProps = {
+    //   province: "MB",
+    //   type: "snow"
+    // }
 
   // MODEL
   constructor(props) {
@@ -30,7 +37,8 @@ class Snowfall extends Component {
 
     fetch(`/api/weather/${this.state.province}/${this.state.type}`)
       .then(res => res.json())
-      .then(snowfall => this.setState({snowfall}, function (){
+      .then(snowfall => this.setState({snowfall: snowfall}, function (){
+        // https://css-tricks.com/understanding-react-setstate/
         //console.log(111, snowfall);
         //console.log(222, this.state.snowfall);
         //console.log(333, this.state.chartData);
@@ -38,7 +46,6 @@ class Snowfall extends Component {
         //console.log(555, this.state.chartData.labels)
         //console.log(666, this.state.chartData.datasets[0].data)
       }));
-
   }
 
   // VIEW
@@ -46,6 +53,7 @@ class Snowfall extends Component {
 
     switch (this.state.type){
             case "snow":
+                // this.setState({chartData.datasets[0]['label']: "Snowfall"});
                 this.state.chartData.datasets[0]['label'] = "Snowfall";
                 this.state.chartData.datasets[0]['backgroundColor'] = 'rgb(153, 51, 255)';
                 break;
@@ -65,6 +73,8 @@ class Snowfall extends Component {
                 this.state.chartData.datasets[0]['label'] = "Average Temperatures";
                 this.state.chartData.datasets[0]['backgroundColor'] = 'rgb(255, 0, 0)';
                 break;
+            default:
+                break;
     }
     for (let key in this.state.snowfall[0])
     {
@@ -75,7 +85,7 @@ class Snowfall extends Component {
 
     return (
       <div>
-        <h2>Snowfall</h2>
+        <h2>Weather Chart</h2>
 
         <div>
           <Line

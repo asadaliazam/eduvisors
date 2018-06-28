@@ -20,12 +20,9 @@ class ProfileCompletion extends Component {
     };
   }
 
-
-
   render() {
     return (
       <div>
-        <h2>Profile Completion</h2>
         <div className = "profileCompletion">
           <RC2
             data = {this.state.chartData}
