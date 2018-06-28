@@ -12,6 +12,7 @@ import {
 
 import HeaderMenu from './header';
 import MainContent from './main';
+import Snowfall from './snowfall';
 
 class App extends Component {
   render() {
@@ -21,6 +22,8 @@ class App extends Component {
           <div>
             <HeaderMenu />
             <MainContent />
+            <Snowfall province={'BC'} type={'snow'} />
+            <Snowfall province={'BC'} type={'rain'} />
           </div>
       </Router>
       </div>

@@ -6,19 +6,19 @@ import '../styles/snowfall.css';
 //https://reactjs.org/docs/lists-and-keys.html
 
 class Snowfall extends Component {
-    // static defaultProps = {
-    //   province: "MB",
-    //   type: "snow"
-    // }
+
+//  province: props.match.params.province,
+//  type: props.match.params.type,
 
   // MODEL
   constructor(props) {
-    //console.log(000, props);
+    //console.log(props);
+    //console.log(111, props.province)
     super(props);
     console.log(props.match)
     this.state = {
-      province: props.match.params.province,
-      type: props.match.params.type,
+      province: props.province,
+      type: props.type,
       snowfall: [],
       chartData :
           {
