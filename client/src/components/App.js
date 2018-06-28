@@ -20,7 +20,7 @@ import SchoolProfile from './schoolProfile';
 import CostLiving from './cost_living';
 import FieldStudy from './field_study';
 import Selector from './selector';
-import Snowfall from './snowfall';
+//import Snowfall from './snowfall';
 
 class App extends Component {
   render() {
@@ -43,7 +43,6 @@ class App extends Component {
         <li><Link to="/cost_living">Cost Living</Link></li>
         <li><Link to="/field_study">Field Study</Link></li>
         <li><Link to="/selector">Selector</Link></li>
-        <li><Link to="/snowfall">Snowfall</Link></li>
       </ul>
         <hr/>
         <Route path="/chart" component={Chart} />
@@ -54,8 +53,8 @@ class App extends Component {
         <Route path="/profileCompletion" component={ProfileCompletion} />
         <Route path="/schoolProfile" component={SchoolProfile} />
         <Route path="/cost_living" component={CostLiving} />
+        <Route path="/field_study" component={FieldStudy} />
         <Route path="/selector" component={Selector} />
-        <Route path="/snowfall" component={Snowfall} />
     </div>
     </Router>
       </div>
