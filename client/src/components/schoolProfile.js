@@ -7,13 +7,13 @@ class SchoolProfile extends Component {
     console.log(props.match);
     this.state = {
       schoolProfile: [],
-      schoolName : "University of Toronto",
+      schoolName : props.match.params.institutionName,
       school: props.match.params.institutionName
     };
   }
   componentWillReceiveProps(nextProps)
   {
-    this.state.school = nextProps.match.params.institutionName;
+    this.state.schoolName = nextProps.match.params.institutionName;
     console.log(this.state.schoolName);
   }
   componentDidMount() {
