@@ -182,6 +182,9 @@ return test;
 //console.log(1400, test);
 }
 
+// ====================================================
+//             COST of LIVING Component
+// ====================================================
 app.get('/api/cost_living', (req, res) => {
 
     db.all("SELECT * FROM cost_living", function(err, rows)
@@ -192,6 +195,9 @@ app.get('/api/cost_living', (req, res) => {
     });
 });
 
+// ====================================================
+//             FIELD of STUDY Component
+// ====================================================
 app.get('/api/field_study', (req, res) => {
     let rows = "";
 
@@ -202,11 +208,13 @@ app.get('/api/field_study', (req, res) => {
     });
 });
 
-
+// ====================================================
+//             PROFILE  Component
+// ====================================================
 app.get('/api/profile', (req, res) => {
-db.all("SELECT * FROM profile WHERE id=1", function(err, rows)
+db.all("SELECT * FROM profile WHERE id=1;", function(err, rows)
     {
-      // console.log(rows);
+      console.log(rows);
       app.locals.data = rows;
       res.json(rows);
     });
@@ -214,56 +222,28 @@ db.all("SELECT * FROM profile WHERE id=1", function(err, rows)
 
 
 // ====================================================
-//             School Profile  Component
+//             SCHOOL PROFILE Component
 // ====================================================
-
-
 var name;
 
-
-
-
-
 app.post('/api/schoolProfile', (req, res) => {
-
-  var name_obj= req.body;
-  var name_school = name_obj.schoolName;
-  name = name_school;
-  // console.log('you posted to /signup'); //appears in console as expected
-
-
-
-  res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
-
-
-  app.get('/api/signup', (req, res) => {
-
-  var id=1;
-
-
-
-    db.all("SELECT * FROM institute_rank WHERE institution_name='"+name+"'", function(err, rows)
-    {
-      //console.log(name);
-      //console.log(rows);
-      app.locals.data = rows;
-      // console.log(100,rows);
-      res.json(rows);
+    var name_obj= req.body;
+    var name_school = name_obj.schoolName;
+    name = name_school;
+    // console.log('you posted to /signup'); //appears in console as expected
+    res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
+    app.get('/api/signup', (req, res) => {
+          var id=1;
+          db.all("SELECT * FROM institute_rank WHERE institution_name='"+name+"'", function(err, rows)
+          {
+            console.log(name);
+            //console.log(rows);
+            app.locals.data = rows;
+            // console.log(100,rows);
+            res.json(rows);
+          });
     });
-
-
-
-  });
-
-
-
 });
-
-
-
-
-
-
 
 // ====================================================
 //              COST of TUITION Component
@@ -356,8 +336,8 @@ app.get('/api/weather/:province/:type', (req, res) => {
     {
           //app.locals.snowfall = rows;
           //app.locals.province = rows.province;
-        //console.log(rows);
-        //console.log(err);
+        //console.log(100, rows);
+        //console.log(200, err);
         app.locals.conta = app.locals.conta + 1;
         console.log(`data fetched > ${app.locals.conta}`)
           res.json(rows);
