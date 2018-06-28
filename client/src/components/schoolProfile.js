@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import '../styles/schoolProfile.css';
 
 class SchoolProfile extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    console.log(props.match);
     this.state = {
       schoolProfile: [],
-      schoolName : "Langara College"
+      schoolName : "University of Toronto",
+      school: props.match.params.institutionName
     };
   }
 
@@ -15,6 +17,8 @@ class SchoolProfile extends Component {
             let reqBody = {
             schoolName: this.state.schoolName
           };
+
+          console.log(this.state.school);
 
           fetch("/api/schoolProfile", {
             method: "POST",
@@ -69,6 +73,7 @@ class SchoolProfile extends Component {
       <ul key={customer.id}><li>id : {customer.id}</li><li> Canadian Ranking: {customer.ca_ranking}</li><li>World Ranking: {customer.wd_rank}</li><li>Institute Name: {customer.institution_name}</li><li>Url: {customer.url}</li><li>Province: {customer.province}</li><li>Short: {customer.two_letter}</li></ul>
     )}
     </ul>
+    <p> {this.state.school} </p>
 
 
 </div>

@@ -61,12 +61,14 @@ function schoolMatchingAlgo(data, total_score, multiplier_at, multiplier_rain, m
   obj.sort(function (a, b) {
   return ((parseFloat(a.calculatedScore)) - (parseFloat(b.calculatedScore)));
 });
+let obj2 = [];
 for (let i = 0 ; i <5 ; i++)
 {
-    //console.log(obj[i]);
+    console.log(obj[i]);
+    obj2.push(obj[i]);
 }
 
-return obj;
+return obj2;
 //console.log(100, obj[0]);
 
 }
@@ -159,19 +161,22 @@ function scoreCalculator(data)
   }
 
   let weather_score2 = (c_at * multiplier_at) + (c_rain * multiplier_rain) + (c_snow * multiplier_snow);
+  console.log("equation:" + c_at + "*" + multiplier_at + "+" +c_rain + "*" + multiplier_rain + c_snow + "*"  + multiplier_snow);
+  console.log(19000, weather_score2);
   let total_score = (weather_score2 * Math.pow(2, o_w)) + (c_emp * Math.pow(2, o_emp)) + (c_tui * Math.pow(2, o_tui)) + (c_col * Math.pow(2, o_col)) + (c_rank * Math.pow(2, o_rank));
+  console.log(20000, total_score);
   var arr2=[];
   let schoolNames = [];
 
   let test = new Promise(function(resolve, reject) {
-      db.each("SELECT * FROM school_rank", function(err, row) {
+      db.each("SELECT * FROM school_rank_test", function(err, row) {
         arr2.push(row);
       }, function(){
               schoolNames = schoolMatchingAlgo(arr2, total_score, multiplier_at, multiplier_rain, multiplier_snow, o_w, o_emp, o_tui, o_col, o_rank);
-              console.log(201, schoolNames[0]);
+              //console.log(201, schoolNames[0]);
               resolve(schoolNames);
       });
-      console.log(12000, schoolNames[0]);
+      //console.log(12000, schoolNames[0]);
 });
 return test;
 //console.log(1400, test);
@@ -239,7 +244,7 @@ app.post('/api/schoolProfile', (req, res) => {
 
     db.all("SELECT * FROM institute_rank WHERE institution_name='"+name+"'", function(err, rows)
     {
-      console.log(name);
+      //console.log(name);
       //console.log(rows);
       app.locals.data = rows;
       // console.log(100,rows);
@@ -283,7 +288,7 @@ app.get('/api/rankings', (req, res) => {
   var arr2=[];
   var schoolNames=[];
 
-db.each("SELECT * FROM profile_advanced WHERE id = 1", function(err, row) {
+db.each("SELECT * FROM profile_advanced WHERE email = 'uni@bc.com'", function(err, row) {
     // var name=row.name;
     // var email=row.email;
     // var newItem = {
@@ -293,18 +298,18 @@ db.each("SELECT * FROM profile_advanced WHERE id = 1", function(err, row) {
     // arr.push(newItem);
     //console.log(11, row);
     arr2 = row;
-    console.log(3, arr2);
+    //console.log(3, arr2);
     schoolNames = scoreCalculator(arr2);
     // test.then(function(schoolNames){
     //   console.log(202, schoolNames);
     //   res.json(schoolNames);
     // });
 
-    console.log(1100, schoolNames);
+    //console.log(1100, schoolNames);
     //res.json(schoolNames);
   }, function(){
       schoolNames.then(function(schoolNames){
-        console.log(1102, schoolNames);
+        //console.log(1102, schoolNames);
         res.json(schoolNames);
       });
   });

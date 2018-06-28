@@ -8,6 +8,7 @@ class Snowfall extends Component {
   constructor(props) {
     //console.log(000, props);
     super(props);
+    console.log(props.match)
     this.state = {
       province: props.match.params.province,
       type: props.match.params.type,
