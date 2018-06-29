@@ -213,6 +213,16 @@ db.all("SELECT * FROM profile WHERE id=1", function(err, rows)
 });
 
 
+app.get('/api/profileCompletion', (req, res) => {
+db.all("SELECT * FROM profileCompletion", function(err, rows)
+    {
+      // console.log(rows);
+      app.locals.data = rows;
+      res.json(rows);
+    });
+});
+
+
 // ====================================================
 //             School Profile  Component
 // ====================================================
