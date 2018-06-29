@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import '../styles/profile.css';
+import ProfileCompletion from './profileCompletion';
 
 class Profile extends Component {
   constructor() {
     super();
     this.state = {
-      profile: []
+      profile: ['asd']
     };
   }
 
@@ -20,12 +21,19 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <h2>profile</h2>
-        <ul>
-        {this.state.profile.map(customer =>
-          <ul key={customer.id}><li>Name : {customer.first_name} {customer.last_name}</li><li>Email: {customer.email}</li><li>Field of Study: {customer.field_study}</li><li>Level of Education: {customer.lvl_educ}</li></ul>
+      
+        {this.state.profile.map(user =>
+          <div>
+            <h1>{user.first_name} {user.last_name}</h1>
+              <ProfileCompletion />
+              <br />
+              <ul key={user.id}>
+                <li>Email: {user.email}</li>
+                <li>Field of Study: {user.field_study}</li>
+                <li>Level of Education: {user.lvl_educ}</li>
+              </ul>
+          </div>
         )}
-        </ul>
       </div>
     );
   }
