@@ -67,7 +67,7 @@ class App extends Component {
             <div>
             <Snowfall province={this.state.value} type={'temp_avg'} />
             </div>
-            
+
 
             </div>
             <p> {this.state.value} </p>
