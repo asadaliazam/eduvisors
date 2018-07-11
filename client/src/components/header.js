@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
-// import '../styles/header.css';
+import '../styles/header.css';
 
 import {
   BrowserRouter as Router,
@@ -21,7 +21,8 @@ import CostLiving from './cost_living';
 import FieldStudy from './field_study';
 import Selector from './selector';
 import Snowfall from './snowfall';
-import '../styles/header.css';
+import Weather from './weather';
+
 
 class HeaderMenu extends Component {
   render() {
@@ -43,6 +44,7 @@ class HeaderMenu extends Component {
                   <li><Link to="/field_study">Field Study</Link></li>
                   <li><Link to="/selector">Selector</Link></li>
                   <li><Link to="/snowfall/BC/rain">Snowfall</Link></li>
+                  <li><Link to="/weather/BC">Weather</Link></li>
                 </ul>
             </nav>
           </header>

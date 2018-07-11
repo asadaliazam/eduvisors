@@ -14,18 +14,9 @@ class Profile extends Component {
     // https://www.youtube.com/watch?v=Oive66jrwBs
     fetch('/api/profile')
     .then(res => res.json())
-    .then(prof => this.setState({profile: prof[0]}, function (){
+    .then(prof => this.setState({profile: prof}, function (){
       console.log(99999, prof);
     }));
-      // .then(function(res){
-      //   return res.json();
-      // })
-      // .then(function(data){
-      //   console.log(555, data[0])
-      //   //console.log(666, this.state.profile[0]);
-      //   //return this.setState({ profile: data[0] });
-      // })
-      // .catch((err) => console.log(777, err));
   }
 
   render() {
@@ -36,9 +27,7 @@ class Profile extends Component {
     return (
       <div>
           <ProfileCompletion />
-          {this.state.profile[0]}
-
-
+          
       </div>
     ); // END of Return
   }

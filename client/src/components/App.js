@@ -24,6 +24,7 @@ class App extends Component {
             <MainContent />
             <Snowfall province={'BC'} type={'snow'} />
             <Snowfall province={'BC'} type={'rain'} />
+            <Snowfall province={'AB'} type={'temp_avg'} />
           </div>
       </Router>
       </div>

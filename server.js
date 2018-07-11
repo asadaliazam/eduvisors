@@ -295,30 +295,32 @@ db.each("SELECT * FROM profile_advanced WHERE email = 'uni@bc.com'", function(er
   });
 
 });
-
 // ====================================================
-//              WEATHER Component
+//              PROVINCE Component
 // ====================================================
-app.locals.conta = 0;
-
-app.post('/api/snow2', (req, res) => {
+app.get('/api/province/:province', (req, res) => {
     let rows = "";
-    console.log(req.body.province);
-    let provinceName = req.body.province;
 
-    db.all("SELECT jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec FROM weather WHERE type = 'Snow' AND province='"+req.body.province+"';", function(err,rows)
+    // PROVINCE in all CAPITAL LETTERS
+    req.params.province = req.params.province.toUpperCase();
+
+    db.all(`SELECT full_name FROM province WHERE short='${req.params.province}';`, function(err,rows)
     {
           //app.locals.snowfall = rows;
           //app.locals.province = rows.province;
-        //  console.log(rows);
-        app.locals.conta = app.locals.conta + 1;
-        console.log(`data fetched > ${app.locals.conta}`)
-          res.json(rows);
+        console.log(100, rows);
+        //console.log(200, err);
+          res.json(rows[0]);
         });
 });
 
 // ====================================================
-app.get('/api/weather/:province/:type', (req, res) => {
+//              SNOWFALL Component
+// ====================================================
+app.locals.conta = 0;
+
+// ====================================================
+app.get('/api/snowfall/:province/:type', (req, res) => {
     let rows = "";
 
     // PROVINCE in all CAPITAL LETTERS
@@ -345,8 +347,25 @@ app.get('/api/weather/:province/:type', (req, res) => {
 });
 
 // ====================================================
-//              SIGNUP Component
+//              WEATHER Component
 // ====================================================
+app.get('/api/weather/:province', (req, res) => {
+    let rows = "";
+    console.log(req.params);
+    // PROVINCE in all CAPITAL LETTERS
+    req.params.province = req.params.province.toUpperCase();
+
+    console.log(req.params);
+    db.all(`SELECT type, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
+            FROM weather WHERE province='${req.params.province}'
+            AND (type='snow' OR type = 'rain' OR type='temp_avg');`, function(err,rows)
+            {
+                res.json(rows);
+                console.log('WEATHER SERVER > ', rows, err);
+
+            });
+});
+
 
 
 // ====================================================

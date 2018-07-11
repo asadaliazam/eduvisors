@@ -13,15 +13,15 @@ class Profile extends Component {
   componentDidMount() {
     fetch('/api/profile')
       .then(res => res.json())
-      .then(profile => this.setState({profile}, () => console.log('profile fetched...', profile)));
-
+      .then(profile => this.setState({profile}));
+//, () => console.log('profile fetched...', profile)
 
   }
 
   render() {
     return (
       <div>
-      
+
         {this.state.profile.map(user =>
           <div>
             <h1>{user.first_name} {user.last_name}</h1>
