@@ -1,6 +1,7 @@
 /* APP.CSS */
 
 
+
 #root{
   margin: auto;
   /* width: 500px; */
@@ -10,7 +11,16 @@
   /* width: 900px; */
     /* margin: auto; */
 }
+/* .App .main-content .chart-nu, .chart-nu2
+{
+  width: 4vw;
+} */
 
+.App .main-content .charts
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .wrapper{
   display: flex;
   flex-flow: row nowrap;

@@ -100,7 +100,7 @@ class SchoolProfile extends Component {
     )}
     </ul>
     <p> {this.state.school} </p>
-    
+
 
 
 </div>

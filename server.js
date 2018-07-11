@@ -221,6 +221,16 @@ db.all("SELECT * FROM profile WHERE id=1;", function(err, rows)
 });
 
 
+app.get('/api/profileCompletion', (req, res) => {
+db.all("SELECT * FROM profileCompletion", function(err, rows)
+    {
+      // console.log(rows);
+      app.locals.data = rows;
+      res.json(rows);
+    });
+});
+
+
 // ====================================================
 //             SCHOOL PROFILE Component
 // ====================================================
@@ -345,6 +355,85 @@ app.get('/api/snowfall/:province/:type', (req, res) => {
           res.json(rows);
         });
 });
+
+// ====================================================
+//              STOREDATA FROM SURVEY 1 Component
+
+app.post('/api/storeUserDataSurvey1', (req, res) => {
+    console.log(11111, req.body.at);
+    let at = parseFloat(req.body.at);
+    let snow = parseFloat(req.body.snow);
+    let rain = parseFloat(req.body.rain);
+
+    console.log(at, snow, rain);
+
+    db.run(`UPDATE profile_advanced set c_at = ${at}, c_snow = ${snow}, c_rain = ${rain} WHERE email = "bb@bb.com";`);
+
+    console.log(111112, at);
+    res.json(at);
+});
+
+// ====================================================
+
+// ====================================================
+//              STOREDATA FROM SURVEY 2 Component
+
+app.post('/api/storeUserDataSurvey2', (req, res) => {
+    let o_at = parseFloat(req.body.o_at);
+    let o_snow = parseFloat(req.body.o_snow);
+    let o_rain = parseFloat(req.body.o_rain);
+
+    console.log(o_at, o_snow, o_rain);
+    db.run(`UPDATE profile_advanced set o_at = ${o_at}, o_snow = ${o_snow}, o_rain = ${o_rain} WHERE email = "bb@bb.com";`);
+
+    console.log(111112, o_at);
+    res.json(o_at);
+
+});
+
+// ====================================================
+
+// ====================================================
+//              STOREDATA FROM SURVEY 3 Component
+
+app.post('/api/storeUserDataSurvey3', (req, res) => {
+    let c_tui = parseFloat(req.body.tui);
+    let c_col = parseFloat(req.body.col);
+    let c_rank = parseFloat(req.body.rank);
+    let c_emp = parseFloat(req.body.emp);
+
+    console.log(c_tui, c_col, c_rank, c_emp);
+    db.run(`UPDATE profile_advanced set c_tui = ${c_tui}, c_col = ${c_col}, c_rank = ${c_rank}, c_emp = ${c_emp} WHERE email = "bb@bb.com";`);
+    res.json(c_tui);
+
+
+});
+
+// ====================================================
+
+// ====================================================
+//              STOREDATA FROM SURVEY 4 Component
+
+app.post('/api/storeUserDataSurvey4', (req, res) => {
+    let o_w = parseFloat(req.body.o_w);
+    let o_tui = parseFloat(req.body.o_tui);
+    let o_col = parseFloat(req.body.o_col);
+    let o_rank = parseFloat(req.body.o_rank);
+    let o_emp = parseFloat(req.body.o_emp);
+
+    console.log(o_w, o_tui, o_col, o_rank, o_emp);
+    db.run(`UPDATE profile_advanced set o_w = ${o_w}, o_tui = ${o_tui}, o_col = ${o_col}, o_rank = ${o_rank}, o_emp = ${o_emp} WHERE email = "bb@bb.com";`);
+    res.json(o_w);
+
+
+});
+
+
+// ====================================================
+//              SIGNUP Component
+
+
+
 
 // ====================================================
 //              WEATHER Component

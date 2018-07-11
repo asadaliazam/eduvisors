@@ -21,6 +21,7 @@ import FieldStudy from './field_study';
 import Selector from './selector';
 import Snowfall from './snowfall';
 import Weather from './weather';
+import Survey from './survey';
 
 class MainContent extends Component {
   render() {
@@ -42,6 +43,7 @@ class MainContent extends Component {
                   <Route path="/selector" component={Selector} />
                   <Route path="/snowfall/:province/:type" component={Snowfall} />
                   <Route path="/weather/:province" component={Weather} />
+                  <Route path="/survey" component={Survey} />
                 </Switch>
           </main>
       </div>

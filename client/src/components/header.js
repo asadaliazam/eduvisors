@@ -45,6 +45,7 @@ class HeaderMenu extends Component {
                   <li><Link to="/selector">Selector</Link></li>
                   <li><Link to="/snowfall/BC/rain">Snowfall</Link></li>
                   <li><Link to="/weather/BC">Weather</Link></li>
+                  <li><Link to="/survey">Survey</Link></li>
                 </ul>
             </nav>
           </header>

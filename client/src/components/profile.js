@@ -22,8 +22,8 @@ class Profile extends Component {
     return (
       <div>
 
-        {this.state.profile.map(user =>
-          <div>
+        {this.state.profile.map((key, user) =>
+        <div key={key}>
             <h1>{user.first_name} {user.last_name}</h1>
               <ProfileCompletion />
               <br />
