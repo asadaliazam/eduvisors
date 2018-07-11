@@ -22,8 +22,10 @@ import Selector from './selector';
 import Snowfall from './snowfall';
 import Weather from './weather';
 import Survey from './survey';
+import Home from './home';
 
 class MainContent extends Component {
+
   render() {
     return (
       <div className="wrapper">
@@ -32,18 +34,19 @@ class MainContent extends Component {
           </aside>
           <main>
                 <Switch>
-                  <Route path="/chart" component={Chart} />
-                  <Route path="/cost" component={Costs} />
-                  <Route path="/engine" component={Engine} />
-                  <Route path="/form" component={Register} />
-                  <Route path="/profile" component={Profile} />
-                  <Route path="/profileCompletion" component={ProfileCompletion} />
-                  <Route path="/schoolProfile" component={SchoolProfile} />
-                  <Route path="/cost_living" component={CostLiving} />
-                  <Route path="/selector" component={Selector} />
-                  <Route path="/snowfall/:province/:type" component={Snowfall} />
-                  <Route path="/weather/:province" component={Weather} />
-                  <Route path="/survey" component={Survey} />
+                      <Route path="/chart" component={Chart} />
+                      <Route path="/cost" component={Costs} />
+                      <Route path="/engine" component={Engine} />
+                      <Route path="/form" component={Register} />
+                      <Route path="/profile" component={Profile} />
+                      <Route path="/profileCompletion" component={ProfileCompletion} />
+                      <Route path="/schoolProfile" component={SchoolProfile} />
+                      <Route path="/cost_living" component={CostLiving} />
+                      <Route path="/selector" component={Selector} />
+                      <Route path="/snowfall/:province/:type" component={Snowfall} />
+                      <Route path="/weather/:province" component={Weather} />
+                      <Route path="/survey" component={Survey} />
+                      <Route path="/home" component={Home} />
                 </Switch>
           </main>
       </div>
