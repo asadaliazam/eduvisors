@@ -328,8 +328,6 @@ app.get('/api/province/:province', (req, res) => {
 //              SNOWFALL Component
 // ====================================================
 app.locals.conta = 0;
-
-// ====================================================
 app.get('/api/snowfall/:province/:type', (req, res) => {
     let rows = "";
 
@@ -348,7 +346,7 @@ app.get('/api/snowfall/:province/:type', (req, res) => {
     {
           //app.locals.snowfall = rows;
           //app.locals.province = rows.province;
-        //console.log(100, rows);
+        console.log(100, rows);
         //console.log(200, err);
         app.locals.conta = app.locals.conta + 1;
         console.log(`data fetched > ${app.locals.conta}`)
@@ -358,7 +356,7 @@ app.get('/api/snowfall/:province/:type', (req, res) => {
 
 // ====================================================
 //              STOREDATA FROM SURVEY 1 Component
-
+// ====================================================
 app.post('/api/storeUserDataSurvey1', (req, res) => {
     console.log(11111, req.body.at);
     let at = parseFloat(req.body.at);
@@ -374,10 +372,8 @@ app.post('/api/storeUserDataSurvey1', (req, res) => {
 });
 
 // ====================================================
-
-// ====================================================
 //              STOREDATA FROM SURVEY 2 Component
-
+// ====================================================
 app.post('/api/storeUserDataSurvey2', (req, res) => {
     let o_at = parseFloat(req.body.o_at);
     let o_snow = parseFloat(req.body.o_snow);
@@ -392,10 +388,8 @@ app.post('/api/storeUserDataSurvey2', (req, res) => {
 });
 
 // ====================================================
-
-// ====================================================
 //              STOREDATA FROM SURVEY 3 Component
-
+// ====================================================
 app.post('/api/storeUserDataSurvey3', (req, res) => {
     let c_tui = parseFloat(req.body.tui);
     let c_col = parseFloat(req.body.col);
@@ -410,10 +404,8 @@ app.post('/api/storeUserDataSurvey3', (req, res) => {
 });
 
 // ====================================================
-
-// ====================================================
 //              STOREDATA FROM SURVEY 4 Component
-
+// ====================================================
 app.post('/api/storeUserDataSurvey4', (req, res) => {
     let o_w = parseFloat(req.body.o_w);
     let o_tui = parseFloat(req.body.o_tui);

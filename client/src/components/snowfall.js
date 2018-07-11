@@ -44,16 +44,12 @@ class Snowfall extends Component {
   }
   fetchFromDatabase()
   {
-    fetch(`/api/weather/${this.state.province}/${this.state.type}`)
+    fetch(`/api/snowfall/${this.state.province}/${this.state.type}`)
       .then(res => res.json())
       .then(snowfall => this.setState({snowfall: snowfall}, function(){
-        //{snowfall: snowfall}, function (){
-        // https://css-tricks.com/understanding-react-setstate/
         let chartData = this.state.chartData;
-
         switch (this.state.type){
                 case "snow":
-                    // this.setState({chartData.datasets[0]['label']: "Snowfall"});
                     chartData.datasets[0]['label'] = "Snowfall";
                     chartData.datasets[0]['backgroundColor'] = 'rgb(153, 51, 255)';
                     break;
@@ -78,52 +74,24 @@ class Snowfall extends Component {
         }
         chartData.labels = [];
         chartData.datasets[0].data = [];
+
         for (let key in snowfall[0])
         {
           chartData.labels.push(key);
           chartData.datasets[0].data.push(parseFloat(snowfall[0][key]));
           console.log(777, snowfall[0][key]);
         }
-        console.log(111, chartData);
-        console.log(222, this.state.snowfall);
-        //console.log(333, this.state.chartData);
-        //console.log(444, this.state.type);
-        //console.log(555, this.state.chartData.labels)
-        //console.log(666, this.state.chartData.datasets[0].data)
 
-        switch (this.state.type){
-                case "snow":
-                    // this.setState({chartData.datasets[0]['label']: "Snowfall"});
-                    this.state.chartData.datasets[0]['label'] = "Snowfall";
-                    this.state.chartData.datasets[0]['backgroundColor'] = 'rgb(153, 51, 255)';
-                    break;
-                case "rain":
-                    this.state.chartData.datasets[0]['label'] = "Rainfall";
-                    this.state.chartData.datasets[0]['backgroundColor'] = 'rgb(0, 128, 255)';
-                    break;
-                case "temp_low":
-                    this.state.chartData.datasets[0]['label'] = "Low Temperatures";
-                    this.state.chartData.datasets[0]['backgroundColor'] = 'rgb(0, 204, 0)';
-                    break;
-                case "temp_high":
-                    this.state.chartData.datasets[0]['label'] = "High Temperatures";
-                    this.state.chartData.datasets[0]['backgroundColor'] = 'rgb(255, 255, 0)';
-                    break;
-                case "temp_avg":
-                    this.state.chartData.datasets[0]['label'] = "Average Temperatures";
-                    this.state.chartData.datasets[0]['backgroundColor'] = 'rgb(255, 0, 0)';
-                    break;
-                default:
-                    break;
-        };
+
         for (let key in this.state.snowfall[0])
         {
           this.state.chartData.labels.push(key);
           this.state.chartData.datasets[0].data.push(parseFloat(this.state.snowfall[0][key]));
           //console.log(777, snowfall[0][key]);
         };
-        this.setState(this.state);
-      }));
+
+      //  this.setState(this.state);
+      //}));
       // fetch(`/api/province/${this.state.province}`)
       //   .then(res => {res.json(); console.log(res);})
       //   .then(prov => this.setState({provname: (prov)}, function (){
@@ -133,8 +101,8 @@ class Snowfall extends Component {
         this.setState({chartData: chartData}, function(){
           console.log(333, chartData);
         });
-      })
-    );
+
+      }));
   }
 
   componentWillReceiveProps(nextProps)
