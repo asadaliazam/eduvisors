@@ -60,23 +60,23 @@ class SchoolProf extends Component {
   render() {
     return (
 
-            <div>
-                <h2>schoolProfile</h2>
+            <div className="sprof">
                 <div>
+                      <h2>Institute Profile</h2>
                       <img src="https://picsum.photos/200/300"/>
                 </div>
-                <ul>
+
                       {this.state.schoolProfile.map(customer =>
                         <ul key={customer.id}>
+                          <strong><li>Institution Name : {customer.institution_name}</li></strong>
                           <li>id : {customer.id}</li>
                           <li> Canadian Ranking: {customer.ca_ranking}</li>
                           <li>World Ranking: {customer.wd_rank}</li>
-                          <li>Institute Name: {customer.institution_name}</li>
                           <li>Url: {customer.url}</li>
                           <li>Province: {customer.province}</li>
                         </ul>
                       )}
-                </ul>
+
                 <p> {this.state.school} </p>
             </div>
     );    // end of RETURN

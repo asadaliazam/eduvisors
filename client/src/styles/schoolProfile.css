@@ -1,1 +1,12 @@
   /* SCHOOLPROFILE.CSS */
+
+.sprof{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.sprof ul{
+    margin: 4rem;
+    margin-right: 0;
+
+}
