@@ -15,7 +15,7 @@ class Snowfall extends Component {
     //console.log(props);
     //console.log(111, props.province)
     super(props);
-    console.log(1000, props)
+    // console.log(1000, props)
     this.fetchFromDatabase = this.fetchFromDatabase.bind(this);
     this.state = {
       province: props.province,
@@ -79,7 +79,7 @@ class Snowfall extends Component {
         {
           chartData.labels.push(key);
           chartData.datasets[0].data.push(parseFloat(snowfall[0][key]));
-          console.log(777, snowfall[0][key]);
+          // console.log(777, snowfall[0][key]);
         }
 
 
@@ -99,7 +99,7 @@ class Snowfall extends Component {
 
 
         this.setState({chartData: chartData}, function(){
-          console.log(333, chartData);
+          // console.log(333, chartData);
         });
 
       }));
@@ -107,7 +107,7 @@ class Snowfall extends Component {
 
   componentWillReceiveProps(nextProps)
   {
-    console.log(101010, nextProps);
+    // console.log(101010, nextProps);
     this.setState({province: nextProps.province}, this.fetchFromDatabase);
 
     //console.log(11, this.state)

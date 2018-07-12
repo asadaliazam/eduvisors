@@ -9,7 +9,8 @@ import {
   Redirect
 } from 'react-router-dom'
 
-import SchoolProfile from './schoolProfile';
+// import SchoolProfile from './schoolProfile';
+import SchoolProf from './schoolProf';
 
 class Engine extends Component {
   constructor() {
@@ -26,20 +27,19 @@ class Engine extends Component {
       .then(schoolNames => this.setState({schoolNames}, () => console.log('SchoolNames fetched...', schoolNames)));
   }
 
+
   render() {
     return (
       <div className = "score">
         <h2>Score</h2>
         <Router>
-        <ul>
-        {this.state.schoolNames.map(schoolNames =>
-          <li> {schoolNames.institutionName} - {schoolNames.province} - {schoolNames.calculatedScore} - {schoolNames.actualScore}
-          <Link to={'/schoolProfile/'+schoolNames.institutionName}>Link to institute page</Link></li>
-        )}
-          <Route path="/schoolProfile/:institutionName" component={SchoolProfile} />
-        </ul>
-
-          </Router>
+              <ul>
+                  {this.state.schoolNames.map(schoolName =>
+                    <li key={schoolName.toString()}> {schoolName.institutionName} - {schoolName.province} - {schoolName.calculatedScore} - {schoolName.actualScore}
+                    <Link to={'/schoolProf/'+schoolName.schoolID}>Link to institute page</Link></li>
+                  )}
+              </ul>
+        </Router>
 
 
       </div>
@@ -48,3 +48,4 @@ class Engine extends Component {
 }
 
 export default Engine;
+// <Route path="/schoolProfile/:institutionName" component={SchoolProfile} />

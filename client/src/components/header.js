@@ -16,7 +16,7 @@ import Engine from './engine';
 import Chart from './chart';
 import Register from './form';
 import ProfileCompletion from './profileCompletion';
-import SchoolProfile from './schoolProfile';
+import SchoolProf from './schoolProf';
 import CostLiving from './cost_living';
 import FieldStudy from './field_study';
 import Selector from './selector';
@@ -37,15 +37,13 @@ class HeaderMenu extends Component {
                   <li><Link to="/cost">Cost</Link></li>
                   <li><Link to="/engine">Engine</Link></li>
                   <li><Link to="/form">Form</Link></li>
-                  <li><Link to="/profile">Profile</Link></li>
                   <li><Link to="/profileCompletion">ProfileCompletion</Link></li>
-                  <li><Link to="/schoolProfile">School Profile</Link></li>
                   <li><Link to="/cost_living">Cost Living</Link></li>
                   <li><Link to="/field_study">Field Study</Link></li>
-                  <li><Link to="/selector">Selector</Link></li>
                   <li><Link to="/snowfall/BC/rain">Snowfall</Link></li>
                   <li><Link to="/weather/BC">Weather</Link></li>
                   <li><Link to="/survey">Survey</Link></li>
+                  <li><Link to="/schoolProf/117">School Profile</Link></li>                  
                   <li><Link to="/home">Home</Link></li>
                 </ul>
             </nav>

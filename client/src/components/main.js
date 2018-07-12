@@ -15,7 +15,7 @@ import Engine from './engine';
 import Chart from './chart';
 import Register from './form';
 import ProfileCompletion from './profileCompletion';
-import SchoolProfile from './schoolProfile';
+import SchoolProf from './schoolProf';
 import CostLiving from './cost_living';
 import FieldStudy from './field_study';
 import Selector from './selector';
@@ -25,6 +25,7 @@ import Survey from './survey';
 import Home from './home';
 
 class MainContent extends Component {
+
 
   render() {
     return (
@@ -38,14 +39,12 @@ class MainContent extends Component {
                       <Route path="/cost" component={Costs} />
                       <Route path="/engine" component={Engine} />
                       <Route path="/form" component={Register} />
-                      <Route path="/profile" component={Profile} />
                       <Route path="/profileCompletion" component={ProfileCompletion} />
-                      <Route path="/schoolProfile" component={SchoolProfile} />
                       <Route path="/cost_living" component={CostLiving} />
-                      <Route path="/selector" component={Selector} />
                       <Route path="/snowfall/:province/:type" component={Snowfall} />
                       <Route path="/weather/:province" component={Weather} />
                       <Route path="/survey" component={Survey} />
+                      <Route path="/schoolProf/:schoolID" component={SchoolProf} />
                       <Route path="/home" component={Home} />
                 </Switch>
           </main>
