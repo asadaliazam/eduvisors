@@ -67,11 +67,11 @@ class ProfileCompletion extends Component {
       fetch('/api/profileCompletion')
         .then(res => { return res.json()})
         .then(profile => {
-          console.log(100,profile[0].name);
+          // console.log(100,profile[0].name);
 
           if(profile[0].name){
             this.state.total = this.state.total + 20;
-            console.log(10,  this.state.total);
+            // console.log(10,  this.state.total);
           }
 
           if(profile[0].email){
@@ -91,7 +91,7 @@ class ProfileCompletion extends Component {
 
           }
 
-console.log(11,  this.state.total);
+// console.log(11,  this.state.total);
   this.state.chartData.datasets[0].data.push(this.state.total,(100 - this.state.total));
           this.setState({profile})
 
@@ -105,7 +105,7 @@ console.log(11,  this.state.total);
   render() {
     return (
       <div>
-        <h2>Profile Completion</h2>
+        
 
         {/* <form>
           <label>

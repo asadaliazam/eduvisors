@@ -15,10 +15,11 @@ class Snowfall extends Component {
     //console.log(props);
     //console.log(111, props.province)
     super(props);
-    console.log(1000, props)
+    // console.log(1000, props)
     this.fetchFromDatabase = this.fetchFromDatabase.bind(this);
     this.state = {
       province: props.province,
+      provname: [],
       type: props.type,
       snowfall: [],
       chartData :
@@ -43,16 +44,12 @@ class Snowfall extends Component {
   }
   fetchFromDatabase()
   {
-    fetch(`/api/weather/${this.state.province}/${this.state.type}`)
+    fetch(`/api/snowfall/${this.state.province}/${this.state.type}`)
       .then(res => res.json())
       .then(snowfall => this.setState({snowfall: snowfall}, function(){
-        //{snowfall: snowfall}, function (){
-        // https://css-tricks.com/understanding-react-setstate/
         let chartData = this.state.chartData;
-
         switch (this.state.type){
                 case "snow":
-                    // this.setState({chartData.datasets[0]['label']: "Snowfall"});
                     chartData.datasets[0]['label'] = "Snowfall";
                     chartData.datasets[0]['backgroundColor'] = 'rgb(153, 51, 255)';
                     break;
@@ -77,28 +74,40 @@ class Snowfall extends Component {
         }
         chartData.labels = [];
         chartData.datasets[0].data = [];
+
         for (let key in snowfall[0])
         {
           chartData.labels.push(key);
           chartData.datasets[0].data.push(parseFloat(snowfall[0][key]));
-          console.log(777, snowfall[0][key]);
+          // console.log(777, snowfall[0][key]);
         }
-        console.log(111, chartData);
-        console.log(222, this.state.snowfall);
-        //console.log(333, this.state.chartData);
-        //console.log(444, this.state.type);
-        //console.log(555, this.state.chartData.labels)
-        //console.log(666, this.state.chartData.datasets[0].data)
+
+
+        for (let key in this.state.snowfall[0])
+        {
+          this.state.chartData.labels.push(key);
+          this.state.chartData.datasets[0].data.push(parseFloat(this.state.snowfall[0][key]));
+          //console.log(777, snowfall[0][key]);
+        };
+
+      //  this.setState(this.state);
+      //}));
+      // fetch(`/api/province/${this.state.province}`)
+      //   .then(res => {res.json(); console.log(res);})
+      //   .then(prov => this.setState({provname: (prov)}, function (){
+      //   }));
+
+
         this.setState({chartData: chartData}, function(){
-          console.log(333, chartData);
+          // console.log(333, chartData);
         });
-      })
-    );
+
+      }));
   }
 
   componentWillReceiveProps(nextProps)
   {
-    console.log(101010, nextProps);
+    // console.log(101010, nextProps);
     this.setState({province: nextProps.province}, this.fetchFromDatabase);
 
     //console.log(11, this.state)
@@ -107,6 +116,7 @@ class Snowfall extends Component {
   componentDidUpdate()
   {
     //console.log(12, this.state);
+
   }
 
   // VIEW

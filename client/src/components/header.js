@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
-// import '../styles/header.css';
+import '../styles/header.css';
 
 import {
   BrowserRouter as Router,
@@ -16,12 +16,13 @@ import Engine from './engine';
 import Chart from './chart';
 import Register from './form';
 import ProfileCompletion from './profileCompletion';
-import SchoolProfile from './schoolProfile';
+import SchoolProf from './schoolProf';
 import CostLiving from './cost_living';
 import FieldStudy from './field_study';
 import Selector from './selector';
 import Snowfall from './snowfall';
-import '../styles/header.css';
+import Weather from './weather';
+
 
 class HeaderMenu extends Component {
   render() {
@@ -32,18 +33,17 @@ class HeaderMenu extends Component {
             <h1 className="App-title">Eduvisors</h1>
             <nav className="container">
                 <ul>
-                  <li><Link to="/chart">Chart</Link></li>
+
                   <li><Link to="/cost">Cost</Link></li>
                   <li><Link to="/engine">Engine</Link></li>
-                  <li><Link to="/form">Form</Link></li>
-                  <li><Link to="/profile">Profile</Link></li>
+
                   <li><Link to="/profileCompletion">ProfileCompletion</Link></li>
-                  <li><Link to="/schoolProfile">School Profile</Link></li>
                   <li><Link to="/cost_living">Cost Living</Link></li>
                   <li><Link to="/field_study">Field Study</Link></li>
-                  <li><Link to="/selector">Selector</Link></li>
-                  <li><Link to="/snowfall/BC/rain">Snowfall</Link></li>
+
+                  <li><Link to="/weather/BC">Weather</Link></li>
                   <li><Link to="/survey">Survey</Link></li>
+                  <li><Link to="/home">Home</Link></li>
                 </ul>
             </nav>
           </header>

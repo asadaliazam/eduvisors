@@ -2,3 +2,16 @@
 aside, main{
   border: 1px solid black;
 }
+
+.wrapper{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.wrapper aside{
+  flex: 1 0 30%;
+}
+
+.wrapper main{
+  flex: 1 0 70%;
+}

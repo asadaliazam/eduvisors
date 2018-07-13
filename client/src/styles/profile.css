@@ -11,6 +11,21 @@ li{
   /* border-bottom: 1px dotted #777; */
 }
 
-.pName{
-  font-size: 2rem;
+.profile{
+  margin: 2rem;
+}
+
+.backButton{
+  background-color: rgb(92, 100, 180);
+  color: white;
+
+  width: 3rem;
+  height: 1.5rem;
+
+  border-radius: 5px;
+
+  margin-left: 2rem;
+
+
+
 }

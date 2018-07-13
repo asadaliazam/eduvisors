@@ -1,5 +1,20 @@
 /* ENGINE.CSS */
-.score h2
-{
-  color: red;
+.score{
+  margin: 2rem;
 }
+
+th{
+  text-align: left;
+}
+
+table{
+  border-spacing: 35px 10px;
+}
+
+
+/* <ul>
+    {this.state.schoolNames.map(schoolName =>
+      <li key={schoolName.toString()}> {schoolName.institutionName} - {schoolName.province} - {schoolName.calculatedScore} - {schoolName.actualScore}
+      <Link to={'/schoolProf/'+schoolName.schoolID}>Link to institute page</Link></li>
+    )}
+</ul> */

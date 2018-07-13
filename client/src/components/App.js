@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.png';
 //import '../styles/App.css';
 import '../styles/App2.css';
+// https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf
 
 
 import {
@@ -30,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
 
-<Router>
+      <Router>
           <div className="main-content">
 
             <HeaderMenu />
@@ -45,35 +46,28 @@ class App extends Component {
                   <option value="MB">MB</option>
                 </select>
               </label>
-              <p> {this.state.value} </p>
             </form>
 
-
             <div className = "charts">
-            <div>
-            <p> {this.state.value} </p>
-            <Snowfall province={this.state.value} type={'snow'} />
+                <div>
+                <p> {this.state.value} </p>
+                  <Snowfall province={this.state.value} type={'snow'} />
+                </div>
+                <div>
+                  <Snowfall province={this.state.value} type={'rain'} />
+                </div>
+                <div>
+                  <Snowfall province={this.state.value} type={'temp_low'} />
+                </div>
+                <div>
+                  <Snowfall province={this.state.value} type={'temp_high'} />
+                </div>
+                <div>
+                  <Snowfall province={this.state.value} type={'temp_avg'} />
+                </div>
             </div>
-
-            <div>
-            <Snowfall province={this.state.value} type={'rain'} />
-            </div>
-            <div>
-            <Snowfall province={this.state.value} type={'temp_low'} />
-            </div>
-            <div>
-            <Snowfall province={this.state.value} type={'temp_high'} />
-            </div>
-            <div>
-            <Snowfall province={this.state.value} type={'temp_avg'} />
-            </div>
-
-
-            </div>
-            <p> {this.state.value} </p>
-
           </div>
-</Router>
+       </Router>
       </div>
     );
   }
