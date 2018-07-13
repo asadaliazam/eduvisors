@@ -8,7 +8,7 @@ class BackButton extends Component {
   render() {
     return (
       <button
-        className="backButton"
+        className="btn"
         onClick={this.context.router.history.goBack}>
           Back
       </button>

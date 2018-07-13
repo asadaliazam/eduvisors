@@ -3,8 +3,9 @@
 
 
 #root{
+  /* width: 900px; */
   margin: auto;
-  /* width: 500px; */
+
 }
 
 .App{
@@ -18,13 +19,13 @@
 
 .App .main-content .charts
 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
 }
-.wrapper{
+/* .wrapper{
   display: flex;
   flex-flow: row nowrap;
-}
+} */
 
 aside{
   flex: 0 0 20%;

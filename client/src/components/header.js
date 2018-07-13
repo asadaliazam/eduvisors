@@ -42,7 +42,7 @@ class HeaderMenu extends Component {
                   <li><Link to="/field_study">Field Study</Link></li>
 
                   <li><Link to="/weather/BC">Weather</Link></li>
-                  <li><Link to="/survey">Survey</Link></li>
+                  <li><Link to="/survey1">Survey</Link></li>
                   <li><Link to="/home">Home</Link></li>
                 </ul>
             </nav>

@@ -46,6 +46,8 @@ class Engine extends Component {
                     </tr>
                   )}
               </table>
+
+              <p className="btn"><Link to="/main">Home</Link></p>
       </div>
     );
   }

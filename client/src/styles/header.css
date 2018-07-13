@@ -4,8 +4,6 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-
-  border: 1px solid black;
 }
 
 h1{

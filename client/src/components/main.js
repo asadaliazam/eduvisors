@@ -24,6 +24,11 @@ import Weather from './weather';
 import Survey from './survey';
 import Home from './home';
 
+import Survey1 from './survey1';
+import Survey2 from './survey2';
+import Survey3 from './survey3';
+import Survey4 from './survey4';
+
 class MainContent extends Component {
 
 
@@ -46,6 +51,10 @@ class MainContent extends Component {
                       <Route path="/survey" component={Survey} />
                       <Route path="/schoolProf/:schoolID" component={SchoolProf} />
                       <Route path="/home" component={Home} />
+                      <Route path="/survey1" component={Survey1} />
+                      <Route path="/survey2" component={Survey2} />
+                      <Route path="/survey3" component={Survey3} />
+                      <Route path="/survey4" component={Survey4} />
                 </Switch>
           </main>
       </div>

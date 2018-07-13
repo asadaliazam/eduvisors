@@ -1,6 +1,6 @@
 /* MAIN.CSS */
-aside, main{
-  border: 1px solid black;
+aside, main, .App-header{
+  /* border: 1px solid black; */
 }
 
 .wrapper{

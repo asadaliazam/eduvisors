@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import '../styles/survey1.css';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect
+} from 'react-router-dom'
 
 
 class Survey3 extends Component {
@@ -76,9 +82,10 @@ class Survey3 extends Component {
     let {rank} = this.state
     let {emp} = this.state
     return (
-      <div>
+      <div className="surveyDiv survey3">
       <div className="first-question">
-      <p> How much do you care about Tuition fees? </p>
+      {/* <p> How much do you care about Tuition fees? </p> */}
+      <p>How much the cost of tuition impacts your study plans?</p>
         <Slider
         value={parseFloat(tui)}
         min={0.1}
@@ -92,7 +99,8 @@ class Survey3 extends Component {
       </div>
 
       <div className="second-question">
-      <p> Does cost of living your destination college? </p>
+      {/* <p> Does cost of living your destination college? </p> */}
+      <p>How much the cost of living impacts your study plans?</p>
         <Slider
         value={parseFloat(col)}
         min={0.1}
@@ -105,7 +113,8 @@ class Survey3 extends Component {
       </div>
 
       <div className="third-question">
-      <p> Does Rank choosing your destination college? </p>
+      {/* <p> Does Rank choosing your destination college? </p> */}
+      <p>How important is the ranking of the institution you will apply for?</p>
         <Slider
         value={parseFloat(rank)}
         min={0.1}
@@ -118,7 +127,8 @@ class Survey3 extends Component {
       </div>
 
       <div className="fourth-question">
-      <p> Does Employment choosing your destination college? </p>
+        <p>How much do you worry about the Employment Rate of the region where you will study?</p>
+      {/* <p> Does Employment choosing your destination college? </p> */}
         <Slider
         value={parseFloat(emp)}
         min={0.1}
@@ -130,9 +140,13 @@ class Survey3 extends Component {
       />
       </div>
 
-      <button onClick={this.saveData.bind(this)} >
-          Save Responses
-        </button>
+      <div className="surveyNav">
+            <button className="btn" onClick={this.saveData.bind(this)} >
+                Save Responses
+            </button>
+
+            <p className="btn"><Link to="/survey4">Next</Link></p>
+      </div>
 
       </div>
     );
