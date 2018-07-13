@@ -3,10 +3,12 @@
 .sprof{
     display: flex;
     flex-flow: row nowrap;
+
+    margin: 2rem;
 }
 
 .sprof ul{
-    margin: 4rem;
+    margin: 2rem;
     margin-right: 0;
 
 }

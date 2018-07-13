@@ -23,6 +23,13 @@ app.locals.data;
 app.locals.firstName;
 app.locals.lastName;
 
+app.locals.user = {
+  id: 1,
+  email: 'bb@bb.com'
+}
+
+// ====================================================
+
 function schoolMatchingAlgo(data, total_score, multiplier_at, multiplier_rain, multiplier_snow, o_w, o_emp, o_tui, o_col, o_rank)
 {
        let obj = [];
@@ -212,13 +219,54 @@ app.get('/api/field_study', (req, res) => {
 // ====================================================
 //             PROFILE  Component
 // ====================================================
+// console.log(56565656, app.locals.user.id);
 app.get('/api/profile', (req, res) => {
-db.all("SELECT * FROM profile WHERE id=1;", function(err, rows)
-    {
-      console.log(rows);
-      app.locals.data = rows;
-      res.json(rows);
-    });
+    db.all(`SELECT * FROM profile WHERE id=${app.locals.user.id};`, function(err, rows)
+        {
+          // console.log(123456, rows);
+          app.locals.data = rows;
+
+          console.log(123456, app.locals.data[0]);
+
+          db.serialize(() => {
+            db.each(`SELECT full_name FROM level_education WHERE short='${app.locals.data[0].lvl_educ}';`, (err, row2) => {
+              app.locals.data[0].lvl_educ = row2.full_name;
+            });
+          });   // end of serialize
+
+          db.serialize(() => {
+            db.each(`SELECT full_name FROM field_study WHERE short='${app.locals.data[0].field_study}';`, (err, row3) => {
+              console.log(55551111,row3.full_name);
+              app.locals.data[0].field_study = row3.full_name;
+            });
+          });   // end of serialize
+
+          console.log(555555, app.locals.data[0]);
+          res.json(app.locals.data);
+        });   // end of DB.ALL
+
+});
+
+app.get('/api/profile2', (req, res) => {
+    db.all(`SELECT * FROM profile WHERE id=${app.locals.user.id};`, function(err, rows)
+        {
+          // console.log(123456, rows);
+          app.locals.data = rows;
+
+          console.log(123456, app.locals.data[0]);
+
+          db.serialize(() => {
+            db.each(`SELECT full_name FROM level_education WHERE short='${app.locals.data[0].lvl_educ}';`, (err, row2) => {
+              if (err) {
+                console.error(777999222, err.message);
+              }
+              // app.locals.data[0].lvl_educ = row;
+              console.log(777999222, row2);
+            });
+          });   // end of serialize
+            res.json(rows);
+        });   // end of DB.ALL
+
 });
 
 // ====================================================
@@ -272,38 +320,6 @@ app.post('/api/schoolProf', (req, res) => {
 
 });   // end of POST
 
-// =====================================
-
-// app.get('/api/signup', (req, res) => {
-//
-//       db.all("SELECT * FROM school_rank_test WHERE id='"+id+"'", function(err, rows)
-//       {
-//         console.log(36363636,id);
-//         //console.log(rows);
-//         app.locals.data = rows;
-//         console.log(100,rows);
-//         res.json(rows);
-//       });
-// });
-
-// app.post('/api/schoolProfile', (req, res) => {
-//     var name_obj= req.body;
-//     var name_school = name_obj.schoolName;
-//     name = name_school;
-//     // console.log('you posted to /signup'); //appears in console as expected
-//     res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
-//     app.get('/api/signup', (req, res) => {
-//           var id=1;
-//           db.all("SELECT * FROM institute_rank WHERE institution_name='"+name+"'", function(err, rows)
-//           {
-//             console.log(name);
-//             //console.log(rows);
-//             app.locals.data = rows;
-//             // console.log(100,rows);
-//             res.json(rows);
-//           });
-//     });
-// });
 
 // ====================================================
 //              COST of TUITION Component
@@ -328,13 +344,14 @@ app.post('/api/register', (req, res) => {
 // ====================================================
 //              RANKINGS Component
 // ====================================================
+// console.log(443433434, app.locals.user.email);
 app.get('/api/rankings', (req, res) => {
 
   var arr=[];
   var arr2=[];
   var schoolNames=[];
 
-  db.each("SELECT * FROM profile_advanced WHERE email = 'bb@bb.com'",
+  db.each(`SELECT * FROM profile_advanced WHERE email = '${app.locals.user.email}'`,
       function(err, row) {
           // var name=row.name;
           // var email=row.email;
@@ -423,7 +440,7 @@ app.post('/api/storeUserDataSurvey1', (req, res) => {
 
     console.log(at, snow, rain);
 
-    db.run(`UPDATE profile_advanced set c_at = ${at}, c_snow = ${snow}, c_rain = ${rain} WHERE email = "aa@aa.com";`);
+    db.run(`UPDATE profile_advanced set c_at = ${at}, c_snow = ${snow}, c_rain = ${rain} WHERE email = '${app.locals.user.email}';`);
 
     console.log(111112, at);
     res.json(at);
@@ -438,7 +455,7 @@ app.post('/api/storeUserDataSurvey2', (req, res) => {
     let o_rain = parseFloat(req.body.o_rain);
 
     console.log(o_at, o_snow, o_rain);
-    db.run(`UPDATE profile_advanced set o_at = ${o_at}, o_snow = ${o_snow}, o_rain = ${o_rain} WHERE email = "bb@bb.com";`);
+    db.run(`UPDATE profile_advanced set o_at = ${o_at}, o_snow = ${o_snow}, o_rain = ${o_rain} WHERE email = '${app.locals.user.email}';`);
 
     console.log(111112, o_at);
     res.json(o_at);
@@ -455,7 +472,7 @@ app.post('/api/storeUserDataSurvey3', (req, res) => {
     let c_emp = parseFloat(req.body.emp);
 
     console.log(c_tui, c_col, c_rank, c_emp);
-    db.run(`UPDATE profile_advanced set c_tui = ${c_tui}, c_col = ${c_col}, c_rank = ${c_rank}, c_emp = ${c_emp} WHERE email = "bb@bb.com";`);
+    db.run(`UPDATE profile_advanced set c_tui = ${c_tui}, c_col = ${c_col}, c_rank = ${c_rank}, c_emp = ${c_emp} WHERE email = '${app.locals.user.email}';`);
     res.json(c_tui);
 
 
@@ -472,7 +489,7 @@ app.post('/api/storeUserDataSurvey4', (req, res) => {
     let o_emp = parseFloat(req.body.o_emp);
 
     console.log(o_w, o_tui, o_col, o_rank, o_emp);
-    db.run(`UPDATE profile_advanced set o_w = ${o_w}, o_tui = ${o_tui}, o_col = ${o_col}, o_rank = ${o_rank}, o_emp = ${o_emp} WHERE email = "bb@bb.com";`);
+    db.run(`UPDATE profile_advanced set o_w = ${o_w}, o_tui = ${o_tui}, o_col = ${o_col}, o_rank = ${o_rank}, o_emp = ${o_emp} WHERE email = '${app.locals.user.email}';`);
     res.json(o_w);
 
 

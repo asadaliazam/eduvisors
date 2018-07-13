@@ -33,17 +33,16 @@ class HeaderMenu extends Component {
             <h1 className="App-title">Eduvisors</h1>
             <nav className="container">
                 <ul>
-                  <li><Link to="/chart">Chart</Link></li>
+
                   <li><Link to="/cost">Cost</Link></li>
                   <li><Link to="/engine">Engine</Link></li>
-                  <li><Link to="/form">Form</Link></li>
+
                   <li><Link to="/profileCompletion">ProfileCompletion</Link></li>
                   <li><Link to="/cost_living">Cost Living</Link></li>
                   <li><Link to="/field_study">Field Study</Link></li>
-                  <li><Link to="/snowfall/BC/rain">Snowfall</Link></li>
+
                   <li><Link to="/weather/BC">Weather</Link></li>
                   <li><Link to="/survey">Survey</Link></li>
-                  <li><Link to="/schoolProf/117">School Profile</Link></li>                  
                   <li><Link to="/home">Home</Link></li>
                 </ul>
             </nav>

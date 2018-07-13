@@ -6,32 +6,29 @@ class Profile extends Component {
   constructor() {
     super();
     this.state = {
-      profile: ['asd']
+      profile: []
     };
   }
 
   componentDidMount() {
     fetch('/api/profile')
       .then(res => res.json())
-      .then(profile => this.setState({profile}));
-//, () => console.log('profile fetched...', profile)
-
+      .then(profile => this.setState({profile}, () => console.log('profile fetched...', profile)));
   }
 
   render() {
     return (
       <div>
-
-        {this.state.profile.map((key, user) =>
-        <div key={key}>
+        {this.state.profile.map(user =>
+        <div key={user.id}>
+            <ProfileCompletion />
             <h1>{user.first_name} {user.last_name}</h1>
-              <ProfileCompletion />
-              <br />
-              <ul key={user.id}>
+            <br />
+            <ul>
                 <li>Email: {user.email}</li>
                 <li>Field of Study: {user.field_study}</li>
                 <li>Level of Education: {user.lvl_educ}</li>
-              </ul>
+            </ul>
           </div>
         )}
       </div>

@@ -4,7 +4,7 @@ import '../styles/schoolProfile.css';
 class SchoolProf extends Component {
   constructor(props) {
         super(props);
-        console.log(222222222, props.match);
+        // console.log(222222222, props.match);
         this.schoolProfile = this.schoolProfile.bind(this);
         this.state = {
             schoolProfile: [],
@@ -15,7 +15,7 @@ class SchoolProf extends Component {
   componentWillReceiveProps(nextProps)
   {
           this.state.schoolID = nextProps.match.params.schoolID;
-          console.log(333333333, this.state.schoolID);
+          // console.log(333333333, this.state.schoolID);
           this.schoolProfile();
   }
 
@@ -37,7 +37,7 @@ class SchoolProf extends Component {
                         throw new Error ('Something went wrong with your fetch');
                   }})
           .then((json) => {
-                  console.log(987654, json);
+                  // console.log(987654, json);
           })
 
 
@@ -62,7 +62,6 @@ class SchoolProf extends Component {
 
             <div className="sprof">
                 <div>
-                      <h2>Institute Profile</h2>
                       <img src="https://picsum.photos/200/300"/>
                 </div>
 
