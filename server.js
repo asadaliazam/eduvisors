@@ -219,53 +219,16 @@ app.get('/api/field_study', (req, res) => {
 // ====================================================
 //             PROFILE  Component
 // ====================================================
-// console.log(56565656, app.locals.user.id);
+
 app.get('/api/profile', (req, res) => {
-    db.all(`SELECT * FROM profile WHERE id=${app.locals.user.id};`, function(err, rows)
+
+    db.all(`SELECT profile.*, level_education.full_name AS ledu, field_study.full_name AS fs FROM profile LEFT JOIN level_education ON profile.lvl_educ = level_education.short LEFT JOIN field_study ON profile.field_study = field_study.short WHERE level_education.short=profile.lvl_educ AND field_study.short=profile.field_study AND
+    profile.id=${app.locals.user.id};`, function(err, rows)
         {
           // console.log(123456, rows);
           app.locals.data = rows;
-
-          console.log(123456, app.locals.data[0]);
-
-          db.serialize(() => {
-            db.each(`SELECT full_name FROM level_education WHERE short='${app.locals.data[0].lvl_educ}';`, (err, row2) => {
-              app.locals.data[0].lvl_educ = row2.full_name;
-            });
-          });   // end of serialize
-
-          db.serialize(() => {
-            db.each(`SELECT full_name FROM field_study WHERE short='${app.locals.data[0].field_study}';`, (err, row3) => {
-              console.log(55551111,row3.full_name);
-              app.locals.data[0].field_study = row3.full_name;
-            });
-          });   // end of serialize
-
-          console.log(555555, app.locals.data[0]);
-          res.json(app.locals.data);
-        });   // end of DB.ALL
-
-});
-
-app.get('/api/profile2', (req, res) => {
-    db.all(`SELECT * FROM profile WHERE id=${app.locals.user.id};`, function(err, rows)
-        {
-          // console.log(123456, rows);
-          app.locals.data = rows;
-
-          console.log(123456, app.locals.data[0]);
-
-          db.serialize(() => {
-            db.each(`SELECT full_name FROM level_education WHERE short='${app.locals.data[0].lvl_educ}';`, (err, row2) => {
-              if (err) {
-                console.error(777999222, err.message);
-              }
-              // app.locals.data[0].lvl_educ = row;
-              console.log(777999222, row2);
-            });
-          });   // end of serialize
-            res.json(rows);
-        });   // end of DB.ALL
+          res.json(rows);
+        });
 
 });
 

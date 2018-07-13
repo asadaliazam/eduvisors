@@ -1,5 +1,12 @@
 /* ENGINE.CSS */
-.score h2
-{
-  color: red;
+.score{
+  margin: 2rem;
+}
+
+th{
+  text-align: left;
+}
+
+table{
+  border-spacing: 35px 10px;
 }

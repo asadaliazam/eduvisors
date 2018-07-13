@@ -18,19 +18,19 @@ class Profile extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.profile.map(user =>
-        <div key={user.id}>
-            <ProfileCompletion />
-            <h1>{user.first_name} {user.last_name}</h1>
-            <br />
-            <ul>
-                <li>Email: {user.email}</li>
-                <li>Field of Study: {user.field_study}</li>
-                <li>Level of Education: {user.lvl_educ}</li>
-            </ul>
-          </div>
-        )}
+      <div className="profile">
+            {this.state.profile.map(user =>
+                <div key={user.id}>
+                <h2>{user.first_name} {user.last_name}</h2>
+                <ProfileCompletion />
+                    <br />
+                    <ul>
+                        <li>Email: {user.email}</li>
+                        <li>Field of Study: {user.fs}</li>
+                        <li>Level of Education: {user.ledu}</li>
+                    </ul>
+               </div>
+            )}
       </div>
     );
   }

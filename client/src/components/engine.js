@@ -32,12 +32,20 @@ class Engine extends Component {
     return (
       <div className = "score">
         <h2>Score</h2>
-              <ul>
+              <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Province</th>
+                  <th>Calculated</th>
+                  <th>Actual</th>
+                  <th>WebSite</th>
+                </tr>
                   {this.state.schoolNames.map(schoolName =>
-                    <li key={schoolName.toString()}> {schoolName.institutionName} - {schoolName.province} - {schoolName.calculatedScore} - {schoolName.actualScore}
-                    <Link to={'/schoolProf/'+schoolName.schoolID}>Link to institute page</Link></li>
+                    <tr key={schoolName.toString()}> <td>{schoolName.institutionName}</td> <td>{schoolName.province}</td> <td>{schoolName.calculatedScore}</td> <td>{schoolName.actualScore}</td>
+                    <td><Link to={'/schoolProf/'+schoolName.schoolID}>click here</Link></td>
+                    </tr>
                   )}
-              </ul>
+              </table>
       </div>
     );
   }
