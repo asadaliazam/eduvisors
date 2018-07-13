@@ -23,6 +23,11 @@ app.locals.data;
 app.locals.firstName;
 app.locals.lastName;
 
+// ====================================================
+//          USER VARIABLE DECLARATION
+//          integrated into Survey, Profile and Rankings Commponents
+// ====================================================
+
 app.locals.user = {
   id: 1,
   email: 'bb@bb.com'
@@ -259,19 +264,9 @@ app.post('/api/schoolProf', (req, res) => {
     // console.log('you posted to /signup'); //appears in console as expected
     // res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
 
-    db.serialize(() => {
-      db.each("SELECT * FROM school_rank_test WHERE id='"+id+"';", (err, row) => {
-        if (err) {
-          console.error(err.message);
-        }
-        app.locals.sName = row.name;
-        console.log(7777777, row.id + "\t" + row.name);
-      });
-    });   // end of serialize
-
     app.get('/api/signup', (req, res) => {
 
-          db.all("SELECT * FROM institute_rank WHERE institution_name='"+app.locals.sName+"'", function(err, rows)
+          db.all(`SELECT institute_rank.* FROM institute_rank LEFT JOIN school_rank_test ON school_rank_test.name = institute_rank.institution_name WHERE school_rank_test.id='${id}';`, function(err, rows)
           {
             console.log(36363636,id);
             //console.log(rows);
@@ -282,6 +277,40 @@ app.post('/api/schoolProf', (req, res) => {
     });  // end of SIGNUP
 
 });   // end of POST
+
+
+
+// app.post('/api/schoolProf', (req, res) => {
+//     var name_obj= req.body;
+//     var name_school = name_obj.schoolID;
+//     id = name_school;
+//     console.log(78787878, id);
+//     // console.log('you posted to /signup'); //appears in console as expected
+//     // res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
+//
+//     db.serialize(() => {
+//       db.each("SELECT * FROM school_rank_test WHERE id='"+id+"';", (err, row) => {
+//         if (err) {
+//           console.error(err.message);
+//         }
+//         app.locals.sName = row.name;
+//         console.log(7777777, row.id + "\t" + row.name);
+//       });
+//     });   // end of serialize
+//
+//     app.get('/api/signup', (req, res) => {
+//
+//           db.all("SELECT * FROM institute_rank WHERE institution_name='"+app.locals.sName+"'", function(err, rows)
+//           {
+//             console.log(36363636,id);
+//             //console.log(rows);
+//             app.locals.data = rows;
+//             console.log(100,rows);
+//             res.json(rows);
+//           });
+//     });  // end of SIGNUP
+//
+// });   // end of POST
 
 
 // ====================================================

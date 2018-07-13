@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/schoolProfile.css';
+import BackButton from './BackButton'
+
 
 class SchoolProf extends Component {
   constructor(props) {
@@ -64,18 +66,19 @@ class SchoolProf extends Component {
                 <div>
                       <img src="https://picsum.photos/200/300"/>
                 </div>
-
-                      {this.state.schoolProfile.map(customer =>
-                        <ul key={customer.id}>
-                          <strong><li>Institution Name : {customer.institution_name}</li></strong>
-                          <li>id : {customer.id}</li>
-                          <li> Canadian Ranking: {customer.ca_ranking}</li>
-                          <li>World Ranking: {customer.wd_rank}</li>
-                          <li>Url: {customer.url}</li>
-                          <li>Province: {customer.province}</li>
-                        </ul>
-                      )}
-
+                <div className="schoolinfo">
+                    <BackButton />
+                    {this.state.schoolProfile.map(customer =>
+                      <ul key={customer.id}>
+                        <strong><li>Institution Name : {customer.institution_name}</li></strong>
+                        <li>id : {customer.id}</li>
+                        <li> Canadian Ranking: {customer.ca_ranking}</li>
+                        <li>World Ranking: {customer.wd_rank}</li>
+                        <li>Url: {customer.url}</li>
+                        <li>Province: {customer.province}</li>
+                      </ul>
+                    )}
+                </div>
                 <p> {this.state.school} </p>
             </div>
     );    // end of RETURN
