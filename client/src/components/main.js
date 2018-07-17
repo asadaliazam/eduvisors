@@ -26,7 +26,7 @@ import HomeContent from './HomeContent';
 
 
 
-import Survey1 from './survey1';
+import Home from './HomeContent';
 import Survey2 from './survey2';
 import Survey3 from './survey3';
 import Survey4 from './survey4';
@@ -49,16 +49,16 @@ class MainContent extends Component {
                       <Route path="/weather/:province" component={Weather} />
                       <Route path="/survey" component={Survey1} />
                       <Route path="/schoolProf/:schoolID" component={SchoolProf} />
-<<<<<<< HEAD
+
                       <Route path="/HomeContent" component={HomeContent} />
 
-=======
+
                       <Route path="/home" component={Home} />
                       <Route path="/survey1" component={Survey1} />
                       <Route path="/survey2" component={Survey2} />
                       <Route path="/survey3" component={Survey3} />
                       <Route path="/survey4" component={Survey4} />
->>>>>>> 2ff2532471c3baef8f3a089f8dce3ac47532aadc
+
                 </Switch>
       </div>
     );

@@ -42,13 +42,13 @@ class HeaderMenu extends Component {
                   <li><Link to="/field_study">Field Study</Link></li>
 
                   <li><Link to="/weather/BC">Weather</Link></li>
-<<<<<<< HEAD
+
                   <li><Link to="/survey">Survey</Link></li>
                   <li><Link to="/HomeContent">Home</Link></li>
-=======
+
                   <li><Link to="/survey1">Survey</Link></li>
                   <li><Link to="/home">Home</Link></li>
->>>>>>> 2ff2532471c3baef8f3a089f8dce3ac47532aadc
+
                 </ul>
             </nav>
           </header>
