@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/cost.css';
+
 
 class Costs extends Component {
   constructor() {

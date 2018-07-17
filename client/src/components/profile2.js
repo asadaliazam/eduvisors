@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/profile.css';
 import ProfileCompletion from './profileCompletion';
 
 class Profile extends Component {
@@ -27,7 +26,7 @@ class Profile extends Component {
     return (
       <div>
           <ProfileCompletion />
-          
+
       </div>
     ); // END of Return
   }

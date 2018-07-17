@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/profile.css';
 import ProfileCompletion from './profileCompletion';
 
 class Profile extends Component {

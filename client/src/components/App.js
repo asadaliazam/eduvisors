@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
 //import '../styles/App.css';
-import '../styles/App2.css';
 // https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf
 
 
@@ -15,7 +14,7 @@ import {
 
 import HeaderMenu from './header';
 import MainContent from './main';
-import Snowfall from './snowfall';
+
 
 class App extends Component {
   constructor(props) {
@@ -32,10 +31,11 @@ class App extends Component {
       <div className="App">
 
       <Router>
+
           <div className="main-content">
 
-            <HeaderMenu />
             <MainContent />
+
             <form onSubmit={this.handleSubmit}>
               <label>
                 Pick your favorite La Croix flavor:
@@ -48,24 +48,7 @@ class App extends Component {
               </label>
             </form>
 
-            <div className = "charts">
-                <div>
-                <p> {this.state.value} </p>
-                  <Snowfall province={this.state.value} type={'snow'} />
-                </div>
-                <div>
-                  <Snowfall province={this.state.value} type={'rain'} />
-                </div>
-                <div>
-                  <Snowfall province={this.state.value} type={'temp_low'} />
-                </div>
-                <div>
-                  <Snowfall province={this.state.value} type={'temp_high'} />
-                </div>
-                <div>
-                  <Snowfall province={this.state.value} type={'temp_avg'} />
-                </div>
-            </div>
+            
           </div>
        </Router>
       </div>

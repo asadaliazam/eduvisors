@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/schoolProfile.css';
 import BackButton from './BackButton'
 
 

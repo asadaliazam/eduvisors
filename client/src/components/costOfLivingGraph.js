@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {Doughnut} from 'react-chartjs-2';
+import {Bar} from 'react-chartjs-2';
 
-class EmploymentGraph extends Component {
+class CostOfLivingGraph extends Component {
 
   constructor(props) {
     super(props);
@@ -9,19 +9,26 @@ class EmploymentGraph extends Component {
     this.fetchFromDatabase = this.fetchFromDatabase.bind(this);
     this.state = {
       province: props.province,
-      employmentRate: 0,
+      costOfLivingData: 0,
       chartData :
           {
-            labels: ["Employed", "Unemployed"],
+            labels: [],
             datasets: [{
                     label: "",
                     backgroundColor: [
                 "#FF6384",
                 "#36A2EB",
+                "#36A2EB",
+                "#36A2EB",
+                "#36A2EB",
+                "#36A2EB",
+                "#36A2EB",
+                "#36A2EB",
+                "#36A2EB",
 
             ],
                     borderColor: 'rgb(255, 255, 255)',
-                    data: [70,30],
+                    data: [],
                   }]
           }
     };
@@ -39,7 +46,7 @@ class EmploymentGraph extends Component {
       province: this.state.province
     }
 
-    fetch("/api/employment", {
+    fetch("/api/costOfLivingGraph", {
       method: "POST",
       body: JSON.stringify(reqBody),
       headers: {
@@ -52,28 +59,43 @@ class EmploymentGraph extends Component {
           throw new Error ('Something went wrong with your fetch');
         }
       }).then((json) => {
-        this.setState({employmentRate:(json[0].rate)}, function()
+        this.setState({costOfLivingData:(json)}, function()
       {
-        //console.log(this.state.employmentRate);
-        let employmentRate = parseFloat(this.state.employmentRate) * 100;
-        let unemploymentRate = 100 - employmentRate;
-        //console.log(employmentRate, unemploymentRate);
 
         let newChartData =
             {
-              labels: ["Employed", "Unemployed"],
+              labels: [],
               datasets: [{
                       label: "",
                       backgroundColor: [
                   "#FF6384",
                   "#36A2EB",
+                  "#36A2EB",
+                  "#36A2EB",
+                  "#36A2EB",
+                  "#36A2EB",
+                  "#36A2EB",
+                  "#36A2EB",
+                  "#36A2EB",
+                  "#36A2EB",
 
               ],
                       borderColor: 'rgb(255, 255, 255)',
-                      data: [employmentRate, unemploymentRate],
+                      data: [],
                     }]
             }
+
+
+
+
+
             //console.log(newChartData);
+      Object.entries(this.state.costOfLivingData[0]).forEach(([key,value]) => {
+        newChartData.labels.push(key);
+        newChartData.datasets[0].data.push(value);
+
+      });
+
 
         this.setState({chartData: newChartData});
       });
@@ -98,15 +120,14 @@ class EmploymentGraph extends Component {
 
     return (
       <div>
-        <h2>Employment Graph</h2>
+        <h2>Cost of living Graph</h2>
         <p> {this.state.province}</p>
 
 
-          <Doughnut
+          <Bar
             data = {this.state.chartData}
             options={{ responsive: true,
-              rotation: 1 * Math.PI,
-              circumference: 1 * Math.PI  }}
+                }}
             />
 
       </div>
@@ -114,4 +135,4 @@ class EmploymentGraph extends Component {
   }
 }
 
-export default EmploymentGraph;
+export default CostOfLivingGraph;

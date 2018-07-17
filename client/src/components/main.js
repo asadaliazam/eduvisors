@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/main.css';
 
 import {
   BrowserRouter as Router,
@@ -21,8 +20,11 @@ import FieldStudy from './field_study';
 import Selector from './selector';
 import Snowfall from './snowfall';
 import Weather from './weather';
-import Survey from './survey';
-import Home from './home';
+import Survey1 from './survey1';
+import App from './App';
+import HomeContent from './HomeContent';
+
+
 
 class MainContent extends Component {
 
@@ -30,11 +32,8 @@ class MainContent extends Component {
   render() {
     return (
       <div className="wrapper">
-          <aside>
-              <Profile />
-          </aside>
-          <main>
                 <Switch>
+
                       <Route path="/chart" component={Chart} />
                       <Route path="/cost" component={Costs} />
                       <Route path="/engine" component={Engine} />
@@ -43,11 +42,11 @@ class MainContent extends Component {
                       <Route path="/cost_living" component={CostLiving} />
                       <Route path="/snowfall/:province/:type" component={Snowfall} />
                       <Route path="/weather/:province" component={Weather} />
-                      <Route path="/survey" component={Survey} />
+                      <Route path="/survey" component={Survey1} />
                       <Route path="/schoolProf/:schoolID" component={SchoolProf} />
-                      <Route path="/home" component={Home} />
+                      <Route path="/HomeContent" component={HomeContent} />
+
                 </Switch>
-          </main>
       </div>
     );
   }

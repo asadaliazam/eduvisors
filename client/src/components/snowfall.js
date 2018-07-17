@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Line} from 'react-chartjs-2';
-import '../styles/snowfall.css';
 
 // MAP
 //https://reactjs.org/docs/lists-and-keys.html
@@ -83,13 +82,6 @@ class Snowfall extends Component {
         }
 
 
-        for (let key in this.state.snowfall[0])
-        {
-          this.state.chartData.labels.push(key);
-          this.state.chartData.datasets[0].data.push(parseFloat(this.state.snowfall[0][key]));
-          //console.log(777, snowfall[0][key]);
-        };
-
       //  this.setState(this.state);
       //}));
       // fetch(`/api/province/${this.state.province}`)
@@ -99,7 +91,7 @@ class Snowfall extends Component {
 
 
         this.setState({chartData: chartData}, function(){
-          // console.log(333, chartData);
+          //console.log(333, chartData);
         });
 
       }));

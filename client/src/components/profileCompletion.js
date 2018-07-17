@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import RC2 from 'react-chartjs2';
-import '../styles/chart.css';
 
 class ProfileCompletion extends Component {
   constructor(props) {
@@ -105,7 +104,7 @@ class ProfileCompletion extends Component {
   render() {
     return (
       <div>
-        
+
 
         {/* <form>
           <label>

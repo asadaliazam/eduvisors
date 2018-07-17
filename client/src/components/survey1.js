@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/survey1.css';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
 

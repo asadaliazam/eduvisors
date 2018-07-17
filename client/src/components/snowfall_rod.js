@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Line} from 'react-chartjs-2';
-import './snowfall.css';
 
 class Snowfall extends Component {
 

@@ -422,6 +422,40 @@ app.get('/api/snowfall/:province/:type', (req, res) => {
 });
 
 // ====================================================
+//               GETTING EMPLOYMENT DATA FOR CHART
+// ====================================================
+app.post('/api/employment', (req, res) => {
+    console.log(req.body.province);
+    let sql = `SELECT rate from employment WHERE province = '${req.body.province}';`
+    console.log(sql);
+
+    db.all(`SELECT rate from employment WHERE province = '${req.body.province}';`, function(err,rows)
+    {
+          console.log(10099, rows);
+          res.json(rows);
+    });
+});
+
+/////////////////////////////////END////////////////////
+
+// ====================================================
+//               GETTING COST OF LIVING DATA FOR CHART
+// ====================================================
+app.post('/api/costOfLivingGraph', (req, res) => {
+    console.log(req.body.province);
+    let sql = `SELECT food, house, house_operations, furniture, clothing, transport, health, personal_care, recreation, education, reading, tobacco_alcohol, games, miscellaneous, gifts FROM cost_living WHERE province = '${req.body.province}';`
+    console.log(sql);
+
+    db.all(sql, function(err,rows)
+    {
+          console.log(10099, rows);
+          res.json(rows);
+    });
+});
+
+/////////////////////////////////END////////////////////
+
+// ====================================================
 //              STOREDATA FROM SURVEY 1 Component
 // ====================================================
 app.post('/api/storeUserDataSurvey1', (req, res) => {

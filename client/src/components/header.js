@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
-import '../styles/header.css';
+
 
 import {
   BrowserRouter as Router,
@@ -43,7 +43,7 @@ class HeaderMenu extends Component {
 
                   <li><Link to="/weather/BC">Weather</Link></li>
                   <li><Link to="/survey">Survey</Link></li>
-                  <li><Link to="/home">Home</Link></li>
+                  <li><Link to="/HomeContent">Home</Link></li>
                 </ul>
             </nav>
           </header>

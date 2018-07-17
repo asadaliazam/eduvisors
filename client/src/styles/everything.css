@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700|Rubik:400,500,700|Source+Sans+Pro:400,700');
+
+
+body{
+
+    margin: auto;
+    font-family: "Rubik", "Roboto", "Source Sans", "Helvetica", "Sans Serif";
+}
+
+.HomePage-Content .Main-Menu .Menu img
+{
+  max-width: 20%;
+  height: auto;
+}
+
+.HomePage-Content .Main-Menu .Menu .header
+{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  background-color: purple;
+  justify-content: flex-end;
+  color: white;
+}
+
+.HomePage-Content .Main-Menu .Menu .header .username
+{
+  text-align: right;
+}
+
+.HomePage-Content .Main-Menu .Menu header nav ul
+{
+
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.HomePage-Content .Main-Menu .Menu header nav ul li
+{
+  padding: 1rem;
+}
+.HomePage-Content .Main-Menu .Menu header nav ul li a
+{
+  color: white;
+
+}
+
+.HomePage-Content .Main-Menu .Menu header .username
+{
+  padding: 1rem;
+
+}
+
+.HomePage-Content .Main-Menu .Menu header .username a
+{
+  color: white
+}
+
+.HomePage-Content .Main-Content
+{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.HomePage-Content .footer
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: purple;
+
+}
+
+.HomePage-Content .footer a
+{
+  color: white;
+}
+
+.HomePage-Content .footer .left-side ul
+{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+.HomePage-Content .footer .right-side ul
+{
+  text-align: right;
+}
+
+
+.HomePage-Content .footer .right-side ul
+{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+
+
+.HomePage-Content .footer li
+{
+  padding: 1rem;
+}

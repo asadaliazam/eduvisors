@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/field_study.css';
+
 
 class FieldStudy extends Component {
   constructor() {
