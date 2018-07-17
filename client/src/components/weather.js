@@ -13,23 +13,22 @@ class Weather extends Component {
     super(props);
     this.state = {
       province: props.match.params.province,
-      weather: [],
+      // weather: [],
+      rod: [],
       chartData :
           {
             labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             datasets: [{
                   label: `Weather in ${this.props.province}`,
-                  backgroundColor: 'rgb(255, 100, 0)',
+                  // backgroundColor: 'rgb(255, 100, 0)',
                   data: [50, 40, 35, 20, 20, 10, 15, 180, 9, 8, 7, 5 ],
                       },
                       {
                   label: `Weather in 1`,
-                  backgroundColor: 'rgb(255, 255, 0)',
                   data: [0, 10, 5, 2, 200, 30, 45, 20, 18, 16, 14, 10 ],
                       },
                       {
                   label: `Weather in 2`,
-                  backgroundColor: 'rgb(255, 0, 0)',
                   data: [120, 30, 20, 12, 10, 40, 25, 30, 27, 24, 21, 150 ],
                 }] // end of DATASETS
           } // end of chartData
@@ -41,14 +40,20 @@ class Weather extends Component {
 
     fetch(`/api/weather/${this.state.province}`)
       .then(res => res.json())
-      .then( weather => this.setState({ weather: weather}, () => console.log(weather)))
-      .catch((err) => console.log(55555, err));
+      .then( rod => this.setState({ rod },
+      Object.entries( rod ).forEach(  ([key, value]) => {
+        console.log(key, value)
+
+      })
+
+    )).catch((err) => console.log(55555, err));
 
   }
 
   // VIEW
   render() {
-    console.log(this.state.weather[0])
+    // console.log(this.state.weather[0])
+    console.log(999, this.state.rod)
     return (
       <div>
         <div>

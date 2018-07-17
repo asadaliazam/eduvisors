@@ -1,0 +1,22 @@
+/* HEADER.CSS */
+
+.App-header{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+h1{
+  display: none;
+}
+
+.container ul{
+  margin: 0;
+  margin-left: 2rem;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.container ul li{
+  padding-right: 1.5rem;
+}

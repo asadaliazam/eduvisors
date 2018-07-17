@@ -70,10 +70,10 @@ class SchoolProf extends Component {
                     {this.state.schoolProfile.map(customer =>
                       <ul key={customer.id}>
                         <strong><li>Institution Name : {customer.institution_name}</li></strong>
-                        <li>id : {customer.id}</li>
-                        <li> Canadian Ranking: {customer.ca_ranking}</li>
+                        {/* <li>id : {customer.id}</li> */}
+                        <li>Canadian Ranking: {customer.ca_ranking}</li>
                         <li>World Ranking: {customer.wd_rank}</li>
-                        <li>Url: {customer.url}</li>
+                        <li>WebSite: <a href={customer.url} target="_blank">{customer.url}</a></li>
                         <li>Province: {customer.province}</li>
                       </ul>
                     )}

@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect
+} from 'react-router-dom'
+
 
 const SortableItem = SortableElement(({value}) => <li>{value}</li>);
 
@@ -188,12 +196,14 @@ class Survey4 extends Component {
 
   render() {
     return (
-      <div>
+      <div className="surveyDiv survey4 sortable">
       <SortableList items={this.state.items} onSortEnd={this.onSortEnd} />
-      <p>{this.state.items[0]}</p>
-        <button onClick={this.saveData.bind(this)} >
+
+        <button className="btn" onClick={this.saveData.bind(this)} >
             Save Responses
           </button>
+
+          <p className="btn"><Link to="/engine">Next</Link></p>
       </div>
     );
   }

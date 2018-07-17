@@ -1,0 +1,75 @@
+/* APP.CSS */
+
+
+
+#root{
+  /* width: 900px; */
+  margin: auto;
+
+}
+
+.App{
+  /* width: 900px; */
+    /* margin: auto; */
+}
+/* .App .main-content .chart-nu, .chart-nu2
+{
+  width: 4vw;
+} */
+
+.App .main-content .charts
+{
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+}
+/* .wrapper{
+  display: flex;
+  flex-flow: row nowrap;
+} */
+
+aside{
+  flex: 0 0 20%;
+  padding: 0 1rem;
+}
+
+aside ul{
+  margin: 0;
+}
+
+main{
+  flex: 0 0 79%;
+}
+
+.App-logo{
+  width: 100px;
+}
+
+.App-header h1{
+  margin: .4rem;
+  padding-right: 3rem;
+  padding-left: 1rem;
+}
+
+.App-header{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  border: 1px solid black;
+}
+
+.App{
+  display: flex;
+  flex-flow: row nowrap;
+  margin: auto;
+}
+
+.container ul{
+  margin: 0;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.container ul li{
+  padding-right: 1.5rem;
+}
