@@ -20,8 +20,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //          VARIABLE DECLARATION
 // ====================================================
 app.locals.data;
-app.locals.firstName;
-app.locals.lastName;
+
 
 // ====================================================
 //          USER VARIABLE DECLARATION
@@ -202,9 +201,7 @@ app.get('/api/cost_living', (req, res) => {
 
     db.all("SELECT * FROM cost_living", function(err, rows)
     {
-      //console.log(rows);
       res.json(rows);
-
     });
 });
 
@@ -216,7 +213,6 @@ app.get('/api/field_study', (req, res) => {
 
     db.all("SELECT * FROM field_study", function(err, rows)
     {
-      //console.log(rows);
       res.json(rows);
     });
 });
@@ -230,11 +226,8 @@ app.get('/api/profile', (req, res) => {
     db.all(`SELECT profile.*, level_education.full_name AS ledu, field_study.full_name AS fs FROM profile LEFT JOIN level_education ON profile.lvl_educ = level_education.short LEFT JOIN field_study ON profile.field_study = field_study.short WHERE level_education.short=profile.lvl_educ AND field_study.short=profile.field_study AND
     profile.id=${app.locals.user.id};`, function(err, rows)
         {
-          // console.log(123456, rows);
-          app.locals.data = rows;
           res.json(rows);
         });
-
 });
 
 // ====================================================
@@ -243,8 +236,6 @@ app.get('/api/profile', (req, res) => {
 app.get('/api/profileCompletion', (req, res) => {
 db.all("SELECT * FROM profileCompletion", function(err, rows)
     {
-      // console.log(rows);
-      app.locals.data = rows;
       res.json(rows);
     });
 });
@@ -253,65 +244,18 @@ db.all("SELECT * FROM profileCompletion", function(err, rows)
 // ====================================================
 //             SCHOOL Component
 // ====================================================
-var name;
-app.locals.sName
 
 app.post('/api/schoolProf', (req, res) => {
-    var name_obj= req.body;
-    var name_school = name_obj.schoolID;
-    id = name_school;
-    console.log(78787878, id);
-    // console.log('you posted to /signup'); //appears in console as expected
-    // res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
+    var id = req.body.schoolID;
 
     app.get('/api/signup', (req, res) => {
-
           db.all(`SELECT institute_rank.* FROM institute_rank LEFT JOIN school_rank_test ON school_rank_test.name = institute_rank.institution_name WHERE school_rank_test.id='${id}';`, function(err, rows)
           {
-            console.log(36363636,id);
-            //console.log(rows);
-            app.locals.data = rows;
-            console.log(100,rows);
             res.json(rows);
           });
     });  // end of SIGNUP
 
 });   // end of POST
-
-
-
-// app.post('/api/schoolProf', (req, res) => {
-//     var name_obj= req.body;
-//     var name_school = name_obj.schoolID;
-//     id = name_school;
-//     console.log(78787878, id);
-//     // console.log('you posted to /signup'); //appears in console as expected
-//     // res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
-//
-//     db.serialize(() => {
-//       db.each("SELECT * FROM school_rank_test WHERE id='"+id+"';", (err, row) => {
-//         if (err) {
-//           console.error(err.message);
-//         }
-//         app.locals.sName = row.name;
-//         console.log(7777777, row.id + "\t" + row.name);
-//       });
-//     });   // end of serialize
-//
-//     app.get('/api/signup', (req, res) => {
-//
-//           db.all("SELECT * FROM institute_rank WHERE institution_name='"+app.locals.sName+"'", function(err, rows)
-//           {
-//             console.log(36363636,id);
-//             //console.log(rows);
-//             app.locals.data = rows;
-//             console.log(100,rows);
-//             res.json(rows);
-//           });
-//     });  // end of SIGNUP
-//
-// });   // end of POST
-
 
 // ====================================================
 //              COST of TUITION Component
@@ -320,7 +264,6 @@ app.get('/api/costoftuition', (req, res) => {
 
     db.all("select id, province, education from cost_living", function(err, rows)
     {
-      //console.log(rows);
       res.json(rows);
     });
 });
@@ -328,50 +271,32 @@ app.get('/api/costoftuition', (req, res) => {
 // ====================================================
 //              REGISTER Component
 // ====================================================
-app.post('/api/register', (req, res) => {
-    //console.log(req);
-    res.json(req.body);
-});
+// app.post('/api/register', (req, res) => {
+//     res.json(req.body);
+// });
 
 // ====================================================
 //              RANKINGS Component
 // ====================================================
-// console.log(443433434, app.locals.user.email);
 app.get('/api/rankings', (req, res) => {
-
-  var arr=[];
-  var arr2=[];
-  var schoolNames=[];
+      var arr=[];
+      var arr2=[];
+      var schoolNames=[];
 
   db.each(`SELECT * FROM profile_advanced WHERE email = '${app.locals.user.email}'`,
       function(err, row) {
-          // var name=row.name;
-          // var email=row.email;
-          // var newItem = {
-          //     'user': name,
-          //     'pwd': email
-          // };
-          // arr.push(newItem);
-          //console.log(11, row);
           arr2 = row;
-          //console.log(3, arr2);
           schoolNames = scoreCalculator(arr2);
-          // test.then(function(schoolNames){
-            //console.log(202, schoolNames);
-          //   res.json(schoolNames);
-          // });
-
-          //console.log(1100, schoolNames);
-          //res.json(schoolNames);
         },
         function(){
           schoolNames.then(function(schoolNames){
-          console.log(1102, schoolNames);
+          // console.log(1102, schoolNames);
           res.json(schoolNames);
         });
     });
 
 });
+
 // ====================================================
 //              PROVINCE Component
 // ====================================================
@@ -383,9 +308,7 @@ app.get('/api/province/:province', (req, res) => {
 
     db.all(`SELECT full_name FROM province WHERE short='${req.params.province}';`, function(err,rows)
     {
-          //app.locals.snowfall = rows;
-          //app.locals.province = rows.province;
-        console.log(100, rows);
+        //console.log(100, rows);
         //console.log(200, err);
           res.json(rows[0]);
         });
@@ -413,10 +336,10 @@ app.get('/api/snowfall/:province/:type', (req, res) => {
     {
           //app.locals.snowfall = rows;
           //app.locals.province = rows.province;
-        console.log(100, rows);
+        // console.log(100, rows);
         //console.log(200, err);
-        app.locals.conta = app.locals.conta + 1;
-        console.log(`data fetched > ${app.locals.conta}`)
+        // app.locals.conta = app.locals.conta + 1;
+        // console.log(`data fetched > ${app.locals.conta}`)
           res.json(rows);
         });
 });
@@ -490,6 +413,13 @@ app.post('/api/storeUserDataSurvey4', (req, res) => {
 // ====================================================
 //              WEATHER Component
 // ====================================================
+app.locals.weather = {
+    datasets: [{
+            label: '',
+            data: []
+      }]
+  }
+
 app.get('/api/weather/:province', (req, res) => {
     let rows = "";
     console.log(req.params);
@@ -497,12 +427,21 @@ app.get('/api/weather/:province', (req, res) => {
     req.params.province = req.params.province.toUpperCase();
 
     console.log(req.params);
-    db.all(`SELECT type, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
-            FROM weather WHERE province='${req.params.province}'
-            AND (type='snow' OR type = 'rain' OR type='temp_avg');`, function(err,rows)
+    db.all(`SELECT type AS label, jan AS Jan, feb as Feb, mar AS Mar, apr AS Apr, may AS May, jun AS Jun, jul AS Jul, aug as Aug, sep AS Sep, oct AS Oct, nov AS Nov, dec AS Dec FROM weather WHERE province='${req.params.province}' AND (type='snow' OR type = 'rain' OR type='temp_avg');`, function(err,rows)
             {
-                res.json(rows);
-                console.log('WEATHER SERVER > ', rows, err);
+                //console.log('WEATHER SERVER > ', rows, err);
+                for (let j=0; j<3; j++ ){
+                      for(let i in rows[j]){
+                          if (i == 'label') {
+                            app.locals.weather[j].datasets.label = i.value;
+                          }
+                          else {
+                            app.locals.weather[j].datasets.data.push(i.value);
+                          }
+                      }
+                  }
+                  console.log(app.locals.weather);
+                  res.json(rows);
 
             });
 });
