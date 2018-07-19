@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Menu from './Menu.js';
 import Profile from './profile.js';
-import HomeContent from './HomeContent.js';
-
+import MainContent from './MainContent.js';
+import Footer from './Footer.js'; 
+import { BrowserRouter as Router} from 'react-router-dom'
 
 import '../styles/everything.css';
 import '../sam.css';
@@ -17,41 +18,27 @@ class HomePage extends Component {
 
   render() {
     return (
+
+      <Router>
       <div className="HomePage-Content">
-        <div className = "Main-Menu">
-        <Menu/>
-        </div>
-        <div className = "Main-Content">
+              <div className = "Main-Menu">
+                    <Menu/>
+              </div>
+              <div className = "Main-Content">
 
-        <div className = "Side-Bar">
-        <Profile/>
-        </div>
+                    <div className = "Side-Bar">
+                          <Profile/>
+                    </div>
 
-        <div className = "Center-Page">
-        <HomeContent/>
-        </div>
+                    <div className = "Center-Page">
+                          <MainContent/>
+                    </div>
+              </div>
 
+              <Footer />
 
-
-        </div>
-        <div className = "footer">
-          <div className = "left-side">
-            <ul>
-              <li> <a href="#">Home</a></li>
-              <li> <a href="#">About</a></li>
-              <li> <a href="#">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div className = "right-side">
-            <ul>
-              <li> <a href="#">Facebook</a></li>
-              <li> <a href="#">Instagram</a></li>
-              <li> <a href="#">G+</a></li>
-            </ul>
-          </div>
-        </div>
       </div>
+      </Router>
 
     );
   }

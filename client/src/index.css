@@ -13,3 +13,7 @@ body{
   display: flex;
   flex-flow: column nowrap;;
 } */
+
+#root .menu .App-logo{
+  background-color: yellow;
+}

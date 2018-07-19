@@ -1,15 +1,5 @@
 import React, { Component } from 'react';
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect
-} from 'react-router-dom'
-
-// import SchoolProfile from './schoolProfile';
-import SchoolProf from './schoolProf';
+import {Link} from 'react-router-dom'
 
 class Engine extends Component {
   constructor() {
@@ -46,7 +36,7 @@ class Engine extends Component {
                   )}
               </table>
 
-              <p className="btn"><Link to="/main">Home</Link></p>
+              <p className="btn"><Link to="/MainContent">Home</Link></p>
       </div>
     );
   }
