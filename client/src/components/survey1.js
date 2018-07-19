@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect
-} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 
@@ -122,10 +116,10 @@ class Survey1 extends Component {
 
             <div className="surveyNav">
                   <button className="btn" onClick={this.saveData.bind(this)} >
-                      Save Responses
+                      Save
                   </button>
 
-                  <p className="btn"><Link to="/survey2">Next</Link></p>
+                  <Link to="/survey2"><p className="btn">Next</p></Link>
             </div>
 
       </div>

@@ -63,7 +63,7 @@ class SchoolProf extends Component {
 
             <div className="sprof">
                 <div>
-                      <img src="https://picsum.photos/200/300"/>
+                      <img src="https://picsum.photos/200/300" alt="Educational Institution"/>
                 </div>
                 <div className="schoolinfo">
                     <BackButton />

@@ -1,13 +1,6 @@
 import React, {Component} from 'react';
-import {render} from 'react-dom';
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect
-} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const SortableItem = SortableElement(({value}) => <li>{value}</li>);
 

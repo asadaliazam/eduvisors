@@ -1,5 +1,82 @@
 /* ROD.CSS */
+:root{
+    --main-color: rgb(91, 101, 177);
+}
 
-#root .menu .App-logo{
-  background-color: yellow;
+.left-side, .right-side, .username{
+  background-color: var(--main-color);
+}
+
+.HomePage-Content .Main-Menu .Menu .left-side img {
+  height: 2rem;
+  padding: 0 1rem;
+}
+
+.left-side{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+}
+
+
+.HomePage-Content .Main-Menu .Menu header nav ul{
+  justify-content: flex-end;
+}
+
+.first-question, .second-question, .third-question, .fourth-question{
+  width: 70%;
+  height: 6rem;
+  margin: 2rem;
+}
+
+.wrapper{
+    margin: auto;
+}
+
+.sortable li{
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+
+  text-align: center;
+  color: rgb(92, 100, 180);
+  font-weight: 700;
+
+  width: 50%;
+
+}
+
+.surveyNav{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+}
+
+.surveyNav a{
+text-decoration: none;
+
+}
+
+.btn{
+  background-color: var(--main-color);
+  height: 2.5rem;
+  color: white;
+  width: 5rem;
+
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+
+  font-size: .75rem;
+
+}
+
+
+
+.rangeslider__fill{
+  background: var(--main-color) !important;
 }

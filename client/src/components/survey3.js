@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect
-} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 class Survey3 extends Component {
