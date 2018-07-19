@@ -3,6 +3,37 @@
     --main-color: rgb(91, 101, 177);
 }
 
+#root{
+  width: 90%;
+  margin: auto;
+
+  /* border: .1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888; */
+}
+
+.wrapper{
+  /* width: 90%; */
+  box-sizing: border-box;
+
+  /* border: .1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888; */
+}
+
+/* .graphContainer{
+  background-color: rgb(181, 181, 181);
+} */
+
+.profile{
+  /* width: 98%;
+  box-sizing: border-box;
+
+  border: .1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888; */
+}
+
 .left-side, .right-side, .username{
   background-color: var(--main-color);
 }

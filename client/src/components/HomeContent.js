@@ -20,7 +20,7 @@ class HomeContent extends Component {
           <div className="main-content">
             <form onSubmit={this.handleSubmit}>
               <label>
-                Pick your favorite La Croix flavor:
+                Select here a Province to see data:
                 <select value={this.state.value} onChange={this.handleChange}>
                   <option value="BC">BC </option>
                   <option value="AB">AB</option>
@@ -32,7 +32,6 @@ class HomeContent extends Component {
 
             <div className = "charts">
                 <div>
-                <p> {this.state.value} </p>
                   <Snowfall province={this.state.value} type={'snow'} />
                 </div>
                 {/* <div>
