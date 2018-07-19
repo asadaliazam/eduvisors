@@ -6,6 +6,7 @@ import Footer from './Footer.js';
 import { BrowserRouter as Router} from 'react-router-dom'
 
 import '../styles/everything.css';
+import '../sam.css';
 
 class HomePage extends Component {
   constructor() {
