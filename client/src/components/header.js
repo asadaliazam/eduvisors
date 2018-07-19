@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
-
+import '../sam.css';
 
 import {
   BrowserRouter as Router,

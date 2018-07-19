@@ -5,6 +5,7 @@ import HomeContent from './HomeContent.js';
 
 
 import '../styles/everything.css';
+import '../sam.css';
 
 class HomePage extends Component {
   constructor() {

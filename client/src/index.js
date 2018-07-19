@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './sam.css';
 import App from './components/App';
 import HomePage from './components/HomePage';
 import registerServiceWorker from './registerServiceWorker';

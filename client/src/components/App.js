@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+//
+// library.add(faStroopwafel)
+//
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+
 //import '../styles/App.css';
 // https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf
 
@@ -26,6 +35,11 @@ class App extends Component {
     handleChange(event) {
       this.setState({value: event.target.value});
     }
+    // export const Food = () => (
+    //   <div>
+    //     Favorite Food: <FontAwesomeIcon icon="stroopwafel" />
+    //   </div>
+    // )
   render() {
     return (
       <div className="App">
@@ -38,7 +52,8 @@ class App extends Component {
 
             <form onSubmit={this.handleSubmit}>
               <label>
-                Pick your favorite La Croix flavor:
+                CANADA:
+
                 <select value={this.state.value} onChange={this.handleChange}>
                   <option value="BC">BC </option>
                   <option value="AB">AB</option>
@@ -47,8 +62,22 @@ class App extends Component {
                 </select>
               </label>
             </form>
+            {/* <Label>
+              <FontAwesomeIcon
+                icon="envelope"
+               color="#6DB65B"
+              />
+              Usernname
+            </Label> */}
+            <div class="information">
+              <ul>
+                {/* <li></li><i class="fas fa-university" style="font-size:60px;color:red;"></i> */}
+                <li>100</li>
+                <li>360,000,000</li>
+                <li>2,000,000</li>
+              </ul>
+            </div>
 
-            
           </div>
        </Router>
       </div>
