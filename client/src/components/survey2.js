@@ -100,27 +100,24 @@ class Survey2 extends Component {
           console.log(json);
         })
 
-
-
-
-
-
   }
 
   render() {
     return (
       <div className="surveyDiv survey2 sortable">
-        <p>Drag these itens, placing the topic with more relevance on the top of the list. Remember the answers you gave in the previous part of the survey.</p>
-        <br/>
-      <SortableList items={this.state.items} onSortEnd={this.onSortEnd} />
+            <p>Drag these itens, placing the topic with more relevance on the top of the list. Remember the answers you gave in the previous part of the survey.</p>
 
-      <div className="surveyNav">
-        <button className='btn' onClick={this.saveData.bind(this)} >
-            Save Responses
-          </button>
+            <br/>
 
-          <p className="btn"><Link to="/survey3">Next</Link></p>
-      </div>
+            <SortableList items={this.state.items} onSortEnd={this.onSortEnd} />
+
+            <div className="surveyNav">
+              <button className='btn' onClick={this.saveData.bind(this)} >
+                  Save
+                </button>
+
+                <Link to="/survey3"><p className="btn">Next</p></Link>
+            </div>
 
       </div>
     );

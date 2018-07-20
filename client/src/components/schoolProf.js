@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
 import BackButton from './BackButton'
 
-
 class SchoolProf extends Component {
   constructor(props) {
         super(props);
-        // console.log(222222222, props.match);
+
         this.schoolProfile = this.schoolProfile.bind(this);
+        this.getFile = this.getFile.bind(this);
         this.state = {
             schoolProfile: [],
             schoolID: props.match.params.schoolID,
+            fileName: 0
         };
       } // end of CONSTRUCTOR
 
   componentWillReceiveProps(nextProps)
   {
           this.state.schoolID = nextProps.match.params.schoolID;
-          // console.log(333333333, this.state.schoolID);
           this.schoolProfile();
   }
 
+  getFile(){
+      let fileName = Math.round(Math.random()*7)+1
+      return require(`./img/${fileName}.jpg`);
+  }
+
   schoolProfile(){
+    let a = this.getFile();
+    this.setState({fileName: a});
           let reqBody = {
           schoolID: this.state.schoolID
           };
@@ -58,18 +65,20 @@ class SchoolProf extends Component {
           this.schoolProfile();
   }
 
+
   render() {
+
     return (
 
             <div className="sprof">
                 <div>
-                      <img src="https://picsum.photos/200/300" alt="Educational Institution"/>
+                  <img src={this.state.fileName} alt="Educational Institution"/>
                 </div>
                 <div className="schoolinfo">
-                    <BackButton />
                     {this.state.schoolProfile.map(customer =>
                       <ul key={customer.id}>
                         <strong><li>Institution Name : {customer.institution_name}</li></strong>
+                        <br/>
                         {/* <li>id : {customer.id}</li> */}
                         <li>Canadian Ranking: {customer.ca_ranking}</li>
                         <li>World Ranking: {customer.wd_rank}</li>
@@ -77,8 +86,10 @@ class SchoolProf extends Component {
                         <li>Province: {customer.province}</li>
                       </ul>
                     )}
+                    <p><BackButton /></p>
                 </div>
                 <p> {this.state.school} </p>
+
             </div>
     );    // end of RETURN
   }   // end of RENDER

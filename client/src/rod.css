@@ -1,39 +1,33 @@
 /* ROD.CSS */
+
+/* ===================== ======================== */
+/* VARIABLE DECLARATION */
+/* ===================== ======================== */
+
 :root{
-    --main-color: rgb(91, 101, 177);
+    /* --main-color: rgb(91, 101, 177); */
+    --main-color: rgb(96, 96, 96);
 }
+
+/* ===================== ======================== */
+/* PAGE LAYOUT */
+/* ===================== ======================== */
 
 #root{
   width: 90%;
   margin: auto;
-
-  /* border: .1px solid;
-  padding: 10px;
-  box-shadow: 5px 10px #888888; */
 }
 
 .wrapper{
-  /* width: 90%; */
+  margin: auto;
   box-sizing: border-box;
-
-  /* border: .1px solid;
-  padding: 10px;
-  box-shadow: 5px 10px #888888; */
 }
 
-/* .graphContainer{
-  background-color: rgb(181, 181, 181);
-} */
+/* ===================== ======================== */
+/* HEADER MENUS */
+/* ===================== ======================== */
 
-.profile{
-  /* width: 98%;
-  box-sizing: border-box;
-
-  border: .1px solid;
-  padding: 10px;
-  box-shadow: 5px 10px #888888; */
-}
-
+/* .Menu .header .left-side, */
 .left-side, .right-side, .username{
   background-color: var(--main-color);
 }
@@ -50,19 +44,25 @@
 
 }
 
-
 .HomePage-Content .Main-Menu .Menu header nav ul{
   justify-content: flex-end;
 }
 
+/* ===================== ======================== */
+/* SURVEY QUESTIONS */
+/* ===================== ======================== */
+
+
 .first-question, .second-question, .third-question, .fourth-question{
-  width: 70%;
+  width: 65%;
   height: 6rem;
   margin: 2rem;
 }
 
-.wrapper{
-    margin: auto;
+.sortable ul{
+  padding: 0;
+  display: inline;
+  margin: auto;
 }
 
 .sortable li{
@@ -71,43 +71,114 @@
   margin-bottom: 1rem;
 
   text-align: center;
-  color: rgb(92, 100, 180);
+  color: var(--main-color);
   font-weight: 700;
 
-  width: 50%;
+  width: 15rem;
+  height: 2.5rem;
+  line-height: 2.5;
 
+  list-style: none;
 }
 
+
 .surveyNav{
+    width: 65%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem;
+    margin: auto;
+    /* margin-left: 1.5rem; */
+    /* padding: 0 4rem; */
 }
 
 .surveyNav a{
-text-decoration: none;
-
+    text-decoration: none;
 }
 
 .btn{
-  background-color: var(--main-color);
-  height: 2.5rem;
-  color: white;
-  width: 5rem;
+    background-color: var(--main-color);
+    height: 2.5rem;
+    color: white;
+    width: 5rem;
 
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
 
-  font-size: .75rem;
+    font-size: .75rem;
+    border-radius: 5px;
+}
 
+.rangeslider__fill{
+    background: var(--main-color) !important;
 }
 
 
+.surveyDiv{
+  display: flex;
+  flex-flow: column nowrap;
+  padding-left: 1.5rem;
+}
 
-.rangeslider__fill{
-  background: var(--main-color) !important;
+.score table{
+  margin: auto;
+}
+
+.score h3{
+  padding-left: 3rem;
+}
+
+.question{
+  display: flex;
+  flex-flow: column nowrap;
+
+  /* border: 1px solid black; */
+  padding: 0 4rem;
+  padding-bottom: 2rem;
+
+}
+
+.rangeslider__label-item {
+  width: 5rem;
+  text-align: left;
+}
+
+.sValue{
+  padding-top: 1rem;
+  font-size: .9rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.sprof{
+  display: flex;
+  flex-flow: row nowrap;
+
+  box-sizing: border-box;
+}
+
+.schoolinfo{
+  margin: 2rem;
+  margin-left: 0;
+}
+.schoolinfo p{
+  margin-left: 2rem;
+}
+
+.schoolinfo li{
+  list-style: none;
+}
+
+.sprof img{
+
+  /* width: 100%; */
+  max-width: 500px;
+  margin: 2rem;
+}
+
+.schoolinfo ul strong{
+  font-size: 1.5rem;
 }
