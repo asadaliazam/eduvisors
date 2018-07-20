@@ -1,21 +1,23 @@
-/* INDEX.CSS */
-/* @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700|Rubik:400,500,700|Source+Sans+Pro:400,700'); */
+/* SAM.CSS */
 
-body{
-    /* margin: auto; */
-    font-family: "Rubik", "Roboto", "Source Sans", "Helvetica", "Sans Serif";
+:root{
+    --main-color: rgb(91, 101, 177);
+    --secondary-color: rgb(187, 191, 250);
+    --terceary-color: rgb(180, 180, 180);
 
-
+    /* --cinza-profile-color: rgb(96, 96, 96);
+    --cinza-header-color: rgb(74, 74, 74); */
 }
 
 /* ==============================Homepage========================================== */
 /* ===============Header================ */
 .header .left-side,.header .right-side,.header .username{
-  background-color:#4A4A4A;
+  /* background-color:#4A4A4A; */
+  background-color: var(--main-color);
 }
 
 /* ===============Main Content================ */
-.main-content  {
+/* .main-content  {
   padding: 2%;
   display:grid;
   grid-template-columns: 5fr 3fr;
@@ -23,16 +25,16 @@ body{
   background-color: white;
 
 
-}
+} */
 
 /* ===========Form(drop down)-App.js================ */
-.main-content form{
+/* .main-content form{
   grid-column: 2/3;
   grid-row: 1;
   text-align:center;
 
 
-}
+} */
 
 .main-content form select{
   width:300px;
@@ -94,20 +96,14 @@ text-align:center;
   display:flex;
   flex-flow: column-wrap;
 }
-.profile .user-info{
-  background-color: #606060;
-  margin:1%;
-  color:white;
-  width: 90%;
-  height:auto;
 
-}
 
 .profile .user-info ul{
   list-style-type: none;
   display:flex;
   flex-flow:column wrap;
   justify-content: center;
+  /* padding: 0; */
 }
 
 .profile .user-info ul li{
@@ -125,8 +121,8 @@ text-align:center;
 .profile h2{
   text-align: center;
   border-bottom: 2px solid black;
-  margin-left: 10%;
-  margin-righ: 10%;
+  /* margin-left: 10%;
+  margin-righ: 10%; */
 }
 
 .profile h3{
@@ -150,5 +146,7 @@ text-align:center;
 /* ===============Header================ */
 /* ===============Header================ */
 .footer .left-side, .right-side, .username{
-  background-color:#3D3D3D;
+  /* background-color:#3D3D3D; */
+  background-color:  var(--main-color);
+
 }

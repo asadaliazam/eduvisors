@@ -22,18 +22,20 @@ class Engine extends Component {
       <div className = "score">
         <h3>Personalized <br/>Recommendations</h3>
               <table>
-                <tr>
-                  <th>Name</th>
-                  <th>Province</th>
-                  {/* <th>Calculated</th> */}
-                  <th>Actual</th>
-                  <th>WebSite</th>
-                </tr>
-                  {this.state.schoolNames.map(schoolName =>
-                    <tr key={schoolName.toString()}> <td>{schoolName.institutionName}</td> <td>{schoolName.province}</td> {/*<td>{schoolName.calculatedScore}</td>*/} <td>{schoolName.actualScore}</td>
-                    <td><Link to={'/schoolProf/'+schoolName.schoolID}>click here</Link></td>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th className="col">Province</th>
+                        {/* <th>Calculated</th> */}
+                        {/*<th>Actual</th>*/}
+                        <th className="col">WebSite</th>
                     </tr>
+                </thead>
+                <tbody>
+                  {this.state.schoolNames.map(schoolName =>
+                    <tr key={schoolName.toString()}><td>{schoolName.institutionName}</td><td className="col">{schoolName.province}</td> {/*<td>{schoolName.calculatedScore}</td>*/} {/*<td>{schoolName.actualScore}</td>*/}<td className="col"><Link to={'/schoolProf/'+schoolName.schoolID}>click here</Link></td></tr>
                   )}
+                  </tbody>
               </table>
 
               {/* <div className="surveyNav">
