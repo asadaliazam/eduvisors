@@ -46,7 +46,7 @@
 
 .surveyDiv{
   display: flex;
-  flex-flow:
+  flex-flow: column nowrap;
 }
 
 .surveyDiv .question{
