@@ -12,7 +12,7 @@ class Survey3 extends Component {
       col: 0,
       rank: 0,
       emp: 0,
-      obj: {0: 'Low', 1: 'High', 0.5: 'Medium'}
+      obj: {0: 'Low', 1: 'High'}
     };
   }
 
@@ -76,7 +76,7 @@ class Survey3 extends Component {
     let {emp} = this.state
     return (
       <div className="surveyDiv survey3">
-      <div className="first-question">
+      <div className="first-question question">
       {/* <p> How much do you care about Tuition fees? </p> */}
       <p>How much the cost of tuition impacts your study plans?</p>
         <Slider
@@ -89,9 +89,10 @@ class Survey3 extends Component {
         orientation="horizontal"
         onChange={this.handleOnChangeTui}
       />
+      <p className="sValue">your value: {this.state.tui} </p>
       </div>
 
-      <div className="second-question">
+      <div className="second-question question">
       {/* <p> Does cost of living your destination college? </p> */}
       <p>How much the cost of living impacts your study plans?</p>
         <Slider
@@ -103,9 +104,10 @@ class Survey3 extends Component {
         orientation="horizontal"
         onChange={this.handleOnChangeCol}
       />
+      <p className="sValue">your value: {this.state.col} </p>
       </div>
 
-      <div className="third-question">
+      <div className="third-question question">
       {/* <p> Does Rank choosing your destination college? </p> */}
       <p>How important is the ranking of the institution you will apply for?</p>
         <Slider
@@ -117,9 +119,10 @@ class Survey3 extends Component {
         orientation="horizontal"
         onChange={this.handleOnChangeRank}
       />
+      <p className="sValue">your value: {this.state.rank} </p>
       </div>
 
-      <div className="fourth-question">
+      <div className="fourth-question question">
         <p>How much do you worry about the Employment Rate of the region where you will study?</p>
       {/* <p> Does Employment choosing your destination college? </p> */}
         <Slider
@@ -131,14 +134,15 @@ class Survey3 extends Component {
         orientation="horizontal"
         onChange={this.handleOnChangeEmp}
       />
+      <p className="sValue">your value: {this.state.emp} </p>
       </div>
 
       <div className="surveyNav">
             <button className="btn" onClick={this.saveData.bind(this)} >
-                Save Responses
+                Save
             </button>
 
-            <p className="btn"><Link to="/survey4">Next</Link></p>
+            <Link to="/survey4"><p className="btn">Next</p></Link>
       </div>
 
       </div>

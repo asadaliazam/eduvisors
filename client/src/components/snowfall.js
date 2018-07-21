@@ -117,15 +117,14 @@ class Snowfall extends Component {
 
 
     return (
-      <div>
-        <h2>Weather Chart</h2>
-        <p> {this.state.province}</p>
-
+      <div className="snowfall graphContainer">
+        <h2>Weather</h2>
 
           <Line
             data = {this.state.chartData}
             options={{ responsive: true  }}
             />
+            <p>Weather</p>
 
       </div>
     );

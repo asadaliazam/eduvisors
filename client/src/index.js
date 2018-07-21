@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './rod.css';
 import './sam.css';
+import './everything.css';
+
 import HomePage from './components/HomePage';
 
 ReactDOM.render(

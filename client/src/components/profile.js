@@ -23,7 +23,7 @@ class Profile extends Component {
                 <h2>{user.first_name} {user.last_name}</h2>
                 <ProfileCompletion />
                     <br />
-                    <div class="user-info">
+                    <div className="user-info">
                     <ul>
                         <li>Email:</li>
                         <li> {user.email}</li>

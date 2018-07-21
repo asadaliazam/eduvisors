@@ -1,10 +1,109 @@
 /* ROD.CSS */
+
+/* ===================== ======================== */
+/* VARIABLE DECLARATION */
+/* ===================== ======================== */
+
 :root{
     --main-color: rgb(91, 101, 177);
+    --secondary-color: rgb(187, 191, 250);
+    --terceary-color: rgb(180, 180, 180);
+
+    /* --cinza-profile-color: rgb(96, 96, 96);
+    --cinza-header-color: rgb(74, 74, 74); */
 }
 
+.HomePage-Content .Main-Content{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.HomePage-Content .Main-Menu .Menu .header{
+  display: contents;
+}
+
+.profile .user-info{
+
+  /* background-color: var(--terceary-color); */
+  background-color: #606060;
+  /* margin:auto; */
+  color:white;
+  width: 100%;
+  height:auto;
+}
+
+.profile .user-info{
+  margin: auto;
+}
+
+.username a{
+  margin-right: 2rem;
+}
+
+.right-side, .username, .Side-Bar{
+  display: none;
+}
+
+.surveyDiv{
+  display: flex;
+  flex-flow:
+}
+
+.surveyDiv .question{
+  /* margin: 0; */
+  padding: 0 5%;
+  margin: auto;
+  width: 80%;
+  height: auto;
+}
+
+.main-content  {
+  padding: 2%;
+  display: flex;
+  flex-flow: column nowrap;
+  /* display:grid;
+  grid-template-columns: 5fr 3fr;
+  grid-template-rows: 2fr 1fr auto; */
+  background-color: white;
+}
+
+.main-content form{
+  display: flex;
+  flex-flow: column nowrap;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+/* ===================== ======================== */
+/* PAGE LAYOUT */
+/* ===================== ======================== */
+
+#root{
+  width: 100%;
+}
+
+.wrapper{
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.sValue{
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.Menu{
+  color: white;
+}
+
+/* ===================== ======================== */
+/* HEADER MENUS */
+/* ===================== ======================== */
+
+/* .Menu .header .left-side, */
 .left-side, .right-side, .username{
   background-color: var(--main-color);
+  line-height: 3;
 }
 
 .HomePage-Content .Main-Menu .Menu .left-side img {
@@ -16,67 +115,248 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-
 }
-
 
 .HomePage-Content .Main-Menu .Menu header nav ul{
   justify-content: flex-end;
 }
 
-.first-question, .second-question, .third-question, .fourth-question{
-  width: 70%;
-  height: 6rem;
-  margin: 2rem;
+/* ===================== ======================== */
+/* SURVEY QUESTIONS */
+/* ===================== ======================== */
+
+.sortable ul{
+  padding: 0;
+  display: inline;
+  margin: auto;
 }
 
-.wrapper{
-    margin: auto;
+.sortable p{
+  padding: 0 1.5rem;
 }
 
 .sortable li{
   border: 1px solid var(--main-color);
   border-radius: 5px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 
   text-align: center;
-  color: rgb(92, 100, 180);
+  color: var(--main-color);
   font-weight: 700;
 
-  width: 50%;
+  width: 15rem;
+  height: 2.5rem;
+  line-height: 2.5;
 
+  list-style: none;
 }
 
+
 .surveyNav{
+    width: 65%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem;
+    margin: auto;
+    padding-bottom: 2rem;
+    /* margin-left: 1.5rem; */
+    /* padding: 0 4rem; */
 }
 
 .surveyNav a{
-text-decoration: none;
+    text-decoration: none;
+}
 
+.surveyNav p{
+    padding: 0;
 }
 
 .btn{
-  background-color: var(--main-color);
-  height: 2.5rem;
-  color: white;
-  width: 5rem;
+    background-color: var(--main-color);
+    height: 2.5rem;
+    color: white;
+    width: 5rem;
 
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
 
-  font-size: .75rem;
+    font-size: .75rem;
+    border-radius: 5px;
+}
 
+.rangeslider__fill{
+    background: var(--main-color) !important;
+}
+
+.score table{
+  margin: auto;
+  margin: 0 5%;
+  column-width: auto;
+  padding: 1rem 0 3rem 0;
+}
+
+.score table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.score table tr:nth-child(even) {
+    background-color: var(--secondary-color);
+}
+
+.score table .col{
+  text-align: center;
+}
+
+.score table th{
+  text-align: left;
+}
+
+.score h3{
+  padding-left: 3rem;
+  color: var(--main-color);
 }
 
 
+.question{
+  width: 65%;
+  height: 6rem;
+  margin: 2rem;
 
-.rangeslider__fill{
-  background: var(--main-color) !important;
+  display: flex;
+  flex-flow: column nowrap;
+
+  /* padding: 0 4rem; */
+  padding-bottom: 2rem;
+
+}
+
+.rangeslider__label-item {
+  width: 5rem;
+  text-align: left;
+}
+
+.sValue{
+  padding-top: 1rem;
+  font-size: .9rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.sprof{
+  display: flex;
+  flex-flow: column nowrap;
+
+  box-sizing: border-box;
+}
+
+.schoolinfo button{
+  margin-top: 2rem;
+
+}
+
+.schoolinfo p{
+  margin-left: 2rem;
+}
+
+.schoolinfo li{
+  list-style: none;
+  line-height: 1.5;
+}
+
+.sprof img{
+
+  width: 90%;
+  /* max-width: 500px; */
+  margin: 5%;
+}
+
+.schoolinfo ul strong{
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 1000px)
+{
+  #root{
+    width: 90%;
+    margin: auto;
+  }
+
+  .HomePage-Content .Main-Content{
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .right-side, .username, .Side-Bar{
+    display: contents;
+  }
+  .Side-Bar{
+    margin: auto;
+  }
+
+  .profile .user-info{
+    /* background-color: #606060; */
+    margin:1%;
+    /* color:white; */
+    width: 90%;
+    /* height:auto; */
+  }
+
+  .surveyDiv{
+    display: flex;
+    flex-flow: column nowrap;
+    padding-left: 1.5rem;
+  }
+
+  .sprof{
+    display: flex;
+    flex-flow: row nowrap;
+
+    box-sizing: border-box;
+  }
+
+  .sprof img{
+
+    /* width: 100%; */
+    max-width: 500px;
+    margin: 2rem;
+  }
+
+  .schoolinfo{
+    margin: 2rem;
+    margin-left: 0;
+  }
+
+  .HomePage-Content .Main-Menu .Menu .header
+  {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: var(--main-color);
+    justify-content: flex-end;
+    color: white;
+  }
+
+  .main-content  {
+    padding: 2%;
+    display:grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: 2fr 1fr auto;
+    background-color: white;
+
+
+  }
+
+  .main-content form{
+    grid-column: 2/3;
+    grid-row: 1;
+    text-align:center;
+  }
+
+  .left-side, .right-side, .username{
+    line-height: 2;
+  }
+
+
 }

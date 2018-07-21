@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import Menu from './Menu.js';
 import Profile from './profile.js';
 import MainContent from './MainContent.js';
-import Footer from './Footer.js'; 
+import Footer from './Footer.js';
 import { BrowserRouter as Router} from 'react-router-dom'
 
-import '../styles/everything.css';
-import '../sam.css';
 
 class HomePage extends Component {
   constructor() {

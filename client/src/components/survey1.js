@@ -68,7 +68,7 @@ class Survey1 extends Component {
     let {rain} = this.state
     return (
       <div className="surveyDiv survey1">
-            <div className="first-question">
+            <div className="first-question question">
                     <p>How much do you care about living in a warm weather region?</p>
                     <Slider
                     value={parseFloat(at)}
@@ -80,12 +80,11 @@ class Survey1 extends Component {
                     orientation="horizontal"
                     onChange={this.handleOnChangeAt}
                   />
-                  <h1> {this.state.at} </h1>
+                  <p className="sValue">your value: {this.state.at} </p>
             </div>
 
-            <div className="second-question">
+            <div className="second-question question">
                   <p>What is your tolerance for living in a place with high snowfall?</p>
-                  {/* <p> Does average snowfall matter to you when choosing your destination college? </p> */}
                     <Slider
                     value={parseFloat(snow)}
                     min={0.1}
@@ -95,13 +94,11 @@ class Survey1 extends Component {
                     orientation="horizontal"
                     onChange={this.handleOnChangeSnow}
                   />
-                  <h1> {this.state.snow} </h1>
+                  <p className="sValue">your value: {this.state.snow} </p>
             </div>
 
-            <div className="third-question">
+            <div className="third-question question">
                   <p>What is your tolerance for living in a place with high rainfall?</p>
-                  {/* <p> Thera are places where rains a lot in Canada. Would you be willing to live in a place with high rainfall averages? </p> */}
-                  {/* <p> Does Rainfall matter to you when choosing your destination college? </p> */}
                     <Slider
                     value={parseFloat(rain)}
                     min={0.1}
@@ -111,7 +108,7 @@ class Survey1 extends Component {
                     orientation="horizontal"
                     onChange={this.handleOnChangeRain}
                   />
-                  <h1> {this.state.rain} </h1>
+                  <p className="sValue">your value: {this.state.rain} </p>
             </div>
 
             <div className="surveyNav">

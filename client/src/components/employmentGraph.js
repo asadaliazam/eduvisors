@@ -97,10 +97,8 @@ class EmploymentGraph extends Component {
 
 
     return (
-      <div>
-        <h2>Employment Graph</h2>
-        <p> {this.state.province}</p>
-
+      <div className="employement graphContainer">
+        <h2>Employment</h2>
 
           <Doughnut
             data = {this.state.chartData}
