@@ -1,13 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import './rod.css';
 import './sam.css';
-import './everything.css';
-
-import HomePage from './components/HomePage';
+import App from './components/App';
 
 ReactDOM.render(
-  <HomePage />,
+  <App />,
   document.getElementById('root')
 );

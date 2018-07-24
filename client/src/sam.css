@@ -11,30 +11,14 @@
 
 /* ==============================Homepage========================================== */
 /* ===============Header================ */
-.header .left-side,.header .right-side,.header .username{
+.header .left-side,
+.header .right-side,
+.header .username{
   /* background-color:#4A4A4A; */
   background-color: var(--main-color);
 }
 
 /* ===============Main Content================ */
-/* .main-content  {
-  padding: 2%;
-  display:grid;
-  grid-template-columns: 5fr 3fr;
-  grid-template-rows: 2fr 1fr auto;
-  background-color: white;
-
-
-} */
-
-/* ===========Form(drop down)-App.js================ */
-/* .main-content form{
-  grid-column: 2/3;
-  grid-row: 1;
-  text-align:center;
-
-
-} */
 
 .main-content form select{
   width:210px;
@@ -170,12 +154,6 @@ margin:1%;
 
 }
 
-/* .wrapper{
-  width: 100%;
-
-  display: flex;
-  flex-flow: column nowrap;;
-} */
 /* ===============Header================ */
 /* ===============Header================ */
 .footer .left-side, .right-side, .username{

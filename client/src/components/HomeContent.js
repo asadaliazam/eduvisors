@@ -7,6 +7,8 @@ import CostOfLivingGraph from './costOfLivingGraph';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUniversity } from '@fortawesome/free-solid-svg-icons'
 import { faUsers } from '@fortawesome/free-solid-svg-icons'
+import { fagraduationCap } from '@fortawesome/free-solid-svg-icons'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 // ===============Material UI design for the graphs==========
 //
 // import PropTypes from 'prop-types';
@@ -37,24 +39,28 @@ class HomeContent extends Component {
             <form onSubmit={this.handleSubmit}>
               <label>
 
-                CANADA
+                Choose a Province:
                 <select value={this.state.value} onChange={this.handleChange}>
-                  <option value="BC">BC </option>
-                  <option value="AB">AB</option>
-                  <option value="NL">NL</option>
-                  <option value="MB">MB</option>
+                  <option value="AB" label="Alberta">AB</option>
+                  <option value="BC" label="British Columbia">BC </option>
+                  <option value="NL" label="NewFoundLand">NL</option>
+                  <option value="MB" label="Manitoba">MB</option>
+                  <option value="ON" label="Ontario">ON</option>
+                  <option value="PE" label="Prince Ed Island">PE</option>
+                  <option value="NS" label="Nova Scotia">NS</option>
+                  <option value="NB" label="New Brunswick">NB</option>
+                  <option value="QC" label="Quebec">QC</option>
+                  <option value="SK" label="Saskatchewan">SK</option>
                 </select>
               </label>
               <div className="information">
                 <ul>
-                <li><FontAwesomeIcon icon={faUniversity} />100</li>
-                <li><FontAwesomeIcon icon={faUsers} /></li>
+                  <li><FontAwesomeIcon icon={faUniversity} />100</li>
+                  <li><FontAwesomeIcon icon={faUsers} />9.000</li>
+                  <li><FontAwesomeIcon icon={faCoffee} />Aberdeen</li>
+                  {/* <li><FontAwesomeIcon icon={fagraduationCap} />111</li> */}
               </ul>
               </div>
-
-              {/* <div>
-                <FontAwesomeIcon icon={graduationCap} />
-              </div> */}
 
             </form>
 
@@ -80,10 +86,10 @@ class HomeContent extends Component {
         <CardActions>
           <Button size="small">Learn More</Button>
         </CardActions>
-      </Card> */}
-            {/* <div className = "charts"> */}
+      </Card>
+           <div className = "charts"> */}
                 <div className="top-chart">
-                <p> {this.state.value} </p>
+                {/* <p> {this.state.value} </p> */}
                   <Snowfall province={this.state.value} type={'snow'} />
                 </div>
                 {/* <div>

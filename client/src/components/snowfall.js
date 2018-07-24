@@ -100,9 +100,11 @@ class Snowfall extends Component {
   componentWillReceiveProps(nextProps)
   {
     // console.log(101010, nextProps);
-    this.setState({province: nextProps.province}, this.fetchFromDatabase);
+   this.setState({province: nextProps.province, type: nextProps.type},  this.fetchFromDatabase);
 
-    //console.log(11, this.state)
+   console.log(nextProps);
+
+   //console.log(11, this.state)
   }
 
   componentDidUpdate()
@@ -124,7 +126,6 @@ class Snowfall extends Component {
             data = {this.state.chartData}
             options={{ responsive: true  }}
             />
-            <p>Weather</p>
 
       </div>
     );
