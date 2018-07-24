@@ -20,7 +20,7 @@ class MainContent extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="Center-Page">
                 <Switch>
                       <Route exact path="/" component={HomeContent} />
                       <Route path="/chart" component={Chart} />

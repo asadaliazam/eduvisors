@@ -75,27 +75,21 @@ class ProfileCompletion extends Component {
 
           if(profile[0].email){
             this.state.total = this.state.total + 20;
-
           }
           if(profile[0].password){
             this.state.total = this.state.total + 20;
-
           }
           if(profile[0].age){
             this.state.total = this.state.total + 20;
-
           }
           if(profile[0].country){
             this.state.total = this.state.total + 20;
-
           }
 
 // console.log(11,  this.state.total);
   this.state.chartData.datasets[0].data.push(this.state.total,(100 - this.state.total));
           this.setState({profile})
-
       });
-
     }
 
 
@@ -139,21 +133,19 @@ class ProfileCompletion extends Component {
 
 
         <div className = "profileCompletion">
-          <RC2
-            data = {this.state.chartData}
-            options={{
-         maintainAspectRatio: false,
-         scaleShowVerticalLines: false,
-         legend: {
-              display: false
-          },
-         tooltips: {
-            mode: 'index',
-            axis: 'y'
-        }
-     }}
-     type='doughnut'
-            />
+            <RC2
+                  data = {this.state.chartData}
+                  options={{
+                         maintainAspectRatio: false,
+                         scaleShowVerticalLines: false,
+                         legend: { display: false },
+                         tooltips: {
+                            mode: 'index',
+                            axis: 'y'
+                        }
+                    }}
+                  type='doughnut'
+              />
         </div>
 
 
