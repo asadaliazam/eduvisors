@@ -3,7 +3,7 @@ import Menu from './Menu.js';
 import Profile from './profile.js';
 import MainContent from './MainContent.js';
 import Footer from './Footer.js';
-import { BrowserRouter as Router} from 'react-router-dom'
+
 
 
 class HomePage extends Component {
@@ -17,26 +17,17 @@ class HomePage extends Component {
   render() {
     return (
 
-      <Router>
+
       <div className="HomePage-Content">
-              <div className = "Main-Menu">
-                    <Menu/>
-              </div>
+
+              <Menu/>
               <div className = "Main-Content">
-
-                    <div className = "Side-Bar">
-                          <Profile/>
-                    </div>
-
-                    <div className = "Center-Page">
-                          <MainContent/>
-                    </div>
+                  <Profile/>
+                  <MainContent/>
               </div>
-
               <Footer />
 
       </div>
-      </Router>
 
     );
   }

@@ -126,9 +126,9 @@ class ProfileCompletion extends Component {
 
    this.setState({chartData: newChartData});
 
+// console.log(11,  this.state.total);
 
       });
-
     }
 
 
@@ -139,21 +139,19 @@ class ProfileCompletion extends Component {
       <div>
 
         <div className = "profileCompletion">
-          <RC2
-            data = {this.state.chartData}
-            options={{
-         maintainAspectRatio: false,
-         scaleShowVerticalLines: false,
-         legend: {
-              display: false
-          },
-         tooltips: {
-            mode: 'index',
-            axis: 'y'
-        }
-     }}
-     type='doughnut'
-            />
+            <RC2
+                  data = {this.state.chartData}
+                  options={{
+                         maintainAspectRatio: false,
+                         scaleShowVerticalLines: false,
+                         legend: { display: false },
+                         tooltips: {
+                            mode: 'index',
+                            axis: 'y'
+                        }
+                    }}
+                  type='doughnut'
+              />
         </div>
 
 

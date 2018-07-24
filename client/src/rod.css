@@ -1,5 +1,7 @@
 /* ROD.CSS */
 
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700|Rubik:400,500,700|Source+Sans+Pro:400,700');
+
 /* ===================== ======================== */
 /* VARIABLE DECLARATION */
 /* ===================== ======================== */
@@ -13,117 +15,156 @@
     --cinza-header-color: rgb(74, 74, 74); */
 }
 
+/* ===================== ======================== */
+/* PAGE LAYOUT */
+/* ===================== ======================== */
+
+body {
+    margin: auto;
+    font-family: "Rubik", "Roboto", "Source Sans", "Helvetica", "Sans Serif";
+}
+
+#root{
+  width: 100%;
+}
+
+.Center-Page{
+  /* margin: auto; */
+}
+
+.HomePage-Content a {
+  color: white;
+}
+
+/* ===================== ======================== */
+/*                 MENU / HEADER */
+/* ===================== ======================== */
+
+/* .HomePage-Content .Menu header{
+  display: contents;
+} */
+
+.HomePage-Content .desktop,
+.HomePage-Content .profile{
+  display: none;
+  font-size: 1rem;
+}
+
+.HomePage-Content .left-side{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  color: white;
+}
+
+.HomePage-Content .username a{
+  margin-right: 2rem;
+}
+
+.HomePage-Content .left-side,
+.HomePage-Content .right-side,
+.HomePage-Content .username{
+  background-color: var(--main-color);
+  line-height: 1;
+  text-align: right;
+  padding: .5rem;
+  font-size: 1rem;
+}
+
+.HomePage-Content header img {
+  padding: 0 .5rem;
+  /* max-width: 20%; */
+  width: 70px;
+  /* height: auto; */
+}
+
+.HomePage-Content header{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.HomePage-Content header .username,
+.HomePage-Content header .right-side{
+  flex: 0 0 8%;
+  justify-content: center;
+  text-align: center;
+  line-height: 2.5;
+  color: white;
+  font-size: 1.2rem;
+}
+.HomePage-Content header .username{
+  order: 1;
+  border-right: 2px solid white;
+
+}
+
+.HomePage-Content header .left-side{
+  order: 2;
+  flex: 1 0 50%;
+}
+
+.HomePage-Content header .right-side{
+  order: 3;
+}
+
+
+.HomePage-Content header nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.HomePage-Content header nav ul li {
+  padding: 1rem;
+}
+
+/* ===================== ======================== */
+/*               CONTENT AREA                     */
+/* ===================== ======================== */
+
 .HomePage-Content .Main-Content{
+  padding: 3% 10%;
   display: flex;
   flex-flow: column nowrap;
+  background-color: white;
 }
 
-.HomePage-Content .Main-Menu .Menu .header{
-  display: contents;
+.HomePage-Content .Main-Content .main-content form{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
-.profile .user-info{
+/* ===================== ======================== */
+/*               PROFILE area */
+/* ===================== ======================== */
 
+.HomePage-Content .Main-Content .profile .user-info{
   /* background-color: var(--terceary-color); */
   background-color: #606060;
-  /* margin:auto; */
+  margin:auto;
   color:white;
   width: 100%;
   height:auto;
 }
 
-.profile .user-info{
-  margin: auto;
-}
-
-.username a{
-  margin-right: 2rem;
-}
-
-.right-side, .username, .Side-Bar{
-  display: none;
-}
+/* ===================== ======================== */
+/*                 SURVEY                         */
+/* ===================== ======================== */
 
 .surveyDiv{
   display: flex;
   flex-flow: column nowrap;
 }
 
-.surveyDiv .question{
-  /* margin: 0; */
-  padding: 0 5%;
-  margin: auto;
-  width: 80%;
-  height: auto;
-}
-
-.main-content  {
-  padding: 2%;
+.question{
   display: flex;
   flex-flow: column nowrap;
-  /* display:grid;
-  grid-template-columns: 5fr 3fr;
-  grid-template-rows: 2fr 1fr auto; */
-  background-color: white;
+  /* padding: 0 4rem; */
+  /* height: auto; */
 }
-
-.main-content form{
-  display: flex;
-  flex-flow: column nowrap;
-  /* justify-content: center; */
-  align-items: center;
-}
-
-/* ===================== ======================== */
-/* PAGE LAYOUT */
-/* ===================== ======================== */
-
-#root{
-  width: 100%;
-}
-
-.wrapper{
-  margin: auto;
-  box-sizing: border-box;
-}
-
-.sValue{
-  padding-bottom: 1rem;
-  border-bottom: 1px solid black;
-}
-
-.Menu{
-  color: white;
-}
-
-/* ===================== ======================== */
-/* HEADER MENUS */
-/* ===================== ======================== */
-
-/* .Menu .header .left-side, */
-.left-side, .right-side, .username{
-  background-color: var(--main-color);
-  line-height: 3;
-}
-
-.HomePage-Content .Main-Menu .Menu .left-side img {
-  height: 2rem;
-  padding: 0 1rem;
-}
-
-.left-side{
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-}
-
-.HomePage-Content .Main-Menu .Menu header nav ul{
-  justify-content: flex-end;
-}
-
-/* ===================== ======================== */
-/* SURVEY QUESTIONS */
-/* ===================== ======================== */
 
 .sortable ul{
   padding: 0;
@@ -153,15 +194,14 @@
 
 
 .surveyNav{
-    width: 65%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+
     margin: auto;
+    width: 65%;
     padding-bottom: 2rem;
-    /* margin-left: 1.5rem; */
-    /* padding: 0 4rem; */
 }
 
 .surveyNav a{
@@ -191,11 +231,21 @@
     background: var(--main-color) !important;
 }
 
+.rangeslider__label-item {
+  width: 5rem;
+  text-align: left;
+}
+
+/* ===================== ======================== */
+/*                 ENGINE PAGE        */
+/* ===================== ======================== */
+
 .score table{
-  margin: auto;
-  margin: 0 5%;
+  /* margin: auto; */
+  /* margin: 0 5%; */
   column-width: auto;
   padding: 1rem 0 3rem 0;
+  margin: 0 -1.5rem;
 }
 
 .score table tr:nth-child(odd) {
@@ -203,7 +253,7 @@
 }
 
 .score table tr:nth-child(even) {
-    background-color: var(--secondary-color);
+    background-color: var(--terceary-color);
 }
 
 .score table .col{
@@ -214,35 +264,33 @@
   text-align: left;
 }
 
+.score table td, .score table th{
+  padding: 8px;
+}
+
 .score h3{
-  padding-left: 3rem;
+  padding-left: 0rem;
   color: var(--main-color);
 }
 
-
-.question{
-  width: 65%;
-  height: 6rem;
-  margin: 2rem;
-
-  display: flex;
-  flex-flow: column nowrap;
-
-  /* padding: 0 4rem; */
-  padding-bottom: 2rem;
-
+.score a{
+  color: black;
 }
 
-.rangeslider__label-item {
-  width: 5rem;
-  text-align: left;
-}
+
+/* ===================== ======================== */
+/*                 SCHOOL PROFILE        */
+/* ===================== ======================== */
 
 .sValue{
-  padding-top: 1rem;
   font-size: .9rem;
-  text-align: center;
   font-weight: 700;
+  text-align: center;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  border-bottom: 1px solid black;
 }
 
 .sprof{
@@ -252,9 +300,13 @@
   box-sizing: border-box;
 }
 
+.sprof img{
+  width: 90%;
+  margin: 5%;
+}
+
 .schoolinfo button{
   margin-top: 2rem;
-
 }
 
 .schoolinfo p{
@@ -266,33 +318,141 @@
   line-height: 1.5;
 }
 
-.sprof img{
-
-  width: 90%;
-  /* max-width: 500px; */
-  margin: 5%;
-}
-
 .schoolinfo ul strong{
   font-size: 1.5rem;
 }
 
+/* ===================== ======================== */
+/*               FOOTER AREA                     */
+/* ===================== ======================== */
+
+/* .HomePage-Content .footer{
+  display: flex;
+  flex-flow: row wrap;
+
+}
+
+.HomePage-Content .footer .left-side,
+.HomePage-Content .footer .right-side{
+  flex: 1 0 90%;
+} */
+
+
+.HomePage-Content .footer .left-side ul{
+  display: flex;
+
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.HomePage-Content .footer .right-side ul{
+  display: flex;
+  justify-content: flex-end;
+
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  text-align: right;
+}
+
+.HomePage-Content .footer li{
+  padding: 1rem;
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/*                 DESKTOP VIEW        */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
 @media screen and (min-width: 1000px)
 {
+
+/* ===================== ======================== */
+/* PAGE LAYOUT */
+/* ===================== ======================== */
   #root{
     width: 90%;
     margin: auto;
   }
 
+/* ===================== ======================== */
+/*               CONTENT AREA                     */
+/* ===================== ======================== */
+
   .HomePage-Content .Main-Content{
-    display: flex;
-    flex-flow: row nowrap;
+    display:grid;
+    /* grid-template-columns: 5fr 3fr;
+    grid-template-rows: 2fr 1fr auto; */
+
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr .2fr;
+
+    background-color: white;
+
+    padding: 2%;
   }
 
-  .right-side, .username, .Side-Bar{
+  .HomePage-Content .Main-Content .Center-Page{
+    padding-left: 2rem;
+  }
+
+
+  /* .main-content form{
+    grid-column: 2/3;
+    grid-row: 1;
+    text-align:center;
+  } */
+
+/* ===================== ======================== */
+/*                 MENU / HEADER */
+/* ===================== ======================== */
+
+  .HomePage-Content header,
+  .HomePage-Content .footer {
+    display: flex;
+    flex-flow: row nowrap;
+    /* display: grid;
+    grid-template-columns: 1fr 2fr 1fr; */
+    justify-content: flex-end;
+
+    background-color: var(--main-color);
+    color: white;
+  }
+
+  .HomePage-Content .desktop,
+  .HomePage-Content .profile{
     display: contents;
   }
-  .Side-Bar{
+
+  .HomePage-Content .mobile{
+    display: none;
+  }
+
+  .HomePage-Content header .username{
+    order: 3;
+    line-height: 3.5;
+  }
+
+  .HomePage-Content header .left-side{
+    order: 1;
+    flex: 1 0 30%;
+  }
+
+  .HomePage-Content header .right-side{
+    order: 2;
+    flex: 1 0 50%;
+  }
+
+  /* ===================== ======================== */
+  /*               PROFILE area */
+  /* ===================== ======================== */
+
+  .profile{
+    display: contents;
     margin: auto;
   }
 
@@ -304,11 +464,38 @@
     /* height:auto; */
   }
 
+  /* ===================== ======================== */
+  /*                 SURVEY                         */
+  /* ===================== ======================== */
   .surveyDiv{
     display: flex;
     flex-flow: column nowrap;
-    padding-left: 1.5rem;
   }
+
+  .survey1, .survey3, .score{
+    background-color: var(--terceary-color);
+
+    padding: 1.5rem 3rem;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  .survey2, .survey4{
+    background-color: var(--secondary-color);
+  }
+
+  /* ===================== ======================== */
+  /*                 ENGINE              */
+  /* ===================== ======================== */
+
+  .score table td, .score table th{
+    padding: 8px;
+  }
+
+
+  /* ===================== ======================== */
+  /*                 SCHOOL PROFILE        */
+  /* ===================== ======================== */
 
   .sprof{
     display: flex;
@@ -329,34 +516,12 @@
     margin-left: 0;
   }
 
-  .HomePage-Content .Main-Menu .Menu .header
-  {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    background-color: var(--main-color);
-    justify-content: flex-end;
-    color: white;
+  /* ===================== ======================== */
+  /*               FOOTER AREA                     */
+  /* ===================== ======================== */
+
+  .footer .right-side, .footer .left-side{
+      align-content: center;
   }
-
-  .main-content  {
-    padding: 2%;
-    display:grid;
-    grid-template-columns: 5fr 3fr;
-    grid-template-rows: 2fr 1fr auto;
-    background-color: white;
-
-
-  }
-
-  .main-content form{
-    grid-column: 2/3;
-    grid-row: 1;
-    text-align:center;
-  }
-
-  .left-side, .right-side, .username{
-    line-height: 2;
-  }
-
 
 }

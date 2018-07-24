@@ -126,7 +126,6 @@ class Snowfall extends Component {
             data = {this.state.chartData}
             options={{ responsive: true  }}
             />
-            <p>Weather</p>
 
       </div>
     );
