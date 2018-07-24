@@ -171,11 +171,11 @@ function scoreCalculator(data)
   }
 
   let weather_score2 = (c_at * multiplier_at) + (c_rain * multiplier_rain) + (c_snow * multiplier_snow);
-  // console.log("equation:" + c_at + "*" + multiplier_at + "+" +c_rain + "*" + multiplier_rain + c_snow + "*"  + multiplier_snow);
-  // console.log(19000, weather_score2);
+  console.log("equation:" + c_at + "*" + multiplier_at + "+" +c_rain + "*" + multiplier_rain + c_snow + "*"  + multiplier_snow);
+  console.log(19000, weather_score2);
 
   let total_score = (weather_score2 * Math.pow(2, o_w)) + (c_emp * Math.pow(2, o_emp)) + (c_tui * Math.pow(2, o_tui)) + (c_col * Math.pow(2, o_col)) + (c_rank * Math.pow(2, o_rank));
-  // console.log(20000, total_score);
+  console.log(20000, total_score);
 
   var arr2=[];
   let schoolNames = [];
@@ -223,8 +223,11 @@ app.get('/api/field_study', (req, res) => {
 
 app.get('/api/profile', (req, res) => {
 
-    db.all(`SELECT profile.*, level_education.full_name AS ledu, field_study.full_name AS fs FROM profile LEFT JOIN level_education ON profile.lvl_educ = level_education.short LEFT JOIN field_study ON profile.field_study = field_study.short WHERE level_education.short=profile.lvl_educ AND field_study.short=profile.field_study AND
-    profile.id=${app.locals.user.id};`, function(err, rows)
+    db.all(`SELECT profile_advanced.*, level_education.full_name AS ledu, field_study.full_name AS fs FROM profile_advanced LEFT JOIN level_education
+ON profile_advanced.lvl_educ = level_education.short
+LEFT JOIN field_study ON profile_advanced.field_of_study = field_study.short
+WHERE level_education.short=profile_advanced.lvl_educ AND field_study.short=profile_advanced.field_of_study AND
+    profile_advanced.email='${app.locals.user.email}';`, function(err, rows)
         {
           res.json(rows);
         });
@@ -234,10 +237,11 @@ app.get('/api/profile', (req, res) => {
 //             COMPLETION Component
 // ====================================================
 app.get('/api/profileCompletion', (req, res) => {
-    db.all("SELECT * FROM profileCompletion", function(err, rows)
-        {
-          res.json(rows);
-        });
+db.all(`SELECT * FROM profile_advanced where email = '${app.locals.user.email}'; `, function(err, rows)
+    {
+      console.log(101010, rows);
+      res.json(rows);
+    });
 });
 
 
@@ -330,7 +334,7 @@ app.get('/api/snowfall/:province/:type', (req, res) => {
     // TABLE in all LOWER CASE
     //req.params.table = req.params.table.toLowerCase();
 
-    // console.log(req.params.type);
+    console.log(req.params.type);
 
     db.all(`SELECT jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec FROM weather WHERE type = '${req.params.type}' AND province='${req.params.province}';`, function(err,rows)
     {
@@ -348,13 +352,13 @@ app.get('/api/snowfall/:province/:type', (req, res) => {
 //               GETTING EMPLOYMENT DATA FOR CHART
 // ====================================================
 app.post('/api/employment', (req, res) => {
-    // console.log(req.body.province);
+    console.log(req.body.province);
     let sql = `SELECT rate from employment WHERE province = '${req.body.province}';`
-    // console.log(sql);
+    console.log(sql);
 
     db.all(`SELECT rate from employment WHERE province = '${req.body.province}';`, function(err,rows)
     {
-          // console.log(10099, rows);
+          console.log(10099, rows);
           res.json(rows);
     });
 });
@@ -365,15 +369,49 @@ app.post('/api/employment', (req, res) => {
 //               GETTING COST OF LIVING DATA FOR CHART
 // ====================================================
 app.post('/api/costOfLivingGraph', (req, res) => {
-    // console.log(req.body.province);
+    console.log(req.body.province);
     let sql = `SELECT food, house, house_operations, furniture, clothing, transport, health, personal_care, recreation, education, reading, tobacco_alcohol, games, miscellaneous, gifts FROM cost_living WHERE province = '${req.body.province}';`
-    // console.log(sql);
+    console.log(sql);
 
     db.all(sql, function(err,rows)
     {
-          // console.log(10099, rows);
+          console.log(10099, rows);
           res.json(rows);
     });
+});
+
+/////////////////////////////////END////////////////////
+
+// ====================================================
+//               GETTING TuitionData FOR CHART
+// ====================================================
+app.post('/api/TuitionGraph', (req, res) => {
+    console.log(req.body.province);
+    let sql = `SELECT  level, average from tuition WHERE province = '${req.body.province}';`
+    console.log(sql);
+
+    db.all(sql, function(err,rows)
+    {
+          //console.log(10099, rows);
+          res.json(rows);
+    });
+});
+
+/////////////////////////////////END////////////////////
+
+// ====================================================
+//               GETTING TuitionData FOR CHART
+// ====================================================
+app.post('/api/SchoolRankGraph', (req, res) => {
+
+    let sql = `SELECT institution_name, ca_ranking FROM institute_rank where two_letter = '${req.body.province}' ORDER BY ca_ranking asc LIMIT 5;`
+    console.log(sql);
+
+    db.all(sql, function(err,rows)
+    {
+        res.json(rows);
+    });
+
 });
 
 /////////////////////////////////END////////////////////
@@ -382,16 +420,16 @@ app.post('/api/costOfLivingGraph', (req, res) => {
 //              STOREDATA FROM SURVEY 1 Component
 // ====================================================
 app.post('/api/storeUserDataSurvey1', (req, res) => {
-    // console.log(11111, req.body.at);
+    console.log(11111, req.body.at);
     let at = parseFloat(req.body.at);
     let snow = parseFloat(req.body.snow);
     let rain = parseFloat(req.body.rain);
 
-    // console.log(at, snow, rain);
+    console.log(at, snow, rain);
 
     db.run(`UPDATE profile_advanced set c_at = ${at}, c_snow = ${snow}, c_rain = ${rain} WHERE email = '${app.locals.user.email}';`);
 
-    // console.log(111112, at);
+    console.log(111112, at);
     res.json(at);
 });
 
@@ -403,10 +441,10 @@ app.post('/api/storeUserDataSurvey2', (req, res) => {
     let o_snow = parseFloat(req.body.o_snow);
     let o_rain = parseFloat(req.body.o_rain);
 
-    // console.log(o_at, o_snow, o_rain);
+    console.log(o_at, o_snow, o_rain);
     db.run(`UPDATE profile_advanced set o_at = ${o_at}, o_snow = ${o_snow}, o_rain = ${o_rain} WHERE email = '${app.locals.user.email}';`);
 
-    // console.log(111112, o_at);
+    console.log(111112, o_at);
     res.json(o_at);
 
 });
@@ -420,7 +458,7 @@ app.post('/api/storeUserDataSurvey3', (req, res) => {
     let c_rank = parseFloat(req.body.rank);
     let c_emp = parseFloat(req.body.emp);
 
-    // console.log(c_tui, c_col, c_rank, c_emp);
+    console.log(c_tui, c_col, c_rank, c_emp);
     db.run(`UPDATE profile_advanced set c_tui = ${c_tui}, c_col = ${c_col}, c_rank = ${c_rank}, c_emp = ${c_emp} WHERE email = '${app.locals.user.email}';`);
     res.json(c_tui);
 
@@ -437,7 +475,7 @@ app.post('/api/storeUserDataSurvey4', (req, res) => {
     let o_rank = parseFloat(req.body.o_rank);
     let o_emp = parseFloat(req.body.o_emp);
 
-    // console.log(o_w, o_tui, o_col, o_rank, o_emp);
+    console.log(o_w, o_tui, o_col, o_rank, o_emp);
     db.run(`UPDATE profile_advanced set o_w = ${o_w}, o_tui = ${o_tui}, o_col = ${o_col}, o_rank = ${o_rank}, o_emp = ${o_emp} WHERE email = '${app.locals.user.email}';`);
     res.json(o_w);
 
@@ -445,36 +483,74 @@ app.post('/api/storeUserDataSurvey4', (req, res) => {
 });
 
 // ====================================================
+// LOGIN LoginAction
+// ====================================================
+app.post('/api/LoginAction', (req, res) => {
+
+    let email = (req.body.email);
+    let sql = `SELECT COUNT(*) as count FROM profile_advanced WHERE email='${email}';`;
+
+    db.all(sql, function(err,rows)
+    {
+        if(rows[0].count === 1)
+        {
+          app.locals.user.email = email;
+        }
+        res.json(rows);
+    });
+
+});
+
+// ====================================================
+// REGISTER RegisterAction
+// ====================================================
+app.post('/api/RegisterAction', (req, res) => {
+
+    let email = req.body.email;
+    let firstName = req.body.firstName;
+    let lastName = req.body.lastName;
+    let fieldOfStudy = req.body.fieldOfStudy;
+    let levelOfEducation = req.body.levelOfEducation;
+
+    let sql = `INSERT INTO profile_advanced (email, first_name, last_name, field_of_study, lvl_educ)
+VALUES ('${email}', '${firstName}', '${lastName}', '${fieldOfStudy}', '${levelOfEducation}');`;
+
+    db.run(sql);
+    app.locals.user.email = email;
+    res.json(1);
+});
+
+// ====================================================
 //              WEATHER Component
 // ====================================================
-// app.locals.weather = {
-//     datasets: [{
-//             label: '',
-//             data: []
-//       }]
-//   }
+app.locals.weather = {
+    datasets: [{
+            label: '',
+            data: []
+      }]
+  }
 
 app.get('/api/weather/:province', (req, res) => {
     let rows = "";
-    // console.log(req.params);
+    console.log(req.params);
     // PROVINCE in all CAPITAL LETTERS
     req.params.province = req.params.province.toUpperCase();
 
-    // console.log(req.params);
+    console.log(req.params);
     db.all(`SELECT type AS label, jan AS Jan, feb as Feb, mar AS Mar, apr AS Apr, may AS May, jun AS Jun, jul AS Jul, aug as Aug, sep AS Sep, oct AS Oct, nov AS Nov, dec AS Dec FROM weather WHERE province='${req.params.province}' AND (type='snow' OR type = 'rain' OR type='temp_avg');`, function(err,rows)
             {
-                // console.log('WEATHER SERVER > ', rows, err);
-                // for (let j=0; j<3; j++ ){
-                //       for(let i in rows[j]){
-                //           if (i == 'label') {
-                //             app.locals.weather[j].datasets.label = i.value;
-                //           }
-                //           else {
-                //             app.locals.weather[j].datasets.data.push(i.value);
-                //           }
-                //       }
-                //   }
-                  // console.log(app.locals.weather);
+                //console.log('WEATHER SERVER > ', rows, err);
+                for (let j=0; j<3; j++ ){
+                      for(let i in rows[j]){
+                          if (i == 'label') {
+                            app.locals.weather[j].datasets.label = i.value;
+                          }
+                          else {
+                            app.locals.weather[j].datasets.data.push(i.value);
+                          }
+                      }
+                  }
+                  console.log(app.locals.weather);
                   res.json(rows);
 
             });
@@ -485,4 +561,3 @@ app.get('/api/weather/:province', (req, res) => {
 // ====================================================
 const port = 5000;
 app.listen(port, () => `Server running on port ${port}`);
-console.log("Server reached .... Ok!")

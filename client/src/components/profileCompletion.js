@@ -13,7 +13,7 @@ class ProfileCompletion extends Component {
         labels: ["Profile"],
         datasets: [{
         label: false,
-        backgroundColor: ['rgb(255, 255, 132)','rgb(255, 108, 132)'],
+        backgroundColor: ['rgb(255, 255, 255)','rgb(255, 23, 23)'],
         borderColor: 'rgb(255, 255, 255)',
         data: []
         }]
@@ -21,57 +21,19 @@ class ProfileCompletion extends Component {
 
       }
 
-     //  name: '',
-     // email: '',
-     // password: '',
-     // age: '',
-     // country: ''
 
     };
-
-    // this.onChange = {
-    //     name: this.handleChange.bind(this, 'name'),
-    //     email: this.handleChange.bind(this, 'email'),
-    //     password: this.handleChange.bind(this, 'password'),
-    //     age: this.handleChange.bind(this, 'age'),
-    //       country: this.handleChange.bind(this, 'country')
-    //
-    //
-    //   }
-    //
-
-
-  }
-
-
-
-//   handleChange(name ,event) {
-//     this.setState({ [name]: event.target.value });
-// var total1 = 0 ;
-//
-//     if(this.state.name != null ){
-//       total1 =   total1 + 25;
-//
-// this.state.total = total1;
-//       console.log(400,  this.state.total);
-//       this.state.chartData.datasets[0].data.push(70,30);
-//       //console.log(405, this.state.chartData);
-//     }
-//
-//   }
-
-
-
+}
     componentDidMount() {
       fetch('/api/profileCompletion')
         .then(res => { return res.json()})
         .then(profile => {
-          // console.log(100,profile[0].name);
-
-          if(profile[0].name){
-            this.state.total = this.state.total + 20;
-            // console.log(10,  this.state.total);
+          let total = 0;
+          if(profile[0].first_name)
+          {
+            total = total + 5;
           }
+<<<<<<< HEAD
 
           if(profile[0].email){
             this.state.total = this.state.total + 20;
@@ -84,11 +46,108 @@ class ProfileCompletion extends Component {
           }
           if(profile[0].country){
             this.state.total = this.state.total + 20;
+=======
+          if(profile[0].email)
+          {
+            total = total + 5;
+          }
+          if(profile[0].last_name)
+          {
+            total = total + 5;
+          }
+          if(profile[0].field_of_study)
+          {
+            total = total + 5;
+          }
+          if(profile[0].lvl_educ)
+          {
+            total = total + 5;
+          }
+          if(profile[0].c_at)
+          {
+            total = total + 5;
+          }
+          if(profile[0].c_rain)
+          {
+            total = total + 5;
+          }
+          if(profile[0].c_snow)
+          {
+            total = total + 5;
+          }
+          if(profile[0].c_emp)
+          {
+            total = total + 5;
+          }
+          if(profile[0].c_tui)
+          {
+            total = total + 5;
+          }
+          if(profile[0].c_col)
+          {
+            total = total + 5;
+          }
+          if(profile[0].c_rank)
+          {
+            total = total + 5;
+          }
+          if(profile[0].o_rank)
+          {
+            total = total + 5;
+          }
+          if(profile[0].o_tui)
+          {
+            total = total + 5;
+          }
+          if(profile[0].o_emp)
+          {
+            total = total + 5;
+          }
+          if(profile[0].o_col)
+          {
+            total = total + 5;
+          }
+          if(profile[0].o_w)
+          {
+            total = total + 5;
+          }
+          if(profile[0].o_at)
+          {
+            total = total + 5;
+          }
+          if(profile[0].o_rain)
+          {
+            total = total + 5;
+          }
+          if(profile[0].o_snow)
+          {
+            total = total + 5;
           }
 
+
+
+          let newChartData =
+          {
+              labels: ["Profile"],
+              datasets: [{
+              label: false,
+              backgroundColor: ['green','rgb(0,0,0)'],
+              borderColor: 'rgb(255, 255, 255)',
+              data: []
+              }]
+>>>>>>> ab97acfcac2c1085a06ac9ae00ab49484c8836e6
+          }
+   newChartData.datasets[0].data.push(total,(100 - total));
+
+   this.setState({chartData: newChartData});
+
+<<<<<<< HEAD
 // console.log(11,  this.state.total);
   this.state.chartData.datasets[0].data.push(this.state.total,(100 - this.state.total));
           this.setState({profile})
+=======
+
+>>>>>>> ab97acfcac2c1085a06ac9ae00ab49484c8836e6
       });
     }
 
@@ -98,39 +157,6 @@ class ProfileCompletion extends Component {
   render() {
     return (
       <div>
-
-
-        {/* <form>
-          <label>
-
-            Name:
-
-            <input type="text" name="name" value={this.state.name}  onChange={this.onChange.name}
-              />
-          </label>
-          <label>
-
-            Email:
-            <input type="text" name="email" value={this.state.email}  onChange={this.onChange.email}/>
-          </label>
-          <label>
-            Password:
-            <input type="text" name="password" value={this.state.password} onChange={this.onChange.password}/>
-          </label>
-          <label>
-            Age:
-            <input type="text" name="age" value={this.state.age}  onChange={this.onChange.age}/>
-          </label>
-          <label>
-            Country:
-            <input type="text" name="country" value={this.state.country}  onChange={this.onChange.country} />
-          </label>
-          <button type="button" onClick={this.handleLogin}>Login</button>
-        </form> */}
-
-
-
-
 
         <div className = "profileCompletion">
             <RC2
