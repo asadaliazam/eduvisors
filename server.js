@@ -248,16 +248,28 @@ db.all(`SELECT * FROM profile_advanced where email = '${app.locals.user.email}';
 // ====================================================
 //             SCHOOL Component
 // ====================================================
+var name;
+app.locals.sName
 
 app.post('/api/schoolProf', (req, res) => {
-    var id = req.body.schoolID;
+   var name_obj= req.body;
+   var name_school = name_obj.schoolID;
+   id = name_school;
+   console.log(78787878, id);
+   // console.log('you posted to /signup'); //appears in console as expected
+   // res.json({greeting: "hello"}); //this is sent back to the browser and i can access it
 
-    app.get('/api/signup', (req, res) => {
-          db.all(`SELECT institute_rank.* FROM institute_rank LEFT JOIN school_rank_test ON school_rank_test.name = institute_rank.institution_name WHERE school_rank_test.id='${id}';`, function(err, rows)
-          {
-            res.json(rows);
-          });
-    });  // end of SIGNUP
+
+
+         db.all(`SELECT institute_rank.* FROM institute_rank LEFT JOIN school_rank_test ON school_rank_test.name = institute_rank.institution_name WHERE school_rank_test.id='${id}';`, function(err, rows)
+         {
+           console.log(36363636,id);
+           //console.log(rows);
+           app.locals.data = rows;
+           console.log(100,rows);
+           res.json(rows);
+         });
+   // end of SIGNUP
 
 });   // end of POST
 
