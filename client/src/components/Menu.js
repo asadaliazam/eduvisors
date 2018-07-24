@@ -1,20 +1,11 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect
-} from 'react-router-dom'
-import Main from './main';
-
+import Logo from'./logo.png';
+import {Link} from 'react-router-dom'
 
 class Menu extends Component {
   constructor() {
     super();
-    this.state = {
-
-    };
+    this.state = {};
   }
 
   render() {
@@ -22,30 +13,26 @@ class Menu extends Component {
       <div className = "Menu">
 
         <header className="header">
+              <div className = "left-side">
+                {/* <img src={require('../styles/logo.svg')}/> */}
+                <img src={Logo} alt="Eduvisors logo"/>
+                | Eduvisors
+              </div>
 
-          <div className = "left-side">
-            <img src={require('../styles/logo.svg')}/>
-            | Eduvisors
-          </div>
+              <div className = "right-side">
+                <nav>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contactus">Contact Us</a></li>
+                        <li><Link to="/HomeContent">Home</Link></li>
+                        <li><Link to="/survey">Survey</Link></li>
+                    </ul>
+                </nav>
+              </div>
 
-          <div className = "right-side">
-            <nav>
-              <ul>
-                <li> <a href="#">Home</a></li>
-                <li> <a href="#">About</a></li>
-                <li> <a href="#">Contact Us</a></li>
-                <Router>
-                <li><Link to="/HomeContent">Home</Link></li>
-              </Router>
-              </ul>
-            </nav>
-          </div>
-
-          <div className = "username">
-            <a href="#">Asad</a>
-          </div>
-
-
+              <div className = "username">
+                <a href="/profile">Asad</a>
+              </div>
         </header>
 
       </div>

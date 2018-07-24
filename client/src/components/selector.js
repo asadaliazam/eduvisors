@@ -21,7 +21,7 @@ class Selector extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Pick your favorite La Croix flavor:
+          Select here a Province to see data:
           <select value={this.state.value} onChange={this.handleChange}>
             <option value="BC">Grapefruit </option>
             <option value="MB">Lime</option>

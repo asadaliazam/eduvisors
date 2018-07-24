@@ -1,13 +1,7 @@
 import React, {Component} from 'react';
-import {render} from 'react-dom';
+// import {render} from 'react-dom';
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect
-} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 const SortableItem = SortableElement(({value}) => <li>{value}</li>);
@@ -197,13 +191,18 @@ class Survey4 extends Component {
   render() {
     return (
       <div className="surveyDiv survey4 sortable">
+        <p>Drag these itens, placing the topic with more relevance on the top of the list. Remember the answers you gave in the previous part of the survey.</p>
+
+        <br/>
       <SortableList items={this.state.items} onSortEnd={this.onSortEnd} />
 
+      <div className="surveyNav">
         <button className="btn" onClick={this.saveData.bind(this)} >
-            Save Responses
+            Save
           </button>
 
-          <p className="btn"><Link to="/engine">Next</Link></p>
+          <Link to="/engine"><p className="btn">Next</p></Link>
+        </div>
       </div>
     );
   }

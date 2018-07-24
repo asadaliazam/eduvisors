@@ -1,5 +1,14 @@
+/* EVERYTHING.CSS */
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700|Rubik:400,500,700|Source+Sans+Pro:400,700');
 
+:root{
+    --main-color: rgb(91, 101, 177);
+    --secondary-color: rgb(187, 191, 250);
+    --terceary-color: rgb(180, 180, 180);
+
+    /* --cinza-profile-color: rgb(96, 96, 96);
+    --cinza-header-color: rgb(74, 74, 74); */
+}
 
 body{
 
@@ -13,14 +22,7 @@ body{
   height: auto;
 }
 
-.HomePage-Content .Main-Menu .Menu .header
-{
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  background-color: purple;
-  justify-content: flex-end;
-  color: white;
-}
+
 
 .HomePage-Content .Main-Menu .Menu .header .username
 {
@@ -49,6 +51,7 @@ body{
 .HomePage-Content .Main-Menu .Menu header .username
 {
   padding: 1rem;
+  line-height: 3;
 
 }
 
@@ -59,15 +62,15 @@ body{
 
 .HomePage-Content .Main-Content
 {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  /* display: grid;
+  grid-template-columns: 1fr 3fr; */
 }
 
 .HomePage-Content .footer
 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: purple;
+  background-color: var(--main-color);
 
 }
 

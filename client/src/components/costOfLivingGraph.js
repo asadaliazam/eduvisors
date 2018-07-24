@@ -119,10 +119,8 @@ class CostOfLivingGraph extends Component {
 
 
     return (
-      <div>
+      <div className="costofliving graphContainer">
         <h2>Cost of living Graph</h2>
-        <p> {this.state.province}</p>
-
 
           <Bar
             data = {this.state.chartData}

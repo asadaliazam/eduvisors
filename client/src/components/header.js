@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../logo.png';
+// import Logo from'./logo.png';
 
 
 import {
@@ -29,7 +29,7 @@ class HeaderMenu extends Component {
     return (
       <div className="menu">
         <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
+            {/* <img src={Logo} className="App-logo" alt="logo" /> */}
             <h1 className="App-title">Eduvisors</h1>
             <nav className="container">
                 <ul>

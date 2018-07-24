@@ -1,0 +1,188 @@
+/* SAM.CSS */
+
+:root{
+    --main-color: rgb(91, 101, 177);
+    --secondary-color: rgb(187, 191, 250);
+    --terceary-color: rgb(180, 180, 180);
+
+    /* --cinza-profile-color: rgb(96, 96, 96);
+    --cinza-header-color: rgb(74, 74, 74); */
+}
+
+/* ==============================Homepage========================================== */
+/* ===============Header================ */
+.header .left-side,.header .right-side,.header .username{
+  /* background-color:#4A4A4A; */
+  background-color: var(--main-color);
+}
+
+/* ===============Main Content================ */
+/* .main-content  {
+  padding: 2%;
+  display:grid;
+  grid-template-columns: 5fr 3fr;
+  grid-template-rows: 2fr 1fr auto;
+  background-color: white;
+
+
+} */
+
+/* ===========Form(drop down)-App.js================ */
+/* .main-content form{
+  grid-column: 2/3;
+  grid-row: 1;
+  text-align:center;
+
+
+} */
+
+.main-content form select{
+  width:300px;
+  height:50px;
+  background-color: #5B62B9;
+  color: white;
+  padding: 16px;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+
+}
+
+
+.main-content form select:hover{
+  border: 2px solid #5B24B9;
+}
+
+
+.main-content form select option{
+text-align:center;
+}
+
+/* ============Information=============== */
+.information {
+margin:1%;
+
+}
+
+.information  ul{
+  color:black;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+}
+
+.information  ul li{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  list-style-type: none;
+  font-size: 1.5rem;
+  border-bottom: 2px solid black;
+  margin-bottom: 2%;
+}
+/* ============Charts=============== */
+/* .charts>div{
+  padding: 2%;
+  margin:4%;
+  background-color: #9C9EDE;
+} */
+.top-chart>div{
+  padding: 2%;
+  margin:2%;
+  background-color: #9C9EDE;
+}
+.down-charts>div{
+  padding: 2%;
+  margin:2%;
+  background-color: #9C9EDE;
+  border:15px solid #B5B5B5;
+}
+
+/* .charts>div:first-of-type{
+  background-color: #9C9EDE;
+  grid-column: 1/3;
+  grid-row: 1;
+  border:15px solid #B5B5B5;
+} */
+.top-chart{
+  background-color: #9C9EDE;
+  grid-column: 1/2;
+  grid-row: 1;
+  border:15px solid #B5B5B5;
+}
+
+/* .charts>div:nth-of-type(2){
+  grid-column: 1/3;
+  grid-row: 3;
+} */
+.down-charts div:first-of-type{
+  grid-column: 1/3;
+  grid-row: 2;
+}
+/* .charts .down-charts{
+  background-color:#5B62B9;
+
+} */
+
+
+/* ============Prfoile================ */
+.profile {
+  display:flex;
+  flex-flow: column-wrap;
+}
+
+
+.profile .user-info ul{
+  list-style-type: none;
+  display:flex;
+  flex-flow:column wrap;
+  justify-content: center;
+  /* padding: 0; */
+}
+
+.profile .user-info ul li{
+  list-style-type: none;
+}
+
+
+.logo {
+  height:50px;
+  width: auto;
+  margin:1%;
+}
+
+
+.profile h2{
+  text-align: center;
+  border-bottom: 2px solid black;
+  /* margin-left: 10%;
+  margin-righ: 10%; */
+}
+
+.profile h3{
+  text-align: center;
+}
+
+.profile .user-info ul li:nth-of-type(odd){
+  border-bottom: 1px solid white;
+  margin:2%;
+}
+.profile .user-info ul li:nth-of-type(even){
+  margin:3%;
+}
+
+/* .wrapper{
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;;
+} */
+/* ===============Header================ */
+/* ===============Header================ */
+.footer .left-side, .right-side, .username{
+  /* background-color:#3D3D3D; */
+  background-color:  var(--main-color);
+
+}

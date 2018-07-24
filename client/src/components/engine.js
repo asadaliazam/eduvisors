@@ -1,15 +1,5 @@
 import React, { Component } from 'react';
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect
-} from 'react-router-dom'
-
-// import SchoolProfile from './schoolProfile';
-import SchoolProf from './schoolProf';
+import {Link} from 'react-router-dom'
 
 class Engine extends Component {
   constructor() {
@@ -30,27 +20,30 @@ class Engine extends Component {
   render() {
     return (
       <div className = "score">
-        <h2>Score</h2>
+        <h3>Personalized <br/>Recommendations</h3>
               <table>
-                <tr>
-                  <th>Name</th>
-                  <th>Province</th>
-                  <th>Calculated</th>
-                  <th>Actual</th>
-                  <th>WebSite</th>
-                </tr>
-                  {this.state.schoolNames.map(schoolName =>
-                    <tr key={schoolName.toString()}> <td>{schoolName.institutionName}</td> <td>{schoolName.province}</td> <td>{schoolName.calculatedScore}</td> <td>{schoolName.actualScore}</td>
-                    <td><Link to={'/schoolProf/'+schoolName.schoolID}>click here</Link></td>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th className="col">Province</th>
+                        {/* <th>Calculated</th> */}
+                        {/*<th>Actual</th>*/}
+                        <th className="col">WebSite</th>
                     </tr>
+                </thead>
+                <tbody>
+                  {this.state.schoolNames.map(schoolName =>
+                    <tr key={schoolName.toString()}><td>{schoolName.institutionName}</td><td className="col">{schoolName.province}</td> {/*<td>{schoolName.calculatedScore}</td>*/} {/*<td>{schoolName.actualScore}</td>*/}<td className="col"><Link to={'/schoolProf/'+schoolName.schoolID}>click here</Link></td></tr>
                   )}
+                  </tbody>
               </table>
 
-              <p className="btn"><Link to="/main">Home</Link></p>
+              {/* <div className="surveyNav">
+                <Link to="/MainContent"><p className="btn">Home</p></Link>
+              </div> */}
       </div>
     );
   }
 }
 
 export default Engine;
-// <Route path="/schoolProfile/:institutionName" component={SchoolProfile} />
