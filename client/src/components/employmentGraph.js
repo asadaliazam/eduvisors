@@ -106,7 +106,9 @@ class EmploymentGraph extends Component {
               rotation: 1 * Math.PI,
               circumference: 1 * Math.PI  }}
             />
-
+            <div>
+              Employment Rate in Canada remained unchanged at 61.50 percent in June from 61.50 percent in May of 2018. Employment Rate in Canada averaged 60.31 percent from 1976 until 2018, reaching an all time high of 63.70 percent in February of 2008 and a record low of 56 percent in December of 1982.
+            </div>
       </div>
     );
   }

@@ -120,13 +120,16 @@ class CostOfLivingGraph extends Component {
 
     return (
       <div className="costofliving graphContainer">
-        <h2>Cost of living Graph</h2>
 
-          <Bar
+
+          <div className="Bar"><Bar
             data = {this.state.chartData}
             options={{ responsive: true,
                 }}
-            />
+            /></div>
+            <div>
+              <h2>Cost of living Graph</h2>
+              <p>Canada's after-tax monthly income is about $3,000 which totals around $36,000per year. The U.S. sits just below Canada at approximately $2,942 per month, or roughly $35,300 per year. The real difference is seen in the cost of living. ... Finally, clothing is more expensive in Canada than in the United States</p></div>
 
       </div>
     );
