@@ -33,20 +33,6 @@ class ProfileCompletion extends Component {
           {
             total = total + 5;
           }
-<<<<<<< HEAD
-
-          if(profile[0].email){
-            this.state.total = this.state.total + 20;
-          }
-          if(profile[0].password){
-            this.state.total = this.state.total + 20;
-          }
-          if(profile[0].age){
-            this.state.total = this.state.total + 20;
-          }
-          if(profile[0].country){
-            this.state.total = this.state.total + 20;
-=======
           if(profile[0].email)
           {
             total = total + 5;
@@ -135,19 +121,13 @@ class ProfileCompletion extends Component {
               borderColor: 'rgb(255, 255, 255)',
               data: []
               }]
->>>>>>> ab97acfcac2c1085a06ac9ae00ab49484c8836e6
           }
    newChartData.datasets[0].data.push(total,(100 - total));
 
    this.setState({chartData: newChartData});
 
-<<<<<<< HEAD
 // console.log(11,  this.state.total);
-  this.state.chartData.datasets[0].data.push(this.state.total,(100 - this.state.total));
-          this.setState({profile})
-=======
 
->>>>>>> ab97acfcac2c1085a06ac9ae00ab49484c8836e6
       });
     }
 
