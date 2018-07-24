@@ -75,8 +75,9 @@ margin:1%;
 }
 
 .graphContainer{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
+  display:flex;
+  flex-flow:row wrap;
+  margin:1%;
 }
 
 .down-charts>div{
