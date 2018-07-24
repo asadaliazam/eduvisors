@@ -127,7 +127,7 @@ class ProfileCompletion extends Component {
    this.setState({chartData: newChartData});
 
 // console.log(11,  this.state.total);
-
+  
       });
     }
 
