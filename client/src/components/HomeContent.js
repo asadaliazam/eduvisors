@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 import Snowfall from './snowfall';
 import EmploymentGraph from './employmentGraph';
 import CostOfLivingGraph from './costOfLivingGraph';
+import TuitionGraph from './TuitionGraph';
+import SchoolRankGraphList from './SchoolRankGraphList';
+// import Login from './Login'
+import LoginForm from './LoginForm'
+
 
 class HomeContent extends Component {
   constructor(props) {
@@ -53,6 +58,13 @@ class HomeContent extends Component {
                 <div>
                   <CostOfLivingGraph province={this.state.value} />
                 </div>
+                <div>
+                  <TuitionGraph province={this.state.value} />
+                </div>
+                <div>
+                  <SchoolRankGraphList province={this.state.value} />
+                </div>
+
             </div>
           </div>
         </div>

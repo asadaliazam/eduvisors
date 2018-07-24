@@ -223,8 +223,11 @@ app.get('/api/field_study', (req, res) => {
 
 app.get('/api/profile', (req, res) => {
 
-    db.all(`SELECT profile.*, level_education.full_name AS ledu, field_study.full_name AS fs FROM profile LEFT JOIN level_education ON profile.lvl_educ = level_education.short LEFT JOIN field_study ON profile.field_study = field_study.short WHERE level_education.short=profile.lvl_educ AND field_study.short=profile.field_study AND
-    profile.id=${app.locals.user.id};`, function(err, rows)
+    db.all(`SELECT profile_advanced.*, level_education.full_name AS ledu, field_study.full_name AS fs FROM profile_advanced LEFT JOIN level_education
+ON profile_advanced.lvl_educ = level_education.short
+LEFT JOIN field_study ON profile_advanced.field_of_study = field_study.short
+WHERE level_education.short=profile_advanced.lvl_educ AND field_study.short=profile_advanced.field_of_study AND
+    profile_advanced.email='${app.locals.user.email}';`, function(err, rows)
         {
           res.json(rows);
         });
@@ -234,8 +237,9 @@ app.get('/api/profile', (req, res) => {
 //             COMPLETION Component
 // ====================================================
 app.get('/api/profileCompletion', (req, res) => {
-db.all("SELECT * FROM profileCompletion", function(err, rows)
+db.all(`SELECT * FROM profile_advanced where email = '${app.locals.user.email}'; `, function(err, rows)
     {
+      console.log(101010, rows);
       res.json(rows);
     });
 });
@@ -379,6 +383,40 @@ app.post('/api/costOfLivingGraph', (req, res) => {
 /////////////////////////////////END////////////////////
 
 // ====================================================
+//               GETTING TuitionData FOR CHART
+// ====================================================
+app.post('/api/TuitionGraph', (req, res) => {
+    console.log(req.body.province);
+    let sql = `SELECT  level, average from tuition WHERE province = '${req.body.province}';`
+    console.log(sql);
+
+    db.all(sql, function(err,rows)
+    {
+          //console.log(10099, rows);
+          res.json(rows);
+    });
+});
+
+/////////////////////////////////END////////////////////
+
+// ====================================================
+//               GETTING TuitionData FOR CHART
+// ====================================================
+app.post('/api/SchoolRankGraph', (req, res) => {
+
+    let sql = `SELECT institution_name, ca_ranking FROM institute_rank where two_letter = '${req.body.province}' ORDER BY ca_ranking asc LIMIT 5;`
+    console.log(sql);
+
+    db.all(sql, function(err,rows)
+    {
+        res.json(rows);
+    });
+
+});
+
+/////////////////////////////////END////////////////////
+
+// ====================================================
 //              STOREDATA FROM SURVEY 1 Component
 // ====================================================
 app.post('/api/storeUserDataSurvey1', (req, res) => {
@@ -442,6 +480,44 @@ app.post('/api/storeUserDataSurvey4', (req, res) => {
     res.json(o_w);
 
 
+});
+
+// ====================================================
+// LOGIN LoginAction
+// ====================================================
+app.post('/api/LoginAction', (req, res) => {
+
+    let email = (req.body.email);
+    let sql = `SELECT COUNT(*) as count FROM profile_advanced WHERE email='${email}';`;
+
+    db.all(sql, function(err,rows)
+    {
+        if(rows[0].count === 1)
+        {
+          app.locals.user.email = email;
+        }
+        res.json(rows);
+    });
+
+});
+
+// ====================================================
+// REGISTER RegisterAction
+// ====================================================
+app.post('/api/RegisterAction', (req, res) => {
+
+    let email = req.body.email;
+    let firstName = req.body.firstName;
+    let lastName = req.body.lastName;
+    let fieldOfStudy = req.body.fieldOfStudy;
+    let levelOfEducation = req.body.levelOfEducation;
+
+    let sql = `INSERT INTO profile_advanced (email, first_name, last_name, field_of_study, lvl_educ)
+VALUES ('${email}', '${firstName}', '${lastName}', '${fieldOfStudy}', '${levelOfEducation}');`;
+
+    db.run(sql);
+    app.locals.user.email = email;
+    res.json(1);
 });
 
 // ====================================================
