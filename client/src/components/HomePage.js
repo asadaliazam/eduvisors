@@ -17,7 +17,7 @@ class HomePage extends Component {
   toggleProf = () => {
     const {showProfile} = this.state;
     this.setState({ showProfile: !showProfile});
-    console.log(showProfile);
+    console.log(1111, showProfile);
   }
 
   render() {
@@ -26,7 +26,7 @@ class HomePage extends Component {
 
       <div className="HomePage-Content">
 
-              <Menu toggleDiv={this.toggleProf}/>
+              <Menu toggleProf={this.toggleProf}/>
               <div className={"Main-Content"+(this.state.showProfile ? '' : ' hideProfile')}>
                   <Profile />
                   <HomeSwitch match={this.props.match}/>
