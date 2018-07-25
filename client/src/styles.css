@@ -400,6 +400,10 @@ margin:1%;
   margin-left: 2rem;
 }
 
+.schoolinfo a{
+  color: blue;
+}
+
 .schoolinfo li{
   list-style: none;
   line-height: 1.5;

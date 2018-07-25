@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import Logo from'./img/logo3.svg';
 import {Link} from 'react-router-dom'
 // ====================== FontAwesome Icons for Header Menu =============
@@ -11,7 +10,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
   class LongMenu extends React.Component {
     constructor(props)
     {
-      super (props),
+      super (props);
       this.state = {
         anchorEl: null,
       };
@@ -27,7 +26,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 
   render() {
-    const { anchorEl } = this.state;
+    // const { anchorEl } = this.state;
     return (
 
         <header className="header">
@@ -37,7 +36,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 
               <div className = "username">
                   <a href="/" className="desktop">Asad</a>
-                  <div className="mobile" id="user" onClick={this.props.toggleDiv}>
+                  <div className="mobile" id="user">
                       <FontAwesomeIcon icon={faUser} />
                 </div>
               </div>

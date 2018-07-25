@@ -31,7 +31,7 @@ class HomePage extends Component {
               <Menu toggleDiv={this.toggleProf}/>
               <div className={"Main-Content"+(this.state.showProfile ? '' : ' hideProfile')}>
                   <Profile />
-                  <MainContent/>
+                  <HomeSwitch match={this.props.match}/>
               </div>
               <Footer />
 
