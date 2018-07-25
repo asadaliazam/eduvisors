@@ -21,21 +21,13 @@ class Survey extends Component {
       isHiddenSurvey1: false
     }
   }
-  toggleHiddenSurvey1 () {
-    this.setState({
-      isHiddenSurvey1: !this.state.isHiddenSurvey1
-    })
-  }
+
 
 
   render() {
     return (
       <div>
-
-        {!this.state.isHiddenSurvey1 && <Survey1 />}
-        <button onClick={this.toggleHiddenSurvey1.bind(this)} >
-            Next
-          </button>
+          <Survey1/>
           <Survey2 />
           <Survey3 />
           <Survey4 />

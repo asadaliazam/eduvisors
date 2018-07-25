@@ -33,7 +33,7 @@ class Engine extends Component {
                 </thead>
                 <tbody>
                   {this.state.schoolNames.map(schoolName =>
-                    <tr key={schoolName.toString()}><td>{schoolName.institutionName}</td><td className="col">{schoolName.province}</td> {/*<td>{schoolName.calculatedScore}</td>*/} {/*<td>{schoolName.actualScore}</td>*/}<td className="col"><Link to={'/schoolProf/'+schoolName.schoolID}>click here</Link></td></tr>
+                    <tr key={schoolName.toString()}><td>{schoolName.institutionName}</td><td className="col">{schoolName.province}</td> {/*<td>{schoolName.calculatedScore}</td>*/} {/*<td>{schoolName.actualScore}</td>*/}<td className="col"><Link to={'/HomePage/schoolProf/'+schoolName.schoolID}>click here</Link></td></tr>
                   )}
                   </tbody>
               </table>

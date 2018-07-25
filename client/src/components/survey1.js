@@ -116,7 +116,7 @@ class Survey1 extends Component {
                       Save
                   </button>
 
-                  <Link to="/survey2"><p className="btn">Next</p></Link>
+                  <Link to="/HomePage/survey2"><p className="btn">Next</p></Link>
             </div>
 
       </div>

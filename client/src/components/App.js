@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import HomePage from './HomePage';
 import { BrowserRouter as Router} from 'react-router-dom'
+import AllRoutes from './AllRoutes';
+
+
 
 class App extends Component {
 
@@ -8,7 +10,7 @@ class App extends Component {
     return (
 
 <Router>
-        <HomePage />
+        <AllRoutes />
 </Router>
     );
   }

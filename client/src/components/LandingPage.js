@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Switch} from 'react-router';
 
-import LoginForm from './LoginForm'
-import RegisterForm from './RegisterForm'
+import LoginForm from './LoginForm';
+import RegisterForm from './RegisterForm';
+
+
 
 
 
@@ -13,22 +16,16 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <Router>
-<div>
-  <ul>
-    <li>
-      <Link to="/login">Login</Link>
-    </li>
-    <li>
-      <Link to="/register">Register</Link>
-    </li>
-
-  </ul>
-
-  <Route path="/login" component={LoginForm} />
-  <Route path="/register" component={RegisterForm} />
-</div>
-</Router>
+          <div>
+            <ul>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+              <li>
+                <Link to="/register">Register</Link>
+              </li>
+            </ul>
+          </div>
     );
   }
 }

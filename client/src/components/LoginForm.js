@@ -4,6 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import HomePage from './HomePage';
+import { Redirect } from 'react-router-dom';
+
 
 
 
@@ -72,59 +74,33 @@ class LoginForm extends React.Component {
 
   render() {
     const { classes } = this.props;
-    let loginButton;
-    let loginView = 1;
-if (this.state.response === 1)
-{
-  loginButton = <HomePage />;
-  loginView = 0;
+    if(this.state.response === 1)
+    {
+      console.log(this.state.response);
+      return <Redirect to='./HomePage' />
+    }
 
-}
-else if (this.state.response === 0)
-{
-  loginButton = 'Wrong Username or password';
-}
+    return(
 
-let loginForm;
-
-if (loginView === 1)
-{
-  loginForm = (
-    <form onSubmit = {this.handleSubmit} className={classes.container} noValidate autoComplete="off">
-      <TextField
-        id="email"
-        label="Email"
-        type="email"
-        className={classes.textField}
-        value={this.state.email}
-        onChange={this.handleChange('email')}
-        margin="normal"
-      />
-      <Button  type="submit" variant="contained" color="primary" className={classes.button}>
-      Login
-    </Button>
-
-
-    </form>
-  )
-}
-
-else if (loginView === 1)
-{
-  loginForm = null;
-}
+        <form onSubmit = {this.handleSubmit} className={classes.container} noValidate autoComplete="off">
+          <TextField
+            id="email"
+            label="Email"
+            type="email"
+            className={classes.textField}
+            value={this.state.email}
+            onChange={this.handleChange('email')}
+            margin="normal"
+          />
+          <Button  type="submit" variant="contained" color="primary" className={classes.button}>
+          Login
+        </Button>
 
 
 
-    return (
-      <div>
-
-      {loginForm}
-      {loginButton}
-
-</div>
-    );
-  }
+        </form>
+    )
+    }
 }
 
 LoginForm.propTypes = {
