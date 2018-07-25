@@ -44,8 +44,15 @@ body {
   display: contents;
 } */
 
-.HomePage-Content .desktop,
-.HomePage-Content .profile{
+.HomePage-Content .profile {
+  display: block;
+}
+.HomePage-Content .hideProfile .profile{
+  display: none;
+}
+
+
+.HomePage-Content .desktop{
   display: none;
   font-size: 1rem;
 }
@@ -424,8 +431,9 @@ body {
   }
 
   .HomePage-Content .desktop,
-  .HomePage-Content .profile{
-    display: contents;
+  .HomePage-Content .profile,
+  .HomePage-Content .hideProfile .profile {
+    display: block;
   }
 
   .HomePage-Content .mobile{

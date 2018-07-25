@@ -10,7 +10,16 @@ class HomePage extends Component {
   constructor() {
     super();
     this.state = {
+        showProfile: true
     };
+    this.toggleProf = this.toggleProf.bind(this)
+
+  }
+
+  toggleProf = () => {
+    const {showProfile} = this.state;
+    this.setState({ showProfile: !showProfile});
+    console.log(showProfile);
   }
 
 
@@ -20,9 +29,9 @@ class HomePage extends Component {
 
       <div className="HomePage-Content">
 
-              <Menu/>
-              <div className = "Main-Content">
-                  <Profile/>
+              <Menu toggleDiv={this.toggleProf}/>
+              <div className={"Main-Content"+(this.state.showProfile ? '' : ' hideProfile')}>
+                  <Profile />
                   <MainContent/>
               </div>
               <Footer />
