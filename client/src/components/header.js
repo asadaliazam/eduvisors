@@ -14,7 +14,6 @@ import Costs from './cost';
 import Profile from './profile';
 import Engine from './engine';
 import Chart from './chart';
-import Register from './form';
 import ProfileCompletion from './profileCompletion';
 import SchoolProf from './schoolProf';
 import CostLiving from './cost_living';

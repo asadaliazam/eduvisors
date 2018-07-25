@@ -23,112 +23,126 @@ class ProfileCompletion extends Component {
 
 
     };
+    this.fetchFromDatabase = this.fetchFromDatabase.bind(this);
 }
-    componentDidMount() {
-      fetch('/api/profileCompletion')
-        .then(res => { return res.json()})
-        .then(profile => {
-          let total = 0;
-          if(profile[0].first_name)
-          {
-            total = total + 5;
-          }
-          if(profile[0].email)
-          {
-            total = total + 5;
-          }
-          if(profile[0].last_name)
-          {
-            total = total + 5;
-          }
-          if(profile[0].field_of_study)
-          {
-            total = total + 5;
-          }
-          if(profile[0].lvl_educ)
-          {
-            total = total + 5;
-          }
-          if(profile[0].c_at)
-          {
-            total = total + 5;
-          }
-          if(profile[0].c_rain)
-          {
-            total = total + 5;
-          }
-          if(profile[0].c_snow)
-          {
-            total = total + 5;
-          }
-          if(profile[0].c_emp)
-          {
-            total = total + 5;
-          }
-          if(profile[0].c_tui)
-          {
-            total = total + 5;
-          }
-          if(profile[0].c_col)
-          {
-            total = total + 5;
-          }
-          if(profile[0].c_rank)
-          {
-            total = total + 5;
-          }
-          if(profile[0].o_rank)
-          {
-            total = total + 5;
-          }
-          if(profile[0].o_tui)
-          {
-            total = total + 5;
-          }
-          if(profile[0].o_emp)
-          {
-            total = total + 5;
-          }
-          if(profile[0].o_col)
-          {
-            total = total + 5;
-          }
-          if(profile[0].o_w)
-          {
-            total = total + 5;
-          }
-          if(profile[0].o_at)
-          {
-            total = total + 5;
-          }
-          if(profile[0].o_rain)
-          {
-            total = total + 5;
-          }
-          if(profile[0].o_snow)
-          {
-            total = total + 5;
-          }
+
+componentWillReceiveProps(randomVariable)
+{
+  this.fetchFromDatabase();
+}
+
+fetchFromDatabase()
+{
+  fetch('/api/profileCompletion')
+    .then(res => { return res.json()})
+    .then(profile => {
+      let total = 0;
+      if(profile[0].first_name)
+      {
+        total = total + 5;
+      }
+      if(profile[0].email)
+      {
+        total = total + 5;
+      }
+      if(profile[0].last_name)
+      {
+        total = total + 5;
+      }
+      if(profile[0].field_of_study)
+      {
+        total = total + 5;
+      }
+      if(profile[0].lvl_educ)
+      {
+        total = total + 5;
+      }
+      if(profile[0].c_at)
+      {
+        total = total + 5;
+      }
+      if(profile[0].c_rain)
+      {
+        total = total + 5;
+      }
+      if(profile[0].c_snow)
+      {
+        total = total + 5;
+      }
+      if(profile[0].c_emp)
+      {
+        total = total + 5;
+      }
+      if(profile[0].c_tui)
+      {
+        total = total + 5;
+      }
+      if(profile[0].c_col)
+      {
+        total = total + 5;
+      }
+      if(profile[0].c_rank)
+      {
+        total = total + 5;
+      }
+      if(profile[0].o_rank)
+      {
+        total = total + 5;
+      }
+      if(profile[0].o_tui)
+      {
+        total = total + 5;
+      }
+      if(profile[0].o_emp)
+      {
+        total = total + 5;
+      }
+      if(profile[0].o_col)
+      {
+        total = total + 5;
+      }
+      if(profile[0].o_w)
+      {
+        total = total + 5;
+      }
+      if(profile[0].o_at)
+      {
+        total = total + 5;
+      }
+      if(profile[0].o_rain)
+      {
+        total = total + 5;
+      }
+      if(profile[0].o_snow)
+      {
+        total = total + 5;
+      }
 
 
 
-          let newChartData =
-          {
-              labels: ["Profile"],
-              datasets: [{
-              label: false,
-              backgroundColor: ['green','rgb(0,0,0)'],
-              borderColor: 'rgb(255, 255, 255)',
-              data: []
-              }]
-          }
-   newChartData.datasets[0].data.push(total,(100 - total));
+      let newChartData =
+      {
+          labels: ["Profile"],
+          datasets: [{
+          label: false,
+          backgroundColor: ['green','rgb(0,0,0)'],
+          borderColor: 'rgb(255, 255, 255)',
+          data: []
+          }]
+      }
+newChartData.datasets[0].data.push(total,(100 - total));
 
-   this.setState({chartData: newChartData});
+
+this.setState({chartData: newChartData});
 
 // console.log(11,  this.state.total);
-  
-      });
+
+  });
+}
+
+    componentDidMount()
+    {
+      this.fetchFromDatabase();
     }
 
 

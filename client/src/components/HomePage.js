@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Menu from './Menu.js';
 import Profile from './profile.js';
-import MainContent from './MainContent.js';
 import Footer from './Footer.js';
-
-
+import HomeContent from './HomeContent.js';
+import HomeSwitch from './HomeSwitch.js';
+import {BrowserRouter as Router } from 'react-router-dom';
 
 class HomePage extends Component {
   constructor() {
@@ -13,22 +13,18 @@ class HomePage extends Component {
     };
   }
 
-
   render() {
     return (
-
-
-      <div className="HomePage-Content">
-
-              <Menu/>
-              <div className = "Main-Content">
-                  <Profile/>
-                  <MainContent/>
-              </div>
-              <Footer />
-
-      </div>
-
+      <Router>
+        <div className="HomePage-Content">
+          <Menu/>
+          <div className = "Main-Content">
+            <Profile/>
+            <HomeSwitch match={this.props.match} />
+          </div>
+          <Footer />
+        </div>
+      </Router>
     );
   }
 }
