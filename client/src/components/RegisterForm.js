@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import HomePage from './HomePage';
+import { Redirect } from 'react-router-dom';
 
 
 const styles = theme => ({
@@ -78,95 +79,66 @@ class RegisterForm extends React.Component {
 
   render() {
     const { classes } = this.props;
-    let loginButton;
-    let loginView = 1;
-if (this.state.response === 1)
-{
-  loginButton = <HomePage />;
-  loginView = 0;
+    if(this.state.response === 1)
+    {
+      console.log(this.state.response);
+      return <Redirect to='./HomePage' />
+    }
 
-}
-else if (this.state.response === 0)
-{
-  loginButton = 'Wrong Username or password';
-}
+    return(
 
-let loginForm;
+      <form onSubmit = {this.handleSubmit} className={classes.container} noValidate autoComplete="off">
+        <TextField
+          id="email"
+          label="Email"
+          type="email"
+          className={classes.textField}
+          value={this.state.email}
+          onChange={this.handleChange('email')}
+          margin="normal"
+        />
+        <TextField
+          id="firstName"
+          label="First Name"
+          type="text"
+          className={classes.textField}
+          value={this.state.firstName}
+          onChange={this.handleChange('firstName')}
+          margin="normal"
+        />
+        <TextField
+          id="lastName"
+          label="Last Name"
+          type="text"
+          className={classes.textField}
+          value={this.state.lastName}
+          onChange={this.handleChange('lastName')}
+          margin="normal"
+        />
+        <TextField
+          id="levelOfEducation"
+          label="Level Of Education"
+          type="text"
+          className={classes.textField}
+          value={this.state.levelOfEducation}
+          onChange={this.handleChange('levelOfEducation')}
+          margin="normal"
+        />
+        <TextField
+          id="fieldOfStudy"
+          label="Field of Study"
+          type="text"
+          className={classes.textField}
+          value={this.state.fieldOfStudy}
+          onChange={this.handleChange('fieldOfStudy')}
+          margin="normal"
+        />
+        <Button  type="submit" variant="contained" color="primary" className={classes.button}>
+        Register
+      </Button>
 
-if (loginView === 1)
-{
-  loginForm = (
-    <form onSubmit = {this.handleSubmit} className={classes.container} noValidate autoComplete="off">
-      <TextField
-        id="email"
-        label="Email"
-        type="email"
-        className={classes.textField}
-        value={this.state.email}
-        onChange={this.handleChange('email')}
-        margin="normal"
-      />
-      <TextField
-        id="firstName"
-        label="First Name"
-        type="text"
-        className={classes.textField}
-        value={this.state.firstName}
-        onChange={this.handleChange('firstName')}
-        margin="normal"
-      />
-      <TextField
-        id="lastName"
-        label="Last Name"
-        type="text"
-        className={classes.textField}
-        value={this.state.lastName}
-        onChange={this.handleChange('lastName')}
-        margin="normal"
-      />
-      <TextField
-        id="levelOfEducation"
-        label="Level Of Education"
-        type="text"
-        className={classes.textField}
-        value={this.state.levelOfEducation}
-        onChange={this.handleChange('levelOfEducation')}
-        margin="normal"
-      />
-      <TextField
-        id="fieldOfStudy"
-        label="Field of Study"
-        type="text"
-        className={classes.textField}
-        value={this.state.fieldOfStudy}
-        onChange={this.handleChange('fieldOfStudy')}
-        margin="normal"
-      />
-      <Button  type="submit" variant="contained" color="primary" className={classes.button}>
-      Register
-    </Button>
-
-    </form>
-  )
-}
-
-else if (loginView === 1)
-{
-  loginForm = null;
-}
-
-
-
-
-    return (
-
-      <div>
-
-      {loginForm}
-      {loginButton}
-
-    </div>
-    );
+      </form>
+    )
   }
 }
 

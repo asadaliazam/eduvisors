@@ -103,10 +103,10 @@ const ITEM_HEIGHT = 48;
               <div className = "right-side">
                 <nav className="desktop">
                     <ul>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/contactus">Contact Us</a></li>
-                        <li><Link to="/HomeContent">Home</Link></li>
-                        <li><Link to="/survey">Survey</Link></li>
+                        <li><a href="/HomePage/about">About</a></li>
+                        <li><a href="/HomePage/contactus">Contact Us</a></li>
+                        <li><Link to="/HomePage">Home</Link></li>
+                        <li><Link to="/HomePage/survey">Survey</Link></li>
                     </ul>
                 </nav>
                 <div className="mobile" id="bars">
