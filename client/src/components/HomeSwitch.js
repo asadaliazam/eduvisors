@@ -7,6 +7,9 @@ import Survey1 from './survey1';
 import Survey2 from './survey2';
 import Survey3 from './survey3';
 import Survey4 from './survey4';
+import AboutPage from './AboutPage.js';
+import ContactUs from './ContactUs.js';
+
 
 
 
@@ -21,6 +24,8 @@ class HomeSwitch extends Component {
                       <Route exact path="/HomePage" component={HomeContent} />
                       <Route path={`${this.props.match.path}/engine`} component={Engine} />
                       <Route path={`${this.props.match.path}/survey`} component={Survey1} />
+                      <Route path={`${this.props.match.path}/about`} component={AboutPage} />
+                        <Route path={`${this.props.match.path}/contactus`} component={ContactUs} />
                       <Route path={`${this.props.match.path}/schoolProf/:schoolID`} component={SchoolProf} />
                       <Route path={`${this.props.match.path}/survey1`} component={Survey1} />
                       <Route path={`${this.props.match.path}/survey2`} component={Survey2} />
