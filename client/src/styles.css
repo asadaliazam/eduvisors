@@ -54,6 +54,10 @@ body {
   font-size: 1rem;
 }
 
+.HomePage-Content .mobile{
+  cursor: pointer;
+}
+
 .HomePage-Content .left-side{
   display: flex;
   flex-flow: row nowrap;
