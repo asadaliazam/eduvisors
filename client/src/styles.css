@@ -229,15 +229,67 @@ text-align:center;
 /*               PROFILE area */
 /* ===================== ======================== */
 
-.HomePage-Content .Main-Content .profile .user-info{
-  /* background-color: var(--terceary-color); */
+/* .HomePage-Content .Main-Content .profile .user-info{
+
   background-color: #606060;
   margin:auto;
   color:white;
   width: 100%;
   height:auto;
+} */
+
+
+.HomePage-Content .Main-Content .profile .user-info{
+  background-color: #606060;
+  /* margin:auto; */
+  color:white;
+  height:auto;
+  padding:.3rem;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /* margin: auto; */
+  /* min-width: 80%; */
+  box-sizing: border-box;
+
 }
 
+
+ .HomePage-Content .Main-Content .profile .user-info ul{
+  list-style-type: none;
+  display:flex;
+  flex-flow:column wrap;
+  /* margin-left: 0!important; */
+  padding-left: 1rem!important;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+}
+
+
+
+ .HomePage-Content .Main-Content .profile div h2{
+  text-align: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 1rem;
+  margin-top: 0rem;
+  /* padding-top: 0rem; */
+  /* margin-left: 10%;
+  margin-righ: 10%; */
+}
+
+.HomePage-Content .Main-Content .profile h3{
+  text-align: center;
+}
+
+.HomePage-Content .Main-Content .profile .user-info ul li:nth-of-type(odd){
+  border-bottom: 1px solid white;
+  /* margin:2%; */
+}
+.HomePage-Content .Main-Content .profile .user-info ul li:nth-of-type(even){
+  margin:3%;
+
+}
 /* ============Information=============== */
 .information {
 margin:1%;
@@ -649,25 +701,14 @@ margin:1%;
   /* flex-flow: column-wrap; */
 }
 
-.HomePage-Content .Main-Content .profile .profile_completion{
+.HomePage-Content .Main-Content .profile{
   border:2px solid #606060;
   padding: 1rem;
     position: fixed;
-    /* position: absolute; */
+
     width: 27%;
 
 
-}
-.HomePage-Content .Main-Content .profile .user-info{
-  background-color: #606060;
-  /* margin:auto; */
-  color:white;
-  height:auto;
-  padding:.3rem;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  /* margin: auto; */
-  /* min-width: 80%; */
-  box-sizing: border-box;
 }
 
 
