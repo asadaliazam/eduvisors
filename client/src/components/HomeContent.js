@@ -12,6 +12,7 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
 // ===============Material UI design for the graphs==========
 //
 // import PropTypes from 'prop-types';
