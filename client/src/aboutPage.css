@@ -27,3 +27,32 @@
 {
   height: 200px;
 }
+
+.resultPageCard .resultPageCardPicture
+{
+  height: 0;
+  padding-top: 56.25%;
+  max-width: 100%;
+}
+
+.resultPageCard button
+{
+  background-color: blue;
+}
+
+.resultsPage
+{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1000px)
+{
+  .resultsPage
+  {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}

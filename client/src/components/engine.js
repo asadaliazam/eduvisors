@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import AboutPagePic from './img/aboutPagePic.jpg';
+
 
 class Engine extends Component {
   constructor() {
@@ -19,29 +27,38 @@ class Engine extends Component {
 
   render() {
     return (
-      <div className = "score">
-        <h3>Personalized <br/>Recommendations</h3>
-              <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th className="col">Province</th>
-                        {/* <th>Calculated</th> */}
-                        {/*<th>Actual</th>*/}
-                        <th className="col">WebSite</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  {this.state.schoolNames.map(schoolName =>
-                    <tr key={schoolName.toString()}><td>{schoolName.institutionName}</td><td className="col">{schoolName.province}</td> {/*<td>{schoolName.calculatedScore}</td>*/} {/*<td>{schoolName.actualScore}</td>*/}<td className="col"><Link to={'/HomePage/schoolProf/'+schoolName.schoolID}>click here</Link></td></tr>
-                  )}
-                  </tbody>
-              </table>
+      <div>
+        <h3>Personalized Recommendations</h3>
+      <div className = "resultsPage">
 
-              {/* <div className="surveyNav">
-                <Link to="/MainContent"><p className="btn">Home</p></Link>
-              </div> */}
+
+
+        {this.state.schoolNames.map(schoolNames =>
+
+                  <Card className="resultPageCard">
+        <CardMedia
+          className="resultPageCardPicture"
+          image="https://picsum.photos/200/300/?random"
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography component="h2">
+            {schoolNames.institutionName}
+          </Typography>
+          <Typography component="p">
+            Province: {schoolNames.province}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button  color="primary">
+            <Link to={'/HomePage/schoolProf/'+schoolNames.schoolID}> Expand</Link>
+          </Button>
+        </CardActions>
+      </Card>
+  )}
+
       </div>
+    </div>
     );
   }
 }
