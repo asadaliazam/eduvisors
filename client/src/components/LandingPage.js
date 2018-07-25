@@ -1,18 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Switch} from 'react-router';
-
-import LoginForm from './LoginForm';
-import RegisterForm from './RegisterForm';
-
-
-
-
+import { Link } from "react-router-dom";
 
 class LandingPage extends Component {
-  constructor(props) {
-    super(props);
-    }
 
   render() {
     return (

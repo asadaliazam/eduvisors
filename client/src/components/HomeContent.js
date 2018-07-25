@@ -1,11 +1,4 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect
-} from 'react-router-dom'
 
 import Snowfall from './snowfall';
 import EmploymentGraph from './employmentGraph';
@@ -13,12 +6,9 @@ import CostOfLivingGraph from './costOfLivingGraph';
 import TuitionGraph from './TuitionGraph';
 import SchoolRankGraphList from './SchoolRankGraphList';
 
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUniversity } from '@fortawesome/free-solid-svg-icons'
 import { faUsers } from '@fortawesome/free-solid-svg-icons'
-import { fagraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 // ===============Material UI design for the graphs==========
 //

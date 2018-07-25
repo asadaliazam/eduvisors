@@ -20,7 +20,8 @@ class SchoolProf extends Component {
 
   componentWillReceiveProps(nextProps)
   {
-          this.state.schoolID = nextProps.match.params.schoolID;
+          // this.state.schoolID = nextProps.match.params.schoolID;
+          this.setState({schoolID: nextProps.match.params.schoolID});
           // console.log(333333333, this.state.schoolID);
           this.schoolProfile();
   }
