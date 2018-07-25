@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Menu from './Menu.js';
-import Example from './Menu2.js';
 
 import Profile from './profile.js';
 import Footer from './Footer.js';
