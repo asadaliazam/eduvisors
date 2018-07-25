@@ -1,30 +1,42 @@
 import React, { Component } from 'react';
 import Menu from './Menu.js';
+import Example from './Menu2.js';
+
 import Profile from './profile.js';
 import Footer from './Footer.js';
-import HomeContent from './HomeContent.js';
 import HomeSwitch from './HomeSwitch.js';
-import {BrowserRouter as Router } from 'react-router-dom';
 
 class HomePage extends Component {
   constructor() {
     super();
     this.state = {
+        showProfile: true
     };
+    this.toggleProf = this.toggleProf.bind(this)
+
+  }
+
+  toggleProf = () => {
+    const {showProfile} = this.state;
+    this.setState({ showProfile: !showProfile});
+    console.log(1111, showProfile);
   }
 
   render() {
     return (
-      <Router>
-        <div className="HomePage-Content">
-          <Menu/>
-          <div className = "Main-Content">
-            <Profile/>
-            <HomeSwitch match={this.props.match} />
-          </div>
-          <Footer />
-        </div>
-      </Router>
+
+
+      <div className="HomePage-Content">
+
+              <Menu toggleProf={this.toggleProf}/>
+              <div className={"Main-Content"+(this.state.showProfile ? '' : ' hideProfile')}>
+                  <Profile />
+                  <HomeSwitch match={this.props.match}/>
+              </div>
+              <Footer />
+
+      </div>
+
     );
   }
 }
