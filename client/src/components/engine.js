@@ -41,19 +41,20 @@ class Engine extends Component {
           image="https://picsum.photos/200/300/?random"
           title="Contemplative Reptile"
         />
-        <CardContent>
-          <Typography component="h2">
-            {schoolNames.institutionName}
-          </Typography>
-          <Typography component="p">
-            Province: {schoolNames.province}
-          </Typography>
+        <CardContent className="CardContent">
+            <Typography component="h2">
+              {schoolNames.institutionName}
+            </Typography>
+            <Typography component="p">
+              Province: {schoolNames.province}
+            </Typography>
+
+          <CardActions>
+            <Button  color="primary">
+              <Link to={'/HomePage/schoolProf/'+schoolNames.schoolID}> View Full Details</Link>
+            </Button>
+          </CardActions>
         </CardContent>
-        <CardActions>
-          <Button  color="primary">
-            <Link to={'/HomePage/schoolProf/'+schoolNames.schoolID}> Expand</Link>
-          </Button>
-        </CardActions>
       </Card>
   )}
 

@@ -487,6 +487,33 @@ margin:1%;
 }
 
 
+
+/* ========================================================= */
+.resultsPage{
+  display:grid;
+  grid-template-columns: 1fr;
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr 2fr; */
+  grid-gap: 2rem;
+  justify-content: center;
+
+}
+
+
+.resultPageCard button
+{
+  background-color: #5B62B9;
+  align-items: flex-end;
+
+}
+
+.resultPageCard .CardContent{
+  display:flex;
+  flex-flow: column wrap;
+
+}
+
+
 /* ===================== ======================== */
 /*                 SCHOOL PROFILE        */
 /* ===================== ======================== */
@@ -618,6 +645,13 @@ margin:1%;
   padding: 1rem;
 }
 
+
+.resultPageCard .resultPageCardPicture
+{
+  height: 0;
+  padding-top: 56.25%;
+  max-width: 100%;
+}
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /*                 DESKTOP VIEW        */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -820,6 +854,36 @@ margin:1%;
   padding: 8px;
 }
 
+.resultsPage{
+  /* display:grid; */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 4fr 3fr;
+}
+
+.resultsPage .resultPageCard:first-of-type{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column: 1/4;
+  grid-row: 1;
+  border-bottom: 1px solid #606060;
+  padding: 1%;
+}
+
+
+.resultsPage .resultPageCard:first-of-type .resultPageCardPicture{
+  grid-column: 1;
+}
+
+
+.resultPageCard .resultPageCard:nth-of-type(2) .resultPageCardPicture
+{
+  grid-row:1;
+  height: 0;
+  /* padding-top: 56.25%; */
+  max-width: 100%;
+}
+
 
 /* ===================== ======================== */
 /*                 SCHOOL PROFILE        */
@@ -892,6 +956,7 @@ align-items: flex-end;
 .landingPage .landing-header ul li{
   text-decoration: none;
 }
+
 .landingPage .landing-image img{
   width: 98.7vw;
   height: auto;
