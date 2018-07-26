@@ -176,7 +176,7 @@ text-decoration: none;
 
   display:flex;
   flex-flow:row wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 /* ===================== ======================== */
   /*               TOP CONTENT                    */
@@ -317,6 +317,8 @@ margin:1%;
 .top-content{
   display: flex;
   flex-flow:column nowrap;
+  margin:1%;
+  padding: 1%;
 }
 /* .charts>div{
   padding: 2%;
@@ -329,6 +331,7 @@ margin:1%;
   padding: 2%;
   margin:2%;
   background-color: #F4F1EF;
+
 }
 
 .graphContainer{
