@@ -6,11 +6,15 @@
 
 .aboutPage .teamMembersWrapper
 {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-around;
   justify-items: center;
-  align-items: center;
+  align-items: center; */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  /* align-items: center; */
 }
 
 .aboutPage

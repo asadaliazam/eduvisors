@@ -7,6 +7,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import AboutPagePic from './img/aboutPagePic.jpg';
+// import { withStyles } from '@material-ui/core/styles';
+// import PropTypes from 'prop-types';
+
 
 
 class Engine extends Component {
