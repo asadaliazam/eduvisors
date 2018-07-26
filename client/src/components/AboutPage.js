@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import AboutPagePic from'./img/aboutPagePic.jpg';
 import teamMember1 from'./img/teamMember1.png';
 
-
-
-
-
 class AboutPage extends Component {
   constructor() {
     super();
@@ -17,7 +13,7 @@ class AboutPage extends Component {
   render() {
     return (
       <div className="aboutPage">
-        <img src={AboutPagePic} alt="About Page Picture"/>
+        <img src={AboutPagePic} alt="Team members"/>
 
         <div className="aboutSection">
           <h2> Our Mission </h2>

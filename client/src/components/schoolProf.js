@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BackButton from './BackButton'
 import Snowfall from './snowfall';
-import CostOfLivingGraph from './costOfLivingGraph';
+// import CostOfLivingGraph from './costOfLivingGraph';
 
 
 class SchoolProf extends Component {
