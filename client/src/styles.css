@@ -7,9 +7,11 @@
 /* ===================== ======================== */
 
 :root{
-    --main-color: rgb(91, 101, 177);
+    /* --main-color: rgb(91, 101, 177); */
+    --main-color: rgb(64, 83, 175);
     --secondary-color: rgb(187, 191, 250);
     --terceary-color: rgb(180, 180, 180);
+    --materialui-blue: rgb(64, 83, 175);
 
     /* --cinza-profile-color: rgb(96, 96, 96);
     --cinza-header-color: rgb(74, 74, 74); */
@@ -41,19 +43,19 @@ body {
 
 }
 
+/* ===================== ======================== */
+/*                 MENU / HEADER */
+/* ===================== ======================== */
+
 
 .HomePage a {
   color: white;
 }
 
-/* ===================== ======================== */
-/*                 MENU / HEADER */
-/* ===================== ======================== */
-
-.HomePage .Profile {
+.Main .Profile {
   display: block;
 }
-.HomePage .hideProfile .Profile{
+.Main .hideProfile .Profile{
   display: none;
 }
 
@@ -73,22 +75,18 @@ body {
   color: white;
 }
 
-.HomePage .username a{
-  margin-right: 2rem;
-}
-
 .HomePage .left-side,
 .HomePage .right-side,
 .HomePage .username{
   background-color: var(--main-color);
-  line-height: 1;
+  /* line-height: 1; */
   text-align: right;
-  padding: .5rem;
+  /* padding: .5rem; */
   font-size: 1rem;
 }
 
 .HomePage header img {
-  padding: 0 .5rem;
+  padding-left: 1rem;
   /* max-width: 20%; */
   width: 70px;
   /* height: auto; */
@@ -133,7 +131,8 @@ body {
 }
 
 .HomePage header nav ul li {
-  padding: 1rem;
+  padding: 0 2rem;
+  line-height: 4.5;
 }
 /* ===================== ======================== */
 /*              SURVEY LINK                   */
@@ -150,19 +149,18 @@ body {
   border: 1px solid #606060;
   padding:.5rem;
   border-radius:1%;
-  margin:0.5rem;
+  margin: 1%;
 
 }
 
 .surveyButton{
-
-width:170px;
-height:50px;
-align-self: center;
+  width:170px;
+  height:50px;
+  align-self: center;
 }
 
 .surveyButton a{
-text-decoration: none;
+  text-decoration: none;
 }
 /* ===================== ======================== */
 /*               CONTENT AREA                     */
@@ -171,7 +169,7 @@ text-decoration: none;
   /*               TOP CONTENT                    */
 /* ===================== ======================== */
 
-.HomePage .Main .Content .top-content{
+.Main .Content .top-content{
 
   display:flex;
   flex-flow:row wrap;
@@ -183,44 +181,52 @@ text-decoration: none;
 
 
 
-.HomePage .Main{
-  padding: 3% 5%;
+.Main{
+  /* padding: 3% 5%; */
   display: flex;
   flex-flow: column nowrap;
   background-color: white;
 }
 
-
-.HomePage .Main .Content form{
-text-align: center;
+.Main form ul li svg{
+  padding-right: 1.5rem;
 }
 
 
-.HomePage  .Content form select{
+.Main .Content form{
+/* text-align: center; */
+flex: 1 0 90%;
+}
+
+
+.Main .Content form select{
   display: flex;
   flex-flow:column nowrap;
-  width:210px;
+  width:200px;
   /* width:auto; */
-  height:50px;
-  background-color: #5B62B9;
+  height:45px;
+  /* background-color: #5B62B9; */
+  background-color: var(--main-color);
   color: white;
   padding:1%;;
   font-size: 20px;
   cursor: pointer;
   margin:2%;
+
 }
-.HomePage  .Content form select ul{
+
+.Main .Content form select ul{
   display:flex;
   justify-content: space-between;
 }
 
 
-.Content form select:hover{
+.Main .Content form select:hover{
   border: 2px solid #5B24B9;
 }
 
 
-.Content form select option{
+.Main .Content form select option{
 text-align:center;
 }
 /* ===================== ======================== */
@@ -237,7 +243,7 @@ text-align:center;
 } */
 
 
-.HomePage .Main .Profile .user-info{
+.Main .Profile .user-info{
   background-color: #606060;
   /* margin:auto; */
   color:white;
@@ -251,7 +257,7 @@ text-align:center;
 }
 
 
- .HomePage .Main .Profile .user-info ul{
+ .Main .Profile .user-info ul{
   list-style-type: none;
   display:flex;
   flex-flow:column wrap;
@@ -266,7 +272,7 @@ text-align:center;
 
 
 
- .HomePage .Main .Profile div h2{
+ .Main .Profile div h2{
   text-align: center;
   border-bottom: 2px solid black;
   padding-bottom: 1rem;
@@ -276,15 +282,16 @@ text-align:center;
   margin-righ: 10%; */
 }
 
-.HomePage .Main .Profile h3{
+.Main .Profile h3{
   text-align: center;
 }
 
-.HomePage .Main .Profile .user-info ul li:nth-of-type(odd){
+.Main .Profile .user-info ul li:nth-of-type(odd){
   border-bottom: 1px solid white;
   /* margin:2%; */
 }
-.HomePage .Main .Profile .user-info ul li:nth-of-type(even){
+
+.Main .Profile .user-info ul li:nth-of-type(even){
   margin:3%;
 
 }
@@ -297,8 +304,9 @@ margin:1%;
 .information  ul{
   color:black;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   justify-content: space-between;
+  padding: 0;
 
 }
 
@@ -307,6 +315,8 @@ margin:1%;
   font-size: 1.5rem;
   border-bottom: 2px solid black;
   margin-bottom: 2%;
+  margin-right: 2rem;
+  flex: 1 0 30%;
 }
 
 /* ===================== ======================== */
@@ -612,13 +622,16 @@ margin:1%;
 /*               FOOTER AREA                     */
 /* ===================== ======================== */
 
-/* .HomePage footer{
+.HomePage footer{
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
+
+  justify-content: space-between;
+  background-color: var(--main-color);
 
 }
 
-.HomePage footer .left-side,
+/* .HomePage footer .left-side,
 .HomePage footer .right-side{
   flex: 1 0 90%;
 } */
@@ -673,16 +686,16 @@ margin:1%;
 /*               CONTENT AREA                     */
 /* ===================== ======================== */
 
-  .HomePage .Main{
+  .Main{
     background-color: white;
-    padding: 2%;
+    /* padding: 2%; */
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 3fr 1fr;
     grid-gap: 2rem;
   }
 
-  .HomePage .Main{
+  .Content{
     grid-column: 2 / 3;
     grid-row: 1;
 
@@ -696,6 +709,14 @@ margin:1%;
 /*                 MENU / HEADER */
 /* ===================== ======================== */
 
+/* .HomePage footer{
+  display: flex;
+  flex-flow: row nowrap;
+
+  justify-content: space-between;
+
+}
+
   .HomePage header,
   .HomePage footer {
     display: flex;
@@ -704,21 +725,26 @@ margin:1%;
 
     background-color: var(--main-color);
     color: white;
-  }
+  } */
 
-  .HomePage .desktop,
-  .HomePage .Profile,
-  .HomePage .hideProfile .Profile {
+  .HomePage  header .desktop,
+  .Main .Profile,
+  .Main .hideProfile .Profile {
     display: block;
   }
 
-  .HomePage .mobile{
+  .HomePage header .mobile{
     display: none;
   }
 
   .HomePage header .username{
     order: 3;
-    line-height: 3.5;
+    line-height: 4.5;
+    text-align: center;
+  }
+
+  .HomePage header .username a{
+    border-left: 2px solid white;
   }
 
   .HomePage header .left-side{
@@ -897,9 +923,9 @@ margin:1%;
 /*               FOOTER AREA                     */
 /* ===================== ======================== */
 
-footer .right-side, footer .left-side{
+/* footer .right-side, footer .left-side{
     align-content: center;
-}
+} */
 
 }
 

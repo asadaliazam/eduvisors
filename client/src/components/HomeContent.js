@@ -50,7 +50,7 @@ class HomeContent extends Component {
               <form onSubmit={this.handleSubmit}>
                   <label>
                     Choose a Province:
-                    <select value={this.state.value} onChange={this.handleChange}>
+                    <select value={this.state.value} onChange={this.handleChange} >
                       <option value="AB" label="Alberta">AB</option>
                       <option value="BC" label="British Columbia">BC </option>
                       <option value="NL" label="NewFoundLand">NL</option>
@@ -73,10 +73,12 @@ class HomeContent extends Component {
                   </div>
                 </form>
 
+              </div>   {/* end of TOP-CONTENT */}
+
                 <div className="top-chart charts">
                   <Snowfall province={this.state.value} type={'snow'} />
                 </div>
-             </div>   {/* end of TOP-CONTENT */}
+
 
                 <div className="down-charts charts">
                     <div>
