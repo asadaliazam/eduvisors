@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import ContactUsPic from'./img/contactUsPic.jpg';
-import teamMember1 from'./img/teamMember1.png';
+// import teamMember1 from'./img/teamMember1.png';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import GoogleMapComponent from './GoogleMapComponent.js';
-
 
 class ContactUs extends Component {
   constructor(props) {
@@ -17,11 +16,7 @@ class ContactUs extends Component {
 
     return (
       <div className="contactUsPage">
-        <img src={ContactUsPic} alt="Contact Page Picture"/>
-
-
-
-
+        <img src={ContactUsPic} alt="Contact Page"/>
 
         <h2> Help Us Get Better </h2>
         <div className="contactUsFormWrapper">

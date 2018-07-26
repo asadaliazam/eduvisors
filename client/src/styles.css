@@ -7,11 +7,12 @@
 /* ===================== ======================== */
 
 :root{
-    /* --main-color: rgb(91, 101, 177); */
+    /* --main-color: rgb(91, 101, 177);*/
     --main-color: rgb(64, 83, 175);
     --secondary-color: rgb(187, 191, 250);
     --terceary-color: rgb(180, 180, 180);
     --materialui-blue: rgb(64, 83, 175);
+    --graph1-bkcolor: rgb(244, 241, 239);
 
     /* --cinza-profile-color: rgb(96, 96, 96);
     --cinza-header-color: rgb(74, 74, 74); */
@@ -50,13 +51,6 @@ body {
 
 .HomePage a {
   color: white;
-}
-
-.Main .Profile {
-  display: block;
-}
-.Main .hideProfile .Profile{
-  display: none;
 }
 
 .HomePage .desktop{
@@ -169,22 +163,11 @@ body {
   /*               TOP CONTENT                    */
 /* ===================== ======================== */
 
-.Main .Content .top-content{
-
-  display:flex;
-  flex-flow:row wrap;
-  justify-content: space-between;
-}
-/* ===================== ======================== */
-  /*               TOP CONTENT                    */
-/* ===================== ======================== */
-
-
-
 .Main{
-  /* padding: 3% 5%; */
+  margin: 3%;
   display: flex;
   flex-flow: column nowrap;
+
   background-color: white;
 }
 
@@ -212,7 +195,10 @@ flex: 1 0 90%;
   font-size: 20px;
   cursor: pointer;
   margin:2%;
+}
 
+.Main .Content form select:hover{
+  border: 2px solid #5B24B9;
 }
 
 .Main .Content form select ul{
@@ -220,81 +206,16 @@ flex: 1 0 90%;
   justify-content: space-between;
 }
 
-
-.Main .Content form select:hover{
-  border: 2px solid #5B24B9;
-}
-
-
 .Main .Content form select option{
 text-align:center;
 }
-/* ===================== ======================== */
-/*               PROFILE area */
-/* ===================== ======================== */
 
-/* .HomePage .Main .Profile .user-info{
-
-  background-color: #606060;
-  margin:auto;
-  color:white;
-  width: 100%;
-  height:auto;
-} */
-
-
-.Main .Profile .user-info{
-  background-color: #606060;
-  /* margin:auto; */
-  color:white;
-  height:auto;
-  padding:.3rem;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  /* margin: auto; */
-  /* min-width: 80%; */
-  box-sizing: border-box;
-
-}
-
-
- .Main .Profile .user-info ul{
-  list-style-type: none;
+.Main .Content .top-content{
   display:flex;
-  flex-flow:column wrap;
-  /* margin-left: 0!important; */
-  padding-left: 1rem!important;
-  padding-left: .5rem;
-  padding-right: .5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-
+  flex-flow:row wrap;
+  justify-content: space-between;
 }
 
-
-
- .Main .Profile div h2{
-  text-align: center;
-  border-bottom: 2px solid black;
-  padding-bottom: 1rem;
-  margin-top: 0rem;
-  /* padding-top: 0rem; */
-  /* margin-left: 10%;
-  margin-righ: 10%; */
-}
-
-.Main .Profile h3{
-  text-align: center;
-}
-
-.Main .Profile .user-info ul li:nth-of-type(odd){
-  border-bottom: 1px solid white;
-  /* margin:2%; */
-}
-
-.Main .Profile .user-info ul li:nth-of-type(even){
-  margin:3%;
-
-}
 /* ============Information=============== */
 .information {
 margin:1%;
@@ -318,6 +239,75 @@ margin:1%;
   margin-right: 2rem;
   flex: 1 0 30%;
 }
+/* ===================== ======================== */
+/*               PROFILE area */
+/* ===================== ======================== */
+
+/* .HomePage .Main .Profile .user-info{
+
+  background-color: #606060;
+  margin:auto;
+  color:white;
+  width: 100%;
+  height:auto;
+} */
+
+.Main .Profile {
+  display: block;
+}
+
+.Main .hideProfile .Profile{
+  display: none;
+}
+
+.Main .Profile .user-info{
+  background-color: #606060;
+  /* margin:auto; */
+  color:white;
+  height:auto;
+  padding:.3rem;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /* margin: auto; */
+  /* min-width: 80%; */
+  box-sizing: border-box;
+}
+
+
+ .Main .Profile .user-info ul{
+  list-style-type: none;
+  display:flex;
+  flex-flow:column wrap;
+  /* margin-left: 0!important; */
+  padding-left: 1rem!important;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+ .Main .Profile div h2{
+  text-align: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 1rem;
+  margin-top: 0rem;
+  /* padding-top: 0rem; */
+  /* margin-left: 10%;
+  margin-righ: 10%; */
+}
+
+.Main .Profile h3{
+  text-align: center;
+}
+
+.Main .Profile .user-info ul li:nth-of-type(odd){
+  border-bottom: 1px solid white;
+  /* margin:2%; */
+}
+
+.Main .Profile .user-info ul li:nth-of-type(even){
+  margin:3%;
+}
+
 
 /* ===================== ======================== */
 /*              CHARTS */
@@ -335,6 +325,16 @@ margin:1%;
 } */
 
 
+/* .HomePage .Main .Content .costofliving .down-charts div .chartjs-render-monitor{
+  max-width: 100%;
+  height: auto;
+} */
+
+.top-chart{
+  grid-column: 1/2;
+  grid-row: 1;
+}
+
 .top-chart>div{
   padding: 2%;
   margin:2%;
@@ -349,27 +349,35 @@ margin:1%;
 }
 
 .charts{
-  background-color: #F4F1EF;
+  /* background-color: #F4F1EF; */
+  background-color: var(--graph1-bkcolor);
   border:3px solid #B5B5B5;
+  margin: 1rem;
 }
 
 .down-charts>div{
   padding: 2%;
   margin:2%;
-
   /* min-width:300px; */
 }
-
-
-.top-chart{
-  grid-column: 1/2;
-  grid-row: 1;
-}
-
 
 .down-charts div:first-of-type{
   grid-column: 1/3;
   grid-row: 2;
+}
+
+.employement p{
+  margin-top: 5rem;
+}
+
+.employement{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.employement div{
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 /* ===================== ======================== */
@@ -377,6 +385,11 @@ margin:1%;
 /* ===================== ======================== */
 
 .surveyDiv{
+  grid-column: 2/3;
+  grid-row: 1;
+
+  margin: 1%;
+  margin-left: 2rem;
   display: flex;
   flex-flow: column nowrap;
 }
@@ -413,7 +426,6 @@ margin:1%;
 
   list-style: none;
 }
-
 
 .surveyNav{
     display: flex;
@@ -503,6 +515,7 @@ margin:1%;
 
 /* ========================================================= */
 .resultsPage{
+
   display:grid;
   grid-template-columns: 1fr;
   /* grid-template-columns: 1fr 1fr;
@@ -687,13 +700,16 @@ margin:1%;
 /* ===================== ======================== */
 
   .Main{
+    margin: 0;
     background-color: white;
     /* padding: 2%; */
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 3fr 1fr;
+    grid-template-rows: 1fr;
     grid-gap: 2rem;
   }
+
+
 
   .Content{
     grid-column: 2 / 3;
@@ -701,6 +717,16 @@ margin:1%;
 
     padding-left: 2rem;
     /* margin-left: 33%;  BIGPROBLEM */
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .employement{
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .costofliving{
     display: flex;
     flex-flow: column nowrap;
   }
@@ -727,9 +753,7 @@ margin:1%;
     color: white;
   } */
 
-  .HomePage  header .desktop,
-  .Main .Profile,
-  .Main .hideProfile .Profile {
+  .HomePage  header .desktop{
     display: block;
   }
 
@@ -773,7 +797,8 @@ margin:1%;
   /* height:auto; */
 }
 
-.HomePage .Main .Profile {
+ .Main .Profile {
+  display: block;
   grid-column: 1 / 2;
   grid-row: 1;
 
@@ -785,6 +810,11 @@ margin:1%;
   height: 100%;
   width: 20vw;
   /* width: 27%; */
+}
+
+
+.Main .hideProfile .Profile {
+  display: block;
 }
 
 
@@ -829,6 +859,7 @@ margin:1%;
 /*                 SURVEY                         */
 /* ===================== ======================== */
 .surveyDiv{
+
   display: flex;
   flex-flow: column nowrap;
 }
@@ -854,6 +885,9 @@ margin:1%;
 }
 
 .resultsPage{
+  grid-column: 2 / 3;
+  margin: 1%;
+  margin-left: 2rem;
   /* display:grid; */
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 4fr 3fr;
@@ -889,8 +923,13 @@ margin:1%;
 /* ===================== ======================== */
 
 .sprof{
+
+      grid-column: 2 / 3;
+      margin: 1%;
+      margin-left: 3rem;
       display: flex;
       flex-flow: row wrap;
+
       box-sizing: border-box;
 }
 
@@ -911,11 +950,19 @@ margin:1%;
 }
 
 .sprof .snowfall{
-      flex: 1 0 100%;
+      flex: 1 0 90%;
+      display: flex;
+      flex-flow: column nowrap;
+      margin: 2rem;;
 }
 
 
-
+.contactUsPage,
+.aboutPage{
+  grid-column: 2 / 3;
+  margin: 1%;
+  margin-left: 2rem;
+}
 
 
 

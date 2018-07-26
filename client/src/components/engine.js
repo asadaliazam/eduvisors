@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import AboutPagePic from './img/aboutPagePic.jpg';
+// import AboutPagePic from './img/aboutPagePic.jpg';
 
 
 class Engine extends Component {
@@ -27,39 +27,35 @@ class Engine extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Personalized Recommendations</h3>
+
+
       <div className = "resultsPage">
+              <h2>Personalized Recommendations</h2>
+              {this.state.schoolNames.map(schoolNames =>
 
+                <Card className="resultPageCard">
+                      <CardMedia
+                        className="resultPageCardPicture"
+                        image="https://picsum.photos/200/300/?random"
+                        title="Contemplative Reptile" />
+                      <CardContent className="CardContent">
+                          <Typography component="h2">
+                            {schoolNames.institutionName}
+                          </Typography>
+                          <Typography component="p">
+                            Province: {schoolNames.province}
+                          </Typography>
 
+                          <CardActions>
+                              <Button  color="primary">
+                                  <Link to={'/HomePage/schoolProf/'+schoolNames.schoolID}> View Full Details</Link>
+                              </Button>
+                          </CardActions>
+                      </CardContent>
+                </Card>
+              )}
+        </div>
 
-        {this.state.schoolNames.map(schoolNames =>
-
-                  <Card className="resultPageCard">
-        <CardMedia
-          className="resultPageCardPicture"
-          image="https://picsum.photos/200/300/?random"
-          title="Contemplative Reptile"
-        />
-        <CardContent className="CardContent">
-            <Typography component="h2">
-              {schoolNames.institutionName}
-            </Typography>
-            <Typography component="p">
-              Province: {schoolNames.province}
-            </Typography>
-
-          <CardActions>
-            <Button  color="primary">
-              <Link to={'/HomePage/schoolProf/'+schoolNames.schoolID}> View Full Details</Link>
-            </Button>
-          </CardActions>
-        </CardContent>
-      </Card>
-  )}
-
-      </div>
-    </div>
     );
   }
 }
