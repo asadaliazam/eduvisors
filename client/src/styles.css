@@ -142,11 +142,13 @@ body {
 /*              SURVEY LINK                   */
 /* ===================== ======================== */
 .surveyLink{
-  max-width: 100%;
+  /* max-width: 100%; */
   /* position:absolute; */
-  min-width: 200px;
+  /* min-width: 200px; */
+  flex: 1 0 100%;
   display:flex;
-  flex-flow: column wrap;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   background-color: #F4F1EF;
   border: 1px solid #606060;
   padding:.5rem;
@@ -190,7 +192,6 @@ text-decoration: none;
   flex-flow: column nowrap;
   background-color: white;
 }
-
 
 
 .HomePage-Content .Main-Content .main-content form{
@@ -340,20 +341,22 @@ margin:1%;
   margin:1%;
 }
 
+.charts{
+  background-color: #F4F1EF;
+  border:3px solid #B5B5B5;
+}
+
 .down-charts>div{
   padding: 2%;
   margin:2%;
-  background-color: #F4F1EF;
-  border:15px solid #B5B5B5;
+
   /* min-width:300px; */
 }
 
 
 .top-chart{
-  background-color: #F4F1EF;
   grid-column: 1/2;
   grid-row: 1;
-  border:15px solid #B5B5B5;
 }
 
 
@@ -675,34 +678,23 @@ margin:1%;
 /* ===================== ======================== */
 
   .HomePage-Content .Main-Content{
-    /* display:grid; */
-    /* grid-template-columns: 5fr 3fr;
-    grid-template-rows: 2fr 1fr auto; */
-
-    /* grid-template-columns: 1fr 2fr; */
-    /* grid-template-rows: 1fr .2fr; */
-
     background-color: white;
-    /* margin:1%; */
     padding: 2%;
-    /* max-width: 60%; */
-
-
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 3fr 1fr;
+    grid-gap: 2rem;
   }
-
 
   .HomePage-Content .Main-Content .Center-Page{
-    padding-left: 2rem;
-    margin-left: 33%;
-
-  }
-
-
-  /* .main-content form{
-    grid-column: 2/3;
+    grid-column: 2 / 3;
     grid-row: 1;
-    text-align:center;
-  } */
+
+    padding-left: 2rem;
+    /* margin-left: 33%;  BIGPROBLEM */
+    display: flex;
+    flex-flow: column nowrap;
+  }
 
 /* ===================== ======================== */
 /*                 MENU / HEADER */
@@ -712,8 +704,6 @@ margin:1%;
   .HomePage-Content .footer {
     display: flex;
     flex-flow: row nowrap;
-    /* display: grid;
-    grid-template-columns: 1fr 2fr 1fr; */
     justify-content: flex-end;
 
     background-color: var(--main-color);
@@ -752,10 +742,6 @@ margin:1%;
 /* ===================== ======================== */
 /*               PROFILE area */
 /* ===================== ======================== */
-.profile{
-  display:contents;
-  margin: auto;
-}
 
 .profile .user-info{
   /* background-color: #606060; */
@@ -765,30 +751,18 @@ margin:1%;
   /* height:auto; */
 }
 
-
-
-
 .HomePage-Content .Main-Content .profile {
+  grid-column: 1 / 2;
+  grid-row: 1;
 
-
-    /* position:fixed; */
-  /* position:fixed; */
-  border: 4px solid #606060;
-  padding:1rem;
   margin:1%;
-/* position: relative; */
-  /* display:flex; */
-  /* flex-flow: column-wrap; */
-}
-
-.HomePage-Content .Main-Content .profile{
   border:2px solid #606060;
   padding: 1rem;
-    position: fixed;
 
-    width: 27%;
-
-
+  position: fixed;
+  height: 100%;
+  width: 20vw;
+  /* width: 27%; */
 }
 
 

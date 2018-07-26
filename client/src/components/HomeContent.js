@@ -38,53 +38,48 @@ class HomeContent extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
           <div className="main-content">
             <div className="surveyLink">
-              <p>Take the survey and we will find your matchmake university:</p>
-              <Button  type="submit" variant="contained" color="primary" className="surveyButton">
-                <Link to="/HomePage/survey">Take Survey</Link>
-              </Button>
+                <p>Take the survey and we will find your matchmake university:</p>
+                <Button  type="submit" variant="contained" color="primary" className="surveyButton">
+                    <Link to="/HomePage/survey">Take Survey</Link>
+                </Button>
             </div>
+
             <div className="top-content">
               <form onSubmit={this.handleSubmit}>
-                <label>
+                  <label>
+                    Choose a Province:
+                    <select value={this.state.value} onChange={this.handleChange}>
+                      <option value="AB" label="Alberta">AB</option>
+                      <option value="BC" label="British Columbia">BC </option>
+                      <option value="NL" label="NewFoundLand">NL</option>
+                      <option value="MB" label="Manitoba">MB</option>
+                      <option value="ON" label="Ontario">ON</option>
+                      <option value="PE" label="Prince Ed Island">PE</option>
+                      <option value="NS" label="Nova Scotia">NS</option>
+                      <option value="NB" label="New Brunswick">NB</option>
+                      <option value="QC" label="Quebec">QC</option>
+                      <option value="SK" label="Saskatchewan">SK</option>
+                    </select>
+                  </label>
+                  <div className="information">
+                    <ul>
+                      <li><FontAwesomeIcon icon={faUniversity} />100</li>
+                      <li><FontAwesomeIcon icon={faUsers} />9.000</li>
+                      <li><FontAwesomeIcon icon={faCoffee} />Aberdeen</li>
 
-                  Choose a Province:
-                  <select value={this.state.value} onChange={this.handleChange}>
-                    <option value="AB" label="Alberta">AB</option>
-                    <option value="BC" label="British Columbia">BC </option>
-                    <option value="NL" label="NewFoundLand">NL</option>
-                    <option value="MB" label="Manitoba">MB</option>
-                    <option value="ON" label="Ontario">ON</option>
-                    <option value="PE" label="Prince Ed Island">PE</option>
-                    <option value="NS" label="Nova Scotia">NS</option>
-                    <option value="NB" label="New Brunswick">NB</option>
-                    <option value="QC" label="Quebec">QC</option>
-                    <option value="SK" label="Saskatchewan">SK</option>
-                  </select>
-                </label>
+                    </ul>
+                  </div>
+                </form>
 
-              <div className="information">
-                <ul>
-                  <li><FontAwesomeIcon icon={faUniversity} />100</li>
-                  <li><FontAwesomeIcon icon={faUsers} />9.000</li>
-                  <li><FontAwesomeIcon icon={faCoffee} />Aberdeen</li>
-
-                </ul>
-              </div>
-
-            </form>
-
-
-
-                <div className="top-chart">
-
+                <div className="top-chart charts">
                   <Snowfall province={this.state.value} type={'snow'} />
                 </div>
-          </div>
+             </div>   {/* end of TOP-CONTENT */}
 
-                <div className="down-charts">
+                <div className="down-charts charts">
                     <div>
                       <EmploymentGraph province={this.state.value} />
                     </div>
@@ -98,10 +93,9 @@ class HomeContent extends Component {
                       <SchoolRankGraphList province={this.state.value} />
                     </div>
 
-                </div>
+                </div> {/* end of DOWN-CHARTS */}
 
-
-        </div>
+          </div> {/* end of MAIN-CONTENT */}
 
     </div>
     );
