@@ -31,7 +31,8 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 
         <header className="header">
               <div className = "left-side">
-                  <img src={Logo} alt="Eduvisors logo"/>
+                <Link to="/HomePage"><img src={Logo} alt="Eduvisors logo"/></Link>
+
               </div>
 
               <div className = "username">

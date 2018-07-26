@@ -5,7 +5,8 @@ class Profile extends Component {
   constructor() {
     super();
     this.state = {
-      profile: []
+      profile: [],
+      error: 0
     };
   }
 
@@ -13,6 +14,7 @@ class Profile extends Component {
     fetch('/api/profile')
       .then(res => res.json())
       .then(profile => this.setState({profile}, () => console.log('profile fetched...', profile)));
+      // .catch(function() { this.setState({error: "Server Side failed to respond!"}), console.log(this.error); }); end of CATCH
   }
 
   render() {
@@ -21,6 +23,7 @@ class Profile extends Component {
             {this.state.profile.map(user =>
                 <div className="profile_completion" key={user.id}>
                 <h2>{user.first_name} {user.last_name}</h2>
+
                 <ProfileCompletion randomVariable={1}/>
                     <br />
                     <div className="user-info">

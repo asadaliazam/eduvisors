@@ -34,9 +34,6 @@ class Snowfall extends Component {
     };  // end of state
   }  // end of constructor
 
-  // CONTROLLER
-
-
   componentDidMount()
   {
     this.fetchFromDatabase();
@@ -50,6 +47,7 @@ class Snowfall extends Component {
         switch (this.state.type){
                 case "snow":
                     chartData.datasets[0]['label'] = "Snowfall";
+                    // this.setState(chartData.datasets[0]['label']: "Snowfall");
                     chartData.datasets[0]['backgroundColor'] = 'rgb(153, 51, 255)';
                     break;
                 case "rain":

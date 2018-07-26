@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BackButton from './BackButton'
 import Snowfall from './snowfall';
+import CostOfLivingGraph from './costOfLivingGraph';
 
 
 class SchoolProf extends Component {
@@ -12,7 +13,7 @@ class SchoolProf extends Component {
         this.state = {
             schoolProfile: [],
             schoolID: props.match.params.schoolID,
-            province: 0,
+            province: 'bc',
             type: 'snow',
             fileName: 0
         };
@@ -69,8 +70,9 @@ class SchoolProf extends Component {
     return (
 
             <div className="sprof">
-                <div>
-            <img src={this.state.fileName} alt="Educational Institution"/>
+                <div className="schoolImg">
+                    <BackButton />
+                    <img src={this.state.fileName} alt="Educational Institution"/>
                 </div>
                 <div className="schoolinfo">
                     {this.state.schoolProfile.map(customer =>
@@ -83,32 +85,27 @@ class SchoolProf extends Component {
                         <li>Province: {customer.province}</li>
                       </ul>
                     )}
-                    <p><BackButton /></p>
                 </div>
-                <p> {this.state.school} </p>
-
-
-
-
-<Snowfall province={this.state.province} type={this.state.type} />
-
-
-      <button onClick={() => this.setState({type: 'rain'})}>
-        RAIN
-      </button>
-      <button onClick={() => this.setState({type: 'snow'})}>
-        SNOWFALL
-      </button>
-      <button onClick={() => this.setState({type: 'temp_high'})}>
-        HIGHEST TEMPERATURES
-      </button>
-      <button onClick={() => this.setState({type: 'temp_low'})}>
-        LOWEST TEMPERATURES
-      </button>
-      <button onClick={() => this.setState({type: 'temp_avg'})}>
-        AVERAGE TEMPERATURES
-      </button>
-
+                <div className="schoolBtns">
+                      <button onClick={() => this.setState({type: 'rain'})}>
+                        Rain
+                      </button>
+                      <button onClick={() => this.setState({type: 'snow'})}>
+                        Snow
+                      </button>
+                      <button onClick={() => this.setState({type: 'temp_high'})}>
+                        High Temp
+                      </button>
+                      <button onClick={() => this.setState({type: 'temp_low'})}>
+                        Low Temp
+                      </button>
+                      <button onClick={() => this.setState({type: 'temp_avg'})}>
+                        Average Temp
+                      </button>
+              </div>
+                {/* <p> {this.state.school} </p> */}
+                <Snowfall province={this.state.province} type={this.state.type} />
+                {/* <CostOfLivingGraph province={this.state.province} /> */}
             </div>
     );    // end of RETURN
   }   // end of RENDER

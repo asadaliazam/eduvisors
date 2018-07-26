@@ -8,7 +8,7 @@ class HomePage extends Component {
   constructor() {
     super();
     this.state = {
-        showProfile: true
+        showProfile: false
     };
     this.toggleProf = this.toggleProf.bind(this)
 

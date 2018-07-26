@@ -93,7 +93,7 @@ body {
 
 .HomePage-Content header .username,
 .HomePage-Content header .right-side{
-  flex: 0 0 8%;
+  flex: 0 0 12%;
   justify-content: center;
   text-align: center;
   line-height: 2.5;
@@ -132,7 +132,7 @@ body {
 /*               CONTENT AREA                     */
 /* ===================== ======================== */
 .HomePage-Content .Main-Content{
-  padding: 3% 10%;
+  padding: 3% 5%;
   display: flex;
   flex-flow: column nowrap;
   background-color: white;
@@ -391,8 +391,46 @@ margin:1%;
 }
 
 .sprof img{
-  width: 90%;
-  margin: 5%;
+  flex: 1 0 95%;
+  width: 100%;
+}
+
+.sprof div .btn{
+  position: absolute;
+  right: 5%;
+  background-color: red;
+
+}
+
+.schoolinfo{
+  flex: 1 0 45%;
+}
+
+.schoolBtns{
+  border-top: 2px solid var(--main-color);
+  padding-top: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+
+
+.schoolBtns button{
+      flex: 0 0 19%;
+      background-color: var(--main-color);
+      height: 2.5rem;
+      color: white;
+      /* width: 5rem; */
+      font-size: .75rem;
+      border-radius: 5px;
+}
+
+.snowfall{
+  flex: 1 0 45%;
 }
 
 .schoolinfo button{
@@ -411,6 +449,11 @@ margin:1%;
   list-style: none;
   line-height: 1.5;
 }
+
+.schoolinfo ul{
+  padding: 0;
+}
+
 
 .schoolinfo ul strong{
   font-size: 1.5rem;
@@ -669,23 +712,35 @@ margin:1%;
 /* ===================== ======================== */
 
 .sprof{
-  display: flex;
-  flex-flow: row nowrap;
-
-  box-sizing: border-box;
+      display: flex;
+      flex-flow: row wrap;
+      box-sizing: border-box;
 }
 
-.sprof img{
+.sprof .schoolImg{
+      flex: 0 0 45%;
+      margin-right: 2rem;
 
-  /* width: 100%; */
-  max-width: 500px;
-  margin: 2rem;
 }
 
 .schoolinfo{
-  margin: 2rem;
-  margin-left: 0;
+      flex: 1 0 45%;
+      margin: 2rem;
+      margin-left: 0;
 }
+
+.sprof .schoolBtns{
+      flex: 1 0 100%;
+}
+
+.sprof .snowfall{
+      flex: 1 0 100%;
+}
+
+
+
+
+
 
 /* ===================== ======================== */
 /*               FOOTER AREA                     */
