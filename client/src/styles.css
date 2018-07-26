@@ -1,5 +1,3 @@
-
-
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700|Rubik:400,500,700|Source+Sans+Pro:400,700');
 
 /* ===================== ======================== */
@@ -7,9 +5,12 @@
 /* ===================== ======================== */
 
 :root{
-    --main-color: rgb(91, 101, 177);
+    /* --main-color: rgb(91, 101, 177);*/
+    --main-color: rgb(64, 83, 175);
     --secondary-color: rgb(187, 191, 250);
     --terceary-color: rgb(180, 180, 180);
+    --materialui-blue: rgb(64, 83, 175);
+    --graph1-bkcolor: rgb(244, 241, 239);
 
     /* --cinza-profile-color: rgb(96, 96, 96);
     --cinza-header-color: rgb(74, 74, 74); */
@@ -41,20 +42,13 @@ body {
 
 }
 
-
-.HomePage a {
-  color: white;
-}
-
 /* ===================== ======================== */
 /*                 MENU / HEADER */
 /* ===================== ======================== */
 
-.HomePage .Profile {
-  display: block;
-}
-.HomePage .hideProfile .Profile{
-  display: none;
+
+.HomePage a {
+  color: white;
 }
 
 .HomePage .desktop{
@@ -73,22 +67,18 @@ body {
   color: white;
 }
 
-.HomePage .username a{
-  margin-right: 2rem;
-}
-
 .HomePage .left-side,
 .HomePage .right-side,
 .HomePage .username{
   background-color: var(--main-color);
-  line-height: 1;
+  /* line-height: 1; */
   text-align: right;
-  padding: .5rem;
+  /* padding: .5rem; */
   font-size: 1rem;
 }
 
 .HomePage header img {
-  padding: 0 .5rem;
+  padding-left: 1rem;
   /* max-width: 20%; */
   width: 70px;
   /* height: auto; */
@@ -133,7 +123,8 @@ body {
 }
 
 .HomePage header nav ul li {
-  padding: 1rem;
+  padding: 0 2rem;
+  line-height: 4.5;
 }
 /* ===================== ======================== */
 /*              SURVEY LINK                   */
@@ -150,19 +141,18 @@ body {
   border: 1px solid #606060;
   padding:.5rem;
   border-radius:1%;
-  margin:0.5rem;
+  margin: 1%;
 
 }
 
 .surveyButton{
-
-width:170px;
-height:50px;
-align-self: center;
+  width:170px;
+  height:50px;
+  align-self: center;
 }
 
 .surveyButton a{
-text-decoration: none;
+  text-decoration: none;
 }
 /* ===================== ======================== */
 /*               CONTENT AREA                     */
@@ -171,57 +161,81 @@ text-decoration: none;
   /*               TOP CONTENT                    */
 /* ===================== ======================== */
 
-.HomePage .Main .Content .top-content{
-
-  display:flex;
-  flex-flow:row wrap;
-  justify-content: space-between;
-}
-/* ===================== ======================== */
-  /*               TOP CONTENT                    */
-/* ===================== ======================== */
-
-
-
-.HomePage .Main{
-  padding: 3% 5%;
+.Main{
+  margin: 3%;
   display: flex;
   flex-flow: column nowrap;
+
   background-color: white;
 }
 
-
-.HomePage .Main .Content form{
-text-align: center;
+.Main form ul li svg{
+  padding-right: 1.5rem;
 }
 
 
-.HomePage  .Content form select{
+.Main .Content form{
+/* text-align: center; */
+flex: 1 0 90%;
+}
+
+
+.Main .Content form select{
   display: flex;
   flex-flow:column nowrap;
-  width:210px;
+  width:200px;
   /* width:auto; */
-  height:50px;
-  background-color: #5B62B9;
+  height:45px;
+  /* background-color: #5B62B9; */
+  background-color: var(--main-color);
   color: white;
   padding:1%;;
   font-size: 20px;
   cursor: pointer;
   margin:2%;
 }
-.HomePage  .Content form select ul{
+
+.Main .Content form select:hover{
+  border: 2px solid #5B24B9;
+}
+
+.Main .Content form select ul{
   display:flex;
   justify-content: space-between;
 }
 
-
-.Content form select:hover{
-  border: 2px solid #5B24B9;
+.Main .Content form select option{
+text-align:center;
 }
 
+.Main .Content .top-content{
+  display:flex;
+  flex-flow:row wrap;
+  justify-content: space-between;
+}
 
-.Content form select option{
-text-align:center;
+/* ============Information=============== */
+.information {
+margin:1%;
+
+}
+
+.information  ul{
+  color:black;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0;
+
+}
+
+.information  ul li{
+  list-style-type: none;
+  font-size: 1.5rem;
+  border-bottom: 2px solid black;
+  margin-bottom: 2%;
+  margin-right: 2rem;
+  flex: 1 0 30%;
 }
 /* ===================== ======================== */
 /*               PROFILE area */
@@ -236,8 +250,15 @@ text-align:center;
   height:auto;
 } */
 
+.Main .Profile {
+  display: block;
+}
 
-.HomePage .Main .Profile .user-info{
+.Main .hideProfile .Profile{
+  display: none;
+}
+
+.Main .Profile .user-info{
   background-color: #606060;
   /* margin:auto; */
   color:white;
@@ -247,11 +268,10 @@ text-align:center;
   /* margin: auto; */
   /* min-width: 80%; */
   box-sizing: border-box;
-
 }
 
 
- .HomePage .Main .Profile .user-info ul{
+ .Main .Profile .user-info ul{
   list-style-type: none;
   display:flex;
   flex-flow:column wrap;
@@ -261,12 +281,9 @@ text-align:center;
   padding-right: .5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-
 }
 
-
-
- .HomePage .Main .Profile div h2{
+ .Main .Profile div h2{
   text-align: center;
   border-bottom: 2px solid black;
   padding-bottom: 1rem;
@@ -276,38 +293,19 @@ text-align:center;
   margin-righ: 10%; */
 }
 
-.HomePage .Main .Profile h3{
+.Main .Profile h3{
   text-align: center;
 }
 
-.HomePage .Main .Profile .user-info ul li:nth-of-type(odd){
+.Main .Profile .user-info ul li:nth-of-type(odd){
   border-bottom: 1px solid white;
   /* margin:2%; */
 }
-.HomePage .Main .Profile .user-info ul li:nth-of-type(even){
+
+.Main .Profile .user-info ul li:nth-of-type(even){
   margin:3%;
-
-}
-/* ============Information=============== */
-.information {
-margin:1%;
-
 }
 
-.information  ul{
-  color:black;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-
-}
-
-.information  ul li{
-  list-style-type: none;
-  font-size: 1.5rem;
-  border-bottom: 2px solid black;
-  margin-bottom: 2%;
-}
 
 /* ===================== ======================== */
 /*              CHARTS */
@@ -325,6 +323,16 @@ margin:1%;
 } */
 
 
+/* .HomePage .Main .Content .costofliving .down-charts div .chartjs-render-monitor{
+  max-width: 100%;
+  height: auto;
+} */
+
+.top-chart{
+  grid-column: 1/2;
+  grid-row: 1;
+}
+
 .top-chart>div{
   padding: 2%;
   margin:2%;
@@ -339,27 +347,35 @@ margin:1%;
 }
 
 .charts{
-  background-color: #F4F1EF;
+  /* background-color: #F4F1EF; */
+  background-color: var(--graph1-bkcolor);
   border:3px solid #B5B5B5;
+  margin: 1rem;
 }
 
 .down-charts>div{
   padding: 2%;
   margin:2%;
-
   /* min-width:300px; */
 }
-
-
-.top-chart{
-  grid-column: 1/2;
-  grid-row: 1;
-}
-
 
 .down-charts div:first-of-type{
   grid-column: 1/3;
   grid-row: 2;
+}
+
+.employement p{
+  margin-top: 5rem;
+}
+
+.employement{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.employement div{
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 /* ===================== ======================== */
@@ -367,6 +383,11 @@ margin:1%;
 /* ===================== ======================== */
 
 .surveyDiv{
+  grid-column: 2/3;
+  grid-row: 1;
+
+  margin: 1%;
+  margin-left: 2rem;
   display: flex;
   flex-flow: column nowrap;
 }
@@ -403,7 +424,6 @@ margin:1%;
 
   list-style: none;
 }
-
 
 .surveyNav{
     display: flex;
@@ -493,6 +513,7 @@ margin:1%;
 
 /* ========================================================= */
 .resultsPage{
+
   display:grid;
   grid-template-columns: 1fr;
   /* grid-template-columns: 1fr 1fr;
@@ -612,13 +633,16 @@ margin:1%;
 /*               FOOTER AREA                     */
 /* ===================== ======================== */
 
-/* .HomePage footer{
+.HomePage footer{
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
+
+  justify-content: space-between;
+  background-color: var(--main-color);
 
 }
 
-.HomePage footer .left-side,
+/* .HomePage footer .left-side,
 .HomePage footer .right-side{
   flex: 1 0 90%;
 } */
@@ -673,16 +697,19 @@ margin:1%;
 /*               CONTENT AREA                     */
 /* ===================== ======================== */
 
-  .HomePage .Main{
+  .Main{
+    margin: 0;
     background-color: white;
-    padding: 2%;
+    /* padding: 2%; */
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 3fr 1fr;
+    grid-template-rows: 1fr;
     grid-gap: 2rem;
   }
 
-  .HomePage .Main{
+
+
+  .Content{
     grid-column: 2 / 3;
     grid-row: 1;
 
@@ -692,9 +719,27 @@ margin:1%;
     flex-flow: column nowrap;
   }
 
+  .employement{
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .costofliving{
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
 /* ===================== ======================== */
 /*                 MENU / HEADER */
 /* ===================== ======================== */
+
+/* .HomePage footer{
+  display: flex;
+  flex-flow: row nowrap;
+
+  justify-content: space-between;
+
+}
 
   .HomePage header,
   .HomePage footer {
@@ -704,21 +749,24 @@ margin:1%;
 
     background-color: var(--main-color);
     color: white;
-  }
+  } */
 
-  .HomePage .desktop,
-  .HomePage .Profile,
-  .HomePage .hideProfile .Profile {
+  .HomePage  header .desktop{
     display: block;
   }
 
-  .HomePage .mobile{
+  .HomePage header .mobile{
     display: none;
   }
 
   .HomePage header .username{
     order: 3;
-    line-height: 3.5;
+    line-height: 4.5;
+    text-align: center;
+  }
+
+  .HomePage header .username a{
+    border-left: 2px solid white;
   }
 
   .HomePage header .left-side{
@@ -747,7 +795,8 @@ margin:1%;
   /* height:auto; */
 }
 
-.HomePage .Main .Profile {
+ .Main .Profile {
+  display: block;
   grid-column: 1 / 2;
   grid-row: 1;
 
@@ -759,6 +808,11 @@ margin:1%;
   height: 100%;
   width: 20vw;
   /* width: 27%; */
+}
+
+
+.Main .hideProfile .Profile {
+  display: block;
 }
 
 
@@ -803,6 +857,7 @@ margin:1%;
 /*                 SURVEY                         */
 /* ===================== ======================== */
 .surveyDiv{
+
   display: flex;
   flex-flow: column nowrap;
 }
@@ -828,6 +883,9 @@ margin:1%;
 }
 
 .resultsPage{
+  grid-column: 2 / 3;
+  margin: 1%;
+  margin-left: 2rem;
   /* display:grid; */
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 4fr 3fr;
@@ -843,14 +901,9 @@ margin:1%;
   padding: 1%;
 }
 
-.resultsPage .resultPageCard .resultPageCardPicture{
-  margin:2%;
-}
 
 .resultsPage .resultPageCard:first-of-type .resultPageCardPicture{
-
   grid-column: 1;
-  grid-row: 1/4;
 }
 
 
@@ -868,8 +921,13 @@ margin:1%;
 /* ===================== ======================== */
 
 .sprof{
+
+      grid-column: 2 / 3;
+      margin: 1%;
+      margin-left: 3rem;
       display: flex;
       flex-flow: row wrap;
+
       box-sizing: border-box;
 }
 
@@ -890,11 +948,19 @@ margin:1%;
 }
 
 .sprof .snowfall{
-      flex: 1 0 100%;
+      flex: 1 0 90%;
+      display: flex;
+      flex-flow: column nowrap;
+      margin: 2rem;;
 }
 
 
-
+.contactUsPage,
+.aboutPage{
+  grid-column: 2 / 3;
+  margin: 1%;
+  margin-left: 2rem;
+}
 
 
 
@@ -902,9 +968,9 @@ margin:1%;
 /*               FOOTER AREA                     */
 /* ===================== ======================== */
 
-footer .right-side, footer .left-side{
+/* footer .right-side, footer .left-side{
     align-content: center;
-}
+} */
 
 }
 
