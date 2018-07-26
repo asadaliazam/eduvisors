@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Menu from './Menu.js';
+
 import Profile from './profile.js';
 import Footer from './Footer.js';
 import HomeSwitch from './HomeSwitch.js';
@@ -8,7 +9,7 @@ class HomePage extends Component {
   constructor() {
     super();
     this.state = {
-        showProfile: true
+        showProfile: false
     };
     this.toggleProf = this.toggleProf.bind(this)
 
@@ -24,10 +25,10 @@ class HomePage extends Component {
     return (
 
 
-      <div className="HomePage-Content">
+      <div className="HomePage">
 
               <Menu toggleProf={this.toggleProf}/>
-              <div className={"Main-Content"+(this.state.showProfile ? '' : ' hideProfile')}>
+              <div className={"Main"+(this.state.showProfile ? '' : ' hideProfile')}>
                   <Profile />
                   <HomeSwitch match={this.props.match}/>
               </div>

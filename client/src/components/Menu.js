@@ -29,13 +29,14 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
     // const { anchorEl } = this.state;
     return (
 
-        <header className="header">
+        <header>
               <div className = "left-side">
-                  <img src={Logo} alt="Eduvisors logo"/>
+                <Link to="/HomePage"><img src={Logo} alt="Eduvisors logo"/></Link>
+
               </div>
 
               <div className = "username">
-                  <a href="/" className="desktop">Asad</a>
+                  <a href="" className="desktop">Asad</a>
                   <div className="mobile" id="user" onClick={this.props.toggleProf}>
                       <FontAwesomeIcon icon={faUser} />
                 </div>

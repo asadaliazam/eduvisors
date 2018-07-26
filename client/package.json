@@ -13,13 +13,16 @@
     "ajv": "^6.5.1",
     "axios": "^0.18.0",
     "chart.js": "^2.7.2",
+    "google-map-react": "^1.0.5",
     "react": "^16.2.0",
+    "react-burger-menu": "^2.5.2",
     "react-chartjs-2": "^2.7.2",
     "react-chartjs2": "^1.2.1",
     "react-dom": "^16.2.0",
     "react-fontawesome": "^1.6.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^1.1.4",
+    "react-scroll": "^1.7.10",
     "react-sortable-hoc": "^0.8.3"
   },
   "scripts": {

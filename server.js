@@ -72,7 +72,7 @@ function schoolMatchingAlgo(data, total_score, multiplier_at, multiplier_rain, m
             });  // end of OBJ.SORT
 
             let obj2 = [];
-            for (let i = 0 ; i <5 ; i++)
+            for (let i = 0 ; i <3 ; i++)
             {
                 // console.log(999999, obj[i]);
                 obj2.push(obj[i]);
@@ -236,6 +236,7 @@ WHERE level_education.short=profile_advanced.lvl_educ AND field_study.short=prof
 // ====================================================
 //             COMPLETION Component
 // ====================================================
+console.log(898989, app.locals.user.email);
 app.get('/api/profileCompletion', (req, res) => {
 db.all(`SELECT * FROM profile_advanced where email = '${app.locals.user.email}'; `, function(err, rows)
     {

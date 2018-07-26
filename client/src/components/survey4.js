@@ -4,7 +4,7 @@ import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc'
 import {Link} from 'react-router-dom'
 
 
-const SortableItem = SortableElement(({value}) => <li>{value}</li>);
+const SortableItem = SortableElement(({value}) => <li className="sortableItem">{value}</li>);
 
 const SortableList = SortableContainer(({items}) => {
   return (

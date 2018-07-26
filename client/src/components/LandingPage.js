@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Switch} from 'react-router';
-
-import LoginForm from './LoginForm';
-import RegisterForm from './RegisterForm';
+import { Link } from "react-router-dom";
 import Logo from'./img/logo1.svg';
 
 import Landingimage from'./img/landing-header.jpg';
@@ -15,9 +11,6 @@ import Footer from './Footer.js';
 
 
 class LandingPage extends Component {
-  constructor(props) {
-    super(props);
-    }
 
   render() {
     return (
@@ -43,9 +36,9 @@ class LandingPage extends Component {
             </ul>
 
             </div>
-              
+
             <div className="landing-image">
-            <img src={Landingimage} alt="Landingimage header-image"/>
+            <img src={Landingimage} alt="Landingimage header"/>
             </div>
             <div className="landing-info">
             <h3>Match making you with your high quality educational destination in Canada.</h3>
