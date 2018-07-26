@@ -6,14 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-<<<<<<< HEAD
-import AboutPagePic from './img/aboutPagePic.jpg';
-// import { withStyles } from '@material-ui/core/styles';
-// import PropTypes from 'prop-types';
-
-=======
 // import AboutPagePic from './img/aboutPagePic.jpg';
->>>>>>> 07abfdaf914cc18cca57747293e4832d50f78469
 
 
 class Engine extends Component {
