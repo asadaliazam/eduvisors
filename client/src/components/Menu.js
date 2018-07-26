@@ -29,7 +29,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
     // const { anchorEl } = this.state;
     return (
 
-        <header className="header">
+        <header>
               <div className = "left-side">
                 <Link to="/HomePage"><img src={Logo} alt="Eduvisors logo"/></Link>
 
