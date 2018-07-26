@@ -385,7 +385,7 @@ margin:1%;
   padding: 0 1.5rem;
 }
 
-.sortable li{
+.sortableItem{
   border: 1px solid var(--main-color);
   border-radius: 5px;
   margin-bottom: 2rem;
