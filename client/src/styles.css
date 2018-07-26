@@ -693,9 +693,13 @@ margin:1%;
 
 }
 
+/* ===================== ======================== */
+/*               LANDING PAGE                    */
+/* ===================== ======================== */
+
 .landingPage .landing-logo
 {
-  width: 15%;
+  width:85px ;
   /* width: 15%; */
 
   /* background-color: pink; */
@@ -709,6 +713,13 @@ margin:1%;
   background-color: black;
   opacity: .5;
 }
+.signupButton{
+  /* display:none; */
+width:200px;
+height:50px;
+align-self: center;
+}
+
 
 .landingPage .landing-header ul{
   display: none;
@@ -720,13 +731,87 @@ align-items: flex-end;
   text-decoration: none;
 }
 .landingPage .landing-image img{
-  width: 98.7vw;
+  width: 100vw;
   height: auto;
   position: relative;
+  display: block;
 
 }
-.signupButton{
-width:200px;
-height:50px;
-align-self: center;
+
+.landingPage .landing-info h3{
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: lighter;
+  color: white;
+  margin-top: 0;
+}
+
+.landingPage .landing-info{
+  background-color: #5b62b9;
+  opacity: .73;
+  margin-top: 0;
+}
+
+.landingPage .signup-video{
+  display:flex;
+  max-width:90%;
+  margin:auto;
+
+}
+.landingPage .signup-video div{
+  flex: 1 0 25px;
+  margin: 1rem;
+
+  /* margin-left: 1rem; */
+}
+.landingPage .signup-video div a{
+  color:white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+
+.landingPage .landing-chart1 .Bar{
+  height: auto!important;
+  width: 100%!important;
+  margin: auto;
+
+}
+.landingPage .landing-chart1 .graphContainer{
+  /* font-size: 1rem; */
+  height: auto!important;
+  width: 80%!important;
+  margin: auto;
+}
+
+.landingPage .landing-chart1 .graphContainer div h2{
+  font-size: 2rem;
+}
+
+.landingPage .landing-chart1 .graphContainer div p{
+  /* font-size: 1rem; */
+  letter-spacing: 1px;
+}
+
+.landingPage .landing-features{
+  display:flex;
+  flex-flow: column nowrap;
+  background-color: #5b62b9;
+  padding: 4rem;
+}
+
+.landingPage .landing-features .features{
+
+  max-width:80%;
+
+margin-top: 1rem!important;
+  margin: auto;
+}
+
+.landingPage .landing-features .features span{
+background-color: #9497ff;
+/* height: 100px;
+width: 200px; */
+padding: 2rem;
+/* margin: 1rem; */
 }

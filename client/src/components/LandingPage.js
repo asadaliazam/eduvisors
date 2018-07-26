@@ -10,8 +10,7 @@ import Landingimage from'./img/landing-header.jpg';
 import Button from '@material-ui/core/Button';
 import CostOfLivingGraph from './costOfLivingGraph';
 
-
-
+import Footer from './Footer.js';
 
 
 
@@ -42,21 +41,42 @@ class LandingPage extends Component {
               </li>
 
             </ul>
-            <div className="signupButton">
-           <p>Sign Up</p>
-           <Button  type="submit" variant="contained" color="primary" className="signupButton">
-             <Link to="/HomePage/signup">Sign up</Link>
-           </Button>
-         </div>
+
             </div>
+              
             <div className="landing-image">
             <img src={Landingimage} alt="Landingimage header-image"/>
             </div>
-            <div>
+            <div className="landing-info">
+            <h3>Match making you with your high quality educational destination in Canada.</h3>
+            </div>
+            <div className="signup-video">
+            <div className="signupButton">
+
+           <Button  type="submit" variant="contained" color="primary" className="signupButton">
+             <Link to="/HomePage/signup">Signup</Link>
+           </Button>
+         </div>
+         <div className="videoButton">
+
+        <Button  type="submit" variant="contained" color="primary" className="signupButton">
+          <Link to="https://www.powtoon.com/embed/dJBuv5ExsKU/">Watch Video</Link>
+        </Button>
+      </div>
+      </div>
+            <div className="landing-chart1">
                      <CostOfLivingGraph province='BC' />
                    </div>
+                   <div className="landing-features">
+                   <div className="feature-1 features"><span>Feature 1</span><h3>About feature</h3></div>
+                   <div className="feature-2 features"><span>Feature 2</span><h3>About feature</h3></div>
+                   <div className="feature-3 features"><span>Feature 3</span><h3>About feature</h3></div>
+                   <div className="landing-chart2">
+                            <CostOfLivingGraph province='BC' />
+                          </div>
 
-          </div>
+                   </div>
+<Footer />          </div>
     );
   }
 }
