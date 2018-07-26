@@ -11,7 +11,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className = "footer">
+      <footer>
             <div className = "left-side">
                   <ul>
                     <li> <a href="/">Home</a></li>
@@ -27,7 +27,7 @@ class Footer extends Component {
                   <li> <a href="gplus">G+</a></li>
                 </ul>
             </div>
-      </div>
+      </footer>
     );
   }
 }

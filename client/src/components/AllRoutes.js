@@ -11,14 +11,14 @@ class AllRoutes extends Component {
 
   render() {
     return (
-      <div className="Center-Page">
+
                 <Switch>
                       <Route exact path="/" component={LandingPage} />
                       <Route path="/login" component={LoginForm} />
                       <Route exact path="/register" component={RegisterForm} />
                       <Route path="/HomePage" component={HomePage} />
                 </Switch>
-      </div>
+      
     );
   }
 }

@@ -19,7 +19,7 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="profile">
+      <div className="Profile">
             {this.state.profile.map(user =>
                 <div key={user.id}>
                 <h2>{user.first_name} {user.last_name}</h2>

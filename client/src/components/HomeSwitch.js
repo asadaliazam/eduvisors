@@ -19,7 +19,7 @@ class HomeSwitch extends Component {
   render() {
     console.log(this.props.match)
     return (
-      <div className="Center-Page">
+
                 <Switch>
                       <Route exact path="/HomePage" component={HomeContent} />
                       <Route path={`${this.props.match.path}/engine`} component={Engine} />
@@ -32,7 +32,7 @@ class HomeSwitch extends Component {
                       <Route path={`${this.props.match.path}/survey3`} component={Survey3} />
                       <Route path={`${this.props.match.path}/survey4`} component={Survey4} />
                 </Switch>
-      </div>
+      
     );
   }
 }

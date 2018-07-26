@@ -38,8 +38,7 @@ class HomeContent extends Component {
 
   render() {
     return (
-      <div>
-          <div className="main-content">
+          <div className="Content">
             <div className="surveyLink">
                 <p>Take the survey and we will find your matchmake university:</p>
                 <Button  type="submit" variant="contained" color="primary" className="surveyButton">
@@ -95,9 +94,8 @@ class HomeContent extends Component {
 
                 </div> {/* end of DOWN-CHARTS */}
 
-          </div> {/* end of MAIN-CONTENT */}
+          </div>
 
-    </div>
     );
   }
 }

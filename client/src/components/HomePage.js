@@ -25,10 +25,10 @@ class HomePage extends Component {
     return (
 
 
-      <div className="HomePage-Content">
+      <div className="HomePage">
 
               <Menu toggleProf={this.toggleProf}/>
-              <div className={"Main-Content"+(this.state.showProfile ? '' : ' hideProfile')}>
+              <div className={"Main"+(this.state.showProfile ? '' : ' hideProfile')}>
                   <Profile />
                   <HomeSwitch match={this.props.match}/>
               </div>
