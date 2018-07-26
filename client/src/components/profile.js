@@ -21,7 +21,7 @@ class Profile extends Component {
     return (
       <div className="profile">
             {this.state.profile.map(user =>
-                <div className="profile_completion" key={user.id}>
+                <div key={user.id}>
                 <h2>{user.first_name} {user.last_name}</h2>
 
                 <ProfileCompletion randomVariable={1}/>

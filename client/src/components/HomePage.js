@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import Menu from './Menu.js';
+<<<<<<< HEAD
+=======
+// import Example from './Menu2.js';
+>>>>>>> 57735f97ff7e7f1198d4a979588b5ff5072ffa43
+
 import Profile from './profile.js';
 import Footer from './Footer.js';
 import HomeSwitch from './HomeSwitch.js';

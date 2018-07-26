@@ -72,7 +72,7 @@ function schoolMatchingAlgo(data, total_score, multiplier_at, multiplier_rain, m
             });  // end of OBJ.SORT
 
             let obj2 = [];
-            for (let i = 0 ; i <5 ; i++)
+            for (let i = 0 ; i <3 ; i++)
             {
                 // console.log(999999, obj[i]);
                 obj2.push(obj[i]);
