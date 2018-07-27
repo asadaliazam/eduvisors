@@ -635,7 +635,7 @@ margin:1%;
 /*               FOOTER AREA                     */
 /* ===================== ======================== */
 
-.HomePage footer{
+.HomePage footer, .landingPage footer{
   display: flex;
   flex-flow: row nowrap;
 
@@ -650,7 +650,7 @@ margin:1%;
 } */
 
 
-.HomePage footer .left-side ul{
+.HomePage footer .left-side ul,.landingPage footer .left-side ul{
   display: flex;
 
   list-style-type: none;
@@ -659,7 +659,7 @@ margin:1%;
 
 }
 
-.HomePage footer .right-side ul{
+.HomePage footer .right-side ul, .landingPage footer .right-side ul{
   display: flex;
   justify-content: flex-end;
 
@@ -670,7 +670,7 @@ margin:1%;
   text-align: right;
 }
 
-.HomePage footer li{
+.HomePage footer li, .landingPage footer li{
   padding: 1rem;
 }
 
@@ -980,21 +980,30 @@ margin:1%;
 /*               LANDING PAGE                    */
 /* ===================== ======================== */
 
-.landingPage .landing-logo
-{
-  width:85px ;
-  /* width: 15%; */
+/* .landingPage .landing-header{
+  display: block;
+} */
 
-  /* background-color: pink; */
-}
-
-.landingPage .landing-header{
-  display: flex;
+.landingPage .landing-header header{
+  /* display: flex; */
   width: 100%;
   position: absolute;
   z-index: 99;
   background-color: black;
   opacity: .5;
+}
+.landingPage .landing-header .left-side a img{
+  max-width: 85px;
+
+}
+.landingPage .landing-header .right-side .mobile{
+  color: white;
+position: absolute;
+right: 0;
+top:.5rem;
+font-size: 2rem;
+  width: 40px;
+  z-index: 99;
 }
 .signupButton{
   /* display:none; */
@@ -1007,7 +1016,7 @@ align-self: center;
 .landingPage .landing-header ul{
   display: none;
 list-style-type: none;
-align-items: flex-end;
+/* align-items: flex-end; */
 }
 
 .landingPage .landing-header ul li{
@@ -1024,7 +1033,7 @@ align-items: flex-end;
 
 .landingPage .landing-info h3{
   padding: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: lighter;
   color: white;
   margin-top: 0;
@@ -1078,24 +1087,42 @@ align-items: flex-end;
 }
 
 .landingPage .landing-features{
-  display:flex;
-  flex-flow: column nowrap;
-  background-color: #5b62b9;
+  /* display:flex; */
+  /* flex-flow: column nowrap; */
+  /* background-color: #5b62b9; */
   padding: 4rem;
+  /* max-width: 80%;
+  margin: auto; */
 }
 
 .landingPage .landing-features .features{
 
-  max-width:80%;
+  max-width:60%;
 
 margin-top: 1rem!important;
   margin: auto;
 }
 
-.landingPage .landing-features .features span{
+.landingPage .landing-features .features img{
 background-color: #9497ff;
-/* height: 100px;
-width: 200px; */
+height: auto;
+max-width: 100px;
+border-radius: 1rem;
+
 padding: 2rem;
 /* margin: 1rem; */
+}
+/* .landingPage .landing-features .landing-chart2 {
+  background-color: #9497ff;
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+
+} */
+
+.landingPage .landing-features .landing-chart2 .graphContainer h2{
+  margin: auto;
+  letter-spacing: 1px;
 }
