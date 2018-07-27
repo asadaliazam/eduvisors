@@ -9,12 +9,12 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "cd client && npm install && npm start"
-    
+    "heroku-postbuild": "cd client && npm install && npm run build"
+
   },
   "engines": {
     "npm": "6.2.0",
-    "node": "9.5.0"
+    "node": "8.11.2"
   },
   "author": "Asad",
   "license": "MIT",
