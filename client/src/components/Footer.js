@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-// import '../styles/everything.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import {faFacebookSquare, faGooglePlusG, faInstagram} from '@fortawesome/fontawesome-free-brands';
+// faTwitter, faLinkedin, faGithub, faFacebook,
 
 class Footer extends Component {
-  constructor() {
-    super();
-    this.state = {
-    };
-  }
-
 
   render() {
     return (
@@ -22,9 +19,9 @@ class Footer extends Component {
 
             <div className = "right-side">
                 <ul>
-                  <li> <a href="facebook">Facebook</a></li>
-                  <li> <a href="instagram">Instagram</a></li>
-                  <li> <a href="gplus">G+</a></li>
+                  <li> <a href="facebook"><FontAwesomeIcon icon={faFacebookSquare} /></a></li>
+                  <li> <a href="instagram"><FontAwesomeIcon icon={faInstagram} /></a></li>
+                  <li> <a href="gplus"><FontAwesomeIcon icon={faGooglePlusG} /></a></li>
                 </ul>
             </div>
       </footer>

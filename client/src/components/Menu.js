@@ -47,8 +47,8 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
                     <ul>
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>
-                        <li><Link to="/HomePage">Home</Link></li>
                         <li><Link to="/HomePage/survey">Survey</Link></li>
+                        <li><Link to="/Login">Login</Link></li>
                     </ul>
                 </nav>
                 <div className="mobile" id="bars">

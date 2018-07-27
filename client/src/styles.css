@@ -22,10 +22,67 @@
 /*              HEADER SIGNUP BUTTON              */
 /* ===================== ======================== */
 
-.signupButton{
+.signupButton, .fb-button{
 width:200px;
 height:50px;
 align-self: center;
+}
+
+
+/* ===================== ======================== */
+/*              LOGIN PAGE              */
+/* ===================== ======================== */
+
+.Login{
+  height: auto;
+  margin: 1rem;
+
+}
+
+.Login form{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.Login form .Input{
+  width: 300px;
+  margin-bottom: 2rem;
+}
+
+.Login form button{
+  width: 150px;
+}
+
+.Login .gmail{
+  background-color: rgb(234, 51, 36);
+  margin: 1rem 0 1rem 1rem;
+
+}
+
+.Login .fbsocial{
+  background-color: darkgrey;
+}
+
+.Login .sociaLogin{
+  border: 2px solid grey;
+  /* padding-top: 2rem; */
+  margin: 2rem;
+
+  padding: 0  2rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+
+}
+
+.Login .sociaLogin div{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+
 }
 
 /* ========================================HOMEPAGE====================================================== */
@@ -447,19 +504,22 @@ margin:1%;
 }
 
 .btn{
-    background-color: var(--main-color);
-    height: 2.5rem;
+    width:150px;
+    height: 2.4rem;
+    font-size: 1rem;
     color: white;
-    width: 5rem;
+    border-radius: 5px;
+    background-color: var(--materialui-blue);
+    text-align: center;
+    /* line-height: 2; */
 
     display: flex;
     flex-flow: row;
     justify-content: center;
     align-items: center;
+  }
 
-    font-size: .75rem;
-    border-radius: 5px;
-}
+
 
 .rangeslider__fill{
     background: var(--main-color) !important;
@@ -657,6 +717,8 @@ margin:1%;
   padding: 0;
   margin: 0;
 
+  display: none;
+
 }
 
 .HomePage footer .right-side ul{
@@ -782,8 +844,20 @@ margin:1%;
   }
 
   /* ===================== ======================== */
-  /*              SURVEY LINK                   */
+  /*              LOGIN              */
   /* ===================== ======================== */
+
+.Login{
+  margin: 5rem auto;
+  display: flex;
+  max-width: 800px;
+  height: 300px;
+}
+
+.Login .sociaLogin{
+  border: none;
+  border-left: 2px solid grey;
+}
 
 /* ===================== ======================== */
 /*               PROFILE area */
