@@ -561,8 +561,8 @@ app.get('/api/weather/:province', (req, res) => {
                           else {
                             app.locals.weather[j].datasets.data.push(i.value);
                           }
-                      }
                   }
+                }
                   console.log(app.locals.weather);
                   res.json(rows);
 
@@ -572,5 +572,5 @@ app.get('/api/weather/:province', (req, res) => {
 
 
 // ====================================================
-const port = 5000;
+const port = (process.env.PORT || 5000);
 app.listen(port, () => `Server running on port ${port}`);
