@@ -1,0 +1,38 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/free-brands-svg-icons": "^5.1.0-11",
+    "@fortawesome/free-regular-svg-icons": "^5.1.0-11",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
+    "@fortawesome/react-fontawesome": "0.1.0-11",
+    "@material-ui/core": "^1.4.0",
+    "ajv": "^6.5.1",
+    "axios": "^0.18.0",
+    "chart.js": "^2.7.2",
+    "google-map-react": "^1.0.5",
+    "react": "^16.2.0",
+    "react-burger-menu": "^2.5.2",
+    "react-chartjs-2": "^2.7.2",
+    "react-chartjs2": "^1.2.1",
+    "react-dom": "^16.2.0",
+    "react-fontawesome": "^1.6.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.4",
+    "react-scroll": "^1.7.10",
+    "react-sortable-hoc": "^0.8.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.1.1"
+  }
+}

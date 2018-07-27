@@ -1,0 +1,1101 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700|Rubik:400,500,700|Source+Sans+Pro:400,700');
+
+/* ===================== ======================== */
+/* VARIABLE DECLARATION */
+/* ===================== ======================== */
+
+:root{
+    /* --main-color: rgb(91, 101, 177);*/
+    --main-color: rgb(64, 83, 175);
+    --secondary-color: rgb(187, 191, 250);
+    --terceary-color: rgb(180, 180, 180);
+    --materialui-blue: rgb(64, 83, 175);
+    --graph1-bkcolor: rgb(244, 241, 239);
+
+    /* --cinza-profile-color: rgb(96, 96, 96);
+    --cinza-header-color: rgb(74, 74, 74); */
+}
+/* ========================================LANDING PAGE================================================== */
+/* ===================== ======================== */
+/*              HEADER SIGNUP BUTTON              */
+/* ===================== ======================== */
+
+.signupButton{
+width:200px;
+height:50px;
+align-self: center;
+}
+
+/* ========================================HOMEPAGE====================================================== */
+/* ===================== ======================== */
+/* PAGE LAYOUT */
+/* ===================== ======================== */
+
+
+body {
+    margin: auto;
+    font-family: "Rubik", "Roboto", "Source Sans", "Helvetica", "Sans Serif";
+}
+
+#root{
+  /* width: 100%; */
+
+}
+
+/* ===================== ======================== */
+/*                 MENU / HEADER */
+/* ===================== ======================== */
+
+
+.HomePage a {
+  color: white;
+}
+
+.HomePage .desktop{
+  display: none;
+  font-size: 1rem;
+}
+
+.HomePage .mobile{
+  cursor: pointer;
+}
+
+.HomePage .left-side{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  color: white;
+}
+
+.HomePage .left-side,
+.HomePage .right-side,
+.HomePage .username{
+  background-color: var(--main-color);
+  /* line-height: 1; */
+  text-align: right;
+  /* padding: .5rem; */
+  font-size: 1rem;
+}
+
+.HomePage header img {
+  padding-left: 1rem;
+  /* max-width: 20%; */
+  width: 70px;
+  /* height: auto; */
+}
+
+.HomePage header{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.HomePage header .username,
+.HomePage header .right-side{
+  flex: 0 0 12%;
+  justify-content: center;
+  text-align: center;
+  line-height: 2.5;
+  color: white;
+  font-size: 1.2rem;
+}
+.HomePage header .username{
+  order: 1;
+  border-right: 2px solid white;
+
+}
+
+.HomePage header .left-side{
+  order: 2;
+  flex: 1 0 50%;
+}
+
+.HomePage header .right-side{
+  order: 3;
+}
+
+
+.HomePage header nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.HomePage header nav ul li {
+  padding: 0 2rem;
+  line-height: 4.5;
+}
+/* ===================== ======================== */
+/*              SURVEY LINK                   */
+/* ===================== ======================== */
+.surveyLink{
+  /* max-width: 100%; */
+  /* position:absolute; */
+  /* min-width: 200px; */
+  flex: 1 0 100%;
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-color: #F4F1EF;
+  border: 1px solid #606060;
+  padding:.5rem;
+  border-radius:1%;
+  margin: 1%;
+
+}
+
+.surveyButton{
+  width:170px;
+  height:50px;
+  align-self: center;
+}
+
+.surveyButton a{
+  text-decoration: none;
+}
+/* ===================== ======================== */
+/*               CONTENT AREA                     */
+/* ===================== ======================== */
+/* ===================== ======================== */
+  /*               TOP CONTENT                    */
+/* ===================== ======================== */
+
+.Main{
+  margin: 3%;
+  display: flex;
+  flex-flow: column nowrap;
+
+  background-color: white;
+}
+
+.Main form ul li svg{
+  padding-right: 1.5rem;
+}
+
+
+.Main .Content form{
+/* text-align: center; */
+flex: 1 0 90%;
+}
+
+
+.Main .Content form select{
+  display: flex;
+  flex-flow:column nowrap;
+  width:200px;
+  /* width:auto; */
+  height:45px;
+  /* background-color: #5B62B9; */
+  background-color: var(--main-color);
+  color: white;
+  padding:1%;;
+  font-size: 20px;
+  cursor: pointer;
+  margin:2%;
+}
+
+.Main .Content form select:hover{
+  border: 2px solid #5B24B9;
+}
+
+.Main .Content form select ul{
+  display:flex;
+  justify-content: space-between;
+}
+
+.Main .Content form select option{
+text-align:center;
+}
+
+.Main .Content .top-content{
+  display:flex;
+  flex-flow:row wrap;
+  justify-content: space-between;
+}
+
+/* ============Information=============== */
+.information {
+margin:1%;
+
+}
+
+.information  ul{
+  color:black;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0;
+
+}
+
+.information  ul li{
+  list-style-type: none;
+  font-size: 1.5rem;
+  border-bottom: 2px solid black;
+  margin-bottom: 2%;
+  margin-right: 2rem;
+  flex: 1 0 30%;
+}
+/* ===================== ======================== */
+/*               PROFILE area */
+/* ===================== ======================== */
+
+/* .HomePage .Main .Profile .user-info{
+
+  background-color: #606060;
+  margin:auto;
+  color:white;
+  width: 100%;
+  height:auto;
+} */
+
+.Main .Profile {
+  display: block;
+}
+
+.Main .hideProfile .Profile{
+  display: none;
+}
+
+.Main .Profile .user-info{
+  background-color: #606060;
+  /* margin:auto; */
+  color:white;
+  height:auto;
+  padding:.3rem;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /* margin: auto; */
+  /* min-width: 80%; */
+  box-sizing: border-box;
+}
+
+
+ .Main .Profile .user-info ul{
+  list-style-type: none;
+  display:flex;
+  flex-flow:column wrap;
+  /* margin-left: 0!important; */
+  padding-left: 1rem!important;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+ .Main .Profile div h2{
+  text-align: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 1rem;
+  margin-top: 0rem;
+  /* padding-top: 0rem; */
+  /* margin-left: 10%;
+  margin-righ: 10%; */
+}
+
+.Main .Profile h3{
+  text-align: center;
+}
+
+.Main .Profile .user-info ul li:nth-of-type(odd){
+  border-bottom: 1px solid white;
+  /* margin:2%; */
+}
+
+.Main .Profile .user-info ul li:nth-of-type(even){
+  margin:3%;
+}
+
+
+/* ===================== ======================== */
+/*              CHARTS */
+/* ===================== ======================== */
+.top-content{
+  display: flex;
+  flex-flow:column nowrap;
+  margin:1%;
+  padding: 1%;
+}
+/* .charts>div{
+  padding: 2%;
+  margin:4%;
+  background-color: #9C9EDE;
+} */
+
+
+/* .HomePage .Main .Content .costofliving .down-charts div .chartjs-render-monitor{
+  max-width: 100%;
+  height: auto;
+} */
+
+.top-chart{
+  grid-column: 1/2;
+  grid-row: 1;
+}
+
+.top-chart>div{
+  padding: 2%;
+  margin:2%;
+  background-color: #F4F1EF;
+
+}
+
+.graphContainer{
+  display:flex;
+  flex-flow:row wrap;
+  margin:1%;
+}
+
+.charts{
+  /* background-color: #F4F1EF; */
+  background-color: var(--graph1-bkcolor);
+  border:3px solid #B5B5B5;
+  margin: 1rem;
+}
+
+.down-charts>div{
+  padding: 2%;
+  margin:2%;
+  /* min-width:300px; */
+}
+
+.down-charts div:first-of-type{
+  grid-column: 1/3;
+  grid-row: 2;
+}
+
+.employement p{
+  margin-top: 5rem;
+}
+
+.employement{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.employement div{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+/* ===================== ======================== */
+/*                 SURVEY                         */
+/* ===================== ======================== */
+
+.surveyDiv{
+  grid-column: 2/3;
+  grid-row: 1;
+
+  margin: 1%;
+  margin-left: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.question{
+  display: flex;
+  flex-flow: column nowrap;
+  /* padding: 0 4rem; */
+  /* height: auto; */
+}
+
+.sortable ul{
+  padding: 0;
+  display: inline;
+  margin: auto;
+}
+
+.sortable p{
+  padding: 0 1.5rem;
+}
+
+.sortableItem{
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  margin-bottom: 2rem;
+
+  text-align: center;
+  color: var(--main-color);
+  font-weight: 700;
+
+  width: 15rem;
+  height: 2.5rem;
+  line-height: 2.5;
+
+  list-style: none;
+}
+
+.surveyNav{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: auto;
+    width: 65%;
+    padding-bottom: 2rem;
+}
+
+.surveyNav a{
+    text-decoration: none;
+}
+
+.surveyNav p{
+    padding: 0;
+}
+
+.btn{
+    background-color: var(--main-color);
+    height: 2.5rem;
+    color: white;
+    width: 5rem;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+
+    font-size: .75rem;
+    border-radius: 5px;
+}
+
+.rangeslider__fill{
+    background: var(--main-color) !important;
+}
+
+.rangeslider__label-item {
+  width: 5rem;
+  text-align: left;
+}
+
+/* ===================== ======================== */
+/*                 ENGINE PAGE        */
+/* ===================== ======================== */
+
+.score table{
+  /* margin: auto; */
+  /* margin: 0 5%; */
+  column-width: auto;
+  padding: 1rem 0 3rem 0;
+  margin: 0 -1.5rem;
+}
+
+.score table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.score table tr:nth-child(even) {
+    background-color: var(--terceary-color);
+}
+
+.score table .col{
+  text-align: center;
+}
+
+.score table th{
+  text-align: left;
+}
+
+.score table td, .score table th{
+  padding: 8px;
+}
+
+.score h3{
+  padding-left: 0rem;
+  color: var(--main-color);
+}
+
+.score a{
+  color: black;
+}
+
+
+
+/* ========================================================= */
+.resultsPage{
+
+  display:grid;
+  grid-template-columns: 1fr;
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr 2fr; */
+  grid-gap: 2rem;
+  justify-content: center;
+
+}
+
+
+.resultPageCard button
+{
+  background-color: #5B62B9;
+  align-items: flex-end;
+
+}
+
+.resultPageCard .CardContent{
+  display:flex;
+  flex-flow: column wrap;
+
+}
+
+
+/* ===================== ======================== */
+/*                 SCHOOL PROFILE        */
+/* ===================== ======================== */
+
+.sValue{
+  font-size: .9rem;
+  font-weight: 700;
+  text-align: center;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  border-bottom: 1px solid black;
+}
+
+.sprof{
+  display: flex;
+  flex-flow: column nowrap;
+
+  box-sizing: border-box;
+}
+
+.sprof img{
+  flex: 1 0 95%;
+  width: 100%;
+}
+
+.sprof div .btn{
+  position: absolute;
+  right: 5%;
+  background-color: red;
+
+}
+
+.schoolinfo{
+  flex: 1 0 45%;
+}
+
+.schoolBtns{
+  border-top: 2px solid var(--main-color);
+  padding-top: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+
+
+.schoolBtns button{
+      flex: 0 0 19%;
+      background-color: var(--main-color);
+      height: 2.5rem;
+      color: white;
+      /* width: 5rem; */
+      font-size: .75rem;
+      border-radius: 5px;
+}
+
+.snowfall{
+  flex: 1 0 45%;
+}
+
+.schoolinfo button{
+  margin-top: 2rem;
+}
+
+.schoolinfo p{
+  margin-left: 2rem;
+}
+
+.schoolinfo a{
+  color: blue;
+}
+
+.schoolinfo li{
+  list-style: none;
+  line-height: 1.5;
+}
+
+.schoolinfo ul{
+  padding: 0;
+}
+
+
+.schoolinfo ul strong{
+  font-size: 1.5rem;
+}
+
+/* ===================== ======================== */
+/*               FOOTER AREA                     */
+/* ===================== ======================== */
+
+.HomePage footer{
+  display: flex;
+  flex-flow: row nowrap;
+
+  justify-content: space-between;
+  background-color: var(--main-color);
+
+}
+
+/* .HomePage footer .left-side,
+.HomePage footer .right-side{
+  flex: 1 0 90%;
+} */
+
+
+.HomePage footer .left-side ul{
+  display: flex;
+
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.HomePage footer .right-side ul{
+  display: flex;
+  justify-content: flex-end;
+
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  text-align: right;
+}
+
+.HomePage footer li{
+  padding: 1rem;
+}
+
+.resultPageCard .resultPageCardPicture
+{
+  height: 0;
+  padding-top: 56.25%;
+  max-width: 100%;
+}
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/*                 DESKTOP VIEW        */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+@media screen and (min-width: 1000px)
+{
+
+/* ===================== ======================== */
+/* PAGE LAYOUT */
+/* ===================== ======================== */
+  #root{
+    /* width: 100%;
+    margin: auto; */
+  }
+
+/* ===================== ======================== */
+/*               CONTENT AREA                     */
+/* ===================== ======================== */
+
+  .Main{
+    margin: 0;
+    background-color: white;
+    /* padding: 2%; */
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    grid-gap: 2rem;
+  }
+
+
+
+  .Content{
+    grid-column: 2 / 3;
+    grid-row: 1;
+
+    padding-left: 2rem;
+    /* margin-left: 33%;  BIGPROBLEM */
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .employement{
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .costofliving{
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+/* ===================== ======================== */
+/*                 MENU / HEADER */
+/* ===================== ======================== */
+
+/* .HomePage footer{
+  display: flex;
+  flex-flow: row nowrap;
+
+  justify-content: space-between;
+
+}
+
+  .HomePage header,
+  .HomePage footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+
+    background-color: var(--main-color);
+    color: white;
+  } */
+
+  .HomePage  header .desktop{
+    display: block;
+  }
+
+  .HomePage header .mobile{
+    display: none;
+  }
+
+  .HomePage header .username{
+    order: 3;
+    line-height: 4.5;
+    text-align: center;
+  }
+
+  .HomePage header .username a{
+    border-left: 2px solid white;
+  }
+
+  .HomePage header .left-side{
+    order: 1;
+    flex: 1 0 30%;
+  }
+
+  .HomePage header .right-side{
+    order: 2;
+    flex: 1 0 50%;
+  }
+
+  /* ===================== ======================== */
+  /*              SURVEY LINK                   */
+  /* ===================== ======================== */
+
+/* ===================== ======================== */
+/*               PROFILE area */
+/* ===================== ======================== */
+
+.Profile .user-info{
+  /* background-color: #606060; */
+  margin:1%;
+  /* color:white; */
+  width: 90%;
+  /* height:auto; */
+}
+
+ .Main .Profile {
+  display: block;
+  grid-column: 1 / 2;
+  grid-row: 1;
+
+  margin:1%;
+  border:2px solid #606060;
+  padding: 1rem;
+
+  position: fixed;
+  height: 100%;
+  width: 20vw;
+  /* width: 27%; */
+}
+
+
+.Main .hideProfile .Profile {
+  display: block;
+}
+
+
+ .HomePage .Main .Profile .user-info ul{
+  list-style-type: none;
+  display:flex;
+  flex-flow:column wrap;
+  /* margin-left: 0!important; */
+  padding-left: 1rem!important;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+}
+
+
+
+ .HomePage .Main .Profile div h2{
+  text-align: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 1rem;
+  margin-top: 0rem;
+  /* padding-top: 0rem; */
+  /* margin-left: 10%;
+  margin-righ: 10%; */
+}
+
+.HomePage .Main .Profile h3{
+  text-align: center;
+}
+
+.HomePage .Main .Profile .user-info ul li:nth-of-type(odd){
+  border-bottom: 1px solid white;
+  /* margin:2%; */
+}
+.HomePage .Main .Profile .user-info ul li:nth-of-type(even){
+  margin:3%;
+
+}
+/* ===================== ======================== */
+/*                 SURVEY                         */
+/* ===================== ======================== */
+.surveyDiv{
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.survey1, .survey3, .score{
+  background-color: var(--terceary-color);
+
+  padding: 1.5rem 3rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.survey2, .survey4{
+  background-color: var(--secondary-color);
+}
+
+/* ===================== ======================== */
+/*                 ENGINE              */
+/* ===================== ======================== */
+
+.score table td, .score table th{
+  padding: 8px;
+}
+
+.resultsPage{
+  grid-column: 2 / 3;
+  margin: 1%;
+  margin-left: 2rem;
+  /* display:grid; */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 4fr 3fr;
+}
+
+.resultsPage .resultPageCard:first-of-type{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column: 1/4;
+  grid-row: 1;
+  border-bottom: 1px solid #606060;
+  padding: 1%;
+}
+
+
+.resultsPage .resultPageCard:first-of-type .resultPageCardPicture{
+  grid-column: 1;
+}
+
+
+.resultPageCard .resultPageCard:nth-of-type(2) .resultPageCardPicture
+{
+  grid-row:1;
+  height: 0;
+  /* padding-top: 56.25%; */
+  max-width: 100%;
+}
+
+
+/* ===================== ======================== */
+/*                 SCHOOL PROFILE        */
+/* ===================== ======================== */
+
+.sprof{
+
+      grid-column: 2 / 3;
+      margin: 1%;
+      margin-left: 3rem;
+      display: flex;
+      flex-flow: row wrap;
+
+      box-sizing: border-box;
+}
+
+.sprof .schoolImg{
+      flex: 0 0 45%;
+      margin-right: 2rem;
+
+}
+
+.schoolinfo{
+      flex: 1 0 45%;
+      margin: 2rem;
+      margin-left: 0;
+}
+
+.sprof .schoolBtns{
+      flex: 1 0 100%;
+}
+
+.sprof .snowfall{
+      flex: 1 0 90%;
+      display: flex;
+      flex-flow: column nowrap;
+      margin: 2rem;;
+}
+
+
+.contactUsPage,
+.aboutPage{
+  grid-column: 2 / 3;
+  margin: 1%;
+  margin-left: 2rem;
+}
+
+
+
+/* ===================== ======================== */
+/*               FOOTER AREA                     */
+/* ===================== ======================== */
+
+/* footer .right-side, footer .left-side{
+    align-content: center;
+} */
+
+}
+
+/* ===================== ======================== */
+/*               LANDING PAGE                    */
+/* ===================== ======================== */
+
+.landingPage .landing-logo
+{
+  width:85px ;
+  /* width: 15%; */
+
+  /* background-color: pink; */
+}
+
+.landingPage .landing-header{
+  display: flex;
+  width: 100%;
+  position: absolute;
+  z-index: 99;
+  background-color: black;
+  opacity: .5;
+}
+.signupButton{
+  /* display:none; */
+width:200px;
+height:50px;
+align-self: center;
+}
+
+
+.landingPage .landing-header ul{
+  display: none;
+list-style-type: none;
+align-items: flex-end;
+}
+
+.landingPage .landing-header ul li{
+  text-decoration: none;
+}
+
+.landingPage .landing-image img{
+  width: 100vw;
+  height: auto;
+  position: relative;
+  display: block;
+
+}
+
+.landingPage .landing-info h3{
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: lighter;
+  color: white;
+  margin-top: 0;
+}
+
+.landingPage .landing-info{
+  background-color: #5b62b9;
+  opacity: .73;
+  margin-top: 0;
+}
+
+.landingPage .signup-video{
+  display:flex;
+  max-width:90%;
+  margin:auto;
+
+}
+.landingPage .signup-video div{
+  flex: 1 0 25px;
+  margin: 1rem;
+
+  /* margin-left: 1rem; */
+}
+.landingPage .signup-video div a{
+  color:white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+
+.landingPage .landing-chart1 .Bar{
+  height: auto!important;
+  width: 100%!important;
+  margin: auto;
+
+}
+.landingPage .landing-chart1 .graphContainer{
+  /* font-size: 1rem; */
+  height: auto!important;
+  width: 80%!important;
+  margin: auto;
+}
+
+.landingPage .landing-chart1 .graphContainer div h2{
+  font-size: 2rem;
+}
+
+.landingPage .landing-chart1 .graphContainer div p{
+  /* font-size: 1rem; */
+  letter-spacing: 1px;
+}
+
+.landingPage .landing-features{
+  display:flex;
+  flex-flow: column nowrap;
+  background-color: #5b62b9;
+  padding: 4rem;
+}
+
+.landingPage .landing-features .features{
+
+  max-width:80%;
+
+margin-top: 1rem!important;
+  margin: auto;
+}
+
+.landingPage .landing-features .features span{
+background-color: #9497ff;
+/* height: 100px;
+width: 200px; */
+padding: 2rem;
+/* margin: 1rem; */
+}
