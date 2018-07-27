@@ -127,7 +127,9 @@ options : {
             data = {this.state.chartData}
             options={this.state.options}
             />
-
+            <p className="graphDescription">
+              Across Canada, the average tuition fees for international undergraduate students rose 6.3% to $25,180 in 2017/2018. Average tuition fees for international students in graduate programs rose 5.4% to $16,252.
+            </p>
       </div>
     );
   }
