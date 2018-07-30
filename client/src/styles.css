@@ -203,7 +203,7 @@ footer{
   justify-content: center;
   text-align: center;
   color: white;
-  
+
 }
 
  header .username{
@@ -343,7 +343,7 @@ margin:1%;
 /* ===================== ======================== */
 
  .Main .Profile  {
-  display: block;
+  display: none;
 }
 
 .Main .hideProfile .Profile{
@@ -435,6 +435,10 @@ margin:1%;
   display:flex;
   flex-flow:row wrap;
   margin: 1rem;
+}
+
+.graphDescription{
+  margin: 3rem;
 }
 
 .graphContainer h2{
