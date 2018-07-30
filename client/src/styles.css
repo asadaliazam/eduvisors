@@ -397,13 +397,19 @@ margin:1%;
 .Main .Profile .profileCompletion{
   margin-top:1.5rem;
   margin-bottom:1.5rem;
+
+  position: relative;
 }
 
 .profileCompletionNumber{
   font-weight: bold;
   text-align: center;
   font-size: 1.5rem;
-  color:#606060;
+  color:black;
+
+  position: absolute;
+  bottom: 0;
+  right: 10px;
 }
 /* ===================== ======================== */
 /*              CHARTS */
@@ -859,6 +865,7 @@ footer a{
   padding-top: 56.25%;
   max-width: 100%;
 }
+
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /*                 DESKTOP VIEW        */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -874,6 +881,38 @@ footer a{
     margin: auto; */
   }
 
+  .ResponsiveDrawer-root-1{
+    flex-flow: column nowrap;
+  }
+
+  .ResponsiveDrawer-content-6,
+  #root main{
+    padding: 0;
+    margin-top: 1%;
+  }
+
+  .MuiPaper-root-15 .MuiPaper-elevation4-21 .MuiAppBar-root-7 .MuiAppBar-positionFixed-8 .MuiAppBar-colorPrimary-13 .mui-fixed .ResponsiveDrawer-appBar-2{
+
+  }
+
+.MuiToolbar-root-42{
+
+}
+
+  #root header .ResponsiveDrawer-appBar-2{
+    position: static;
+    width: 100%;
+  }
+
+  .ResponsiveDrawer-drawerPaper-5{
+    position: static;
+  }
+
+  .MuiAppBar-positionFixed-8{
+    position: static;
+  }
+
+
 /* ===================== ======================== */
 /*               CONTENT AREA                     */
 /* ===================== ======================== */
@@ -888,13 +927,9 @@ footer a{
     grid-gap: 2rem;
   }
 
-
-
   .Content{
     grid-column: 2 / 3;
     grid-row: 1;
-
-    /* padding-left: 2rem; */
 
     display: flex;
     flex-flow: column nowrap;
@@ -1139,9 +1174,6 @@ footer a{
   width: 20vw;
   z-index: 0;
 }
-
-
-
 
 /* ===================== ======================== */
 /*                 SURVEY                         */
