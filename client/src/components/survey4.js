@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { Redirect } from 'react-router-dom';
 
 
 const SortableItem = SortableElement(({value}) => <li className="sortableItem">{value}</li>);
@@ -22,6 +23,7 @@ const SortableList = SortableContainer(({items}) => {
 class Survey4 extends Component {
   state = {
     items: ['Weather', 'Tuition Fees', 'Cost of Living', 'Institution Rank', 'Employment'],
+    done: 0,
   };
   onSortEnd = ({oldIndex, newIndex}) => {
     this.setState({
@@ -187,11 +189,16 @@ class Survey4 extends Component {
           }
         }).then((json) => {
           console.log(json);
+          this.setState({done: 1});
         })
 
   }
 
   render() {
+    if (this.state.done === 1)
+    {
+      return <Redirect to='./engine' />
+    }
     return (
       <div>
       <div className="CardHeader">
@@ -209,7 +216,6 @@ class Survey4 extends Component {
             Save
           </button>
 
-          <Link to="/HomePage/engine"><p className="btn">Next</p></Link>
         </div>
       </Card>
       </div>

@@ -4,7 +4,10 @@ import 'react-rangeslider/lib/index.css'
 import {Link} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Redirect } from 'react-router-dom';
+
+
 
 
 
@@ -12,6 +15,7 @@ class Survey1 extends Component {
   constructor() {
     super();
     this.state = {
+      done: 0,
       at: 0,
       snow: 0,
       rain: 0,
@@ -60,6 +64,7 @@ class Survey1 extends Component {
                 }
               }).then((json) => {
                 console.log(json);
+                this.setState({done: 1});
               })
 
             }
@@ -69,12 +74,18 @@ class Survey1 extends Component {
     let { at } = this.state
     let {snow } = this.state
     let {rain} = this.state
+
+    if (this.state.done === 1)
+    {
+      return <Redirect to='./survey2' />
+    }
     return (
       <div>
       <div className="CardHeader">
         <p>Survey Questions: 1 / 4</p>
         <Link to="/HomePage"><FontAwesomeIcon icon={faTimes} /></Link>
       </div>
+
 
       <Card className="surveyDiv survey1">
             <div className="first-question question">
@@ -124,8 +135,6 @@ class Survey1 extends Component {
                   <button className="btn" onClick={this.saveData.bind(this)} >
                       Save
                   </button>
-
-                  <Link to="/HomePage/survey2"><p className="btn">Next</p></Link>
             </div>
 
       </Card>
