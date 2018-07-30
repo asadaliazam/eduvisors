@@ -263,6 +263,10 @@ footer{
 
   border-radius: 5px;
 }
+
+.CardHeader p{
+  margin: .2rem 0;
+}
 /* ===================== ======================== */
 /*               CONTENT AREA                     */
 /* ===================== ======================== */
@@ -739,11 +743,29 @@ margin:1%;
 
 
 .aboutMission .pCenter{
-  text-align: center;
+  margin: 2rem;
 }
 
-.aboutEduvisors, .aboutMission{
-  margin: 0 1rem;
+.aboutMission{
+  /* margin: 0 1rem; */
+}
+
+.aboutEduvisors{
+  margin: 1rem 0;
+}
+
+.aboutMission{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.Mission{
+  flex: 0 0 30%;
+  /* padding: 0 1rem; */
+}
+
+.vid{
+  flex: 1 0 60%;
 }
 
 .aboutEduvisors p{
@@ -751,7 +773,7 @@ margin:1%;
 }
 
 .aboutPage .aboutMission .vid{
-  margin: 4% 0;
+  /* margin: 4% 0; */
 }
 
 .aboutPage .teamMembersWrapper{
@@ -776,11 +798,25 @@ margin:1%;
   margin-bottom: 3rem;
 }
 
-.aboutPage .teamMember img
-{
+.aboutPage .teamMember img{
   border-radius: 50%;
   width: 100%;
   max-width: 240px;
+}
+
+.vid{
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+
+.vid iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 
@@ -800,7 +836,7 @@ margin:1%;
 }
 
 .contactUsPage .TxtField{
-  width: 80%;
+  width: 100%;
 }
 
 .contactUsPage .surveyButton{
@@ -1048,14 +1084,16 @@ footer a{
 /* ===================== ======================== */
 
 .aboutPage{
-  margin-left: 2rem;
+
   grid-column: 2 / 3;
   grid-row: 1;
 }
 
-.aboutMission .vid{
-  margin: 3rem;
-}
+
+/* .aboutMission{
+  display: flex;
+  flex-flow: row nowrap;
+} */
 
 .aboutPage .teamMembersWrapper
 {
@@ -1066,7 +1104,7 @@ footer a{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: .2fr .7fr .7fr .7fr;
-  text-align: center;
+  /* text-align: center; */
   justify-items: center;
 
   /* display: flex; */
@@ -1077,7 +1115,7 @@ footer a{
 .aboutPage .teamMembersWrapper h2{
   grid-column: 1 / 3;
   grid-row: 1;
-  text-align: left;
+  
 }
 
 .aboutPage .teamMembersWrapper .t1{
@@ -1121,8 +1159,8 @@ footer a{
   display: flex;
   flex-flow: column nowrap;
 
-  margin: 1%;
-  margin-left: 2rem;
+  /* margin: 1%; */
+  /* margin-left: 2rem; */
 }
 
 .contactUsFrame{

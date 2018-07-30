@@ -19,9 +19,15 @@ class AboutPage extends Component {
       <div className="aboutPage">
 
         <div className="aboutMission">
+          <div className="Mission">
           <h2> Our Mission </h2>
-          <p className="pCenter"> - Eduvisors match makes students with great recommendations for an educational path in Canada -  </p>
-          <embed className="vid" src={require("./img/video/Eduvisors_1-min.mp4")} type="video/mp4" autostart="false" height="260" width="440" />
+          <p className="pCenter">Eduvisors match makes students with great recommendations for an educational path in Canada</p>
+        </div>
+
+          <div class="vid">
+            <iframe width="560" height="315" src={require("./img/video/Eduvisors_1-min.mp4")} allowfullscreen></iframe>
+          </div>
+
         </div>
 
         <div className="aboutEduvisors">

@@ -73,7 +73,7 @@ class Survey1 extends Component {
       <div>
       <div className="CardHeader">
         <p>Survey Questions: 1 / 4</p>
-        <Link to="/"><FontAwesomeIcon icon={faTimes} /></Link>
+        <Link to="/HomePage"><FontAwesomeIcon icon={faTimes} /></Link>
       </div>
 
       <Card className="surveyDiv survey1">
