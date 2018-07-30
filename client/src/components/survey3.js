@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
 import {Link} from 'react-router-dom'
-
+import Card from '@material-ui/core/Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 class Survey3 extends Component {
   constructor() {
@@ -75,7 +77,12 @@ class Survey3 extends Component {
     let {rank} = this.state
     let {emp} = this.state
     return (
-      <div className="surveyDiv survey3">
+      <div>
+      <div className="CardHeader">
+        <p>Survey Questions: 3 / 4</p>
+        <Link to="/HomePage"><FontAwesomeIcon icon={faTimes} /></Link>
+      </div>
+      <Card className="surveyDiv survey3">
       <div className="first-question question">
       {/* <p> How much do you care about Tuition fees? </p> */}
       <p>How much the cost of tuition impacts your study plans?</p>
@@ -145,6 +152,7 @@ class Survey3 extends Component {
             <Link to="/HomePage/survey4"><p className="btn">Next</p></Link>
       </div>
 
+    </Card>
       </div>
     );
   }

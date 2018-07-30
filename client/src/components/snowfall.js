@@ -46,7 +46,7 @@ class Snowfall extends Component {
         let chartData = this.state.chartData;
         switch (this.state.type){
                 case "snow":
-                    chartData.datasets[0]['label'] = "Snowfall";
+                    chartData.datasets[0]['label'] = `Snowfall: ${this.state.province}`;
                     // this.setState(chartData.datasets[0]['label']: "Snowfall");
                     chartData.datasets[0]['backgroundColor'] = 'rgb(153, 51, 255)';
                     break;

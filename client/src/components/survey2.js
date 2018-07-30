@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
 import {Link} from 'react-router-dom'
+import Card from '@material-ui/core/Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 const SortableItem = SortableElement(({value}) => <li className="sortableItem">{value}</li>);
 
@@ -104,7 +107,13 @@ class Survey2 extends Component {
 
   render() {
     return (
-      <div className="surveyDiv survey2 sortable">
+
+      <div>
+      <div className="CardHeader">
+        <p>Survey Questions: 2 / 4</p>
+        <Link to="/HomePage"><FontAwesomeIcon icon={faTimes} /></Link>
+      </div>
+      <Card className="surveyDiv survey2 sortable">
             <p>Drag these itens, placing the topic with more relevance on the top of the list. Remember the answers you gave in the previous part of the survey.</p>
 
             <br/>
@@ -119,7 +128,8 @@ class Survey2 extends Component {
                 <Link to="/HomePage/survey3"><p className="btn">Next</p></Link>
             </div>
 
-      </div>
+      </Card>
+    </div>
     );
   }
 }

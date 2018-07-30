@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import ProfileCompletion from './profileCompletion';
-
-
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 
@@ -13,25 +11,19 @@ class Profile extends Component {
       error: 0
     };
   }
-
   componentDidMount() {
     fetch('/api/profile')
       .then(res => res.json())
       .then(profile => this.setState({profile}, () => console.log('profile fetched...', profile)));
       // .catch(function() { this.setState({error: "Server Side failed to respond!"}), console.log(this.error); }); end of CATCH
   }
-
   render() {
     return (
-
         <Card className="Profile">
-
-
                 {this.state.profile.map(user =>
                     <div key={user.id}>
                     <div className="name">{user.first_name} {user.last_name}</div>
                     <ProfileCompletion randomVariable={1}/>
-
                           <Card className="user-info">
                                     <Typography component="h2">
                                       <li>Email:</li>
@@ -49,8 +41,6 @@ class Profile extends Component {
                       </div>
                 )}
         </Card>
-
-      // </div>
     );
   }
 }

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 // ====================== FontAwesome Icons for Header Menu =============
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+// import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 
   class LongMenu extends React.Component {

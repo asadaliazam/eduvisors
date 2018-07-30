@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import BackButton from './BackButton'
 import Snowfall from './snowfall';
+import TuitionGraph from './TuitionGraph';
+
 // import CostOfLivingGraph from './costOfLivingGraph';
 
 
@@ -105,6 +107,8 @@ class SchoolProf extends Component {
               </div>
                 {/* <p> {this.state.school} </p> */}
                 <Snowfall province={this.state.province} type={this.state.type} />
+                <TuitionGraph province={this.state.province} />
+
                 {/* <CostOfLivingGraph province={this.state.province} /> */}
             </div>
     );    // end of RETURN

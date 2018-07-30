@@ -30,9 +30,6 @@ class HomeContent extends Component {
   render() {
     // const classes = this.props;
     return (
-
-
-
           <div className="Content">
             <div className="surveyLink">
                 <p>Take the survey and we will find your matchmake university:</p>
@@ -77,9 +74,9 @@ class HomeContent extends Component {
                 <Card className="resultPageCard">
                       <CardContent className="CardContent">
                           <Snowfall province={this.state.value} type={'snow'} />
-                          <Typography component="p">
+                          {/* <Typography component="p">
                             Snowfall: {this.state.value}
-                          </Typography>
+                          </Typography> */}
                       </CardContent>
                 </Card>
                 </div>

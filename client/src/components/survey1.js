@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
 import {Link} from 'react-router-dom'
+import Card from '@material-ui/core/Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -67,7 +70,13 @@ class Survey1 extends Component {
     let {snow } = this.state
     let {rain} = this.state
     return (
-      <div className="surveyDiv survey1">
+      <div>
+      <div className="CardHeader">
+        <p>Survey Questions: 1 / 4</p>
+        <Link to="/HomePage"><FontAwesomeIcon icon={faTimes} /></Link>
+      </div>
+
+      <Card className="surveyDiv survey1">
             <div className="first-question question">
                     <p>How much do you care about living in a warm weather region?</p>
                     <Slider
@@ -119,6 +128,7 @@ class Survey1 extends Component {
                   <Link to="/HomePage/survey2"><p className="btn">Next</p></Link>
             </div>
 
+      </Card>
       </div>
     );
   }

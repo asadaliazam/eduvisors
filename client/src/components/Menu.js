@@ -37,7 +37,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 
               <div className = "username">
                   <a href="" className="desktop">Asad</a>
-                  <div className="mobile" id="user" onClick={this.props.toggleProf}>
+                  <div className="mobile" id="user" >
                       <FontAwesomeIcon icon={faUser} />
                 </div>
               </div>
