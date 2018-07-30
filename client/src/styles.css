@@ -13,7 +13,7 @@
     --secondary-color: rgb(187, 191, 250);
     --terceary-color: rgb(180, 180, 180);
     --materialui-blue: rgb(64, 83, 175);
-    --graph1-bkcolor: rgb(244, 241, 239);
+    --offwhite-color: rgb(244, 241, 239);
 
     /* --cinza-profile-color: rgb(96, 96, 96);
     --cinza-header-color: rgb(74, 74, 74); */
@@ -34,51 +34,95 @@ align-self: center;
 /*              LOGIN PAGE              */
 /* ===================== ======================== */
 
-.Login{
+.LoginContent, .RegContent{
   height: auto;
   margin: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+
+  /* background-color: var(--offwhite-color); */
+}
+
+.LoginContent div, .LoginContent div form, .LoginPage .LoginContent,
+.RegContent div form, .RegPage .RegContent{
+  background-color: var(--offwhite-color);
+}
+
+.RegContent .btn{
+  margin-top: 2rem;
+  margin-left: 10rem;
+}
+
+.LoginPage header a,
+.RegPage header a{
+  color: white;
+}
+
+.LoginContent .logAlternative a{
+  color: blue;
+}
+
+.LoginContent .card-content{
+  padding: 0 3rem;
+}
+
+.LoginContent .logAlternative{
+    border-top: 2px solid lightgrey;
+    margin-top: 2rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.LoginContent img, .RegContent img{
+  width: 100%;
 
 }
 
-.Login form{
+.LoginContent form{
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
 }
 
-.Login form .Input{
+.LoginPage header,
+.LoginPage footer,
+.RegPage header,
+.RegPage footer{
+  background-color: rgb(112,112,112);
+}
+
+.LoginContent form .Input{
   width: 300px;
   margin-bottom: 2rem;
 }
 
-.Login form button{
+.LoginContent form button{
   width: 150px;
 }
 
-.Login .gmail{
+.LoginContent .gmail{
   background-color: rgb(234, 51, 36);
-  margin: 1rem 0 1rem 1rem;
+  margin: 1rem 0;
 
 }
 
-.Login .fbsocial{
+.LoginContent .logAlternative .fbsocial{
   background-color: darkgrey;
 }
 
-.Login .sociaLogin{
+.LoginContent .sociaLogin{
   border: 2px solid grey;
-  /* padding-top: 2rem; */
   margin: 2rem;
-
   padding: 0  2rem;
 
   display: flex;
   flex-flow: column nowrap;
   text-align: center;
-
 }
 
-.Login .sociaLogin div{
+.LoginContent .sociaLogin div{
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -94,7 +138,7 @@ align-self: center;
 
 body {
     margin: auto;
-    font-family: "Rubik", "Roboto", "Source Sans", "Helvetica", "Sans Serif";
+    font-family: "Roboto", "Source Sans", "Helvetica", "Sans Serif";
 }
 
 #root{
@@ -105,77 +149,78 @@ body {
 /* ===================== ======================== */
 /*                 MENU / HEADER */
 /* ===================== ======================== */
-
-
 .HomePage a {
   color: white;
 }
 
-.HomePage .desktop{
+ .desktop{
   display: none;
   font-size: 1rem;
 }
 
-.HomePage .mobile{
+ .mobile{
   cursor: pointer;
 }
 
-.HomePage .left-side{
+ .left-side{
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   color: white;
 }
 
-.HomePage .left-side,
-.HomePage .right-side,
-.HomePage .username{
-  background-color: var(--main-color);
-  /* line-height: 1; */
+ .left-side,
+ .right-side,
+ .username{
   text-align: right;
-  /* padding: .5rem; */
   font-size: 1rem;
 }
 
-.HomePage header img {
-  padding-left: 1rem;
-  /* max-width: 20%; */
+ header img {
+  padding-left: 2rem;
   width: 70px;
-  /* height: auto; */
 }
 
-.HomePage header{
+header a{
+  line-height: 1;
+}
+
+header,
+footer{
+    background-color: var(--main-color);
+}
+
+ header{
   position: sticky;
   display: flex;
   flex-flow: row nowrap;
+  line-height: 4;
 }
 
-.HomePage header .username,
-.HomePage header .right-side{
-  flex: 0 0 12%;
+ header .username,
+ header .right-side{
+  flex: 0 0 5rem;
   justify-content: center;
   text-align: center;
-  line-height: 2.5;
   color: white;
-  font-size: 1.2rem;
+  
 }
-.HomePage header .username{
+
+ header .username{
   order: 1;
   border-right: 2px solid white;
-
 }
 
-.HomePage header .left-side{
+ header .left-side{
   order: 2;
   flex: 1 0 50%;
 }
 
-.HomePage header .right-side{
+ header .right-side{
   order: 3;
 }
 
-
-.HomePage header nav ul {
+ header nav ul {
   display: flex;
   justify-content: flex-end;
   list-style-type: none;
@@ -183,17 +228,13 @@ body {
   padding: 0;
 }
 
-.HomePage header nav ul li {
+ header nav ul li {
   padding: 0 2rem;
-  line-height: 4.5;
 }
 /* ===================== ======================== */
 /*              SURVEY LINK                   */
 /* ===================== ======================== */
 .surveyLink{
-  /* max-width: 100%; */
-  /* position:absolute; */
-  /* min-width: 200px; */
   flex: 1 0 100%;
   display:flex;
   flex-flow: row nowrap;
@@ -203,7 +244,6 @@ body {
   padding:.5rem;
   border-radius:1%;
   margin: 1%;
-
 }
 
 .surveyButton{
@@ -384,8 +424,8 @@ margin:1%;
 }
 
 .charts>div{
-  padding: 2%;
-  margin:10%;
+  /* padding: 2%; */
+  margin:2%;
   /* background-color: #9497FF; */
   background-color: #BFBFBF;
 
@@ -394,13 +434,19 @@ margin:1%;
 .graphContainer{
   display:flex;
   flex-flow:row wrap;
-  margin:1.5rem;
+  margin: 1rem;
+}
+
+.graphContainer h2{
+    margin-bottom: 2rem;
+    margin-top: 0;
 }
 
 .charts{
-  background-color: var(--graph1-bkcolor);
+  background-color: var(--offwhite-color);
   border:3px solid #B5B5B5;
-  margin: 1rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
 }
 
 
@@ -663,44 +709,112 @@ margin:1%;
 /* ===================== ======================== */
 /*              ABOUT                */
 /* ===================== ======================== */
-.aboutPage img , .contactUsPage img
-{
-  max-width: 100%;
+.aboutPage img{
+  width: 100%;
   height: auto;
 }
 
-.aboutPage .teamMembersWrapper
-{
+.aboutPage{
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  flex-flow: column nowrap;
 }
 
-.aboutPage
-{
+.aboutPage .aboutEduvisors,
+.aboutPage .aboutMission{
+  flex: 1 0 45%;
+}
+
+
+.aboutMission .pCenter{
   text-align: center;
 }
+
+.aboutEduvisors, .aboutMission{
+  margin: 0 1rem;
+}
+
+.aboutEduvisors p{
+  text-align: left;
+}
+
+.aboutPage .aboutMission .vid{
+  margin: 4% 0;
+}
+
+.aboutPage .teamMembersWrapper{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: 2rem 1rem;
+  text-align: center;
+
+}
+
+.aboutPage .teamMembersWrapper h2{
+  align-self: flex-start;
+  margin-bottom: 3rem;
+}
+
+.aboutPage .teamMember{
+  /* display: inline; */
+  width: 55%;
+  margin-bottom: 3rem;
+}
+
 .aboutPage .teamMember img
 {
   border-radius: 50%;
-  width: 50%;
+  width: 100%;
+  max-width: 240px;
 }
 
-.contactUsPage .google-map
-{
+
+/* ===================== ======================== */
+/*               CONTACT US PAGE                     */
+/* ===================== ======================== */
+
+.contactUsPage{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.contactUsPage img{
+  width: 100%;
+  height: auto;
+  margin-top: 3rem;
+}
+
+.contactUsPage .TxtField{
+  width: 80%;
+}
+
+.contactUsPage .surveyButton{
+  margin: 3rem 10rem;
+}
+
+
+/* .contactUsPage .TeamPic, */
+.contactUsPage .contactUsFormWrapper{
+  flex-flow: 0 0 90%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.contactUsPage div .google-map{
   height: 200px;
+  flex: 1 0 100%;
+  margin-bottom: 2rem;
 }
 
-
-
-/* ===================== ======================== */
-/*               ABOUT                */
-/* ===================== ======================== */
 /* ===================== ======================== */
 /*               FOOTER AREA                     */
 /* ===================== ======================== */
 
-.HomePage footer, .landingPage footer{
+footer, .landingPage footer{
   display: flex;
   flex-flow: row nowrap;
 
@@ -709,13 +823,12 @@ margin:1%;
 
 }
 
-/* .HomePage footer .left-side,
-.HomePage footer .right-side{
-  flex: 1 0 90%;
-} */
+footer .left-side{
+  margin-left: 3rem;
+}
 
 
-.HomePage footer .left-side ul,.landingPage footer .left-side ul{
+/* .landingPage footer .left-side ul{
   display: flex;
 
   list-style-type: none;
@@ -723,10 +836,9 @@ margin:1%;
   margin: 0;
 
   display: none;
+} */
 
-}
-
-.HomePage footer .right-side ul, .landingPage footer .right-side ul{
+footer .right-side ul, .landingPage footer .right-side ul{
   display: flex;
   justify-content: flex-end;
 
@@ -735,10 +847,15 @@ margin:1%;
   margin: 0;
 
   text-align: right;
+
 }
 
-.HomePage footer li, .landingPage footer li{
+footer li, .landingPage footer li{
   padding: 1rem;
+}
+
+footer a{
+  color: white;
 }
 
 .resultPageCard .resultPageCardPicture
@@ -769,7 +886,7 @@ margin:1%;
   .Main{
     margin: 0;
     background-color: white;
-    /* padding: 2%; */
+
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr;
@@ -783,7 +900,7 @@ margin:1%;
     grid-row: 1;
 
     padding-left: 2rem;
-    /* margin-left: 33%;  BIGPROBLEM */
+
     display: flex;
     flex-flow: column nowrap;
   }
@@ -802,48 +919,42 @@ margin:1%;
 /*                 MENU / HEADER */
 /* ===================== ======================== */
 
-/* .HomePage footer{
-  display: flex;
-  flex-flow: row nowrap;
-
-  justify-content: space-between;
-
-}
-
-  .HomePage header,
-  .HomePage footer {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-
-    background-color: var(--main-color);
-    color: white;
-  } */
-
-  .HomePage  header .desktop{
+  header .desktop{
     display: block;
   }
 
-  .HomePage header .mobile{
+   header .mobile{
     display: none;
   }
 
-  .HomePage header .username{
+  .LoginPage header .mobile,
+  .RegPage header .mobile{
+   display: block;
+   text-align: right;
+   margin-right: 2rem;
+ }
+
+   header .username{
     order: 3;
-    line-height: 4.5;
-    text-align: center;
+    flex: 1 0 12%;
   }
 
-  .HomePage header .username a{
+   header .username a{
     border-left: 2px solid white;
+    line-height: 4;
   }
 
-  .HomePage header .left-side{
+
+  /* header .left-side a{
+   line-height: 4;
+ } */
+
+   header .left-side{
     order: 1;
     flex: 1 0 30%;
   }
 
-  .HomePage header .right-side{
+   header .right-side{
     order: 2;
     flex: 1 0 50%;
   }
@@ -852,17 +963,157 @@ margin:1%;
   /*              LOGIN              */
   /* ===================== ======================== */
 
-.Login{
+.LoginContent, .RegContent{
   margin: 5rem auto;
-  display: flex;
   max-width: 800px;
-  height: 300px;
+  height: auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  box-sizing: border-box;
 }
 
-.Login .sociaLogin{
+.LoginContent img{
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+}
+
+
+.LoginContent .sociaLogin{
   border: none;
   border-left: 2px solid grey;
 }
+
+.LoginContent .card-content{
+  padding: 0 6rem;
+}
+
+/* .LoginContent div, .LoginContent div form, .LoginPage .LoginContent,
+.RegContent div form, .RegPage .RegContent{
+  background-color: var(--offwhite-color);
+} */
+
+.RegContent .btn{
+  margin-top: 9rem;
+  margin-left: 2rem;
+}
+
+/* ===================== ======================== */
+/*                 ABOUT PAGE */
+/* ===================== ======================== */
+
+.aboutPage{
+  margin-left: 2rem;
+  grid-column: 2 / 3;
+  grid-row: 1;
+}
+
+.aboutMission .vid{
+  margin: 3rem;
+}
+
+.aboutPage .teamMembersWrapper
+{
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: .2fr .7fr .7fr .7fr;
+  text-align: center;
+  justify-items: center;
+
+  /* display: flex; */
+  /* flex-flow: row wrap; */
+  /* justify-content: space-around; */
+}
+
+.aboutPage .teamMembersWrapper h2{
+  grid-column: 1 / 3;
+  grid-row: 1;
+  text-align: left;
+}
+
+.aboutPage .teamMembersWrapper .t1{
+  grid-column: 1 / 2;
+  grid-row: 2;
+}
+
+.aboutPage .teamMembersWrapper .t2{
+  grid-column: 2 / 3;
+  grid-row: 2;
+}
+
+.aboutPage .teamMembersWrapper .t3{
+  grid-column: 1 / 2;
+  grid-row: 3;
+}
+
+.aboutPage .teamMembersWrapper .t4{
+  grid-column: 2 / 3;
+  grid-row: 3;
+}
+
+.aboutPage .teamMembersWrapper .t5{
+  grid-column: 1 / 3;
+  grid-row: 4;
+
+}
+
+.aboutPage .teamMembersWrapper .t5 img{
+  max-width: 230px;
+}
+
+/* ===================== ======================== */
+/*               CONTACT US PAGE                     */
+/* ===================== ======================== */
+
+.contactUsPage{
+  grid-column: 2 / 3;
+  grid-row: 1;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  margin: 1%;
+  margin-left: 2rem;
+}
+
+.contactUsFrame{
+  display: flex;
+  flex-flow: row wrap;
+
+  box-sizing: border-box;
+
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contactUsFrame h2{
+  flex: 1 0 90%;
+}
+
+.contactUsFrame img{
+
+  height: 100%;
+  max-width: 45%;
+  margin-top: 0;
+}
+
+.contactUsFrame .contactUsFormWrapper{
+  /* flex: 1 0 45%; */
+  width: 45%;
+
+  border: none;
+  margin: 0;
+  padding: 0 0 0 2rem;
+}
+
 
 /* ===================== ======================== */
 /*               PROFILE area */
@@ -872,8 +1123,6 @@ margin:1%;
   background-color: #606060;
   margin:1%;
   color:white;
-
-
 }
 
  .Main .Profile {
@@ -885,7 +1134,7 @@ margin:1%;
   position: fixed;
   height: 85%;
   width: 20vw;
-
+  z-index: 0;
 }
 
 
@@ -932,6 +1181,10 @@ margin:1%;
   grid-template-rows: 4fr 3fr;
 }
 
+.resultsPage{
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .resultsPage .resultPageCard:first-of-type{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -962,7 +1215,6 @@ margin:1%;
 /* ===================== ======================== */
 
 .sprof{
-
       grid-column: 2 / 3;
       margin: 1%;
       margin-left: 3rem;
@@ -975,7 +1227,6 @@ margin:1%;
 .sprof .schoolImg{
       flex: 0 0 45%;
       margin-right: 2rem;
-
 }
 
 .schoolinfo{
@@ -995,44 +1246,7 @@ margin:1%;
       margin: 2rem;;
 }
 
-
-.contactUsPage,
-.aboutPage{
-  grid-column: 2 / 3;
-  margin: 1%;
-  margin-left: 2rem;
-}
-
-
-
-/* ===================== ======================== */
-/*               ABOUT                  */
-/* ===================== ======================== */
-@media screen and (min-width: 1000px)
-{
-  .resultsPage
-  {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-}
-
-
-/* ===================== ======================== */
-/*               ABOUT                  */
-/* ===================== ======================== */
-
-
-
-/* ===================== ======================== */
-/*               FOOTER AREA                     */
-/* ===================== ======================== */
-
-/* footer .right-side, footer .left-side{
-    align-content: center;
-} */
-
-}
+} /*   end of MEDIA QUERY */
 
 /* ===================== ======================== */
 /*               LANDING PAGE                    */

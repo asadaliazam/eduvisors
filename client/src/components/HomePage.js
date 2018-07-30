@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MenuToggle from './MenuToggle.js';
 import Menu from './Menu.js';
 
 import Profile from './profile.js';
@@ -27,7 +28,7 @@ class HomePage extends Component {
 
       <div className="HomePage">
 
-              <Menu toggleProf={this.toggleProf}/>
+              <Menu />
               <div className={"Main"+(this.state.showProfile ? '' : ' hideProfile')}>
                   <Profile />
                   <HomeSwitch match={this.props.match}/>

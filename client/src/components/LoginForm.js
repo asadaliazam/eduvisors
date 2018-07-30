@@ -1,35 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Redirect } from 'react-router-dom';
 // =============================
 import Card from '@material-ui/core/Card';
-// import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-// import Typography from '@material-ui/core/Typography';
 // =============================
-import LongMenu from './Menu';
+import LoginMenu from './LoginMenu';
 import Footer from './Footer';
+import {Link} from 'react-router-dom'
 // =============================
-// import FacebookButton from './FacebookButton';
 
-// const styles = theme => ({
-//   container: {
-//     display: 'flex',
-//     flexWrap: 'wrap',
-//   },
-//   textField: {
-//     marginLeft: theme.spacing.unit,
-//     marginRight: theme.spacing.unit,
-//     width: 200,
-//   },
-//   menu: {
-//     width: 200,
-//   },
-// });
-
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 200,
+  },
+  menu: {
+    width: 200,
+  },
+});
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -40,7 +37,6 @@ class LoginForm extends React.Component {
     loginView: 1,
   };
   this.handleSubmit = this.handleSubmit.bind(this);
-
 }
 
   handleChange = email => event => {
@@ -78,7 +74,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    // const { classes } = this.props;
+    const { classes } = this.props;
     if(this.state.response === 1)
     {
       console.log(this.state.response);
@@ -86,45 +82,59 @@ class LoginForm extends React.Component {
     }
 
     return(
+<div className="LoginPage">
+  <LoginMenu />
+  <Card className="LoginContent">
+        <img src={require("./img/flag-sma.png")} alt="SomePic"/>
+        <CardContent className="card-content">
+          <h2>Sign in for your study path to Canada</h2>
+          <form onSubmit = {this.handleSubmit} className={classes.container} noValidate autoComplete="off">
+            <TextField
+              id="email"
+              label="Email"
+              type="email"
+              className={classes.textField}
+              value={this.state.email}
+              onChange={this.handleChange('email')}
+              margin="normal"
+            />
 
-        <div className="HomePage">
-          <LongMenu />
-          <Card className="Login">
-                <CardContent>
-                  <h2>Sign In</h2>
-                  <form onSubmit = {this.handleSubmit} className="formLogin" noValidate autoComplete="off">
-                    <TextField
-                      id="email"
-                      label="Email"
-                      type="email"
-                      className="Input"
-                      value={this.state.email}
-                      onChange={this.handleChange('email')}
-                      margin="normal"
-                    />
+            <Button  type="submit" variant="contained" color="primary" >
+            Login
+          </Button>
+          </form>
 
-                    <Button  type="submit" variant="contained" color="primary" >
-                    Login
-                  </Button>
-                  </form>
+          <div className="logAlternative">
 
-                </CardContent>
-
-                <div className="sociaLogin">
-                    <p>or</p>
-                    <div>
-                        <button className="btn fbsocial ">facebook</button>
-                        <button className="btn gmail ">gmail</button>
-                    </div>
+                <p>or</p>
+                <div>
+                    <button className="btn fbsocial ">facebook</button>
+                    <button className="btn gmail ">gmail</button>
                 </div>
+                <Link to="/">forgot password</Link>
 
-                {/* <CardActions>
-                  <Button size="small">Learn More</Button>
-                </CardActions> */}
-              </Card>
-              <Footer />
+          </div>
 
+        </CardContent>
+
+        {/* <div className="sociaLogin">
+            <p>or</p>
+            <div>
+                <button className="btn fbsocial ">facebook</button>
+                <button className="btn gmail ">gmail</button>
             </div>
+        </div>
+
+
+          <Link to="/HomePage/">forgot password</Link> */}
+
+        {/* <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions> */}
+      </Card>
+      <Footer />
+
+    </div>
 
 
     )
@@ -135,5 +145,5 @@ LoginForm.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-// export default withStyles(styles)(LoginForm);
-export default LoginForm;
+export default withStyles(styles)(LoginForm);
+// export default LoginForm;

@@ -10,11 +10,7 @@ class Footer extends Component {
     return (
       <footer>
             <div className = "left-side">
-                  <ul>
-                    <li> <a href="/">Home</a></li>
-                    <li> <a href="./about">About</a></li>
-                    <li> <a href="./contactus">Contact Us</a></li>
-                  </ul>
+                Eduvisors - Copyright &copy; 2018
             </div>
 
             <div className = "right-side">
