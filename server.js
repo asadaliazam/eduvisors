@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+var path = require('path');
+
 
 //  =====================================
 
@@ -15,6 +17,9 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('eduvisors.db');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(path.resolve(__dirname, './client/build')));
+
+
 
 // ====================================================
 //          VARIABLE DECLARATION

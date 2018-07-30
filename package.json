@@ -7,9 +7,9 @@
     "client-install": "cd client && npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NODE_PATH=src react-scripts build"
+    "client": "cd client && npm start",
+    "dev": "concurrently --kill-others-on-fail \"npm run start\" \"npm run client\"",
+    "heroku-postbuild": "cd client/ && npm install && npm install --no-shrinkwrap && npm run build"
 
   },
   "engines": {
