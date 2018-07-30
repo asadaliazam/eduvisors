@@ -35,6 +35,8 @@ align-self: center;
   margin: 1rem;
   display: flex;
   flex-flow: column nowrap;
+<<<<<<< HEAD
+=======
 
   /* background-color: var(--offwhite-color); */
 }
@@ -73,9 +75,51 @@ align-self: center;
 
 .LoginContent img, .RegContent img{
   width: 100%;
+>>>>>>> 99740f3a73ec17f09c2ffe6dd69ffb13906c4995
+
+  /* background-color: var(--offwhite-color); */
+}
+
+<<<<<<< HEAD
+.LoginContent div, .LoginContent div form, .LoginPage .LoginContent,
+.RegContent div form, .RegPage .RegContent{
+  background-color: var(--offwhite-color);
+}
+
+.RegContent .btn{
+  margin-top: 2rem;
+  margin-left: 10rem;
+}
+
+.LoginPage header a,
+.RegPage header a{
+  color: white;
+}
+
+.LoginContent .logAlternative a{
+  color: blue;
+}
+
+.LoginContent .card-content{
+  padding: 0 3rem;
+}
+
+.LoginContent .logAlternative{
+    border-top: 2px solid lightgrey;
+    margin-top: 2rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.LoginContent img, .RegContent img{
+  width: 100%;
 
 }
 
+=======
+>>>>>>> 99740f3a73ec17f09c2ffe6dd69ffb13906c4995
 .LoginContent form{
   display: flex;
   flex-flow: column nowrap;
@@ -1051,6 +1095,7 @@ footer a{
   flex-flow: row nowrap;
 
   box-sizing: border-box;
+<<<<<<< HEAD
 }
 
 .LoginContent img{
@@ -1059,6 +1104,16 @@ footer a{
   max-width: 320px;
 }
 
+=======
+}
+
+.LoginContent img{
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+}
+
+>>>>>>> 99740f3a73ec17f09c2ffe6dd69ffb13906c4995
 
 .LoginContent .sociaLogin{
   border: none;
@@ -1350,8 +1405,12 @@ footer a{
 
 .landingPage .landing-header .left-side a img{
 <<<<<<< HEAD
+<<<<<<< HEAD
   max-width: 6rem;
 
+=======
+  max-width: 85px;
+>>>>>>> 99740f3a73ec17f09c2ffe6dd69ffb13906c4995
 =======
   max-width: 85px;
 >>>>>>> 99740f3a73ec17f09c2ffe6dd69ffb13906c4995
