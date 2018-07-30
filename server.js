@@ -21,6 +21,7 @@ app.use(express.static(path.resolve(__dirname, './client/build')));
 
 
 
+
 // ====================================================
 //          VARIABLE DECLARATION
 // ====================================================
@@ -38,6 +39,7 @@ app.locals.user = {
 }
 
 // ====================================================
+
 
 function schoolMatchingAlgo(data, total_score, multiplier_at, multiplier_rain, multiplier_snow, o_w, o_emp, o_tui, o_col, o_rank)
 {
@@ -573,6 +575,10 @@ app.get('/api/weather/:province', (req, res) => {
 
             });
 });
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
 
 
 
