@@ -35,7 +35,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 
               </div>
 
-            
+
 
               <div className = "right-side">
                 <nav className="desktop">
@@ -43,7 +43,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>
                         <li><Link to="/Login">Login</Link></li>
-                        <li><Link to="/register">Signup</Link></li>
+                        {/* <li><Link to="/register">Signup</Link></li> */}
                     </ul>
                 </nav>
                 <div className="mobile" id="bars">
