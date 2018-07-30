@@ -38,7 +38,6 @@ class HomeContent extends Component {
                 </Button>
             </div>
 
-
             <div className="top-content">
               <form onSubmit={this.handleSubmit}>
                   <label>

@@ -3,13 +3,16 @@ import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
 import {Link} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Redirect } from 'react-router-dom';
+
 
 class Survey3 extends Component {
   constructor() {
     super();
     this.state = {
+      done: 0,
       tui: 0,
       col: 0,
       rank: 0,
@@ -66,12 +69,17 @@ class Survey3 extends Component {
                 }
               }).then((json) => {
                 console.log(json);
+                this.setState({done: 1});
               })
 
             }
 
 
   render() {
+    if (this.state.done === 1)
+    {
+      return <Redirect to='./survey4' />
+    }
     let { tui } = this.state
     let {col } = this.state
     let {rank} = this.state
@@ -149,7 +157,6 @@ class Survey3 extends Component {
                 Save
             </button>
 
-            <Link to="/HomePage/survey4"><p className="btn">Next</p></Link>
       </div>
 
     </Card>

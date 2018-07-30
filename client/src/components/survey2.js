@@ -2,8 +2,12 @@ import React, {Component} from 'react';
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
 import {Link} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Redirect } from 'react-router-dom';
+
+
+
 
 const SortableItem = SortableElement(({value}) => <li className="sortableItem">{value}</li>);
 
@@ -20,6 +24,7 @@ const SortableList = SortableContainer(({items}) => {
 class Survey2 extends Component {
   state = {
     items: ['Average Temperature', 'Snowfall', 'Rainfall'],
+    done: 0,
   };
   onSortEnd = ({oldIndex, newIndex}) => {
     this.setState({
@@ -101,11 +106,17 @@ class Survey2 extends Component {
           }
         }).then((json) => {
           console.log(json);
+          this.setState({done: 1});
         })
 
   }
 
   render() {
+    if (this.state.done === 1)
+    {
+      return <Redirect to='./survey3' />
+    }
+
     return (
 
       <div>
@@ -113,6 +124,7 @@ class Survey2 extends Component {
         <p>Survey Questions: 2 / 4</p>
         <Link to="/HomePage"><FontAwesomeIcon icon={faTimes} /></Link>
       </div>
+
       <Card className="surveyDiv survey2 sortable">
             <p>Drag these itens, placing the topic with more relevance on the top of the list. Remember the answers you gave in the previous part of the survey.</p>
 
@@ -125,7 +137,6 @@ class Survey2 extends Component {
                   Save
                 </button>
 
-                <Link to="/HomePage/survey3"><p className="btn">Next</p></Link>
             </div>
 
       </Card>
