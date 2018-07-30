@@ -24,6 +24,19 @@ class TuitionGraph extends Component {
   ]
 },
 options : {
+  legend: {
+             display: false,
+             labels: {
+                fontColor: 'rgb(255, 99, 132)'
+            }
+
+         },
+
+       title: {
+           display: true,
+           text: 'Tuition Data'
+       },
+
     scales: {
         yAxes: [{
             display: true,
