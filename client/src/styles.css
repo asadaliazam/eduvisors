@@ -26,6 +26,8 @@ align-self: center;
 }
 
 
+
+
 /* ===================== ======================== */
 /*              LOGIN PAGE              */
 /* ===================== ======================== */
@@ -74,6 +76,26 @@ align-self: center;
 .LoginContent img, .RegContent img{
   width: 100%;
 
+  /* background-color: var(--offwhite-color); */
+}
+
+.LoginContent div, .LoginContent div form, .LoginPage .LoginContent,
+.RegContent div form, .RegPage .RegContent{
+  background-color: var(--offwhite-color);
+}
+
+.RegContent .btn{
+  margin-top: 2rem;
+  margin-left: 10rem;
+}
+
+.LoginPage header a,
+.RegPage header a{
+  color: white;
+}
+
+.LoginContent .logAlternative a{
+  color: blue;
 }
 
 .LoginContent form{
@@ -1059,7 +1081,6 @@ footer a{
   max-width: 320px;
 }
 
-
 .LoginContent .sociaLogin{
   border: none;
   border-left: 2px solid grey;
@@ -1247,6 +1268,10 @@ footer a{
   background-color: var(--secondary-color);
 }
 
+/* .survey2
+{
+  margin-bottom: 300px;
+} */
 /* ===================== ======================== */
 /*                 ENGINE              */
 /* ===================== ======================== */
@@ -1350,8 +1375,8 @@ footer a{
 }
 
 .landingPage .landing-header .left-side a img{
-  max-width: 85px;
 
+  max-width: 85px;
 }
 
 .landingPage .landing-header .right-side .mobile{
