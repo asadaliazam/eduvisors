@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AboutPagePic from'./img/aboutPagePic.jpg';
+// import AboutPagePic from'./img/aboutPagePic.jpg';
 import teamMember1 from'./img/team/asad.jpeg';
 import teamMember2 from'./img/team/nav.png';
 import teamMember3 from'./img/team/rod2.png';

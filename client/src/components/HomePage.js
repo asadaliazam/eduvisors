@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MenuToggle from './MenuToggle.js';
+// import MenuToggle from './MenuToggle.js';
 import Menu from './Menu.js';
 
 import Profile from './profile.js';
@@ -10,7 +10,7 @@ class HomePage extends Component {
   constructor() {
     super();
     this.state = {
-        showProfile: false
+        showProfile: true
     };
     this.toggleProf = this.toggleProf.bind(this)
 

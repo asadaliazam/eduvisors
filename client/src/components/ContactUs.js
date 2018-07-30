@@ -20,7 +20,7 @@ class ContactUs extends Component {
 
         <div className="contactUsFrame">
           <h2> Reach out! We are here for you. </h2>
-            <img src={TeamPic} alt="Team Photo" />
+            <img src={TeamPic} alt="Team Eduvisors" />
 
 
             <div className="contactUsFormWrapper">

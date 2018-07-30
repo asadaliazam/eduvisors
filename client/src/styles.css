@@ -1,12 +1,8 @@
-
-
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700|Rubik:400,500,700|Source+Sans+Pro:400,700');
 
 /* ===================== ======================== */
 /* VARIABLE DECLARATION */
-
 /* ===================== ======================== */
-
 :root{
     /* --main-color: rgb(91, 101, 177);*/
     --main-color: rgb(64, 83, 175);
@@ -18,7 +14,7 @@
     /* --cinza-profile-color: rgb(96, 96, 96);
     --cinza-header-color: rgb(74, 74, 74); */
 }
-/* ========================================LANDING PAGE================================================== */
+
 /* ===================== ======================== */
 /*              HEADER SIGNUP BUTTON              */
 /* ===================== ======================== */
@@ -130,7 +126,6 @@ align-self: center;
 
 }
 
-/* ========================================HOMEPAGE====================================================== */
 /* ===================== ======================== */
 /* PAGE LAYOUT */
 /* ===================== ======================== */
@@ -243,7 +238,7 @@ footer{
   border: 1px solid #606060;
   padding:.5rem;
   border-radius:1%;
-  margin: 1%;
+  /* margin: 1%; */
 }
 
 .surveyButton{
@@ -257,9 +252,6 @@ footer{
 }
 /* ===================== ======================== */
 /*               CONTENT AREA                     */
-/* ===================== ======================== */
-/* ===================== ======================== */
-  /*               TOP CONTENT                    */
 /* ===================== ======================== */
 
 .Main{
@@ -346,9 +338,9 @@ margin:1%;
   display: none;
 }
 
-.Main .hideProfile .Profile{
+/* .Main .hideProfile .Profile{
   display: none;
-}
+} */
 
 .Main .Profile .user-info  {
   background-color: #606060;
@@ -391,7 +383,7 @@ margin:1%;
   margin:1rem;
 }
 
- .HomePage .Main .Profile .name{
+ .Main .Profile .name{
   text-align: center;
   padding-bottom: 1rem;
   border-bottom: 2px solid #606060;
@@ -402,7 +394,7 @@ margin:1%;
 }
 
 
-.HomePage .Main .Profile .profileCompletion{
+.Main .Profile .profileCompletion{
   margin-top:1.5rem;
   margin-bottom:1.5rem;
 }
@@ -668,8 +660,6 @@ margin:1%;
   box-sizing: border-box;
 }
 
-
-
 .schoolBtns button{
       flex: 0 0 19%;
       background-color: var(--main-color);
@@ -828,7 +818,7 @@ footer, .landingPage footer{
 }
 
 footer .left-side{
-  margin-left: 3rem;
+  margin-left: 1.5rem;
 }
 
 
@@ -855,7 +845,8 @@ footer .right-side ul, .landingPage footer .right-side ul{
 }
 
 footer li, .landingPage footer li{
-  padding: 1rem;
+  padding-right: 2rem;
+  line-height: 4;
 }
 
 footer a{
@@ -888,7 +879,7 @@ footer a{
 /* ===================== ======================== */
 
   .Main{
-    margin: 0;
+    margin: 1%;
     background-color: white;
 
     display: grid;
@@ -903,7 +894,7 @@ footer a{
     grid-column: 2 / 3;
     grid-row: 1;
 
-    padding-left: 2rem;
+    /* padding-left: 2rem; */
 
     display: flex;
     flex-flow: column nowrap;
@@ -1123,28 +1114,33 @@ footer a{
 /*               PROFILE area */
 /* ===================== ======================== */
 
-.Profile .user-info {
+/* .HomePage{
+  position: absolute;
+} */
+
+.Main .Profile .user-info {
   background-color: #606060;
   margin:1%;
   color:white;
 }
 
  .Main .Profile {
-  display: sticky;
+  display: block;
+  position: sticky;
+  top: 0;
+
   grid-column: 1 / 2;
   grid-row: 1;
+
   margin:1%;
   padding: 1rem;
-  position: fixed;
+
   height: 85%;
   width: 20vw;
   z-index: 0;
 }
 
 
-.Main .hideProfile .Profile {
-  display: block;
-}
 
 
 /* ===================== ======================== */
@@ -1268,16 +1264,17 @@ footer a{
   background-color: black;
   opacity: .5;
 }
+
 .landingPage .landing-header .left-side a img{
   max-width: 85px;
-
 }
+
 .landingPage .landing-header .right-side .mobile{
   color: white;
-position: absolute;
-right: 0;
-top:.5rem;
-font-size: 2rem;
+  position: absolute;
+  right: 0;
+  top:.5rem;
+  font-size: 2rem;
   width: 40px;
   z-index: 99;
 }

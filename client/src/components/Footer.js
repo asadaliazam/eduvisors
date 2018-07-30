@@ -10,7 +10,7 @@ class Footer extends Component {
     return (
       <footer>
             <div className = "left-side">
-                Eduvisors - Copyright &copy; 2018
+                Eduvisors &copy; 2018
             </div>
 
             <div className = "right-side">

@@ -30,9 +30,6 @@ class HomeContent extends Component {
   render() {
     // const classes = this.props;
     return (
-
-
-
           <div className="Content">
             <div className="surveyLink">
                 <p>Take the survey and we will find your matchmake university:</p>
