@@ -26,6 +26,41 @@ height:50px;
 align-self: center;
 }
 
+.avatar
+{
+  margin: 10;
+  background-color: orange !important;
+  text-align: center;
+  align-items: center;
+}
+
+.SchoolRankGraphList .schoolRankList
+{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.SchoolRankGraphList .schoolRankList li
+{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.5rem;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  padding: 0.5rem;
+  padding-bottom: 2rem;
+}
+
+
+
+
+
+
 
 
 
@@ -383,9 +418,9 @@ margin:1%;
 /*               PROFILE area */
 /* ===================== ======================== */
 
- .Main .Profile  {
+ /* .Main .Profile  {
   display: none;
-}
+} */
 
 /* .Main .hideProfile .Profile{
   display: none;

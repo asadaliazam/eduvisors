@@ -594,8 +594,8 @@ app.get('/api/weather/:province', (req, res) => {
                           else {
                             app.locals.weather[j].datasets.data.push(i.value);
                           }
-                      }
                   }
+                }
                   console.log(app.locals.weather);
                   res.json(rows);
 

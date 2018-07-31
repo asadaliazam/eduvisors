@@ -9,16 +9,11 @@ class Profile extends Component {
     this.state = {
       profile: [],
       error: 0,
-      shown: true,
+
     };
   }
 
 
-  toggle() {
-  		this.setState({
-  			shown: !this.state.shown
-  		});
-  	}
 
 
   componentDidMount() {
@@ -30,21 +25,12 @@ class Profile extends Component {
   render() {
 
 
-    var shown = {
-    			display: this.state.shown ? "block" : "none"
-    		};
-
-    		var hidden = {
-    			display: this.state.shown ? "none" : "block"
-    		}
-
-
 
 
     return (
         <Card className="Profile">
 
-          <div style={ shown } >
+          <div  >
                 {this.state.profile.map(user =>
                     <div key={user.id}>
                     <div className="name">{user.first_name} {user.last_name}</div>
@@ -68,8 +54,7 @@ class Profile extends Component {
 
               </div>
 
-              <h2 style={ hidden }></h2>
-            				<button onClick={this.toggle.bind(this)}>Toggle</button>
+            
 
 
         </Card>
