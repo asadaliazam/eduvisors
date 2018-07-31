@@ -802,6 +802,15 @@ margin:1%;
 .aboutPage{
   display: flex;
   flex-flow: column nowrap;
+  padding: 2%;
+}
+
+.aboutPage h2{
+  margin-top: 0;
+}
+
+.aboutPage a{
+  color: blue;
 }
 
 .aboutPage .aboutEduvisors,
@@ -866,6 +875,7 @@ margin:1%;
   /* display: inline; */
   width: 55%;
   margin-bottom: 3rem;
+  line-height: .7;
 }
 
 .aboutPage .teamMember img{
@@ -884,11 +894,10 @@ margin:1%;
 .vid iframe{
 	position: absolute;
 	top: 0;
-	left: 100px;
+	left: 30px;
 	width: 80%;
 	height: 80%;
   /* margin: auto; */
-
 }
 
 
@@ -1012,15 +1021,8 @@ footer a{
     margin-top: 1%;
   }
 
-  .MuiPaper-root-15 .MuiPaper-elevation4-21 .MuiAppBar-root-7 .MuiAppBar-positionFixed-8 .MuiAppBar-colorPrimary-13 .mui-fixed .ResponsiveDrawer-appBar-2{
 
-  }
-
-.MuiToolbar-root-42{
-
-}
-
-  #root header .ResponsiveDrawer-appBar-2{
+  /* #root header .ResponsiveDrawer-appBar-2{
     position: static;
     width: 100%;
   }
@@ -1031,7 +1033,7 @@ footer a{
 
   .MuiAppBar-positionFixed-8{
     position: static;
-  }
+  } */
 
 
 /* ===================== ======================== */
@@ -1160,6 +1162,9 @@ footer a{
   grid-row: 1;
 }
 
+.vid iframe{
+	left: 100px;
+}
 
 /* .aboutMission{
   display: flex;
