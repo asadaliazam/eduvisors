@@ -344,7 +344,7 @@ text-align:center;
 .Main .Content .top-content{
   display:flex;
   flex-flow:row wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .purpleAvatar {
