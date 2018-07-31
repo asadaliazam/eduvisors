@@ -54,7 +54,7 @@ class CostOfLivingGraph extends Component {
                                     let newChartData = {
                                           labels: [],
                                           datasets: [{
-                                                  label: "",
+                                                  label: `Living Expenses: ${this.state.province}`,
                                                   backgroundColor: ["#FF6384",
                                                                     "#ecff83",
                                                                     "#74ec7a",

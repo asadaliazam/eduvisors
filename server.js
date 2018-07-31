@@ -234,6 +234,18 @@ WHERE level_education.short=profile_advanced.lvl_educ AND field_study.short=prof
 });
 
 // ====================================================
+//             PROFILEFORMENU  Component
+// ====================================================
+
+app.get('/api/profileForMenu', (req, res) => {
+
+    db.all(`SELECT first_name From profile_advanced WHERE email='${app.locals.user.email}';`, function(err, rows)
+        {
+          res.json(rows);
+        });
+});
+
+// ====================================================
 //             COMPLETION Component
 // ====================================================
 console.log(898989, app.locals.user.email);
@@ -393,6 +405,23 @@ FROM cost_living WHERE province = '${req.body.province}';`
           res.json(rows);
     });
 });
+
+// ====================================================
+//               GETTING InterestingFacts
+// ====================================================
+app.post('/api/InterestingFactsData', (req, res) => {
+    console.log(req.body.province);
+    let sql = `SELECT * FROM province_data WHERE province = '${req.body.province}';`
+    console.log(sql);
+
+    db.all(sql, function(err,rows)
+    {
+          console.log(10099, rows);
+          res.json(rows);
+    });
+});
+
+
 
 /////////////////////////////////END////////////////////
 
