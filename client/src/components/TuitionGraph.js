@@ -23,13 +23,12 @@ class TuitionGraph extends Component {
   ]
 },
 options : {
-  legend: { display: false,
+  legend: { display: true,
             labels: {
                 fontColor: 'rgb(255, 99, 132)'}
          },
            title: {
            display: true,
-           text: `Year Tuition Fee Cost: ${this.props.province.toUpperCase()}`,
        },
     scales: {
         yAxes: [{
@@ -79,6 +78,7 @@ options : {
         let newChartData = {
           labels: ['Graduate Programs', 'Undergraduate Programs'],
           datasets: [{
+              label: `Year Tuition Fee Cost: ${this.state.province}`,
               backgroundColor: 'rgba(255,99,132,0.2)',
               borderColor: 'rgba(255,99,132,1)',
               borderWidth: 1,

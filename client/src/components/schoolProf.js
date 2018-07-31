@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import BackButton from './BackButton'
 import Snowfall from './snowfall';
 import TuitionGraph from './TuitionGraph';
-
-// import CostOfLivingGraph from './costOfLivingGraph';
+import {Link} from 'react-router-dom'
+import Card from '@material-ui/core/Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Redirect } from 'react-router-dom';
+import CostOfLivingGraph from './costOfLivingGraph';
 
 
 class SchoolProf extends Component {
@@ -15,7 +19,7 @@ class SchoolProf extends Component {
         this.state = {
             schoolProfile: [],
             schoolID: props.match.params.schoolID,
-            province: 'bc',
+            province: 'BC',
             type: 'snow',
             fileName: 0
         };
@@ -71,23 +75,29 @@ class SchoolProf extends Component {
   render() {
     return (
 
-            <div className="sprof">
+      <div>
+      <div className="CardHeader">
+        <p>Institution Profile</p>
+        <Link to="/HomePage/engine"><FontAwesomeIcon icon={faTimes} /></Link>
+      </div>
+            <Card className="sprof">
                 <div className="schoolImg">
-                    <BackButton />
                     <img src={this.state.fileName} alt="Educational Institution"/>
                 </div>
                 <div className="schoolinfo">
                     {this.state.schoolProfile.map(customer =>
                       <ul key={customer.id}>
-                        <strong><li>Institution Name : {customer.institution_name}</li></strong>
+                        <strong><li>{customer.institution_name}</li></strong>
+                        <li className="schDet">{customer.province}, Canada</li>
+                        <li className="schDet"><a href={customer.url} target="_blank">{customer.url}</a></li>
                         <br/>
-                        <li>Canadian Ranking: {customer.ca_ranking}</li>
-                        <li>World Ranking: {customer.wd_rank}</li>
-                        <li>WebSite: <a href={customer.url} target="_blank">{customer.url}</a></li>
-                        <li>Province: {customer.province}</li>
+                        <li className="schRank">Canadian Ranking: <span>{customer.ca_ranking}</span></li>
+                        <li className="schRank">World Ranking: <span>{customer.wd_rank}</span></li>
+
                       </ul>
                     )}
                 </div>
+                <CostOfLivingGraph province={this.state.province} />
                 <div className="schoolBtns">
                       <button onClick={() => this.setState({type: 'rain'})}>
                         Rain
@@ -108,9 +118,9 @@ class SchoolProf extends Component {
                 {/* <p> {this.state.school} </p> */}
                 <Snowfall province={this.state.province} type={this.state.type} />
                 <TuitionGraph province={this.state.province} />
-
-                {/* <CostOfLivingGraph province={this.state.province} /> */}
+            </Card>
             </div>
+
     );    // end of RETURN
   }   // end of RENDER
 

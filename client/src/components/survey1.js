@@ -133,7 +133,7 @@ class Survey1 extends Component {
 
             <div className="surveyNav">
                   <button className="btn" onClick={this.saveData.bind(this)} >
-                      Save
+                      Next
                   </button>
             </div>
 
