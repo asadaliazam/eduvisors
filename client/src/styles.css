@@ -347,6 +347,13 @@ text-align:center;
   justify-content: space-between;
 }
 
+.purpleAvatar {
+  margin:10;
+  color:#fff;
+  backgroundColor:red;
+}
+
+
 /* ============Information=============== */
 .information {
 margin:1%;
