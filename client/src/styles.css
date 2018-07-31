@@ -314,6 +314,7 @@ flex: 1 0 90%;
 
 
 .Main .Content form select{
+
   display: flex;
   flex-flow:column nowrap;
   width:200px;
@@ -339,43 +340,44 @@ flex: 1 0 90%;
 
 .Main .Content form select option{
 text-align:center;
+
 }
 
 .Main .Content .top-content{
+  margin:2rem 2rem .5% .5%;
   display:flex;
   flex-flow:row wrap;
   justify-content: center;
 }
 
-.purpleAvatar {
-  margin:10;
-  color:#fff;
-  backgroundColor:red;
-}
 
 
-/* ============Information=============== */
-.information {
+
+/* ============InterestingFacts=============== */
+.InterestingFacts {
 margin:1%;
-
 }
 
-.information  ul{
+.InterestingFacts  ul{
   color:black;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
-  padding: 0;
+  padding: .3rem;
 
 }
 
-.information  ul li{
+.InterestingFacts  ul li{
+  display: flex;
+  justify-content: space-between;
   list-style-type: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border-bottom: 2px solid black;
-  margin-bottom: 2%;
-  margin-right: 2rem;
-  flex: 1 0 30%;
+  margin: auto;
+  padding: 1rem;
+  width: 15rem;
+  /* flex: 0 0 27%; */
+
 }
 /* ===================== ======================== */
 /*               PROFILE area */
@@ -461,16 +463,10 @@ margin:1%;
 /* ===================== ======================== */
 /*              CHARTS */
 /* ===================== ======================== */
-.top-content{
-  display: flex;
-  flex-flow:column nowrap;
-  margin:1%;
-  padding: 1%;
-}
 
 .charts>div{
   /* padding: 2%; */
-  margin:2%;
+  margin:3%;
   /* background-color: #9497FF; */
   background-color: #BFBFBF;
 
@@ -496,6 +492,7 @@ margin:1%;
   border:3px solid #B5B5B5;
   border-radius: 5px;
   margin-bottom: 2rem;
+  margin:1%;
 }
 
 
@@ -1089,6 +1086,14 @@ footer a{
     display: flex;
     flex-flow: column nowrap;
   }
+
+/* ===================== ======================== */
+/*                 InterestingFacts */
+/* ===================== ======================== */
+.InterestingFacts  ul li:nth-last-of-type(3){
+justify-content: center;
+
+}
 
 /* ===================== ======================== */
 /*                 MENU / HEADER */
