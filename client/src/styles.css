@@ -347,6 +347,13 @@ text-align:center;
   justify-content: space-between;
 }
 
+.purpleAvatar {
+  margin:10;
+  color:#fff;
+  backgroundColor:red;
+}
+
+
 /* ============Information=============== */
 .information {
 margin:1%;
@@ -747,11 +754,11 @@ grid-gap: 2rem;
 }
 
 .schoolBtns button{
-      flex: 0 0 19%;
+      /* flex: 0 0 19%; */
       background-color: var(--main-color);
       height: 2.5rem;
       color: white;
-      /* width: 5rem; */
+
       font-size: .75rem;
       border-radius: 5px;
 }
@@ -1540,7 +1547,7 @@ list-style-type: none;
 }
 
 .landingPage .landing-image img{
-  width: 100vw;
+  width: 100%;
   height: auto;
   position: relative;
   display: block;
@@ -1678,6 +1685,8 @@ margin-top: 2rem!important;
     margin: 1rem 4.5rem;
     background-color: rgb(64, 83, 175);
     color: white; */
+    max-width: 90%;
+    margin: auto;
 
 }
 .landingPage .landing-features .feature-set h3{
