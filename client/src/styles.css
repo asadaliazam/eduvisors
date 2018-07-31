@@ -1538,7 +1538,7 @@ list-style-type: none;
 }
 
 .landingPage .landing-image img{
-  width: 100vw;
+  width: 100%;
   height: auto;
   position: relative;
   display: block;
@@ -1676,6 +1676,8 @@ margin-top: 2rem!important;
     margin: 1rem 4.5rem;
     background-color: rgb(64, 83, 175);
     color: white; */
+    max-width: 90%;
+    margin: auto;
 
 }
 .landingPage .landing-features .feature-set h3{
