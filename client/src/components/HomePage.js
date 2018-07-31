@@ -6,6 +6,8 @@ import Profile from './profile.js';
 import Footer from './Footer.js';
 import HomeSwitch from './HomeSwitch.js';
 
+import Media from "react-media";
+
 class HomePage extends Component {
   constructor() {
     super();
@@ -13,7 +15,7 @@ class HomePage extends Component {
         showProfile: true,
         shown: true,
     };
-    this.toggleProf = this.toggleProf.bind(this)
+    // this.toggleProf = this.toggleProf.bind(this)
 
   }
 
@@ -27,11 +29,11 @@ class HomePage extends Component {
 
 
 
-  toggleProf = () => {
-    const {showProfile} = this.state;
-    this.setState({ showProfile: !showProfile});
-    console.log(1111, showProfile);
-  }
+  // toggleProf = () => {
+  //   const {showProfile} = this.state;
+  //   this.setState({ showProfile: !showProfile});
+  //   console.log(1111, showProfile);
+  // }
 
   render() {
 
@@ -66,7 +68,11 @@ class HomePage extends Component {
                   </div>
 
                   <h2 style={ hidden }></h2>
+
+
+                  <Media query="(max-width: 998px)">
                         <button onClick={this.toggle.bind(this)}>Toggle</button>
+                      </Media>
 
                 </div>
 
