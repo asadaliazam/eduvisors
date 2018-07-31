@@ -745,11 +745,11 @@ grid-gap: 2rem;
 }
 
 .schoolBtns button{
-      flex: 0 0 19%;
+      /* flex: 0 0 19%; */
       background-color: var(--main-color);
       height: 2.5rem;
       color: white;
-      /* width: 5rem; */
+
       font-size: .75rem;
       border-radius: 5px;
 }
