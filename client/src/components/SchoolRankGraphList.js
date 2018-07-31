@@ -85,7 +85,7 @@ class SchoolRankGraphList extends Component {
   // VIEW
   render() {
     const listItems = this.state.schoolRankData.map((data) =>
-  <li key={data.institution_name}><Avatar className="avatar">{data.ca_ranking}</Avatar> {data.institution_name}</li>
+  <li key={data.institution_name}><Avatar className="avatar">#{data.ca_ranking}</Avatar> {data.institution_name}</li>
 
 );
     return (
