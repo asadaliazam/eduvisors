@@ -406,6 +406,23 @@ FROM cost_living WHERE province = '${req.body.province}';`
     });
 });
 
+// ====================================================
+//               GETTING InterestingFacts
+// ====================================================
+app.post('/api/InterestingFactsData', (req, res) => {
+    console.log(req.body.province);
+    let sql = `SELECT * FROM province_data WHERE province = '${req.body.province}';`
+    console.log(sql);
+
+    db.all(sql, function(err,rows)
+    {
+          console.log(10099, rows);
+          res.json(rows);
+    });
+});
+
+
+
 /////////////////////////////////END////////////////////
 
 // ====================================================
