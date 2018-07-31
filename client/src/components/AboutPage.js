@@ -27,9 +27,7 @@ class AboutPage extends Component {
                   <p className="pCenter">Eduvisors match make you with your most compatible educational path in Canada</p>
             </div>
 
-            <div class="vid">
-              <iframe width="560" height="315" src={require("./img/video/Eduvisors_1-min.mp4")} allowfullscreen></iframe>
-            </div>
+      
 
           <div class="vid">
             <iframe title="video" width="560" height="315" src={require("./img/video/Eduvisors_1-min.mp4")} allowfullscreen></iframe>

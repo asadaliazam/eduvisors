@@ -76,10 +76,10 @@ class LandingPage extends Component {
                       </div>
                               {/* </div> */}
                  </div>
-                   <div className="landing-chart2">
+                   {/* <div className="landing-chart2">
                      <CostOfLivingGraph province='BC' />
 
-                          </div>
+                          </div> */}
                         {/* </div> */}
                    </div>
                    {/* <div className="team">
