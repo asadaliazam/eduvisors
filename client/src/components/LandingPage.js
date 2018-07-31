@@ -42,7 +42,7 @@ class LandingPage extends Component {
                 <div className="signup-video">
                       <div className="signupButton">
                             <Button  type="submit" variant="contained" color="primary" className="signupButton">
-                                    <Link to="/HomePage/signup">Signup</Link>
+                                    <Link to="/register">Signup</Link>
                             </Button>
                       </div>
 
