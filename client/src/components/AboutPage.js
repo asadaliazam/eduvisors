@@ -93,6 +93,7 @@ class AboutPage extends Component {
             </div>
 
     </div>
+    </div>
 
 </Card>
 
