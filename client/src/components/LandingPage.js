@@ -12,6 +12,12 @@ import Feature3 from'./img/map.svg';
 import Footer from './Footer.js';
 
 
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import Typography from '@material-ui/core/Typography';
+
+
 
 
 class LandingPage extends Component {

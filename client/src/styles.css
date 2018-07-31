@@ -26,6 +26,41 @@ height:50px;
 align-self: center;
 }
 
+.avatar
+{
+  margin: 10;
+  background-color: orange !important;
+  text-align: center;
+  align-items: center;
+}
+
+.SchoolRankGraphList .schoolRankList
+{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.SchoolRankGraphList .schoolRankList li
+{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.5rem;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  padding: 0.5rem;
+  padding-bottom: 2rem;
+}
+
+
+
+
+
+
 
 
 
@@ -314,6 +349,7 @@ flex: 1 0 90%;
 
 
 .Main .Content form select{
+
   display: flex;
   flex-flow:column nowrap;
   width:200px;
@@ -339,51 +375,52 @@ flex: 1 0 90%;
 
 .Main .Content form select option{
 text-align:center;
+
 }
 
 .Main .Content .top-content{
+  margin:2rem 2rem .5% .5%;
   display:flex;
   flex-flow:row wrap;
-  justify-content: space-between;
-}
-
-.purpleAvatar {
-  margin:10;
-  color:#fff;
-  backgroundColor:red;
+  justify-content: center;
 }
 
 
-/* ============Information=============== */
-.information {
+
+
+/* ============InterestingFacts=============== */
+.InterestingFacts {
 margin:1%;
-
 }
 
-.information  ul{
+.InterestingFacts  ul{
   color:black;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
-  padding: 0;
+  padding: .3rem;
 
 }
 
-.information  ul li{
+.InterestingFacts  ul li{
+  display: flex;
+  justify-content: space-between;
   list-style-type: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border-bottom: 2px solid black;
-  margin-bottom: 2%;
-  margin-right: 2rem;
-  flex: 1 0 30%;
+  margin: auto;
+  padding: 1rem;
+  width: 15rem;
+  /* flex: 0 0 27%; */
+
 }
 /* ===================== ======================== */
 /*               PROFILE area */
 /* ===================== ======================== */
 
- .Main .Profile  {
+ /* .Main .Profile  {
   display: none;
-}
+} */
 
 /* .Main .hideProfile .Profile{
   display: none;
@@ -461,16 +498,10 @@ margin:1%;
 /* ===================== ======================== */
 /*              CHARTS */
 /* ===================== ======================== */
-.top-content{
-  display: flex;
-  flex-flow:column nowrap;
-  margin:1%;
-  padding: 1%;
-}
 
 .charts>div{
   /* padding: 2%; */
-  margin:2%;
+  margin:3%;
   /* background-color: #9497FF; */
   background-color: #BFBFBF;
 
@@ -496,6 +527,7 @@ margin:1%;
   border:3px solid #B5B5B5;
   border-radius: 5px;
   margin-bottom: 2rem;
+  margin:1%;
 }
 
 
@@ -1093,6 +1125,14 @@ footer a{
     display: flex;
     flex-flow: column nowrap;
   }
+
+/* ===================== ======================== */
+/*                 InterestingFacts */
+/* ===================== ======================== */
+.InterestingFacts  ul li:nth-last-of-type(3){
+justify-content: center;
+
+}
 
 /* ===================== ======================== */
 /*                 MENU / HEADER */

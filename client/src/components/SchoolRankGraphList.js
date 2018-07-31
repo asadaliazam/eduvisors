@@ -85,16 +85,17 @@ class SchoolRankGraphList extends Component {
   // VIEW
   render() {
     const listItems = this.state.schoolRankData.map((data) =>
-  <li key={data.institution_name}><Avatar className={this.state.purpleAvatar}>{data.ca_ranking}</Avatar> {data.institution_name}</li>
+  <li key={data.institution_name}><Avatar className="avatar">#{data.ca_ranking}</Avatar> {data.institution_name}</li>
 
 );
     return (
-      <div>
-        <h2>School Rank Graph</h2>
+      <div className="SchoolRankGraphList">
+        <h2>Top Universities in {this.state.province}:</h2>
         {/* <p> {this.state.province}</p> */}
-        <ul>
+        <ul class="schoolRankList">
           {listItems}
         </ul>
+
 
       </div>
     );
