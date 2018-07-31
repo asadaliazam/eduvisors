@@ -11,11 +11,6 @@ import Feature3 from'./img/map.svg';
 // import Partbg from'./img/partbg.jpg';
 import Footer from './Footer.js';
 
-import Card from '@material-ui/core/Card';
-// import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
 
 
 
@@ -81,18 +76,24 @@ class LandingPage extends Component {
                       </div>
                               {/* </div> */}
                  </div>
-                         {/* <div className="team">
-                         <ul>
-                         <li><img src={Feature2} alt="Feature2"/><h3>Secured Personal Data</h3></li>
-                         <li></li>
-                         <li></li>
-                         <li></li>
-                         <li></li>
-                         </ul>
-                         </div> */}
-           </div>
-           <Footer />
-    </div>
+                   <div className="landing-chart2">
+                     <CostOfLivingGraph province='BC' />
+
+                          </div>
+                        {/* </div> */}
+                   </div>
+                   {/* <div className="team">
+                   <ul>
+                   <li><img src={Feature2} alt="Feature2"/><h3>Secured Personal Data</h3></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   </ul>
+                   </div> */}
+
+<Footer />
+</div>
     );
   }
 }
