@@ -1648,10 +1648,10 @@ margin-bottom: 2rem;
   text-align: center;
   /* max-width: 80%;
   margin: auto; */
-  /* border: 4px solid darkslategray; */
-    /* margin: 1rem 3rem; */
-    /* background-color: rgb(64, 83, 175); */
-    /* color: white; */
+  border: 4px solid darkslategray;
+    margin: 1rem 3rem;
+    background-color: rgb(64, 83, 175);
+    color: white;
 }
 
 .landingPage .landing-features .features{
