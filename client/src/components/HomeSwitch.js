@@ -32,7 +32,7 @@ class HomeSwitch extends Component {
                       <Route path={`${this.props.match.path}/survey3`} component={Survey3} />
                       <Route path={`${this.props.match.path}/survey4`} component={Survey4} />
                 </Switch>
-      
+
     );
   }
 }

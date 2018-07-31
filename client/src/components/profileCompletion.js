@@ -135,7 +135,10 @@ render() {
                 type='doughnut'
             />
           </div>
-            <div className="profileCompletionNumber">Profile Completion:{this.state.chartData.datasets[0].data[0]}%</div>
+          <div className="profileCompletionNumber">
+            {/* Profile Completion: */}
+            {this.state.chartData.datasets[0].data[0]}%
+          </div>
       </div>
 
   );

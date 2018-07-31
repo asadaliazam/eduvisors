@@ -8,7 +8,14 @@ import SnowFall from './snowfall';
 import Feature1 from'./img/like.svg';
 import Feature2 from'./img/lock.svg';
 import Feature3 from'./img/map.svg';
+// import Partbg from'./img/partbg.jpg';
 import Footer from './Footer.js';
+
+import Card from '@material-ui/core/Card';
+// import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 
 
 
@@ -25,10 +32,11 @@ class LandingPage extends Component {
 
             <div className="landing-image">
             <img src={Landingimage} alt="Landingimage header"/>
-            </div>
+
             <div className="landing-info">
             <h3>Match making you with your high quality educational destination in Canada.</h3>
             </div>
+              </div>
             <div className="signup-video">
             <div className="signupButton">
 
@@ -43,18 +51,23 @@ class LandingPage extends Component {
         </Button>
       </div>
       </div>
+
             <div className="landing-chart1">
               <SnowFall province='BC' type='rain' />
                    </div>
+                   {/* <div className="bg-img"> */}
+                     {/* <img src={Partbg} alt="partbg"/> */}
                    <div className="landing-features">
+                     <div className="feature-set">
                    <div className="feature-1 features"><img src={Feature1} alt="Feature1"/><h3>Eduvisors Engine</h3></div>
                    <div className="feature-2 features"><img src={Feature2} alt="Feature2"/><h3>Secured Personal Data</h3></div>
                    <div className="feature-3 features"><img src={Feature3} alt="Feature3"/><h3>Province & School Specific Details</h3></div>
+                 </div>
                    <div className="landing-chart2">
                      <CostOfLivingGraph province='BC' />
 
                           </div>
-
+                        {/* </div> */}
                    </div>
                    {/* <div className="team">
                    <ul>
@@ -65,6 +78,7 @@ class LandingPage extends Component {
                    <li></li>
                    </ul>
                    </div> */}
+      
 <Footer />
 </div>
     );

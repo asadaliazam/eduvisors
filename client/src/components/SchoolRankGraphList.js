@@ -67,7 +67,7 @@ class SchoolRankGraphList extends Component {
     return (
       <div>
         <h2>School Rank Graph</h2>
-        <p> {this.state.province}</p>
+        {/* <p> {this.state.province}</p> */}
         <ul>
           {listItems}
         </ul>
