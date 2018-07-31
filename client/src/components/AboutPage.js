@@ -6,6 +6,9 @@ import teamMember3 from'./img/team/rod2.png';
 import teamMember4 from'./img/team/sam.png';
 import teamMember5 from'./img/team/lak2.png';
 
+import {Link, BrowserRouter as Router} from 'react-router-dom'
+import Card from '@material-ui/core/Card';
+
 class AboutPage extends Component {
   constructor() {
     super();
@@ -16,7 +19,7 @@ class AboutPage extends Component {
 
   render() {
     return (
-      <div className="aboutPage">
+      <Card className="aboutPage">
 
             <div className="aboutMission">
                   <div className="Mission">
@@ -51,36 +54,45 @@ class AboutPage extends Component {
                   <img src={teamMember1} alt="Team Member"/>
                   <h3>Asad Azam</h3>
                   <p>Developer & QA Lead</p>
+                  <a href="https://www.linkedin.com/in/asadaliazam/" target="_blank">/in/asadaliazam/</a>
+
             </div>
 
             <div className="teamMember t2">
                   <img src={teamMember2} alt="Team Member"/>
                   <h3>Navorse Sharma</h3>
                   <p>Develper Lead</p>
+                  <a href="https://www.linkedin.com/in/navrose-rikhi/" target="_blank">/in/navrose-rikhi/</a>
+
             </div>
 
             <div className="teamMember t3">
                   <img src={teamMember3} alt="Team Member"/>
                   <h3>Rod Ornellas</h3>
                   <p>Developer & Project Manager</p>
-                  <a href="linkedin/rodrigoornellas/">/in/rodrigoornellas/</a>
+                  <a href="https://www.linkedin.com/in/rodrigoornellas/" target="_blank">/in/rodrigoornellas/</a>
+
             </div>
 
             <div className="teamMember t4">
                   <img src={teamMember4} alt="Team Member"/>
                   <h3>Samaneh Hoseini</h3>
                   <p>Developer & UX Lead</p>
+                  <a href="https://www.linkedin.com/in/samanehhos/" target="_blank">/in/samanehhos/</a>
+
             </div>
 
             <div className="teamMember t5">
                   <img src={teamMember5} alt="Team Member"/>
                   <h3>Lakshay Sachdeva</h3>
                   <p>Lead Designer</p>
+                  <a href="https://www.linkedin.com/in/lsachdeva/" target="_blank">/in/lsachdeva/</a>
+
             </div>
 
     </div>
 
-</div>
+</Card>
 
 
 
