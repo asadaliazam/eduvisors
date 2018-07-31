@@ -75,6 +75,7 @@ align-self: center;
 
 .LoginContent img, .RegContent img{
   width: 100%;
+
   /* background-color: var(--offwhite-color); */
 }
 
@@ -97,26 +98,6 @@ align-self: center;
   color: blue;
 }
 
-.LoginContent .card-content{
-  padding: 0 3rem;
-}
-
-.LoginContent .logAlternative{
-    border-top: 2px solid lightgrey;
-    margin-top: 2rem;
-
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-}
-
-.LoginContent img, .RegContent img{
-  width: 100%;
-
-}
-
-=======
->>>>>>> 99740f3a73ec17f09c2ffe6dd69ffb13906c4995
 .LoginContent form{
   display: flex;
   flex-flow: column nowrap;
@@ -1390,11 +1371,12 @@ footer a{
   z-index: 99;
   background-color: black;
   opacity: .5;
+  line-height: 4;
 }
 
 .landingPage .landing-header .left-side a img{
-  max-width: 6rem;
-  /* max-width: 85px; */
+
+  max-width: 85px;
 }
 
 .landingPage .landing-header .right-side .mobile{

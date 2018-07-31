@@ -11,6 +11,12 @@ import Feature3 from'./img/map.svg';
 // import Partbg from'./img/partbg.jpg';
 import Footer from './Footer.js';
 
+import Card from '@material-ui/core/Card';
+// import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+
 
 
 class LandingPage extends Component {
@@ -45,6 +51,7 @@ class LandingPage extends Component {
         </Button>
       </div>
       </div>
+
             <div className="landing-chart1">
               <SnowFall province='BC' type='rain' />
                    </div>
@@ -71,6 +78,7 @@ class LandingPage extends Component {
                    <li></li>
                    </ul>
                    </div> */}
+      
 <Footer />
 </div>
     );
