@@ -28,13 +28,12 @@ class Engine extends Component {
   render() {
     return (
 
-
       <div className = "resultsPage">
               <h2>Personalized Recommendations</h2>
               {this.state.schoolNames.map(schoolNames =>
 
                 <Card className="resultPageCard">
-                      <CardMedia
+                      <CardMedia className="cardPicture"
                         className="resultPageCardPicture"
                         image="https://picsum.photos/200/300/?random"
                         title="Contemplative Reptile" />
