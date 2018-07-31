@@ -383,7 +383,8 @@ app.post('/api/employment', (req, res) => {
 // ====================================================
 app.post('/api/costOfLivingGraph', (req, res) => {
     console.log(req.body.province);
-    let sql = `SELECT food, house, house_operations, furniture, clothing, transport, health, personal_care, recreation, education, reading, tobacco_alcohol, games, miscellaneous, gifts FROM cost_living WHERE province = '${req.body.province}';`
+    let sql = `SELECT food,(house_operations + house + furniture) AS housing, transport, (health + personal_care) AS health, (recreation + tobacco_alcohol + games)  AS recreation, (education + reading) AS education, miscellaneous
+FROM cost_living WHERE province = '${req.body.province}';`
     console.log(sql);
 
     db.all(sql, function(err,rows)
