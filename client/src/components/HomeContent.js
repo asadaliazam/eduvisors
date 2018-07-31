@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import InterestingFacts from './InterestingFacts';
 
 class HomeContent extends Component {
   constructor(props) {
@@ -67,6 +68,8 @@ class HomeContent extends Component {
 
               </div>   {/* end of TOP-CONTENT */}
 
+                <InterestingFacts province={this.state.value} />
+
               <div className="top-chart charts">
 
 
@@ -79,6 +82,8 @@ class HomeContent extends Component {
                       </CardContent>
                 </Card>
                 </div>
+
+
 
                 <div className="down-charts charts">
                   <Card className="resultPageCard">

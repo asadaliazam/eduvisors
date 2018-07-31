@@ -13,7 +13,14 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
       super (props);
       this.state = {
         anchorEl: null,
+        firstName: 0,
       };
+    }
+
+    componentDidMount() {
+      fetch('/api/profileForMenu')
+        .then(res => res.json())
+        .then(firstName => this.setState({firstName: firstName[0].first_name}, () => console.log('profile fetched...', firstName[0].first_name)));
     }
 
     handleClick = event => {
@@ -36,7 +43,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
               </div>
 
               <div className = "username">
-                  <a href="" className="desktop">Asad</a>
+                  <a href="" className="desktop">{this.state.firstName}</a>
                   <div className="mobile" id="user" >
                       <FontAwesomeIcon icon={faUser} />
                 </div>

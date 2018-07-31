@@ -19,44 +19,62 @@ class LandingPage extends Component {
   render() {
     return (
 
-          <div className="landingPage">
+    <div className="landingPage">
 
           <div className="landing-header">
-        <Menu toggleProf={this.toggleProf}/>
-            </div>
+                <Menu toggleProf={this.toggleProf} />
+          </div>
 
-            <div className="landing-image">
-            <img src={Landingimage} alt="Landingimage header"/>
+          <div className="landing-image">
+                <img src={Landingimage} alt="Landingimage header"/>
+                <div className="landing-info">
+                    <h3>Match making you with your high quality educational destination in Canada.</h3>
+                </div>
+          </div>
 
-            <div className="landing-info">
-            <h3>Match making you with your high quality educational destination in Canada.</h3>
-            </div>
-              </div>
-            <div className="signup-video">
-            <div className="signupButton">
+          <div className="contentBody">
+                <div className="signup-video">
+                      <div className="signupButton">
+                            <Button  type="submit" variant="contained" color="primary" className="signupButton">
+                                    <Link to="/HomePage/signup">Signup</Link>
+                            </Button>
+                      </div>
 
-           <Button  type="submit" variant="contained" color="primary" className="signupButton">
-             <Link to="/HomePage/signup">Signup</Link>
-           </Button>
-         </div>
-         <div className="videoButton">
+                      <div className="videoButton">
+                            <Button  type="submit" variant="contained" color="primary" className="signupButton">
+                                    <Link to="https://www.powtoon.com/embed/dJBuv5ExsKU/">Watch Video</Link>
+                            </Button>
+                      </div>
+                </div>
 
-        <Button  type="submit" variant="contained" color="primary" className="signupButton">
-          <Link to="https://www.powtoon.com/embed/dJBuv5ExsKU/">Watch Video</Link>
-        </Button>
-      </div>
-      </div>
+                <div className="landing-chart1">
+                      <SnowFall province='BC' type='rain' />
+                </div>
+                         {/* <div className="bg-img"> */}
+                           {/* <img src={Partbg} alt="partbg"/> */}
+                <div className="landing-features">
+                       <div className="feature-set">
+                              <div className="feature-1 features">
+                                    <img src={Feature1} alt="Feature1"/>
+                                    <h3>Eduvisors Engine</h3>
+                                    <p>In the heart of the App is Eduvisors’ engine that calculates recommendations to all users.</p>
+                              </div>
+                              <div className="feature-2 features">
+                                    <img src={Feature2} alt="Feature2"/>
+                                    <h3>Secured Personal Data</h3>
+                                    <p>Eduvisors have implemented protocols and technology to secure all personal data.</p>
+                              </div>
+                              <div className="feature-3 features">
+                                    <img src={Feature3} alt="Feature3"/>
+                                    <h3>Province & School Specific Details</h3>
+                                    <p>Access to information about the schools and provinces to support your decision process.</p>
+                              </div>
+                       </div>
 
-            <div className="landing-chart1">
-              <SnowFall province='BC' type='rain' />
-                   </div>
-                   {/* <div className="bg-img"> */}
-                     {/* <img src={Partbg} alt="partbg"/> */}
-                   <div className="landing-features">
-                     <div className="feature-set">
-                   <div className="feature-1 features"><img src={Feature1} alt="Feature1"/><h3>Eduvisors Engine</h3></div>
-                   <div className="feature-2 features"><img src={Feature2} alt="Feature2"/><h3>Secured Personal Data</h3></div>
-                   <div className="feature-3 features"><img src={Feature3} alt="Feature3"/><h3>Province & School Specific Details</h3></div>
+                       <div className="landing-chart2">
+                              <CostOfLivingGraph province='BC' />
+                      </div>
+                              {/* </div> */}
                  </div>
                    <div className="landing-chart2">
                      <CostOfLivingGraph province='BC' />

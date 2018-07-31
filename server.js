@@ -234,6 +234,18 @@ WHERE level_education.short=profile_advanced.lvl_educ AND field_study.short=prof
 });
 
 // ====================================================
+//             PROFILEFORMENU  Component
+// ====================================================
+
+app.get('/api/profileForMenu', (req, res) => {
+
+    db.all(`SELECT first_name From profile_advanced WHERE email='${app.locals.user.email}';`, function(err, rows)
+        {
+          res.json(rows);
+        });
+});
+
+// ====================================================
 //             COMPLETION Component
 // ====================================================
 console.log(898989, app.locals.user.email);
@@ -383,7 +395,8 @@ app.post('/api/employment', (req, res) => {
 // ====================================================
 app.post('/api/costOfLivingGraph', (req, res) => {
     console.log(req.body.province);
-    let sql = `SELECT food, house, house_operations, furniture, clothing, transport, health, personal_care, recreation, education, reading, tobacco_alcohol, games, miscellaneous, gifts FROM cost_living WHERE province = '${req.body.province}';`
+    let sql = `SELECT food,(house_operations + house + furniture) AS housing, transport, (health + personal_care) AS health, (recreation + tobacco_alcohol + games)  AS recreation, (education + reading) AS education, miscellaneous
+FROM cost_living WHERE province = '${req.body.province}';`
     console.log(sql);
 
     db.all(sql, function(err,rows)
@@ -392,6 +405,23 @@ app.post('/api/costOfLivingGraph', (req, res) => {
           res.json(rows);
     });
 });
+
+// ====================================================
+//               GETTING InterestingFacts
+// ====================================================
+app.post('/api/InterestingFactsData', (req, res) => {
+    console.log(req.body.province);
+    let sql = `SELECT * FROM province_data WHERE province = '${req.body.province}';`
+    console.log(sql);
+
+    db.all(sql, function(err,rows)
+    {
+          console.log(10099, rows);
+          res.json(rows);
+    });
+});
+
+
 
 /////////////////////////////////END////////////////////
 
