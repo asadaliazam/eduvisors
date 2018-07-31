@@ -10,11 +10,22 @@ class HomePage extends Component {
   constructor() {
     super();
     this.state = {
-        showProfile: true
+        showProfile: true,
+        shown: true,
     };
     this.toggleProf = this.toggleProf.bind(this)
 
   }
+
+
+
+    toggle() {
+    		this.setState({
+    			shown: !this.state.shown
+    		});
+    	}
+
+
 
   toggleProf = () => {
     const {showProfile} = this.state;
@@ -23,6 +34,22 @@ class HomePage extends Component {
   }
 
   render() {
+
+
+
+
+        var shown = {
+        			display: this.state.shown ? "block" : "none"
+        		};
+
+        		var hidden = {
+        			display: this.state.shown ? "none" : "block"
+        		}
+
+
+
+
+
     return (
 
 
@@ -30,7 +57,20 @@ class HomePage extends Component {
 
               <Menu />
               <div className={"Main"+(this.state.showProfile ? '' : ' hideProfile')}>
+
+
+                <div>
+
+                  <div style={ shown }>
                   <Profile />
+                  </div>
+
+                  <h2 style={ hidden }></h2>
+                        <button onClick={this.toggle.bind(this)}>Toggle</button>
+
+                </div>
+
+
                   <HomeSwitch match={this.props.match}/>
               </div>
               <Footer />
