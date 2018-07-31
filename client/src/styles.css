@@ -633,8 +633,10 @@ margin:1%;
   display:grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 1fr ;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
   justify-content: center;
+
+  margin-bottom: 13rem;
 }
 
 .resultsPage h2{
@@ -822,6 +824,13 @@ grid-gap: 2rem;
 .aboutPage .aboutEduvisors,
 .aboutPage .aboutMission{
   flex: 1 0 45%;
+}
+
+.aboutPage .teamMember a img{
+  width: 3rem;
+  position: absolute;
+
+
 }
 
 
@@ -1405,7 +1414,7 @@ footer a{
   grid-column: 1/2;
   grid-row: 3;
   border-bottom: 1px solid #606060;
-  padding: 1%;
+  padding: 2%;
 }
 .resultsPage .resultPageCard:nth-of-type(3){
 
@@ -1413,7 +1422,7 @@ footer a{
   grid-column: 2/3;
   grid-row: 3;
   border-bottom: 1px solid #606060;
-  padding: 1%;
+  padding: 2%;
 
 /* .resultPageCard .resultPageCard:nth-of-type(2) .resultPageCardPicture
 {
