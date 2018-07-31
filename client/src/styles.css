@@ -836,6 +836,7 @@ grid-gap: 2rem;
 .aboutPage .teamMember a img{
   width: 3rem;
   position: absolute;
+    left: -1.5rem;
 
 
 }
@@ -846,10 +847,13 @@ grid-gap: 2rem;
   font-size: 1.3rem;
   text-align: center;
 }
-
-.aboutMission{
-  /* margin: 0 1rem; */
+.aboutMission .teamMembersWrapper a{
+  position: relative;
 }
+
+.aboutMission .teamMembersWrapper div{
+  line-height: 1;
+  }
 
 .aboutEduvisors{
   margin: 1rem 0;
@@ -1741,6 +1745,12 @@ color: black;
     position: relative;
   }
 
+  .landingPage .signup-video{
+    padding-bottom: 0;
+  }
+  .landingPage .signup-video{
+    height: 0;
+  }
   .landingPage .signup-video .signupButton Button{
     position: absolute;
     top:.65rem;
