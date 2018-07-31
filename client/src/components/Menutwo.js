@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from'./img/logo1.svg';
+import Logo from'./img/logo3.svg';
 import {Link} from 'react-router-dom'
 // ====================== FontAwesome Icons for Header Menu =============
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
