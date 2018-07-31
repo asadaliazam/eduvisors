@@ -5,10 +5,6 @@ import EmploymentGraph from './employmentGraph';
 import CostOfLivingGraph from './costOfLivingGraph';
 import TuitionGraph from './TuitionGraph';
 import SchoolRankGraphList from './SchoolRankGraphList';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUniversity } from '@fortawesome/free-solid-svg-icons'
-import { faUsers } from '@fortawesome/free-solid-svg-icons'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
 import Card from '@material-ui/core/Card';
@@ -62,7 +58,13 @@ class HomeContent extends Component {
                 </Button>
             </div>
 
-            <div className="top-content">
+          
+                <Card className="top-content">
+                      <CardContent className="CardContent">
+
+
+
+
               <form onSubmit={this.handleSubmit}>
                   <label>
                     Choose a Province:
@@ -79,19 +81,19 @@ class HomeContent extends Component {
                       <option value="SK" label="Saskatchewan">SK</option>
                     </select>
                   </label>
-                  <div className="information">
-                    <ul>
-                      <li><FontAwesomeIcon icon={faUniversity} />100</li>
-                      <li><FontAwesomeIcon icon={faUsers} />9.000</li>
-                      <li><FontAwesomeIcon icon={faCoffee} />Aberdeen</li>
 
-                    </ul>
-                  </div>
+
+                      <InterestingFacts province={this.state.value} />
+
+
+
                 </form>
 
-              </div>   {/* end of TOP-CONTENT */}
+          </CardContent>
+    </Card>
+              {/* </div>   {/* end of TOP-CONTENT */}
 
-                <InterestingFacts province={this.state.value} />
+
 
               <div className="top-chart charts">
 
@@ -138,7 +140,7 @@ class HomeContent extends Component {
 
                   <Card className="resultPageCard">
                         <CardContent className="CardContent">
-                          
+
                             <SchoolRankGraphList province={this.state.value} />
                             <Typography component="p">
                               School Ranking Graph: {this.state.value}

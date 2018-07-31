@@ -103,7 +103,7 @@ import Media from "react-media";
 
                 </div>
 
-                <h2 style={ hidden }></h2>
+                {/* <h2 style={ hidden }></h2> */}
                 <FontAwesomeIcon icon={faBars} onClick={this.toggle.bind(this)} />
 
 
