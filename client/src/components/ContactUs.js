@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import ContactUsPic from'./img/contactUsPic.jpg';
-import TeamPic from'./img/team/team_pic.jpeg';
+import TeamPic from'./img/contactUs.png';
 // import teamMember1 from'./img/teamMember1.png';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -58,10 +58,10 @@ class ContactUs extends Component {
                   </form>
               </div>
           </div>
-          <div>
+          {/* <div>
               <h2> Our Location </h2>
               <GoogleMapComponent />
-          </div>
+          </div> */}
       </div>
 
 
