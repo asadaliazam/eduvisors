@@ -27,25 +27,14 @@ class Engine extends Component {
 
   sendValue(index)
   {
-    if (index === 1)
-    {
-      return (
-require(`./img/2.jpg`)      )
+    if (index === 1){
+      return ( require(`./img/2.jpg`) )
     }
-
-    else if (index === 2)
-    {
-      return (
-        require(`./img/1.jpg`)
-
-      )
+    else if (index === 2){
+      return ( require(`./img/1.jpg`) )
     }
-
-    else if (index === 0)
-    {
-      return (
-         require(`./img/3.jpg`)
-      )
+    else if (index === 0){
+      return ( require(`./img/3.jpg`))
     }
   }
 
@@ -53,32 +42,29 @@ require(`./img/2.jpg`)      )
   render() {
     return (
 
-
       <div className = "resultsPage">
               <h2>Personalized Recommendations</h2>
               {this.state.schoolNames.map((schoolNames,index) =>
 
-                <Card className="resultPageCard">
+              <Card className="resultPageCard">
                       <CardMedia
-                        className="resultPageCardPicture"
-                        image={this.sendValue(index)}
-
-                        title="Contemplative Reptile" />
+                            className="resultPageCardPicture"
+                            image={this.sendValue(index)}
+                            title="Contemplative Reptile" />
                       <CardContent className="CardContent">
-                          <Typography component="h2">
-                            {schoolNames.institutionName}
-                          </Typography>
-                          <Typography component="p">
-                            Province: {schoolNames.province}
-                          </Typography>
-
-                          <CardActions>
-                              <Button  color="primary">
-                                  <Link to={'/HomePage/schoolProf/'+schoolNames.schoolID}> View Full Details</Link>
-                              </Button>
-                          </CardActions>
+                            <Typography component="h2">
+                              {schoolNames.institutionName}
+                            </Typography>
+                            <Typography component="p">
+                              Province: {schoolNames.province}
+                            </Typography>
+                            <CardActions>
+                                <Button  color="primary">
+                                    <Link to={'/HomePage/schoolProf/'+schoolNames.schoolID}> View Full Details</Link>
+                                </Button>
+                            </CardActions>
                       </CardContent>
-                </Card>
+              </Card>
               )}
         </div>
 
