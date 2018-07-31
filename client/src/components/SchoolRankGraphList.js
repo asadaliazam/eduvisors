@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 // import deepOrange from '@material-ui/core/colors/deepOrange';
 // import deepPurple from '@material-ui/core/colors/deepPurple';

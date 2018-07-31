@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import BackButton from './BackButton'
 import Snowfall from './snowfall';
 import TuitionGraph from './TuitionGraph';
 import {Link} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Redirect } from 'react-router-dom';
 import CostOfLivingGraph from './costOfLivingGraph';
 
 

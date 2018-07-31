@@ -6,11 +6,11 @@ import GoogleMapComponent from './GoogleMapComponent.js';
 import LoginMenu from './LoginMenu';
 import Footer from './Footer';
 
-class ContactLand extends Component {
+class ExtContactUs extends Component {
 
   render() {
     return (
-      <div>
+      <div className="External">
       <LoginMenu />
       <div className="contactUsPage">
 
@@ -20,7 +20,7 @@ class ContactLand extends Component {
 
             <div className="contactUsFormWrapper">
 
-                  <form className="contactUsForm">
+                  <form className="contactUsForm" action="/">
                   <div className="section">
                     <TextField
                       id="name"
@@ -61,4 +61,4 @@ class ContactLand extends Component {
   }
 }
 
-export default ContactLand;
+export default ExtContactUs;

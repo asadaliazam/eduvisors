@@ -25,7 +25,7 @@ class ContactUs extends Component {
 
             <div className="contactUsFormWrapper">
 
-                  <form className="contactUsForm">
+                  <form className="contactUsForm" action="/HomePage">
                   <div className="section">
                     <TextField
                       id="name"

@@ -40,8 +40,8 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
               <div className = "right-side">
                 <nav className="desktop">
                     <ul>
-                        <li><a href="/HomePage/about">About</a></li>
-                        <li><a href="/HomePage/contactus">Contact Us</a></li>
+                        <li><a href="/abouts">About</a></li>
+                        <li><a href="/contacts">Contact Us</a></li>
                         <li><Link to="/Login">Login</Link></li>
                         {/* <li><Link to="/register">Signup</Link></li> */}
                     </ul>
