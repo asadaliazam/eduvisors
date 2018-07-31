@@ -1,34 +1,189 @@
-
-
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700|Rubik:400,500,700|Source+Sans+Pro:400,700');
 
 /* ===================== ======================== */
 /* VARIABLE DECLARATION */
 /* ===================== ======================== */
-
 :root{
     /* --main-color: rgb(91, 101, 177);*/
     --main-color: rgb(64, 83, 175);
-    --secondary-color: rgb(187, 191, 250);
+    --secondary-color: #BFBFBF;
     --terceary-color: rgb(180, 180, 180);
     --materialui-blue: rgb(64, 83, 175);
-    --graph1-bkcolor: rgb(244, 241, 239);
+    --offwhite-color: rgb(244, 241, 239);
 
     /* --cinza-profile-color: rgb(96, 96, 96);
     --cinza-header-color: rgb(74, 74, 74); */
+    --otherblue: rgb(48, 129, 247);
 }
-/* ========================================LANDING PAGE================================================== */
+
 /* ===================== ======================== */
 /*              HEADER SIGNUP BUTTON              */
 /* ===================== ======================== */
 
-.signupButton{
+.signupButton, .fb-button{
 width:200px;
 height:50px;
 align-self: center;
 }
 
-/* ========================================HOMEPAGE====================================================== */
+.avatar
+{
+  margin: 10;
+  background-color: orange !important;
+  text-align: center;
+  align-items: center;
+}
+
+.SchoolRankGraphList .schoolRankList
+{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.SchoolRankGraphList .schoolRankList li
+{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.5rem;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  padding: 0.5rem;
+  padding-bottom: 2rem;
+}
+
+
+
+
+
+
+
+
+
+/* ===================== ======================== */
+/*              LOGIN PAGE              */
+/* ===================== ======================== */
+
+.LoginContent, .RegContent{
+  height: auto;
+  margin: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+
+  /* background-color: var(--offwhite-color); */
+}
+
+.LoginContent div, .LoginContent div form, .LoginPage .LoginContent,
+.RegContent div form, .RegPage .RegContent{
+  background-color: var(--offwhite-color);
+}
+
+.RegContent .btn{
+  margin-top: 2rem;
+  margin-left: 10rem;
+}
+
+.LoginPage header a,
+.RegPage header a{
+  color: white;
+}
+
+.LoginContent .logAlternative a{
+  color: blue;
+}
+
+.LoginContent .card-content{
+  padding: 0 3rem;
+}
+
+.LoginContent .logAlternative{
+    border-top: 2px solid lightgrey;
+    margin-top: 2rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.LoginContent img, .RegContent img{
+  width: 100%;
+
+  /* background-color: var(--offwhite-color); */
+}
+
+.LoginContent div, .LoginContent div form, .LoginPage .LoginContent,
+.RegContent div form, .RegPage .RegContent{
+  background-color: var(--offwhite-color);
+}
+
+.RegContent .btn{
+  margin-top: 2rem;
+  margin-left: 10rem;
+}
+
+.LoginPage header a,
+.RegPage header a{
+  color: white;
+}
+
+.LoginContent .logAlternative a{
+  color: blue;
+}
+
+.LoginContent form{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.LoginPage header,
+.LoginPage footer,
+.RegPage header,
+.RegPage footer{
+  background-color: rgba(0,0,0, .5);
+}
+
+.LoginContent form .Input{
+  width: 300px;
+  margin-bottom: 2rem;
+}
+
+.LoginContent form button{
+  width: 150px;
+}
+
+.LoginContent .gmail{
+  background-color: rgb(234, 51, 36);
+  margin: 1rem 0;
+
+}
+
+.LoginContent .logAlternative .fbsocial{
+  background-color: darkgrey;
+}
+
+.LoginContent .sociaLogin{
+  border: 2px solid grey;
+  margin: 2rem;
+  padding: 0  2rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+}
+
+.LoginContent .sociaLogin div{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
 /* ===================== ======================== */
 /* PAGE LAYOUT */
 /* ===================== ======================== */
@@ -36,7 +191,7 @@ align-self: center;
 
 body {
     margin: auto;
-    font-family: "Rubik", "Roboto", "Source Sans", "Helvetica", "Sans Serif";
+    font-family: "Roboto", "Source Sans", "Helvetica", "Sans Serif";
 }
 
 #root{
@@ -47,76 +202,78 @@ body {
 /* ===================== ======================== */
 /*                 MENU / HEADER */
 /* ===================== ======================== */
-
-
 .HomePage a {
   color: white;
 }
 
-.HomePage .desktop{
+ .desktop{
   display: none;
   font-size: 1rem;
 }
 
-.HomePage .mobile{
+ .mobile{
   cursor: pointer;
 }
 
-.HomePage .left-side{
+ .left-side{
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   color: white;
 }
 
-.HomePage .left-side,
-.HomePage .right-side,
-.HomePage .username{
-  background-color: var(--main-color);
-  /* line-height: 1; */
+ .left-side,
+ .right-side,
+ .username{
   text-align: right;
-  /* padding: .5rem; */
   font-size: 1rem;
 }
 
-.HomePage header img {
-  padding-left: 1rem;
-  /* max-width: 20%; */
+ header img {
+  padding-left: 2rem;
   width: 70px;
-  /* height: auto; */
 }
 
-.HomePage header{
+header a{
+  line-height: 1;
+}
+
+header,
+footer{
+    background-color: var(--main-color);
+}
+
+ header{
+  position: sticky;
   display: flex;
   flex-flow: row nowrap;
+  line-height: 4;
 }
 
-.HomePage header .username,
-.HomePage header .right-side{
-  flex: 0 0 12%;
+ header .username,
+ header .right-side{
+  flex: 0 0 5rem;
   justify-content: center;
   text-align: center;
-  line-height: 2.5;
   color: white;
-  font-size: 1.2rem;
+
 }
-.HomePage header .username{
+
+ header .username{
   order: 1;
   border-right: 2px solid white;
-
 }
 
-.HomePage header .left-side{
+ header .left-side{
   order: 2;
   flex: 1 0 50%;
 }
 
-.HomePage header .right-side{
+ header .right-side{
   order: 3;
 }
 
-
-.HomePage header nav ul {
+ header nav ul {
   display: flex;
   justify-content: flex-end;
   list-style-type: none;
@@ -124,17 +281,13 @@ body {
   padding: 0;
 }
 
-.HomePage header nav ul li {
+ header nav ul li {
   padding: 0 2rem;
-  line-height: 4.5;
 }
 /* ===================== ======================== */
 /*              SURVEY LINK                   */
 /* ===================== ======================== */
 .surveyLink{
-  /* max-width: 100%; */
-  /* position:absolute; */
-  /* min-width: 200px; */
   flex: 1 0 100%;
   display:flex;
   flex-flow: row nowrap;
@@ -143,8 +296,7 @@ body {
   border: 1px solid #606060;
   padding:.5rem;
   border-radius:1%;
-  margin: 1%;
-
+  /* margin: 1%; */
 }
 
 .surveyButton{
@@ -156,11 +308,25 @@ body {
 .surveyButton a{
   text-decoration: none;
 }
+
+.CardHeader{
+  background-color: rgba(0,0,0,.5);
+  color: white;
+  padding: .5rem 1rem;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 5px;
+}
+
+.CardHeader p{
+  margin: .2rem 0;
+}
 /* ===================== ======================== */
 /*               CONTENT AREA                     */
-/* ===================== ======================== */
-/* ===================== ======================== */
-  /*               TOP CONTENT                    */
 /* ===================== ======================== */
 
 .Main{
@@ -213,8 +379,15 @@ text-align:center;
 .Main .Content .top-content{
   display:flex;
   flex-flow:row wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
+
+.purpleAvatar {
+  margin:10;
+  color:#fff;
+  backgroundColor:red;
+}
+
 
 /* ============Information=============== */
 .information {
@@ -243,72 +416,83 @@ margin:1%;
 /*               PROFILE area */
 /* ===================== ======================== */
 
-/* .HomePage .Main .Profile .user-info{
-
-  background-color: #606060;
-  margin:auto;
-  color:white;
-  width: 100%;
-  height:auto;
+ /* .Main .Profile  {
+  display: none;
 } */
 
-.Main .Profile {
-  display: block;
-}
-
-.Main .hideProfile .Profile{
+/* .Main .hideProfile .Profile{
   display: none;
-}
+} */
 
-.Main .Profile .user-info{
+.Main .Profile .user-info  {
   background-color: #606060;
-  /* margin:auto; */
-  color:white;
   height:auto;
   padding:.3rem;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  /* margin: auto; */
-  /* min-width: 80%; */
+  box-shadow: 8px 8px 0px 0 rgba(0,0,0,0.2);
   box-sizing: border-box;
+  margin-top:4rem;
+  font-size:1rem;
 }
 
 
- .Main .Profile .user-info ul{
+ .Main .Profile .user-info  h2{
   list-style-type: none;
   display:flex;
   flex-flow:column wrap;
-  /* margin-left: 0!important; */
-  padding-left: 1rem!important;
+  color:white;
   padding-left: .5rem;
   padding-right: .5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
- .Main .Profile div h2{
-  text-align: center;
-  border-bottom: 2px solid black;
+ .Main .Profile  div h2{
   padding-bottom: 1rem;
   margin-top: 0rem;
-  /* padding-top: 0rem; */
-  /* margin-left: 10%;
-  margin-righ: 10%; */
 }
 
-.Main .Profile h3{
+.Main .Profile  h3{
   text-align: center;
 }
 
-.Main .Profile .user-info ul li:nth-of-type(odd){
+.Main .Profile .user-info  h2 li:nth-of-type(odd){
   border-bottom: 1px solid white;
-  /* margin:2%; */
+  margin:.5rem;
+  font-weight: bold;
 }
 
-.Main .Profile .user-info ul li:nth-of-type(even){
-  margin:3%;
+.Main .Profile .user-info  h2 li:nth-of-type(even){
+  margin:1rem;
+}
+
+ .Main .Profile .name{
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #606060;
+  margin:1%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color:#606060;
 }
 
 
+.Main .Profile .profileCompletion{
+  margin-top:1.5rem;
+  margin-bottom:1.5rem;
+
+  position: relative;
+}
+
+.profileCompletionNumber{
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+  color:black;
+
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
 /* ===================== ======================== */
 /*              CHARTS */
 /* ===================== ======================== */
@@ -318,67 +502,39 @@ margin:1%;
   margin:1%;
   padding: 1%;
 }
-/* .charts>div{
-  padding: 2%;
-  margin:4%;
-  background-color: #9C9EDE;
-} */
 
-
-/* .HomePage .Main .Content .costofliving .down-charts div .chartjs-render-monitor{
-  max-width: 100%;
-  height: auto;
-} */
-
-.top-chart{
-  grid-column: 1/2;
-  grid-row: 1;
-}
-
-.top-chart>div{
-  padding: 2%;
+.charts>div{
+  /* padding: 2%; */
   margin:2%;
-  background-color: #F4F1EF;
+  /* background-color: #9497FF; */
+  background-color: #BFBFBF;
 
 }
 
 .graphContainer{
   display:flex;
   flex-flow:row wrap;
-  margin:1%;
-}
-
-.charts{
-  /* background-color: #F4F1EF; */
-  background-color: var(--graph1-bkcolor);
-  border:3px solid #B5B5B5;
   margin: 1rem;
 }
 
-.down-charts>div{
-  padding: 2%;
-  margin:2%;
-  /* min-width:300px; */
+.graphDescription{
+  margin: 3rem;
 }
 
-.down-charts div:first-of-type{
-  grid-column: 1/3;
-  grid-row: 2;
+.graphContainer h2{
+    margin-bottom: 2rem;
+    margin-top: 0;
 }
 
-.employement p{
-  margin-top: 5rem;
+.charts{
+  background-color: var(--offwhite-color);
+  border:3px solid #B5B5B5;
+  border-radius: 5px;
+  margin-bottom: 2rem;
 }
 
-.employement{
-  display: flex;
-  flex-flow: column nowrap;
-}
 
-.employement div{
-  display: flex;
-  flex-flow: column nowrap;
-}
+
 
 /* ===================== ======================== */
 /*                 SURVEY                         */
@@ -388,8 +544,8 @@ margin:1%;
   grid-column: 2/3;
   grid-row: 1;
 
-  margin: 1%;
-  margin-left: 2rem;
+  /* margin: 1%;
+  margin-left: 2rem; */
   display: flex;
   flex-flow: column nowrap;
 }
@@ -430,12 +586,10 @@ margin:1%;
 .surveyNav{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
 
-    margin: auto;
-    width: 65%;
-    padding-bottom: 2rem;
+    padding: 2rem;
+
 }
 
 .surveyNav a{
@@ -446,20 +600,24 @@ margin:1%;
     padding: 0;
 }
 
+
 .btn{
-    background-color: var(--main-color);
-    height: 2.5rem;
+    width:150px;
+    height: 2.4rem;
+    font-size: 1rem;
     color: white;
-    width: 5rem;
+    border-radius: 5px;
+    background-color: var(--materialui-blue);
+    text-align: center;
+    /* line-height: 2; */
 
     display: flex;
     flex-flow: row;
     justify-content: center;
     align-items: center;
+  }
 
-    font-size: .75rem;
-    border-radius: 5px;
-}
+
 
 .rangeslider__fill{
     background: var(--main-color) !important;
@@ -474,9 +632,8 @@ margin:1%;
 /*                 ENGINE PAGE        */
 /* ===================== ======================== */
 
-.score table{
-  /* margin: auto; */
-  /* margin: 0 5%; */
+/* .score table{
+
   column-width: auto;
   padding: 1rem 0 3rem 0;
   margin: 0 -1.5rem;
@@ -509,33 +666,42 @@ margin:1%;
 
 .score a{
   color: black;
-}
+} */
 
 
 
 /* ========================================================= */
 .resultsPage{
-
   display:grid;
   grid-template-columns: 1fr;
-  /* grid-template-columns: 1fr 1fr;
-  grid-template-rows: 3fr 2fr; */
-  grid-gap: 2rem;
+  grid-template-rows: auto 1fr 1fr ;
+  grid-gap: 1rem;
   justify-content: center;
 
+  margin-bottom: 13rem;
 }
 
+.resultsPage h2{
+  grid-row: 1;
 
-.resultPageCard button
+}
+
+/* .resultsPage .resultPageCard .CardContent{
+  display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 2fr 1fr;
+grid-gap: 2rem;
+
+} */
+
+.resultsPage .resultPageCard button
 {
-  background-color: #5B62B9;
-  align-items: flex-end;
+  /* grid-column: 3/4;
+  grid-row: 2; */
+  background-color: var(--main-color);
+  height: 2.5rem;
+  font-size: .75rem;
 
-}
-
-.resultPageCard .CardContent{
-  display:flex;
-  flex-flow: column wrap;
 
 }
 
@@ -556,26 +722,59 @@ margin:1%;
 }
 
 .sprof{
-  display: flex;
+  /* display: flex;
   flex-flow: column nowrap;
 
-  box-sizing: border-box;
+  box-sizing: border-box; */
+  padding: 1%;
 }
 
 .sprof img{
-  flex: 1 0 95%;
+  /* flex: 1 0 95%; */
   width: 100%;
 }
 
-.sprof div .btn{
+/* .sprof div .btn{
   position: absolute;
   right: 5%;
   background-color: red;
 
+} */
+
+/* .schoolinfo{
+  flex: 1 0 45%;
+} */
+
+.schoolinfo ul{
+  display: flex;
+  flex-flow: row wrap;
 }
 
-.schoolinfo{
-  flex: 1 0 45%;
+.schoolinfo ul .schDet{
+  flex: 0 0 90%;
+  width: 90%;
+}
+
+.schoolinfo ul .schRank{
+  border: 1px solid black;
+  border-radius: 5px;
+  flex: 1 0 40%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem .1rem;
+
+  margin: 2rem 2% 0 2%;
+}
+
+/* .schoolinfo ul .schRank:first-of-type{
+  margin-right: 1rem;
+} */
+
+.schoolinfo ul .schRank span{
+  font-size: 3rem;
 }
 
 .schoolBtns{
@@ -589,14 +788,12 @@ margin:1%;
   box-sizing: border-box;
 }
 
-
-
 .schoolBtns button{
-      flex: 0 0 19%;
+      /* flex: 0 0 19%; */
       background-color: var(--main-color);
       height: 2.5rem;
       color: white;
-      /* width: 5rem; */
+
       font-size: .75rem;
       border-radius: 5px;
 }
@@ -624,6 +821,12 @@ margin:1%;
 
 .schoolinfo ul{
   padding: 0;
+  margin: 0;
+}
+
+.schoolinfo .schDet{
+  line-height: 1.3;
+  font-size: .8rem;
 }
 
 
@@ -631,11 +834,174 @@ margin:1%;
   font-size: 1.5rem;
 }
 
+/* .schoolinfo ul{
+  display: flex;
+  flex-flow: column wrap;
+} */
+
+
+
+/* ===================== ======================== */
+/*              ABOUT                */
+/* ===================== ======================== */
+.aboutPage img{
+  width: 100%;
+  height: auto;
+}
+
+.aboutPage{
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 2%;
+}
+
+.aboutPage h2{
+  margin-top: 0;
+}
+
+.aboutPage a{
+  color: blue;
+}
+
+.aboutPage .aboutEduvisors,
+.aboutPage .aboutMission{
+  flex: 1 0 45%;
+}
+
+.aboutPage .teamMember a img{
+  width: 3rem;
+  position: absolute;
+
+
+}
+
+
+.aboutMission .pCenter{
+  margin: 2rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.aboutMission{
+  /* margin: 0 1rem; */
+}
+
+.aboutEduvisors{
+  margin: 1rem 0;
+}
+
+.aboutMission{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.aboutMission.Mission{
+  flex: 0 0 30%;
+  /* padding: 0 1rem; */
+}
+
+/* .vid{
+  flex: 1 0 60%;
+} */
+
+.aboutEduvisors p{
+  text-align: left;
+}
+
+.aboutPage .aboutMission .vid{
+  /* margin: 4% 0; */
+}
+
+.aboutPage .teamMembersWrapper{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: 2rem 1rem;
+  text-align: center;
+
+}
+
+.aboutPage .teamMembersWrapper h2{
+  align-self: flex-start;
+  margin-bottom: 3rem;
+}
+
+.aboutPage .teamMember{
+  /* display: inline; */
+  width: 55%;
+  margin-bottom: 3rem;
+  line-height: .7;
+}
+
+.aboutPage .teamMember img{
+  border-radius: 50%;
+  width: 100%;
+  max-width: 240px;
+}
+
+.vid{
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+
+.vid iframe{
+	position: absolute;
+	top: 0;
+	left: 30px;
+	width: 80%;
+	height: 80%;
+  /* margin: auto; */
+}
+
+
+/* ===================== ======================== */
+/*               CONTACT US PAGE                     */
+/* ===================== ======================== */
+
+.contactUsPage{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.contactUsPage img{
+  width: 100%;
+  height: auto;
+  margin-top: 3rem;
+}
+
+.contactUsPage .TxtField{
+  width: 100%;
+}
+
+.contactUsPage .surveyButton{
+  margin: 3rem 10rem;
+}
+
+
+/* .contactUsPage .TeamPic, */
+.contactUsPage .contactUsFormWrapper{
+  flex-flow: 0 0 90%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.contactUsPage div .google-map{
+  height: 200px;
+  flex: 1 0 100%;
+  margin-bottom: 2rem;
+}
+
 /* ===================== ======================== */
 /*               FOOTER AREA                     */
 /* ===================== ======================== */
 
-.HomePage footer{
+footer, .landingPage footer{
   display: flex;
   flex-flow: row nowrap;
 
@@ -644,22 +1010,22 @@ margin:1%;
 
 }
 
-/* .HomePage footer .left-side,
-.HomePage footer .right-side{
-  flex: 1 0 90%;
-} */
+footer .left-side{
+  margin-left: 1.5rem;
+}
 
 
-.HomePage footer .left-side ul{
+/* .landingPage footer .left-side ul{
   display: flex;
 
   list-style-type: none;
   padding: 0;
   margin: 0;
 
-}
+  display: none;
+} */
 
-.HomePage footer .right-side ul{
+footer .right-side ul, .landingPage footer .right-side ul{
   display: flex;
   justify-content: flex-end;
 
@@ -668,10 +1034,16 @@ margin:1%;
   margin: 0;
 
   text-align: right;
+
 }
 
-.HomePage footer li{
-  padding: 1rem;
+footer li, .landingPage footer li{
+  padding-right: 2rem;
+  line-height: 4;
+}
+
+footer a{
+  color: white;
 }
 
 .resultPageCard .resultPageCardPicture
@@ -680,6 +1052,7 @@ margin:1%;
   padding-top: 56.25%;
   max-width: 100%;
 }
+
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /*                 DESKTOP VIEW        */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -695,28 +1068,49 @@ margin:1%;
     margin: auto; */
   }
 
+  .ResponsiveDrawer-root-1{
+    flex-flow: column nowrap;
+  }
+
+  .ResponsiveDrawer-content-6,
+  #root main{
+    padding: 0;
+    margin-top: 1%;
+  }
+
+
+  /* #root header .ResponsiveDrawer-appBar-2{
+    position: static;
+    width: 100%;
+  }
+
+  .ResponsiveDrawer-drawerPaper-5{
+    position: static;
+  }
+
+  .MuiAppBar-positionFixed-8{
+    position: static;
+  } */
+
+
 /* ===================== ======================== */
 /*               CONTENT AREA                     */
 /* ===================== ======================== */
 
   .Main{
-    margin: 0;
+    margin: 1%;
     background-color: white;
-    /* padding: 2%; */
+
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr;
     grid-gap: 2rem;
   }
 
-
-
   .Content{
     grid-column: 2 / 3;
     grid-row: 1;
 
-    padding-left: 2rem;
-    /* margin-left: 33%;  BIGPROBLEM */
     display: flex;
     flex-flow: column nowrap;
   }
@@ -735,126 +1129,236 @@ margin:1%;
 /*                 MENU / HEADER */
 /* ===================== ======================== */
 
-/* .HomePage footer{
-  display: flex;
-  flex-flow: row nowrap;
-
-  justify-content: space-between;
-
-}
-
-  .HomePage header,
-  .HomePage footer {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-
-    background-color: var(--main-color);
-    color: white;
-  } */
-
-  .HomePage  header .desktop{
+  header .desktop{
     display: block;
   }
 
-  .HomePage header .mobile{
+   header .mobile{
     display: none;
   }
 
-  .HomePage header .username{
+  .LoginPage header .mobile,
+  .RegPage header .mobile{
+   display: block;
+   text-align: right;
+   margin-right: 2rem;
+ }
+
+   header .username{
     order: 3;
-    line-height: 4.5;
-    text-align: center;
+    flex: 1 0 12%;
   }
 
-  .HomePage header .username a{
+   header .username a{
     border-left: 2px solid white;
+    line-height: 4;
   }
 
-  .HomePage header .left-side{
+
+  /* header .left-side a{
+   line-height: 4;
+ } */
+
+   header .left-side{
     order: 1;
     flex: 1 0 30%;
   }
 
-  .HomePage header .right-side{
+   header .right-side{
     order: 2;
     flex: 1 0 50%;
   }
 
   /* ===================== ======================== */
-  /*              SURVEY LINK                   */
+  /*              LOGIN              */
   /* ===================== ======================== */
+
+.LoginContent, .RegContent{
+  margin: 5rem auto;
+  max-width: 800px;
+  height: auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  box-sizing: border-box;
+}
+
+.LoginContent img{
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+}
+
+.LoginContent .sociaLogin{
+  border: none;
+  border-left: 2px solid grey;
+}
+
+.LoginContent .card-content{
+  padding: 0 6rem;
+}
+
+/* .LoginContent div, .LoginContent div form, .LoginPage .LoginContent,
+.RegContent div form, .RegPage .RegContent{
+  background-color: var(--offwhite-color);
+} */
+
+.RegContent .btn{
+  margin-top: 9rem;
+  margin-left: 2rem;
+}
+
+/* ===================== ======================== */
+/*                 ABOUT PAGE */
+/* ===================== ======================== */
+
+.aboutPage{
+
+  grid-column: 2 / 3;
+  grid-row: 1;
+}
+
+.vid iframe{
+	left: 100px;
+}
+
+/* .aboutMission{
+  display: flex;
+  flex-flow: row nowrap;
+} */
+
+.aboutPage .teamMembersWrapper
+{
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: .2fr .7fr .7fr .7fr;
+  /* text-align: center; */
+  justify-items: center;
+
+  /* display: flex; */
+  /* flex-flow: row wrap; */
+  /* justify-content: space-around; */
+}
+
+.aboutPage .teamMembersWrapper h2{
+  grid-column: 1 / 3;
+  grid-row: 1;
+
+}
+
+.aboutPage .teamMembersWrapper .t1{
+  grid-column: 1 / 2;
+  grid-row: 2;
+}
+
+.aboutPage .teamMembersWrapper .t2{
+  grid-column: 2 / 3;
+  grid-row: 2;
+}
+
+.aboutPage .teamMembersWrapper .t3{
+  grid-column: 1 / 2;
+  grid-row: 3;
+}
+
+.aboutPage .teamMembersWrapper .t4{
+  grid-column: 2 / 3;
+  grid-row: 3;
+}
+
+.aboutPage .teamMembersWrapper .t5{
+  grid-column: 1 / 3;
+  grid-row: 4;
+
+}
+
+.aboutPage .teamMembersWrapper .t5 img{
+  max-width: 230px;
+}
+
+/* ===================== ======================== */
+/*               CONTACT US PAGE                     */
+/* ===================== ======================== */
+
+.contactUsPage{
+  grid-column: 2 / 3;
+  grid-row: 1;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  /* margin: 1%; */
+  /* margin-left: 2rem; */
+}
+
+.contactUsFrame{
+  display: flex;
+  flex-flow: row wrap;
+
+  box-sizing: border-box;
+
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contactUsFrame h2{
+  flex: 1 0 90%;
+}
+
+.contactUsFrame img{
+
+  height: 100%;
+  max-width: 45%;
+  margin-top: 0;
+}
+
+.contactUsFrame .contactUsFormWrapper{
+  /* flex: 1 0 45%; */
+  width: 45%;
+
+  border: none;
+  margin: 0;
+  padding: 0 0 0 2rem;
+}
+
 
 /* ===================== ======================== */
 /*               PROFILE area */
 /* ===================== ======================== */
 
-.Profile .user-info{
-  /* background-color: #606060; */
+/* .HomePage{
+  position: absolute;
+} */
+
+.Main .Profile .user-info {
+  background-color: #606060;
   margin:1%;
-  /* color:white; */
-  width: 90%;
-  /* height:auto; */
+  color:white;
 }
 
  .Main .Profile {
   display: block;
+  position: sticky;
+  top: 0;
+
   grid-column: 1 / 2;
   grid-row: 1;
 
   margin:1%;
-  border:2px solid #606060;
   padding: 1rem;
 
-  position: fixed;
-  height: 100%;
+  height: 85%;
   width: 20vw;
-  /* width: 27%; */
+  z-index: 0;
 }
 
-
-.Main .hideProfile .Profile {
-  display: block;
-}
-
-
- .HomePage .Main .Profile .user-info ul{
-  list-style-type: none;
-  display:flex;
-  flex-flow:column wrap;
-  /* margin-left: 0!important; */
-  padding-left: 1rem!important;
-  padding-left: .5rem;
-  padding-right: .5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-
-}
-
-
-
- .HomePage .Main .Profile div h2{
-  text-align: center;
-  border-bottom: 2px solid black;
-  padding-bottom: 1rem;
-  margin-top: 0rem;
-  /* padding-top: 0rem; */
-  /* margin-left: 10%;
-  margin-righ: 10%; */
-}
-
-.HomePage .Main .Profile h3{
-  text-align: center;
-}
-
-.HomePage .Main .Profile .user-info ul li:nth-of-type(odd){
-  border-bottom: 1px solid white;
-  /* margin:2%; */
-}
-.HomePage .Main .Profile .user-info ul li:nth-of-type(even){
-  margin:3%;
-
-}
 /* ===================== ======================== */
 /*                 SURVEY                         */
 /* ===================== ======================== */
@@ -876,45 +1380,99 @@ margin:1%;
   background-color: var(--secondary-color);
 }
 
+/* .survey2
+{
+  margin-bottom: 300px;
+} */
 /* ===================== ======================== */
 /*                 ENGINE              */
 /* ===================== ======================== */
 
-.score table td, .score table th{
+/* .score table td, .score table th{
   padding: 8px;
-}
+} */
 
 .resultsPage{
-  grid-column: 2 / 3;
-  margin: 1%;
-  margin-left: 2rem;
-  /* display:grid; */
+
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 4fr 3fr;
+  grid-template-rows:auto 2fr 1fr;
 }
 
-.resultsPage .resultPageCard:first-of-type{
-  display: grid;
+.resultsPage .resultPageCard {
+  display:grid;
+  grid-gap: 2rem;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-column: 1/4;
-  grid-row: 1;
-  border-bottom: 1px solid #606060;
-  padding: 1%;
+
 }
 
-
-.resultsPage .resultPageCard:first-of-type .resultPageCardPicture{
+.resultsPage .cardPicture{
   grid-column: 1;
 }
 
+.resultsPage h2{
+  grid-row: 1;
 
-.resultPageCard .resultPageCard:nth-of-type(2) .resultPageCardPicture
+  /* grid-column: 2 / 3; */
+  /* margin: 1%;
+  margin-left: 2rem; */
+
+  /* display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: .1fr 1fr 1fr;
+} */
+
+/* .resultsPage{
+  grid-template-columns: 1fr 1fr 1fr;
+} */
+
+/* .resultsPage h2{
+  grid-column: 1/3;
+  grid-row: 1;
+} */
+
+
+
+/* .resultsPage .resultPageCard:first-of-type{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column: 1/3;
+  grid-row: 2;
+  border-bottom: 1px solid #606060;
+  padding: 1%; */
+
+}
+
+
+.resultsPage .resultPageCard:first-of-type{
+
+  grid-column: 1/3;
+  grid-row: 2;
+  border-bottom: 1px solid #606060;
+  padding: 1%;
+}
+.resultsPage .resultPageCard:nth-of-type(2){
+
+  grid-column: 1/2;
+  grid-row: 3;
+  border-bottom: 1px solid #606060;
+  padding: 2%;
+}
+.resultsPage .resultPageCard:nth-of-type(3){
+
+
+  grid-column: 2/3;
+  grid-row: 3;
+  border-bottom: 1px solid #606060;
+  padding: 2%;
+
+/* .resultPageCard .resultPageCard:nth-of-type(2) .resultPageCardPicture
 {
-  grid-row:1;
-  height: 0;
+  grid-row:3;
+  height: 0; */
   /* padding-top: 56.25%; */
-  max-width: 100%;
+  /* max-width: 100%; */
+
 }
 
 
@@ -923,10 +1481,10 @@ margin:1%;
 /* ===================== ======================== */
 
 .sprof{
-
       grid-column: 2 / 3;
-      margin: 1%;
-      margin-left: 3rem;
+      margin: 1% 0;
+      padding: .5rem;
+      /* margin-left: 3rem; */
       display: flex;
       flex-flow: row wrap;
 
@@ -936,14 +1494,16 @@ margin:1%;
 .sprof .schoolImg{
       flex: 0 0 45%;
       margin-right: 2rem;
-
 }
 
 .schoolinfo{
       flex: 1 0 45%;
-      margin: 2rem;
+      /* margin: 2rem; */
       margin-left: 0;
 }
+
+
+
 
 .sprof .schoolBtns{
       flex: 1 0 100%;
@@ -956,66 +1516,73 @@ margin:1%;
       margin: 2rem;;
 }
 
-
-.contactUsPage,
-.aboutPage{
-  grid-column: 2 / 3;
-  margin: 1%;
-  margin-left: 2rem;
-}
-
-
-
-/* ===================== ======================== */
-/*               FOOTER AREA                     */
-/* ===================== ======================== */
-
-/* footer .right-side, footer .left-side{
-    align-content: center;
-} */
-
-}
+} /*   end of MEDIA QUERY */
 
 /* ===================== ======================== */
 /*               LANDING PAGE                    */
 /* ===================== ======================== */
 
-.landingPage .landing-logo
-{
-  width:85px ;
-  /* width: 15%; */
+/* .landingPage .landing-header{
+  display: block;
+} */
 
-  /* background-color: pink; */
-}
-
-.landingPage .landing-header{
-  display: flex;
+.landingPage .landing-header header{
+  /* display: flex; */
   width: 100%;
   position: absolute;
   z-index: 99;
   background-color: black;
   opacity: .5;
+  line-height: 4;
+  height: 4rem;
+}
+
+.landingPage .landing-header .left-side a img{
+
+  /* max-width: 85px; */
+}
+
+.landingPage .landing-header .right-side .mobile{
+  color: white;
+  position: absolute;
+  right: 0;
+  top:-2rem;
+  font-size: 2rem;
+  width: 40px;
+  z-index: 99;
 }
 .signupButton{
   /* display:none; */
-width:200px;
-height:50px;
-align-self: center;
+/* max-width:200px; */
+/* height:auto; */
+/* align-self: center; */
 }
 
+.landingPage .graphDescription{
+  margin: 1rem;
+}
 
 .landingPage .landing-header ul{
   display: none;
 list-style-type: none;
-align-items: flex-end;
+/* align-items: flex-end; */
 }
 
-.landingPage .landing-header ul li{
+.landingPage .landing-header ul li a{
+  color:white;
   text-decoration: none;
+}
+.landingPage .landing-header ul li:hover a{
+  color: darkslategray;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.landingPage .landing-header ul li:hover{
+  background-color:var(--secondary-color);
 }
 
 .landingPage .landing-image img{
-  width: 100vw;
+  width: 100%;
   height: auto;
   position: relative;
   display: block;
@@ -1024,7 +1591,7 @@ align-items: flex-end;
 
 .landingPage .landing-info h3{
   padding: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: lighter;
   color: white;
   margin-top: 0;
@@ -1036,15 +1603,24 @@ align-items: flex-end;
   margin-top: 0;
 }
 
+.landingPage .contentBody{
+  margin: 1%;
+}
+
 .landingPage .signup-video{
   display:flex;
   max-width:90%;
   margin:auto;
+  text-align: center;
+  flex-flow: row wrap;
+  padding-bottom: 1rem;
 
 }
 .landingPage .signup-video div{
   flex: 1 0 25px;
-  margin: 1rem;
+
+  /* max-width: 3rem; */
+  margin: .2rem;
 
   /* margin-left: 1rem; */
 }
@@ -1054,6 +1630,9 @@ align-items: flex-end;
   font-size: 1rem;
 }
 
+.landingPage .landing-chart1{
+  margin-top: 4rem;
+}
 
 .landingPage .landing-chart1 .Bar{
   height: auto!important;
@@ -1061,41 +1640,209 @@ align-items: flex-end;
   margin: auto;
 
 }
-.landingPage .landing-chart1 .graphContainer{
+
+.landingPage .landing-chart1 .graphContainer, .landingPage .landing-chart2 .graphContainer{
   /* font-size: 1rem; */
   height: auto!important;
   width: 80%!important;
   margin: auto;
+  flex-flow: column wrap;
+
 }
 
-.landingPage .landing-chart1 .graphContainer div h2{
-  font-size: 2rem;
+
+
+
+.landingPage .landing-chart1 .graphContainer{
+  background-color:var(--secondary-color);
+  padding: 2rem;
+  border-radius: 2rem;
 }
 
-.landingPage .landing-chart1 .graphContainer div p{
+
+.landingPage .landing-chart2 .graphContainer{
+background-color: var(--secondary-color);
+padding: 0 2rem;
+border-radius: 2rem;
+color: darkslategray;
+margin-bottom: 2rem;
+}
+.landingPage .landing-chart1 .graphContainer h2{
+  color: white;
+
+}
+
+.landingPage .landing-chart1 .graphContainer h2, .landingPage .landing-chart2 .graphContainer h2{
+  padding: 1rem 0;
+}
+
+
+
+
+.landingPage .landing-chart1 div p, .landingPage .landing-chart2 div p{
   /* font-size: 1rem; */
   letter-spacing: 1px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  font-size: .75rem;
+}
+.landingPage .landing-chart1 div p{
+  color:darkslategrey;
 }
 
 .landingPage .landing-features{
-  display:flex;
-  flex-flow: column nowrap;
-  background-color: #5b62b9;
-  padding: 4rem;
+  /* display:flex; */
+  /* flex-flow: column nowrap; */
+  /* background-color: #5b62b9; */
+  /* padding: 4rem; */
+  text-align: center;
+  /* max-width: 80%;
+  margin: auto; */
+  border: 4px solid darkslategray;
+    margin: 1rem 3rem;
+    background-color: rgb(64, 83, 175);
+    color: white;
 }
 
 .landingPage .landing-features .features{
 
-  max-width:80%;
+  /* max-width:60%; */
 
-margin-top: 1rem!important;
-  margin: auto;
+margin-top: 2rem!important;
+  /* margin: auto; */
+
+}
+.landingPage .landing-features .feature-set{
+  display: flex;
+  flex-direction: column;
+  /* border: 4px solid darkslategray;
+    margin: 1rem 4.5rem;
+    background-color: rgb(64, 83, 175);
+    color: white; */
+    max-width: 90%;
+    margin: auto;
+
+}
+.landingPage .landing-features .feature-set h3{
+  font-weight: lighter;
 }
 
-.landingPage .landing-features .features span{
+.landingPage .landing-features .features img{
 background-color: #9497ff;
-/* height: 100px;
-width: 200px; */
+height: auto;
+max-width: 100px;
+border-radius: 1rem;
+
 padding: 2rem;
 /* margin: 1rem; */
+}
+/* .landingPage .landing-features .landing-chart2 {
+  background-color: #9497ff;
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+
+} */
+
+.landingPage .landing-features .landing-chart2 .graphContainer h2{
+  margin: auto;
+  letter-spacing: 1px;
+}
+@media screen and (min-width: 1000px)
+{
+  .landingPage .landing-header .right-side .mobile{
+    display: none;
+  }
+  .landingPage .landing-header .right-side .desktop{
+    display: block;
+z-index: 99;
+color: black;
+  }
+  .landingPage .landing-image {
+    position: relative;
+  }
+  .landingPage .landing-image .landing-info h3{
+    position: absolute;
+    left: 2rem;
+    bottom: 1rem;
+    max-width: 400px;
+    background-color: inherit;
+    border-radius: 1rem;
+  }
+  .landingPage .signup-video .videoButton{
+    position: relative;
+  }
+
+  .landingPage .signup-video .signupButton Button{
+    position: absolute;
+    top:.65rem;
+    right: 2rem;
+    z-index: 99;
+    height: 1rem;
+    width: 7rem;
+
+
+
+  }
+
+  .landingPage .signup-video .videoButton Button{
+    position: absolute;
+    bottom:6.65rem;
+    right: -2rem;
+    z-index: 99;
+    height: 3rem;
+    width: 9rem;
+    background-color: white;
+}
+
+
+.landingPage .signup-video .videoButton Button a{
+  color:#3f51b5;
+}
+.landingPage .landing-chart1 .graphContainer h2{
+  /* font-size: 1rem; */
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.landingPage .landing-chart1  div p, .landingPage .landing-chart2 div p{
+  /* font-size: 1rem; */
+width: 80%;
+text-align: center;
+margin: auto;
+margin-top: 2rem;
+margin-bottom: 3rem;
+font-size: 1rem;
+}
+
+.landingPage .landing-features .feature-set{
+  display: flex;
+  /* flex-flow: row-wrap; */
+  flex-direction: row;
+}
+
+.landingPage .landing-features .features{
+  flex:1 1 33%;
+}
+.landingPage .landing-header ul{
+  display: flex;
+  /* align-self: flex-end; */
+  width: 30%;
+  position: absolute;
+  top: 0rem;
+  right: 9rem;
+}
+.landingPage .landing-header ul li {
+  flex: 1 0 10%;
+  padding: 0;
+  margin-right: .2rem;
+}
+.landingPage .landing-chart1 .graphContainer h2{
+  border-bottom: 2px solid white;
+  padding: 0 2rem;
+  border-radius: .5rem;
+}
 }

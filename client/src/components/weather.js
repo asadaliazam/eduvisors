@@ -63,6 +63,9 @@ class Weather extends Component {
               />
 
         </div>
+        <p className="graphDescription">
+          Weather forms the Canadian psyche as much as hockey and the maple leaf. Winter, in particular, defines Canada in the global consciousness and occupies our thoughts daily when we often begin the day wondering how much we'll have to bundle up and hoping the car will start or the bus won't be late, and end the day hoping that the next day will be warmer.
+        </p>
       </div>
     );
   }

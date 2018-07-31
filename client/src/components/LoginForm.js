@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { Redirect } from 'react-router-dom';  
+import { Redirect } from 'react-router-dom';
+// =============================
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+// =============================
+import LoginMenu from './LoginMenu';
+import Footer from './Footer';
+import {Link} from 'react-router-dom'
+// =============================
 
 const styles = theme => ({
   container: {
@@ -20,7 +28,6 @@ const styles = theme => ({
   },
 });
 
-
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -30,7 +37,6 @@ class LoginForm extends React.Component {
     loginView: 1,
   };
   this.handleSubmit = this.handleSubmit.bind(this);
-
 }
 
   handleChange = email => event => {
@@ -76,24 +82,61 @@ class LoginForm extends React.Component {
     }
 
     return(
+<div className="LoginPage">
+  <LoginMenu />
+  <Card className="LoginContent">
+        <img src={require("./img/flag-sma.png")} alt="SomePic"/>
+        <CardContent className="card-content">
+          <h2>Sign in for your study path to Canada</h2>
+          <form onSubmit = {this.handleSubmit} className={classes.container} noValidate autoComplete="off">
+            <TextField
+              id="email"
+              label="Email"
+              type="email"
+              className={classes.textField}
+              value={this.state.email}
+              onChange={this.handleChange('email')}
+              margin="normal"
+            />
 
-        <form onSubmit = {this.handleSubmit} className={classes.container} noValidate autoComplete="off">
-          <TextField
-            id="email"
-            label="Email"
-            type="email"
-            className={classes.textField}
-            value={this.state.email}
-            onChange={this.handleChange('email')}
-            margin="normal"
-          />
-          <Button  type="submit" variant="contained" color="primary" className={classes.button}>
-          Login
-        </Button>
+            <Button  type="submit" variant="contained" color="primary" >
+            Login
+          </Button>
+          </form>
+
+          <div className="logAlternative">
+
+                <p>or</p>
+                <div>
+                    <button className="btn fbsocial ">facebook</button>
+                    <button className="btn gmail ">gmail</button>
+                </div>
+                <Link to="/">forgot password</Link>
+
+          </div>
+
+        </CardContent>
+
+        {/* <div className="sociaLogin">
+            <p>or</p>
+            <div>
+                <button className="btn fbsocial ">facebook</button>
+                <button className="btn gmail ">gmail</button>
+            </div>
+        </div>
 
 
+          <Link to="/HomePage/">forgot password</Link> */}
 
-        </form>
+        {/* <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions> */}
+      </Card>
+      <Footer />
+
+    </div>
+
+
     )
     }
 }
@@ -103,3 +146,4 @@ LoginForm.propTypes = {
 };
 
 export default withStyles(styles)(LoginForm);
+// export default LoginForm;

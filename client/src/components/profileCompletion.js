@@ -97,8 +97,8 @@ fetchFromDatabase(){
                 labels: ["Profile"],
                 datasets: [{
                 label: false,
-                backgroundColor: ['green','rgb(0,0,0)'],
-                borderColor: 'rgb(255, 255, 255)',
+                backgroundColor: ['#6a8cff','#F4F1EF'],
+                borderColor: '606060;',
                 data: []
                 }]
             }
@@ -120,7 +120,8 @@ render() {
   return (
 
       <div className = "profileCompletion">
-          <RC2
+          <div className="profileChart">
+            <RC2
                 data = {this.state.chartData}
                 options={{
                        maintainAspectRatio: false,
@@ -133,6 +134,11 @@ render() {
                   }}
                 type='doughnut'
             />
+          </div>
+          <div className="profileCompletionNumber">
+            {/* Profile Completion: */}
+            {this.state.chartData.datasets[0].data[0]}%
+          </div>
       </div>
 
   );

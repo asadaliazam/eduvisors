@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
 import {Link} from 'react-router-dom'
+import Card from '@material-ui/core/Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Redirect } from 'react-router-dom';
 
 
 class Survey3 extends Component {
   constructor() {
     super();
     this.state = {
+      done: 0,
       tui: 0,
       col: 0,
       rank: 0,
@@ -64,18 +69,28 @@ class Survey3 extends Component {
                 }
               }).then((json) => {
                 console.log(json);
+                this.setState({done: 1});
               })
 
             }
 
 
   render() {
+    if (this.state.done === 1)
+    {
+      return <Redirect to='./survey4' />
+    }
     let { tui } = this.state
     let {col } = this.state
     let {rank} = this.state
     let {emp} = this.state
     return (
-      <div className="surveyDiv survey3">
+      <div>
+      <div className="CardHeader">
+        <p>Survey Questions: 3 / 4</p>
+        <Link to="/HomePage"><FontAwesomeIcon icon={faTimes} /></Link>
+      </div>
+      <Card className="surveyDiv survey3">
       <div className="first-question question">
       {/* <p> How much do you care about Tuition fees? </p> */}
       <p>How much the cost of tuition impacts your study plans?</p>
@@ -139,12 +154,12 @@ class Survey3 extends Component {
 
       <div className="surveyNav">
             <button className="btn" onClick={this.saveData.bind(this)} >
-                Save
+                Next
             </button>
 
-            <Link to="/HomePage/survey4"><p className="btn">Next</p></Link>
       </div>
 
+    </Card>
       </div>
     );
   }

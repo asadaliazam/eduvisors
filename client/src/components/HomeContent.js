@@ -5,20 +5,39 @@ import EmploymentGraph from './employmentGraph';
 import CostOfLivingGraph from './costOfLivingGraph';
 import TuitionGraph from './TuitionGraph';
 import SchoolRankGraphList from './SchoolRankGraphList';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUniversity } from '@fortawesome/free-solid-svg-icons'
 import { faUsers } from '@fortawesome/free-solid-svg-icons'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
-
-
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import InterestingFacts from './InterestingFacts';
+
+
+
+//
+// const styles = {
+//   avatar: {
+//     margin: 10,
+//   },
+//   orangeAvatar: {
+//     margin: 10,
+//     color: '#fff',
+//     backgroundColor: deepOrange[500],
+//   },
+//   purpleAvatar: {
+//     margin: 10,
+//     color: '#fff',
+//     backgroundColor: deepPurple[500],
+//   },
+//   row: {
+//     display: 'flex',
+//     justifyContent: 'center',
+//   },
+// };
 
 class HomeContent extends Component {
   constructor(props) {
@@ -33,11 +52,8 @@ class HomeContent extends Component {
 
 
   render() {
-    const classes = this.props;
+    // const classes = this.props;
     return (
-
-
-
           <div className="Content">
             <div className="surveyLink">
                 <p>Take the survey and we will find your matchmake university:</p>
@@ -45,7 +61,6 @@ class HomeContent extends Component {
                     <Link to="/HomePage/survey">Take Survey</Link>
                 </Button>
             </div>
-
 
             <div className="top-content">
               <form onSubmit={this.handleSubmit}>
@@ -76,60 +91,54 @@ class HomeContent extends Component {
 
               </div>   {/* end of TOP-CONTENT */}
 
-                <div className="top-chart charts">
-                  <Snowfall province={this.state.value} type={'snow'} />
+                <InterestingFacts province={this.state.value} />
+
+              <div className="top-chart charts">
+
+
+                <Card className="resultPageCard">
+                      <CardContent className="CardContent">
+                          <Snowfall province={this.state.value} type={'snow'} />
+                          {/* <Typography component="p">
+                            Snowfall: {this.state.value}
+                          </Typography> */}
+                      </CardContent>
+                </Card>
                 </div>
+
 
 
                 <div className="down-charts charts">
                   <Card className="resultPageCard">
-
                         <CardContent className="CardContent">
-                            {/* <Typography component="h2">
-                              {schoolNames.institutionName}
-                            </Typography> */}
                             <EmploymentGraph province={this.state.value} />
                             <Typography component="p">
                               Weather Graph: {this.state.value}
                             </Typography>
-
                         </CardContent>
                   </Card>
 
                   <Card className="resultPageCard">
-
                         <CardContent className="CardContent">
-                            {/* <Typography component="h2">
-                              {schoolNames.institutionName}
-                            </Typography> */}
                             <CostOfLivingGraph province={this.state.value} />
                             <Typography component="p">
                               Cost Of Living: {this.state.value}
                             </Typography>
-
                         </CardContent>
                   </Card>
 
                   <Card className="resultPageCard">
-
                         <CardContent className="CardContent">
-                            {/* <Typography component="h2">
-                              {schoolNames.institutionName}
-                            </Typography> */}
                             <TuitionGraph province={this.state.value} />
                             <Typography component="p">
                               Tuition Fees Graph: {this.state.value}
                             </Typography>
-
                         </CardContent>
                   </Card>
 
                   <Card className="resultPageCard">
-
                         <CardContent className="CardContent">
-                            {/* <Typography component="h2">
-                              {schoolNames.institutionName}
-                            </Typography> */}
+                          
                             <SchoolRankGraphList province={this.state.value} />
                             <Typography component="p">
                               School Ranking Graph: {this.state.value}
@@ -137,9 +146,6 @@ class HomeContent extends Component {
 
                         </CardContent>
                   </Card>
-
-
-
                 </div> {/* end of DOWN-CHARTS */}
 
           </div>
@@ -148,7 +154,4 @@ class HomeContent extends Component {
   }
 }
 
-// export default withStyles(styles)(HomeContent);
 export default HomeContent;
-
-// export default with()(SimpleCard);

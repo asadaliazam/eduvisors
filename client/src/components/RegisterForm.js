@@ -4,7 +4,12 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Redirect } from 'react-router-dom';
-
+// =======================================
+import LoginMenu from './LoginMenu';
+import Footer from './Footer';
+// import {Link} from 'react-router-dom'
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 const styles = theme => ({
   container: {
@@ -85,7 +90,13 @@ class RegisterForm extends React.Component {
     }
 
     return(
+      <div className="RegPage">
+      <LoginMenu />
+      <Card className="RegContent">
+        <img src={require("./img/flag-sma.png")} alt="SomePic"/>
 
+        <CardContent>
+          <h2>Quick Registration</h2>
       <form onSubmit = {this.handleSubmit} className={classes.container} noValidate autoComplete="off">
         <TextField
           id="email"
@@ -132,11 +143,15 @@ class RegisterForm extends React.Component {
           onChange={this.handleChange('fieldOfStudy')}
           margin="normal"
         />
-        <Button  type="submit" variant="contained" color="primary" className={classes.button}>
+        <Button  type="submit" variant="contained" color="primary" className="btn">
         Register
       </Button>
 
       </form>
+      </CardContent>
+    </Card>
+    <Footer />
+  </div>
     )
   }
 }

@@ -46,7 +46,7 @@ class Snowfall extends Component {
         let chartData = this.state.chartData;
         switch (this.state.type){
                 case "snow":
-                    chartData.datasets[0]['label'] = "Snowfall";
+                    chartData.datasets[0]['label'] = `Snowfall: ${this.state.province}`;
                     // this.setState(chartData.datasets[0]['label']: "Snowfall");
                     chartData.datasets[0]['backgroundColor'] = 'rgb(153, 51, 255)';
                     break;
@@ -124,7 +124,9 @@ class Snowfall extends Component {
             data = {this.state.chartData}
             options={{ responsive: true  }}
             />
-
+            <p className="graphDescription">
+              Employment Rate in Canada remained unchanged at 61.50 percent in June from 61.50 percent in May of 2018. Employment Rate in Canada averaged 60.31 percent from 1976 until 2018, reaching an all time high of 63.70 percent in February of 2008 and a record low of 56 percent in December of 1982.
+            </p>
       </div>
     );
   }

@@ -12,8 +12,7 @@ class TuitionGraph extends Component {
       tuitionData: 0,
       chartData : {
   labels: ['Graduate Programs', 'Undergraduate Programs'],
-  datasets: [
-    {
+  datasets: [{
       backgroundColor: 'rgba(255,99,132,0.2)',
       borderColor: 'rgba(255,99,132,1)',
       borderWidth: 1,
@@ -24,6 +23,13 @@ class TuitionGraph extends Component {
   ]
 },
 options : {
+  legend: { display: true,
+            labels: {
+                fontColor: 'rgb(255, 99, 132)'}
+         },
+           title: {
+           display: true,
+       },
     scales: {
         yAxes: [{
             display: true,
@@ -38,16 +44,12 @@ options : {
             ticks: {
                 suggestedMin: 3000,    // minimum will be 0, unless there is a lower value.
                 // OR //
-
             }
         }]
     }
 },
 };
-
     };
-
-
 
   componentDidMount()
   {
@@ -55,8 +57,7 @@ options : {
   }
   fetchFromDatabase()
   {
-    let reqBody =
-    {
+    let reqBody = {
       province: this.state.province
     }
 
@@ -70,28 +71,21 @@ options : {
         if (res.ok){
           return res.json();
         } else {
-          throw new Error ('Something went wrong with your fetch');
-        }
+          throw new Error ('Something went wrong with your fetch'); }
       }).then((json) => {
-        this.setState({tuitionData:(json)}, function()
-      {
+        this.setState({tuitionData:(json)}, function(){
 
-        let newChartData =
-          {
-    labels: ['Graduate Programs', 'Undergraduate Programs'],
-    datasets: [
-      {
-        backgroundColor: 'rgba(255,99,132,0.2)',
-        borderColor: 'rgba(255,99,132,1)',
-        borderWidth: 1,
-        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-        hoverBorderColor: 'rgba(255,99,132,1)',
-        data: []
-      }
-    ]
-  }
-
-
+        let newChartData = {
+          labels: ['Graduate Programs', 'Undergraduate Programs'],
+          datasets: [{
+              label: `Year Tuition Fee Cost: ${this.state.province}`,
+              backgroundColor: 'rgba(255,99,132,0.2)',
+              borderColor: 'rgba(255,99,132,1)',
+              borderWidth: 1,
+              hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              hoverBorderColor: 'rgba(255,99,132,1)',
+              data: []
+            }]}
       Object.entries(this.state.tuitionData).forEach(([key,value]) => {
 
       newChartData.datasets[0].data.push(parseFloat(value.average.toFixed(1)));
@@ -101,33 +95,24 @@ options : {
       })
   }
 
-  componentWillReceiveProps(nextProps)
-  {
+  componentWillReceiveProps(nextProps){
     this.setState({province: nextProps.province}, this.fetchFromDatabase);
   }
 
-  componentDidUpdate()
-  {
-
-
-  }
-
-  // VIEW
   render() {
 
-
-
     return (
-      <div>
+      <div className="graphContainer">
         <h2>Tuition Graph</h2>
-        <p> {this.state.province}</p>
-
+        {/* <p> {this.state.province}</p> */}
 
           <HorizontalBar
             data = {this.state.chartData}
             options={this.state.options}
             />
-
+            <p className="graphDescription">
+              Across Canada, the average tuition fees for international undergraduate students rose 6.3% to $25,180 in 2017/2018. Average tuition fees for international students in graduate programs rose 5.4% to $16,252.
+            </p>
       </div>
     );
   }

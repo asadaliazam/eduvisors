@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Bar} from 'react-chartjs-2';
+import {Doughnut} from 'react-chartjs-2';
+
 
 class CostOfLivingGraph extends Component {
 
@@ -17,9 +19,9 @@ class CostOfLivingGraph extends Component {
                     label: "",
                     backgroundColor: ["#FF6384",
                                       "#36A2EB",
-                                      "#36A2EB",
-                                      "#36A2EB",
-                                      "#36A2EB",
+                                      "#36A23B",
+                                      "#36A21B",
+                                      "#36A27B",
                                       "#36A2EB",
                                       "#36A2EB",
                                       "#36A2EB",
@@ -52,15 +54,15 @@ class CostOfLivingGraph extends Component {
                                     let newChartData = {
                                           labels: [],
                                           datasets: [{
-                                                  label: "",
+                                                  label: `Living Expenses: ${this.state.province}`,
                                                   backgroundColor: ["#FF6384",
-                                                                    "#36A2EB",
-                                                                    "#36A2EB",
-                                                                    "#36A2EB",
-                                                                    "#36A2EB",
-                                                                    "#36A2EB",
-                                                                    "#36A2EB",
-                                                                    "#36A2EB",
+                                                                    "#ecff83",
+                                                                    "#74ec7a",
+                                                                    "#36A3EB",
+                                                                    "#36A4EB",
+                                                                    "#36A5EB",
+                                                                    "#36A6EB",
+                                                                    "#36A7EB",
                                                                     "#36A2EB",
                                                                     "#36A2EB" ],
                                                   borderColor: 'rgb(255, 255, 255)',
@@ -84,12 +86,14 @@ class CostOfLivingGraph extends Component {
       <div className="costofliving graphContainer">
           <h2>Cost of living Graph</h2>
           <div className="Bar">
-                  <Bar
+                  <Doughnut
                   data = {this.state.chartData}
                   options={{ responsive: true }}
                   />
           </div>
-          <p>Canada's after-tax monthly income is about $3,000 which totals around $36,000per year. The U.S. sits just below Canada at approximately $2,942 per month, or roughly $35,300 per year. The real difference is seen in the cost of living. ... Finally, clothing is more expensive in Canada than in the United States</p>
+          <p className="graphDescription">
+            Canada's after-tax monthly income is about $3,000 which totals around $36,000per year. The U.S. sits just below Canada at approximately $2,942 per month, or roughly $35,300 per year. The real difference is seen in the cost of living. Finally, clothing is more expensive in Canada than in the United States
+          </p>
       </div>
     );
   }

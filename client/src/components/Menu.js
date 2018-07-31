@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import Media from "react-media";
 
 
   class LongMenu extends React.Component {
@@ -13,7 +14,24 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
       super (props);
       this.state = {
         anchorEl: null,
+        firstName: 0,
+          shown: false,
       };
+    }
+
+
+
+
+        toggle() {
+        		this.setState({
+        			shown: !this.state.shown
+        		});
+        	}
+
+    componentDidMount() {
+      fetch('/api/profileForMenu')
+        .then(res => res.json())
+        .then(firstName => this.setState({firstName: firstName[0].first_name}, () => console.log('profile fetched...', firstName[0].first_name)));
     }
 
     handleClick = event => {
@@ -26,6 +44,20 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 
   render() {
+
+
+
+
+
+            var shown = {
+            			display: this.state.shown ? "block" : "none"
+            		};
+
+            		var hidden = {
+            			display: this.state.shown ? "none" : "block"
+            		}
+
+
     // const { anchorEl } = this.state;
     return (
 
@@ -36,8 +68,8 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
               </div>
 
               <div className = "username">
-                  <a href="" className="desktop">Asad</a>
-                  <div className="mobile" id="user" onClick={this.props.toggleProf}>
+                  <a href="" className="desktop">{this.state.firstName}</a>
+                  <div className="mobile" id="user" >
                       <FontAwesomeIcon icon={faUser} />
                 </div>
               </div>
@@ -47,13 +79,39 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
                     <ul>
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>
-                        <li><Link to="/HomePage">Home</Link></li>
                         <li><Link to="/HomePage/survey">Survey</Link></li>
+                        <li><Link to="/Login">Login</Link></li>
                     </ul>
                 </nav>
-                <div className="mobile" id="bars">
-                      <FontAwesomeIcon icon={faBars} />
+
+
+
+                     <Media query="(max-width: 998px)">
+
+                <div>
+
+
+                <div className="mobile" id="bars" style={ shown }>
+
+
+                      <ul>
+                          <li><a href="/HomePage/about">About</a></li>
+                          <li><a href="/HomePage/contactus">Contact Us</a></li>
+                          <li><Link to="/HomePage/survey">Survey</Link></li>
+                          <li><Link to="/Login">Login</Link></li>
+                      </ul>
+
                 </div>
+
+                <h2 style={ hidden }></h2>
+                <FontAwesomeIcon icon={faBars} onClick={this.toggle.bind(this)} />
+
+
+              </div>
+
+              </Media>
+
+
               </div>
 
         </header>
