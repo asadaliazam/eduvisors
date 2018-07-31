@@ -10,7 +10,6 @@
     "client": "cd client && npm start",
     "dev": "concurrently --kill-others-on-fail \"npm run start\" \"npm run client\"",
     "heroku-postbuild": "cd client/ && npm install && npm install --no-shrinkwrap && npm run build"
-
   },
   "engines": {
     "npm": "6.2.0",
