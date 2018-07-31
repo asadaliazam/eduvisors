@@ -1,4 +1,28 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Avatar from '@material-ui/core/Avatar';
+// import deepOrange from '@material-ui/core/colors/deepOrange';
+// import deepPurple from '@material-ui/core/colors/deepPurple';
+
+
+
+// const styles = {
+//   avatar: {
+//     margin: 10,
+//   },
+//
+//   purpleAvatar: {
+//     margin: 10,
+//     color: '#fff',
+//     backgroundColor: deepPurple[500],
+//   },
+//   row: {
+//     display: 'flex',
+//     justifyContent: 'center',
+//   },
+// };
+
 
 class SchoolRankGraphList extends Component {
 
@@ -61,7 +85,7 @@ class SchoolRankGraphList extends Component {
   // VIEW
   render() {
     const listItems = this.state.schoolRankData.map((data) =>
-  <li key={data.institution_name}> {data.institution_name} - {data.ca_ranking}</li>
+  <li key={data.institution_name}><Avatar className={this.state.purpleAvatar}>{data.ca_ranking}</Avatar> {data.institution_name}</li>
 
 );
     return (

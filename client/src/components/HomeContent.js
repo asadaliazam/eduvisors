@@ -16,6 +16,29 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import InterestingFacts from './InterestingFacts';
 
+
+
+//
+// const styles = {
+//   avatar: {
+//     margin: 10,
+//   },
+//   orangeAvatar: {
+//     margin: 10,
+//     color: '#fff',
+//     backgroundColor: deepOrange[500],
+//   },
+//   purpleAvatar: {
+//     margin: 10,
+//     color: '#fff',
+//     backgroundColor: deepPurple[500],
+//   },
+//   row: {
+//     display: 'flex',
+//     justifyContent: 'center',
+//   },
+// };
+
 class HomeContent extends Component {
   constructor(props) {
     super(props);
@@ -115,10 +138,12 @@ class HomeContent extends Component {
 
                   <Card className="resultPageCard">
                         <CardContent className="CardContent">
+                          
                             <SchoolRankGraphList province={this.state.value} />
                             <Typography component="p">
                               School Ranking Graph: {this.state.value}
                             </Typography>
+
                         </CardContent>
                   </Card>
                 </div> {/* end of DOWN-CHARTS */}

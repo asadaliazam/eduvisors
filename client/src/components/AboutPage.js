@@ -8,6 +8,8 @@ import teamMember5 from'./img/team/lak2.png';
 
 import {Link, BrowserRouter as Router} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faLinkedin} from '@fortawesome/fontawesome-free-brands';
 
 class AboutPage extends Component {
   constructor() {
@@ -49,42 +51,49 @@ class AboutPage extends Component {
                         <h2> Meet Our Team </h2>
 
                         <div className="teamMember t1">
+                              <a href="https://www.linkedin.com/in/asadaliazam/" target="_blank">
+                              <img src={require("./img/linkedin.svg")} alt="linkedin icon" />
+                              </a>
                               <img src={teamMember1} alt="Team Member"/>
                               <h3>Asad Azam</h3>
                               <p>Developer & QA Lead</p>
-                              <a href="https://www.linkedin.com/in/asadaliazam/" target="_blank">/in/asadaliazam/</a>
-
                         </div>
 
                         <div className="teamMember t2">
+                              <a href="https://www.linkedin.com/in/navrose-rikhi/" target="_blank">
+                              <img src={require("./img/linkedin.svg")} alt="linkedin icon" />
+                              </a>
                               <img src={teamMember2} alt="Team Member"/>
                               <h3>Navorse Sharma</h3>
                               <p>Develper Lead</p>
-                              <a href="https://www.linkedin.com/in/navrose-rikhi/" target="_blank">/in/navrose-rikhi/</a>
-
                         </div>
 
                         <div className="teamMember t3">
+                              <a href="https://www.linkedin.com/in/rodrigoornellas/" target="_blank">
+                              <img src={require("./img/linkedin.svg")} alt="linkedin icon" />
+                              </a>
                               <img src={teamMember3} alt="Team Member"/>
                               <h3>Rod Ornellas</h3>
                               <p>Developer & Project Manager</p>
-                              <a href="https://www.linkedin.com/in/rodrigoornellas/" target="_blank">/in/rodrigoornellas/</a>
-
                         </div>
 
                         <div className="teamMember t4">
+                              <a href="https://www.linkedin.com/in/samanehhos/" target="_blank">
+                              <img src={require("./img/linkedin.svg")} alt="linkedin icon" />
+                              </a>
                               <img src={teamMember4} alt="Team Member"/>
                               <h3>Samaneh Hoseini</h3>
                               <p>Developer & UX Lead</p>
-                              <a href="https://www.linkedin.com/in/samanehhos/" target="_blank">/in/samanehhos/</a>
-
                         </div>
 
                         <div className="teamMember t5">
+                              <a href="https://www.linkedin.com/in/lsachdeva/" target="_blank">
+                              <img src={require("./img/linkedin.svg")} alt="linkedin icon" />
+                              </a>                          
                               <img src={teamMember5} alt="Team Member"/>
                               <h3>Lakshay Sachdeva</h3>
                               <p>Lead Designer</p>
-                              <a href="https://www.linkedin.com/in/lsachdeva/" target="_blank">/in/lsachdeva/</a>
+
 
                         </div>
 

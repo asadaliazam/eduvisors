@@ -8,9 +8,19 @@ class Profile extends Component {
     super();
     this.state = {
       profile: [],
-      error: 0
+      error: 0,
+      shown: true,
     };
   }
+
+
+  toggle() {
+  		this.setState({
+  			shown: !this.state.shown
+  		});
+  	}
+
+
   componentDidMount() {
     fetch('/api/profile')
       .then(res => res.json())
@@ -18,8 +28,23 @@ class Profile extends Component {
       // .catch(function() { this.setState({error: "Server Side failed to respond!"}), console.log(this.error); }); end of CATCH
   }
   render() {
+
+
+    var shown = {
+    			display: this.state.shown ? "block" : "none"
+    		};
+
+    		var hidden = {
+    			display: this.state.shown ? "none" : "block"
+    		}
+
+
+
+
     return (
         <Card className="Profile">
+
+          <div style={ shown } >
                 {this.state.profile.map(user =>
                     <div key={user.id}>
                     <div className="name">{user.first_name} {user.last_name}</div>
@@ -40,6 +65,13 @@ class Profile extends Component {
                           </Card>
                       </div>
                 )}
+
+              </div>
+
+              <h2 style={ hidden }></h2>
+            				<button onClick={this.toggle.bind(this)}>Toggle</button>
+
+
         </Card>
     );
   }
