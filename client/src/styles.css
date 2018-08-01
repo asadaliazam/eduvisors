@@ -489,10 +489,10 @@ margin:1%;
 
  /* .Main .Profile  {
   display: none;
-} */
+}
 
-/* .Main .hideProfile .Profile{
-  display: none;
+.Main .hideProfile .Profile{
+  display: block;
 } */
 
 .Main .Profile .user-info  {
@@ -1238,6 +1238,8 @@ footer a{
 /*               CONTENT AREA                     */
 /* ===================== ======================== */
 
+
+
   .Main{
     margin: 1%;
     background-color: white;
@@ -1506,6 +1508,11 @@ justify-content: center;
   color:white;
 }
 
+ .Main .hideProfile .Profile {
+   display: block;
+
+ }
+
  .Main .Profile {
   display: block;
   position: sticky;
@@ -1514,7 +1521,8 @@ justify-content: center;
   grid-column: 1 / 2;
   grid-row: 1;
 
-  margin:1%;
+  /* margin:1%; */
+  border: 1px solid lightgrey;
   padding: 1rem;
 
   height: 85%;

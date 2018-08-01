@@ -70,7 +70,7 @@ import Media from "react-media";
               <div className = "right-side">
                 <nav className="desktop">
                     <ul>
-                        <li><a href="/HomePage/engine">Results</a></li>
+                        <li><a href="/HomePage/Results">Results</a></li>
                         <li><Link to="/HomePage/ListOfSchools">List of Schools</Link></li>
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>
@@ -90,7 +90,7 @@ import Media from "react-media";
 
 
                       <ul>
-                        <li><a href="/HomePage/engine">Results</a></li>
+                        <li><a href="/HomePage/Results">Results</a></li>
                         <li><Link to="/HomePage/ListOfSchools">List of Schools</Link></li>
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>

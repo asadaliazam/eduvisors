@@ -30,7 +30,7 @@ class Profile extends Component {
     return (
         <Card className="Profile">
 
-          <div  >
+          {/* <div  > */}
                 {this.state.profile.map(user =>
                     <div key={user.id}>
                     <div className="name">{user.first_name} {user.last_name}</div>
@@ -52,9 +52,9 @@ class Profile extends Component {
                       </div>
                 )}
 
-              </div>
+              {/* </div> */}
 
-            
+
 
 
         </Card>
