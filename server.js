@@ -222,6 +222,29 @@ app.get('/api/field_study', (req, res) => {
 });
 
 // ====================================================
+//             ListOfSchools Component
+// ====================================================
+app.get('/api/ListOfSchools', (req, res) => {
+    let rows = "";
+
+    db.all("SELECT institution_name, ca_ranking, url, province FROM institute_rank;", function(err, rows)
+    {
+      res.json(rows);
+    });
+});
+
+// ====================================================
+//             Logout Component
+// ====================================================
+app.get('/api/logOut', (req, res) => {
+    let rows = 1;
+    app.locals.user.email = '';
+    res.json(rows);
+});
+
+
+
+// ====================================================
 //             PROFILE  Component
 // ====================================================
 

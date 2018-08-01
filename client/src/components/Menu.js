@@ -80,8 +80,10 @@ import Media from "react-media";
                         <li><a href="/HomePage/engine">Results</a></li>
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>
-                        {/* <li><Link to="/HomePage/survey">Survey</Link></li> */}
-                        {/* <li><Link to="/Login">Login</Link></li> */}
+                        <li><Link to="/HomePage/Results">Results</Link></li>
+                        <li><Link to="/HomePage/Logout">Logout</Link></li>
+                        <li><Link to="/HomePage/ListOfSchools">List of Schools</Link></li>
+
                     </ul>
                 </nav>
 

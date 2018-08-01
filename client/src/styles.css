@@ -27,6 +27,10 @@ height:50px;
 align-self: center;
 }
 
+/* ===================== ======================== */
+/*              SCHOOLRANK GRAPH LIST COMPONENT              */
+/* ===================== ======================== */
+
 .avatar
 {
   margin: 10;
@@ -41,7 +45,7 @@ align-self: center;
   padding: 0;
   list-style-type: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1rem;
 }
 
@@ -56,6 +60,33 @@ align-self: center;
   padding: 0.5rem;
   padding-bottom: 2rem;
 }
+
+
+/* ===================== ======================== */
+/*             LIST OF SCHOOLS COMPONENT        */
+/* ===================== ======================== */
+
+.ListOfSchoolsCard
+{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 1rem;
+  margin: 0.5rem;
+}
+
+.ListOfSchoolsCard button
+{
+  background-color: blue;
+}
+
+.ListOfSchoolsCard a
+{
+  color: black !important;
+}
+
+
+
+
 
 
 
@@ -1558,10 +1589,10 @@ justify-content: center;
 .landingPage .landing-header header{
   /* display: flex; */
   width: 100%;
-  position: absolute;
+  position: relative;
   z-index: 99;
   background-color: black;
-  opacity: .5;
+  opacity: .9;
   line-height: 4;
   height: 4rem;
 }
@@ -1696,8 +1727,9 @@ border-radius: 2rem;
 color: darkslategray;
 margin-bottom: 2rem;
 }
-.landingPage .landing-chart1 .graphContainer h2{
+.landingPage .landing-chart1 .graphContainer h2, .landingPage .landing-chart2 .graphContainer h2{
   color: white;
+
 
 }
 
@@ -1728,10 +1760,10 @@ margin-bottom: 2rem;
   text-align: center;
   /* max-width: 80%;
   margin: auto; */
-  border: 4px solid darkslategray;
-    margin: 1rem 3rem;
-    background-color: rgb(64, 83, 175);
-    color: white;
+  /* border: 4px solid darkslategray; */
+    /* margin: 1rem 3rem; */
+    /* background-color: rgb(64, 83, 175); */
+    /* color: white; */
 }
 
 .landingPage .landing-features .features{
@@ -1782,6 +1814,12 @@ padding: 2rem;
 }
 @media screen and (min-width: 1000px)
 {
+
+  .landingPage .landing-header header{
+    position: absolute;
+    opacity: .5;
+
+  }
   .landingPage .landing-header .right-side .mobile{
     display: none;
   }
@@ -1880,4 +1918,22 @@ font-size: 1rem;
   padding: 0 2rem;
   border-radius: .5rem;
 }
+
+.landingPage .landing-chart2 .graphContainer h2{
+    border-bottom: 2px solid white;
+    width: 18rem;
+    border-radius: 1rem;
+}
+
+/* ===================== ======================== */
+/*              SCHOOLRANK GRAPH LIST COMPONENT              */
+/* ===================== ======================== */
+
+
+.SchoolRankGraphList .schoolRankList
+{
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
 }

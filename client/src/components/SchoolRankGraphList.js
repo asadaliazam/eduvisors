@@ -90,7 +90,7 @@ class SchoolRankGraphList extends Component {
       <div className="SchoolRankGraphList">
         <h2>Top Universities in {this.state.province}:</h2>
         {/* <p> {this.state.province}</p> */}
-        <ul class="schoolRankList">
+        <ul className="schoolRankList">
           {listItems}
         </ul>
 
