@@ -15,6 +15,7 @@ import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
 
+
 class ContactUs extends Component {
   constructor(props) {
     super(props);

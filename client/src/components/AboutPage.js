@@ -10,6 +10,7 @@ import {Link, BrowserRouter as Router} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faLinkedin} from '@fortawesome/fontawesome-free-brands';
+import { faTimes, faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
 
 class AboutPage extends Component {
   constructor() {
@@ -21,9 +22,13 @@ class AboutPage extends Component {
 
   render() {
     return (
-      <Card className="aboutPage">
+      <div className="aboutPage">
 
-            <div className="aboutMission">
+            <div className="CardHeader">
+              <p>About</p>
+              <Link to="/HomePage/"><FontAwesomeIcon icon={faTimes} /></Link>
+            </div>
+            <Card className="aboutMission">
                   <div className="Mission">
                       <h2> Our Mission </h2>
                       <p className="pCenter">Eduvisors match make you with your most compatible educational path in Canada</p>
@@ -32,6 +37,7 @@ class AboutPage extends Component {
                   <div class="vid">
                           <iframe title="video" width="560" height="315" src={require("./img/video/Eduvisors_1-min.mp4")} allowfullscreen></iframe>
                   </div>
+
 
                   <div className="aboutEduvisors">
                           <h2>About</h2>
@@ -45,8 +51,9 @@ class AboutPage extends Component {
                           Welcomo to Eduvisors and see you in Canada!
                           </p>
                   </div>
+                </Card>
 
-                  <div className="teamMembersWrapper">
+                  <Card className="teamMembersWrapper">
 
                         <h2> Meet Our Team </h2>
 
@@ -97,10 +104,10 @@ class AboutPage extends Component {
 
                         </div>
 
-                </div>
-            </div>
+                </Card>
 
-</Card>
+
+</div>
 
     );
   }

@@ -99,7 +99,7 @@ class SchoolProf extends Component {
                 </div>
 
               </Card>
-              <Card>
+              <Card className="schoolinfo">
                     <CostOfLivingGraph province={this.state.province} />
               </Card>
               <Card>

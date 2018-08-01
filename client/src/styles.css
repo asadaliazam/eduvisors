@@ -71,7 +71,7 @@ align-self: center;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-gap: 1rem;
-  margin: 0.5rem;
+  margin: 1rem;
 }
 
 .ListOfSchoolsCard button
@@ -84,17 +84,18 @@ align-self: center;
   color: black !important;
 }
 
+.ListOfSchoolsCard .schRank{
+  margin: 0;
+}
 
+.ListOfSchoolsCard h2{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
-
-
-
-
-
-
-
-
-
+.ListOfSchoolsCard .btn a{
+  color: white;
+}
 
 /* ===================== ======================== */
 /*              LOGIN PAGE              */
@@ -327,7 +328,19 @@ footer{
 }
 
  header nav ul li {
-  padding: 0 2rem;
+  padding: 0 2rem 0 0;
+}
+
+#bars ul li{
+  list-style: none;
+  padding-right: 1rem;
+  line-height: 2;
+  width: 150px;
+  /* border: 1px solid white; */
+}
+
+#bars ul li a{
+  text-decoration: none;
 }
 /* ===================== ======================== */
 /*              SURVEY LINK                   */
@@ -340,8 +353,8 @@ footer{
   background-color: #F4F1EF;
   border: 1px solid #606060;
   padding:.5rem;
-  border-radius:1%;
-  margin: 1%;
+  border-radius: 5px;
+  margin: 0;
 }
 
 .surveyLink p{
@@ -368,12 +381,18 @@ footer{
   justify-content: space-between;
   align-items: center;
 
+  border: 1px solid grey;
   border-radius: 5px 5px 0 0;
 }
 
 .CardHeader p{
   margin: .2rem 0;
 }
+
+.aboutPage .CardHeader a{
+  color: white;
+}
+
 /* ===================== ======================== */
 /*               CONTENT AREA                     */
 /* ===================== ======================== */
@@ -429,7 +448,7 @@ text-align:center;
 
 .Main .Content .top-content{
   /* margin:2rem 2rem .5% .5%; */
-  margin: 1%;
+  margin: 1% 0;
   display:flex;
   flex-flow:row wrap;
   justify-content: center;
@@ -577,7 +596,7 @@ margin:1%;
   border:3px solid #B5B5B5;
   border-radius: 5px;
   margin-bottom: 2rem;
-  margin:1%;
+  margin:1% 0;
 }
 
 
@@ -738,7 +757,12 @@ margin:1%;
 /* .resultsPage h2{ */
 .resultsPage .CardHeader{
   grid-row: 1;
-  margin: .5rem 0 0 0;
+  margin: 0;
+  border: 1px solid grey;
+}
+
+.resultsPage .resultPageCard{
+  margin-bottom: 1rem;
 }
 
 .resultsPage .resultPageCard .CardContent h2{
@@ -818,9 +842,11 @@ grid-gap: 2rem;
 
 } */
 
-/* .schoolinfo{
-  flex: 1 0 45%;
-} */
+.schoolinfo{
+  background-color: var(--offwhite-color);
+  padding: .5rem;
+
+}
 
 .schoolinfo ul{
   display: flex;
@@ -832,6 +858,7 @@ grid-gap: 2rem;
   width: 90%;
 }
 
+.ListOfSchoolsCard .schRank,
 .schoolinfo ul .schRank{
   border: 1px solid black;
   border-radius: 5px;
@@ -844,6 +871,8 @@ grid-gap: 2rem;
   padding: .5rem .1rem;
 
   margin: 2rem 2% 0 2%;
+  text-align: center;
+  min-width: 145px;
 }
 
 
@@ -919,15 +948,15 @@ grid-gap: 2rem;
 /* ===================== ======================== */
 /*              ABOUT                */
 /* ===================== ======================== */
-.aboutPage img{
-  width: 100%;
-  height: auto;
-}
 
 .aboutPage{
   display: flex;
   flex-flow: column nowrap;
-  padding: 2%;
+}
+
+.aboutPage img{
+  width: 100%;
+  height: auto;
 }
 
 .aboutPage h2{
@@ -941,47 +970,54 @@ grid-gap: 2rem;
 .aboutPage .aboutEduvisors,
 .aboutPage .aboutMission{
   flex: 1 0 45%;
+  padding: 2%;
+  margin-bottom: 1rem;
 }
 
-.aboutPage .teamMember a img{
-  width: 3rem;
-  position: absolute;
-    left: -1.5rem;
+.aboutPage .teamMembersWrapper{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--offwhite-color);
 
 }
 
+.aboutPage .teamMembersWrapper h2{
+  align-self: flex-start;
+  margin-bottom: 3rem;
+}
+
+.aboutPage .aboutMission{
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: var(--offwhite-color);
+  border-radius: 0 0 5px 5px;
+}
+
+.aboutMission .Mission{
+  flex: 0 0 30%;
+  /* padding: 0 1rem; */
+}
 
 .aboutMission .pCenter{
   margin: 2rem;
   font-size: 1.3rem;
   text-align: center;
 }
-.aboutMission .teamMembersWrapper a{
-  position: relative;
-}
+
+
 
 .aboutMission .teamMembersWrapper div{
   line-height: 1;
   }
 
 .aboutEduvisors{
-  margin: 1rem 0;
+  margin: 0;
 }
-
-.aboutMission{
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-.aboutMission.Mission{
-  flex: 0 0 30%;
-  /* padding: 0 1rem; */
-}
-
-/* .vid{
-  flex: 1 0 60%;
-} */
 
 .aboutEduvisors p{
   text-align: left;
@@ -991,27 +1027,23 @@ grid-gap: 2rem;
   /* margin: 4% 0; */
 }
 
-.aboutPage .teamMembersWrapper{
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-
-  margin: 2rem 1rem;
-  text-align: center;
-
-}
-
-.aboutPage .teamMembersWrapper h2{
-  align-self: flex-start;
-  margin-bottom: 3rem;
-}
 
 .aboutPage .teamMember{
   /* display: inline; */
   width: 55%;
   margin-bottom: 3rem;
   line-height: .7;
+}
+
+.aboutPage .t5,
+.aboutPage .teamMember{
+  position: relative;
+}
+
+.aboutPage .teamMember a{
+  width: 3rem;
+  position: absolute;
+  left: 0;
 }
 
 .aboutPage .teamMember img{
@@ -1053,7 +1085,6 @@ grid-gap: 2rem;
 .contactUsPage img{
   width: 100%;
   height: auto;
-  margin-top: 3rem;
 }
 
 .contactUsPage .TxtField{
@@ -1085,6 +1116,26 @@ grid-gap: 2rem;
 {
   margin: 2%;
   /* padding: 4%; */
+}
+
+.contactUsFrame{
+  padding: 1rem;
+  background-color: var(--offwhite-color);
+}
+
+/* ===================== ======================== */
+/*             LIST OF SCHOOLS COMPONENT        */
+/* ===================== ======================== */
+
+.ListOfSchoolsCard .schRank{
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    border: none;
+}
+
+.ListOfSchoolsCard .schRank span{
+    font-size: 3rem;
 }
 
 /* ===================== ======================== */
@@ -1327,14 +1378,13 @@ justify-content: center;
 } */
 
 .aboutPage .teamMembersWrapper{
-  margin-top: 2rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-top: 1rem;
+  padding: 2%;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: .2fr .7fr .7fr .7fr;
-  /* text-align: center; */
+
   justify-items: center;
 
   /* display: flex; */
@@ -1345,6 +1395,8 @@ justify-content: center;
 .aboutPage .teamMembersWrapper h2{
   grid-column: 1 / 3;
   grid-row: 1;
+  justify-self: start;
+  margin-left: 1rem;
 
 }
 
@@ -1399,6 +1451,10 @@ justify-content: center;
   /* margin-left: 2rem; */
 }
 
+.contactUsPage img{
+  margin-top: 3rem;
+}
+
 .contactUsFrame{
   display: flex;
   flex-flow: row wrap;
@@ -1409,6 +1465,8 @@ justify-content: center;
   border-radius: 0 0 5px 5px;
   padding: 1rem;
   margin-bottom: 2rem;
+
+  background-color: var(--offwhite-color);
 }
 
 .contactUsFrame h2{
@@ -1493,7 +1551,7 @@ justify-content: center;
 
 .resultsPage{
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 2fr 1fr;
+  grid-template-rows: auto 1.7fr 1fr;
   /* grid-gap: 1rem; */
 }
 
