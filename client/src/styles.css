@@ -310,7 +310,7 @@ footer{
   border: 1px solid #606060;
   padding:.5rem;
   border-radius:1%;
-  /* margin: 1%; */
+  margin: 1%;
 }
 
 .surveyLink p{
@@ -397,7 +397,8 @@ text-align:center;
 }
 
 .Main .Content .top-content{
-  margin:2rem 2rem .5% .5%;
+  /* margin:2rem 2rem .5% .5%; */
+  margin: 1%;
   display:flex;
   flex-flow:row wrap;
   justify-content: center;
