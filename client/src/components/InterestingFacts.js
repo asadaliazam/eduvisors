@@ -23,27 +23,15 @@ class InterestingFacts extends Component {
     };    // end of STATE
   }   // end of CONSTRUCTOR
 
-  sendValue(index)
-  {
-    if (index === 1)
-    {
-      return (
-require(`./img/2.jpg`)      )
+  sendValue(index) {
+    if (index === 1){
+      return ( require(`./img/2.jpg`) )
     }
-
-    else if (index === 2)
-    {
-      return (
-        require(`./img/1.jpg`)
-
-      )
+    else if (index === 2) {
+      return ( require(`./img/1.jpg`) )
     }
-
-    else if (index === 0)
-    {
-      return (
-         require(`./img/3.jpg`)
-      )
+    else if (index === 0) {
+      return ( require(`./img/3.jpg`) )
     }
   }
 

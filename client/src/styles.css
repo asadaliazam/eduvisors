@@ -9,11 +9,12 @@
     --secondary-color: #BFBFBF;
     --terceary-color: rgb(180, 180, 180);
     --materialui-blue: rgb(64, 83, 175);
-    --offwhite-color: rgb(244, 241, 239);
+    --offwhite-color: rgb(245, 245, 245);
 
     /* --cinza-profile-color: rgb(96, 96, 96);
     --cinza-header-color: rgb(74, 74, 74); */
     --otherblue: rgb(48, 129, 247);
+    --blackopacity-color: rgba(0,0,0, .5);
 }
 
 /* ===================== ======================== */
@@ -68,7 +69,8 @@ align-self: center;
 /*              LOGIN PAGE              */
 /* ===================== ======================== */
 
-.LoginContent, .RegContent{
+.LoginContent,
+.RegContent{
   height: auto;
   margin: 1rem;
   display: flex;
@@ -77,8 +79,12 @@ align-self: center;
   /* background-color: var(--offwhite-color); */
 }
 
-.LoginContent div, .LoginContent div form, .LoginPage .LoginContent,
-.RegContent div form, .RegPage .RegContent{
+.LoginContent div,
+.LoginContent div form,
+.LoginPage .LoginContent,
+.RegContent div form,
+.RegPage .RegContent
+{
   background-color: var(--offwhite-color);
 }
 
@@ -88,7 +94,8 @@ align-self: center;
 }
 
 .LoginPage header a,
-.RegPage header a{
+.RegPage header a,
+.External header a{
   color: white;
 }
 
@@ -115,8 +122,11 @@ align-self: center;
   /* background-color: var(--offwhite-color); */
 }
 
-.LoginContent div, .LoginContent div form, .LoginPage .LoginContent,
-.RegContent div form, .RegPage .RegContent{
+.LoginContent div,
+.LoginContent div form,
+.LoginPage .LoginContent,
+.RegContent div form,
+.RegPage .RegContent{
   background-color: var(--offwhite-color);
 }
 
@@ -143,8 +153,12 @@ align-self: center;
 .LoginPage header,
 .LoginPage footer,
 .RegPage header,
-.RegPage footer{
-  background-color: rgba(0,0,0, .5);
+.RegPage footer,
+.External header,
+.External footer,
+.landingPage footer{
+  /* background-color: rgba(0,0,0, .5); */
+  background-color: var(--blackopacity-color);
 }
 
 .LoginContent form .Input{
@@ -296,7 +310,11 @@ footer{
   border: 1px solid #606060;
   padding:.5rem;
   border-radius:1%;
-  /* margin: 1%; */
+  margin: 1%;
+}
+
+.surveyLink p{
+  margin-right: 1rem;
 }
 
 .surveyButton{
@@ -319,7 +337,7 @@ footer{
   justify-content: space-between;
   align-items: center;
 
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
 }
 
 .CardHeader p{
@@ -379,7 +397,8 @@ text-align:center;
 }
 
 .Main .Content .top-content{
-  margin:2rem 2rem .5% .5%;
+  /* margin:2rem 2rem .5% .5%; */
+  margin: 1%;
   display:flex;
   flex-flow:row wrap;
   justify-content: center;
@@ -541,10 +560,15 @@ margin:1%;
   grid-column: 2/3;
   grid-row: 1;
 
-  /* margin: 1%;
-  margin-left: 2rem; */
+  padding: 2rem;
   display: flex;
   flex-flow: column nowrap;
+}
+
+.survey1, .survey3, .score{
+  background-color: var(--terceary-color);
+  border: 1px solid var(--blackopacity-color);
+  border-radius: 0 0 5px 5px;
 }
 
 .question{
@@ -998,11 +1022,18 @@ grid-gap: 2rem;
   margin-bottom: 2rem;
 }
 
+.External .contactUsPage,
+.External .aboutPage
+{
+  margin: 2%;
+  padding: 4%;
+}
+
 /* ===================== ======================== */
 /*               FOOTER AREA                     */
 /* ===================== ======================== */
 
-footer, .landingPage footer{
+footer{
   display: flex;
   flex-flow: row nowrap;
 
@@ -1147,7 +1178,8 @@ justify-content: center;
   }
 
   .LoginPage header .mobile,
-  .RegPage header .mobile{
+  .RegPage header .mobile,
+  .External header .mobile{
    display: block;
    text-align: right;
    margin-right: 2rem;
@@ -1337,6 +1369,11 @@ justify-content: center;
   padding: 0 0 0 2rem;
 }
 
+.External .contactUsPage,
+.External .aboutPage{
+  margin: 2%;
+}
+
 
 /* ===================== ======================== */
 /*               PROFILE area */
@@ -1375,24 +1412,18 @@ justify-content: center;
 
   display: flex;
   flex-flow: column nowrap;
+  border-radius: 0 0 5px 5px;
 }
 
 .survey1, .survey3, .score{
-  background-color: var(--terceary-color);
-
   padding: 1.5rem 3rem;
-  border: 1px solid black;
-  border-radius: 5px;
 }
 
 .survey2, .survey4{
   background-color: var(--secondary-color);
 }
 
-/* .survey2
-{
-  margin-bottom: 300px;
-} */
+
 /* ===================== ======================== */
 /*                 ENGINE              */
 /* ===================== ======================== */

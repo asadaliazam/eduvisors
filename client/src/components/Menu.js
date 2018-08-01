@@ -63,7 +63,7 @@ import Media from "react-media";
 
         <header>
               <div className = "left-side">
-                <Link to="/HomePage"><img src={Logo} alt="Eduvisors logo"/></Link>
+                <Link to="/"><img src={Logo} alt="Eduvisors logo"/></Link>
 
               </div>
 
@@ -79,8 +79,8 @@ import Media from "react-media";
                     <ul>
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>
-                        <li><Link to="/HomePage/survey">Survey</Link></li>
-                        <li><Link to="/Login">Login</Link></li>
+                        {/* <li><Link to="/HomePage/survey">Survey</Link></li> */}
+                        {/* <li><Link to="/Login">Login</Link></li> */}
                     </ul>
                 </nav>
 

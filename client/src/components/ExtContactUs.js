@@ -1,31 +1,26 @@
 import React, { Component } from 'react';
-// import ContactUsPic from'./img/contactUsPic.jpg';
 import TeamPic from'./img/contactUs.png';
-// import teamMember1 from'./img/teamMember1.png';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import GoogleMapComponent from './GoogleMapComponent.js';
+import LoginMenu from './LoginMenu';
+import Footer from './Footer';
 
-class ContactUs extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+class ExtContactUs extends Component {
 
   render() {
-
     return (
+      <div className="External">
+      <LoginMenu />
       <div className="contactUsPage">
 
         <div className="contactUsFrame">
           <h2> Reach out! We are here for you. </h2>
             <img src={TeamPic} alt="Team Eduvisors" />
 
-
             <div className="contactUsFormWrapper">
 
-                  <form className="contactUsForm" action="/HomePage">
+                  <form className="contactUsForm" action="/">
                   <div className="section">
                     <TextField
                       id="name"
@@ -58,15 +53,12 @@ class ContactUs extends Component {
                   </form>
               </div>
           </div>
-          {/* <div>
-              <h2> Our Location </h2>
-              <GoogleMapComponent />
-          </div> */}
       </div>
 
-
+      <Footer />
+      </div>
     );
   }
 }
 
-export default ContactUs;
+export default ExtContactUs;
