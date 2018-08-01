@@ -8,6 +8,8 @@ import Media from "react-media";
 class HomePage extends Component {
   constructor() {
     super();
+    this.toggle = this.toggle.bind(this);
+
     this.state = {
         shown: true,
     };
@@ -24,7 +26,7 @@ class HomePage extends Component {
 		var hidden = { display: this.state.shown ? "none" : "block" };
     return (
       <div className="HomePage">
-              <Menu />
+              <Menu toggle={this.toggle}/>
               <div className={"Main"+(this.state.showProfile ? '' : ' hideProfile')}>
                     <div>
                           <div style={ shown }>

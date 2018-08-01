@@ -70,7 +70,7 @@ import Media from "react-media";
               <div className = "username">
                   <a href="" className="desktop">{this.state.firstName}</a>
                   <div className="mobile" id="user" >
-                      <FontAwesomeIcon icon={faUser} />
+                      <FontAwesomeIcon icon={faUser} onClick={this.props.toggle}/>
                 </div>
               </div>
 
