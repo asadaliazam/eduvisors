@@ -9,6 +9,11 @@ import Survey3 from './survey3';
 import Survey4 from './survey4';
 import AboutPage from './AboutPage.js';
 import ContactUs from './ContactUs.js';
+import Results from './Results.js';
+import Logout from './Logout.js';
+import ListOfSchools from './ListOfSchools.js';
+
+
 
 
 
@@ -31,6 +36,10 @@ class HomeSwitch extends Component {
                       <Route path={`${this.props.match.path}/survey2`} component={Survey2} />
                       <Route path={`${this.props.match.path}/survey3`} component={Survey3} />
                       <Route path={`${this.props.match.path}/survey4`} component={Survey4} />
+                      <Route path={`${this.props.match.path}/Results`} component={Results} />
+                      <Route path={`${this.props.match.path}/Logout`} component={Logout} />
+                      <Route path={`${this.props.match.path}/ListOfSchools`} component={ListOfSchools} />
+
                 </Switch>
 
     );

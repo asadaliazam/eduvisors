@@ -27,6 +27,10 @@ height:50px;
 align-self: center;
 }
 
+/* ===================== ======================== */
+/*              SCHOOLRANK GRAPH LIST COMPONENT              */
+/* ===================== ======================== */
+
 .avatar
 {
   margin: 10;
@@ -41,7 +45,7 @@ align-self: center;
   padding: 0;
   list-style-type: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1rem;
 }
 
@@ -56,6 +60,33 @@ align-self: center;
   padding: 0.5rem;
   padding-bottom: 2rem;
 }
+
+
+/* ===================== ======================== */
+/*             LIST OF SCHOOLS COMPONENT        */
+/* ===================== ======================== */
+
+.ListOfSchoolsCard
+{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 1rem;
+  margin: 0.5rem;
+}
+
+.ListOfSchoolsCard button
+{
+  background-color: blue;
+}
+
+.ListOfSchoolsCard a
+{
+  color: black !important;
+}
+
+
+
+
 
 
 
@@ -1709,7 +1740,7 @@ margin-bottom: 2rem;
 }
 .landingPage .landing-chart1 .graphContainer h2, .landingPage .landing-chart2 .graphContainer h2{
   color: white;
-  
+
 
 }
 
@@ -1904,4 +1935,16 @@ font-size: 1rem;
     width: 18rem;
     border-radius: 1rem;
 }
+
+/* ===================== ======================== */
+/*              SCHOOLRANK GRAPH LIST COMPONENT              */
+/* ===================== ======================== */
+
+
+.SchoolRankGraphList .schoolRankList
+{
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
 }
