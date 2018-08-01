@@ -24,10 +24,11 @@ class HomePage extends Component {
   render() {
     var shown = { display: this.state.shown ? "block" : "none" };
 		var hidden = { display: this.state.shown ? "none" : "block" };
+    console.log(1111111, this.state.shown);
     return (
       <div className="HomePage">
               <Menu toggle={this.toggle}/>
-              <div className={"Main"+(this.state.showProfile ? '' : ' hideProfile')}>
+              <div className={"Main"+(this.state.shown ? '' : ' hideProfile')}>
                     <div>
                           <div style={ shown }>
                           <Profile />
