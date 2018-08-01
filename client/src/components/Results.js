@@ -19,7 +19,72 @@ fetchFromDatabase(){
   fetch('/api/profileCompletion')
     .then(res => { return res.json()})
     .then(profile => {
-            if ((profile[0].first_name) && (profile[0].email) && (profile[0].last_name) && (profile[0].field_of_study)  || (profile[0].lvl_educ)  || (profile[0].c_at) || (profile[0].c_rain) || (profile[0].c_snow) || (profile[0].c_emp) || (profile[0].c_tui) || (profile[0].c_col) || (profile[0].c_rank) || (profile[0].o_rank) || (profile[0].o_tui) || (profile[0].o_emp) || (profile[0].o_col) || (profile[0].o_w) || (profile[0].o_at) || (profile[0].o_rain) || (profile[0].o_snow)) {
+      console.log(profile);
+      let total = 0;
+      if(profile[0].first_name) {
+        total = total + 5;
+      }
+      if(profile[0].email) {
+        total = total + 5;
+      }
+      if(profile[0].last_name) {
+        total = total + 5;
+      }
+      if(profile[0].field_of_study) {
+        total = total + 5;
+      }
+      if(profile[0].lvl_educ) {
+        total = total + 5;
+      }
+      if(profile[0].c_at) {
+        total = total + 5;
+      }
+      if(profile[0].c_rain) {
+        total = total + 5;
+      }
+      if(profile[0].c_snow) {
+        total = total + 5;
+      }
+      if(profile[0].c_emp) {
+        total = total + 5;
+      }
+      if(profile[0].c_tui) {
+        total = total + 5;
+      }
+      if(profile[0].c_col) {
+        total = total + 5;
+      }
+      if(profile[0].c_rank) {
+        total = total + 5;
+      }
+      if(profile[0].o_rank) {
+        total = total + 5;
+      }
+      if(profile[0].o_tui) {
+        total = total + 5;
+      }
+      if(profile[0].o_emp) {
+        total = total + 5;
+      }
+      if(profile[0].o_col) {
+        total = total + 5;
+      }
+      if(profile[0].o_w) {
+        total = total + 5;
+      }
+      if(profile[0].o_at) {
+        total = total + 5;
+      }
+      if(profile[0].o_rain) {
+        total = total + 5;
+      }
+      if(profile[0].o_snow) {
+        total = total + 5;
+      }
+
+      console.log(total);
+            if  (total > 25)
+            {
               this.setState({profileComplete: 1});
             }
 
