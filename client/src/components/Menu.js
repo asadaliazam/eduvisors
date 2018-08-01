@@ -19,10 +19,7 @@ import Media from "react-media";
       };
     }
 
-
-
-
-        toggle() {
+    toggle() {
         		this.setState({
         			shown: !this.state.shown
         		});
@@ -44,10 +41,6 @@ import Media from "react-media";
 
 
   render() {
-
-
-
-
 
             var shown = {
             			display: this.state.shown ? "block" : "none"
@@ -77,11 +70,11 @@ import Media from "react-media";
               <div className = "right-side">
                 <nav className="desktop">
                     <ul>
+                        <li><a href="/HomePage/engine">Results</a></li>
+                        <li><Link to="/HomePage/ListOfSchools">List of Schools</Link></li>
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>
-                        <li><Link to="/HomePage/Results">Results</Link></li>
                         <li><Link to="/HomePage/Logout">Logout</Link></li>
-                        <li><Link to="/HomePage/ListOfSchools">List of Schools</Link></li>
 
                     </ul>
                 </nav>
@@ -97,10 +90,11 @@ import Media from "react-media";
 
 
                       <ul>
-                          <li><a href="/HomePage/about">About</a></li>
-                          <li><a href="/HomePage/contactus">Contact Us</a></li>
-                          <li><Link to="/HomePage/survey">Survey</Link></li>
-                          <li><Link to="/Login">Login</Link></li>
+                        <li><a href="/HomePage/engine">Results</a></li>
+                        <li><Link to="/HomePage/ListOfSchools">List of Schools</Link></li>
+                        <li><a href="/HomePage/about">About</a></li>
+                        <li><a href="/HomePage/contactus">Contact Us</a></li>
+                        <li><Link to="/HomePage/Logout">Logout</Link></li>
                       </ul>
 
                 </div>

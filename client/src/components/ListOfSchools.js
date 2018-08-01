@@ -6,7 +6,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -26,38 +27,45 @@ class ListOfSchools extends Component {
 
   render() {
     return (
-      <div>
-        <h2>List of schools</h2>
+      <Card>
+        <div className="CardHeader">
+          <p>List of schools</p>
+          <Link to="/HomePage/"><FontAwesomeIcon icon={faTimes} /></Link>
+        </div>
 
         {this.state.ListOfSchools.map((ListOfSchools,index) =>
 
         <Card className="ListOfSchoolsCard">
-                <CardMedia
+                {/* <CardMedia
                       className="ListOfSchoolsCardMedia"
                       image='https://i0.wp.com/hifadhiafrica.org/wp-content/uploads/2017/01/default-placeholder.png'
-                      title="Contemplative Reptile" />
+                      title="Contemplative Reptile" /> */}
+                      <div className="schRank">
+                        Canada Rank:
+                          <span><FontAwesomeIcon icon={faTrophy} /> {ListOfSchools.ca_ranking}</span>
+                      </div>
                 <CardContent className="ListOfSchoolsCardContent">
                       <Typography component="h2">
                         {ListOfSchools.institution_name}
                       </Typography>
                       <Typography component="p">
-                        Province: {ListOfSchools.province}
+                        {ListOfSchools.province}, Canada
                       </Typography>
-                      <Typography component="p">
+                      {/* <Typography component="p">
                         Canada Rank: {ListOfSchools.ca_ranking}
-                      </Typography>
+                      </Typography> */}
                       <Typography component="p">
-                        Website: <a href={ListOfSchools.url} target="_blank">{ListOfSchools.url}</a>
+                        <a href={ListOfSchools.url} target="_blank">{ListOfSchools.url}</a>
                       </Typography>
                       <CardActions>
-                          <Button  color="secondary">
-                              <Link to={'/HomePage/schoolProf/'+ListOfSchools.ca_ranking}> View Full Details</Link>
+                          <Button  color="primary" className="btn">
+                              <Link to={'/HomePage/schoolProf/'+ListOfSchools.ca_ranking}> View Details</Link>
                           </Button>
                       </CardActions>
                 </CardContent>
         </Card>
         )}
-      </div>
+      </Card>
     );
   }
 }

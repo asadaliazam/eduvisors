@@ -32,7 +32,8 @@ app.locals.data;
 
 app.locals.user = {
   id: 1,
-  email: 'bb@bb.com'
+  email: ''
+  // email: 'bb@bb.com'
 }
 
 // ====================================================
