@@ -533,7 +533,7 @@ margin:1%;
 }
 
 .graphDescription{
-  margin: 3rem;
+  margin: 2rem 3rem 0 3rem;
 }
 
 .graphContainer h2{
@@ -556,19 +556,20 @@ margin:1%;
 /*                 SURVEY                         */
 /* ===================== ======================== */
 
-.surveyDiv{
+.HomePage .Main div .surveyDiv{
   grid-column: 2/3;
   grid-row: 1;
 
   padding: 2rem;
   display: flex;
   flex-flow: column nowrap;
+
+  border-radius: 0 0 5px 5px;
 }
 
 .survey1, .survey3, .score{
   background-color: var(--terceary-color);
   border: 1px solid var(--blackopacity-color);
-  border-radius: 0 0 5px 5px;
 }
 
 .question{
@@ -638,7 +639,9 @@ margin:1%;
     align-items: center;
   }
 
-
+  .btn a{
+    text-decoration: none;
+  }
 
 .rangeslider__fill{
     background: var(--main-color) !important;
@@ -696,15 +699,23 @@ margin:1%;
   display:grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 1fr ;
-  grid-gap: 1rem;
   justify-content: center;
 
   margin-bottom: 13rem;
 }
 
-.resultsPage h2{
+/* .resultsPage h2{ */
+.resultsPage .CardHeader{
   grid-row: 1;
+  margin: .5rem 0 0 0;
+}
 
+.resultsPage .resultPageCard .CardContent h2{
+  font-weight: bold;
+}
+
+.resultsPage .btn{
+  width: 110px;
 }
 
 /* .resultsPage .resultPageCard .CardContent{
@@ -730,6 +741,20 @@ grid-gap: 2rem;
 /* ===================== ======================== */
 /*                 SCHOOL PROFILE        */
 /* ===================== ======================== */
+
+.schoolPage{
+  overflow: hidden;
+}
+
+.resultsPage .MuiCard-root-1,
+.schoolPage .MuiCard-root-1{
+  background-color: var(--offwhite-color);
+}
+
+.schoolPage .MuiCard-root-1{
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
 
 .sValue{
   font-size: .9rem;
@@ -790,18 +815,16 @@ grid-gap: 2rem;
   margin: 2rem 2% 0 2%;
 }
 
-/* .schoolinfo ul .schRank:first-of-type{
-  margin-right: 1rem;
-} */
 
 .schoolinfo ul .schRank span{
   font-size: 3rem;
 }
 
 .schoolBtns{
-  border-top: 2px solid var(--main-color);
+  /* border-top: 2px solid var(--main-color); */
   padding-top: 1rem;
-  margin-top: 1rem;
+  margin: 0 1rem;
+
   display: flex;
   flex-flow: row wrap;
 
@@ -810,7 +833,7 @@ grid-gap: 2rem;
 }
 
 .schoolBtns button{
-      /* flex: 0 0 19%; */
+      flex: 0 0 18%;
       background-color: var(--main-color);
       height: 2.5rem;
       color: white;
@@ -992,6 +1015,10 @@ grid-gap: 2rem;
   flex-flow: column nowrap;
 }
 
+.contactUsPage h2{
+  margin-top: 0;
+}
+
 .contactUsPage img{
   width: 100%;
   height: auto;
@@ -1026,7 +1053,7 @@ grid-gap: 2rem;
 .External .aboutPage
 {
   margin: 2%;
-  padding: 4%;
+  /* padding: 4%; */
 }
 
 /* ===================== ======================== */
@@ -1255,7 +1282,6 @@ justify-content: center;
 /* ===================== ======================== */
 
 .aboutPage{
-
   grid-column: 2 / 3;
   grid-row: 1;
 }
@@ -1269,8 +1295,7 @@ justify-content: center;
   flex-flow: row nowrap;
 } */
 
-.aboutPage .teamMembersWrapper
-{
+.aboutPage .teamMembersWrapper{
   margin-top: 2rem;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -1292,31 +1317,37 @@ justify-content: center;
 
 }
 
+
 .aboutPage .teamMembersWrapper .t1{
   grid-column: 1 / 2;
   grid-row: 2;
 }
+
 
 .aboutPage .teamMembersWrapper .t2{
   grid-column: 2 / 3;
   grid-row: 2;
 }
 
+
 .aboutPage .teamMembersWrapper .t3{
   grid-column: 1 / 2;
   grid-row: 3;
 }
+
 
 .aboutPage .teamMembersWrapper .t4{
   grid-column: 2 / 3;
   grid-row: 3;
 }
 
+
 .aboutPage .teamMembersWrapper .t5{
   grid-column: 1 / 3;
   grid-row: 4;
 
 }
+
 
 .aboutPage .teamMembersWrapper .t5 img{
   max-width: 230px;
@@ -1344,7 +1375,7 @@ justify-content: center;
   box-sizing: border-box;
 
   border: 1px solid lightgrey;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
   padding: 1rem;
   margin-bottom: 2rem;
 }
@@ -1369,10 +1400,7 @@ justify-content: center;
   padding: 0 0 0 2rem;
 }
 
-.External .contactUsPage,
-.External .aboutPage{
-  margin: 2%;
-}
+
 
 
 /* ===================== ======================== */
@@ -1408,7 +1436,7 @@ justify-content: center;
 /* ===================== ======================== */
 /*                 SURVEY                         */
 /* ===================== ======================== */
-.surveyDiv{
+.HomePage .Main div .surveyDiv{
 
   display: flex;
   flex-flow: column nowrap;
@@ -1433,88 +1461,49 @@ justify-content: center;
 } */
 
 .resultsPage{
-
   grid-template-columns: 1fr 1fr;
-  grid-template-rows:auto 2fr 1fr;
+  grid-template-rows: auto 2fr 1fr;
+  /* grid-gap: 1rem; */
 }
 
 .resultsPage .resultPageCard {
   display:grid;
-  grid-gap: 2rem;
   grid-template-columns: 1fr 1fr;
-
+  grid-gap: 2rem;
+  margin-bottom: 1rem;
 }
 
 .resultsPage .cardPicture{
   grid-column: 1;
 }
 
-.resultsPage h2{
-  grid-row: 1;
 
-  /* grid-column: 2 / 3; */
-  /* margin: 1%;
-  margin-left: 2rem; */
-
-  /* display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: .1fr 1fr 1fr;
-} */
-
-/* .resultsPage{
-  grid-template-columns: 1fr 1fr 1fr;
-} */
-
-/* .resultsPage h2{
-  grid-column: 1/3;
-  grid-row: 1;
-} */
-
-
-
-/* .resultsPage .resultPageCard:first-of-type{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-column: 1/3;
-  grid-row: 2;
-  border-bottom: 1px solid #606060;
-  padding: 1%; */
-
+.resultsPage .CardHeader{
+  grid-column: 1/-1;
 }
 
-
-.resultsPage .resultPageCard:first-of-type{
-
+.HomePage .Main .resultsPage .resultPageCard:nth-of-type(2){
   grid-column: 1/3;
   grid-row: 2;
-  border-bottom: 1px solid #606060;
-  padding: 1%;
+  border-bottom: 1px solid lightgrey;
+  padding: 1rem;
 }
-.resultsPage .resultPageCard:nth-of-type(2){
 
+.resultsPage .resultPageCard:nth-of-type(4){
   grid-column: 1/2;
   grid-row: 3;
-  border-bottom: 1px solid #606060;
-  padding: 2%;
+  border-bottom: 1px solid lightgrey;
+  padding: 1rem;
+  margin-right: 1rem;
 }
+
 .resultsPage .resultPageCard:nth-of-type(3){
-
-
   grid-column: 2/3;
   grid-row: 3;
   border-bottom: 1px solid #606060;
-  padding: 2%;
-
-/* .resultPageCard .resultPageCard:nth-of-type(2) .resultPageCardPicture
-{
-  grid-row:3;
-  height: 0; */
-  /* padding-top: 56.25%; */
-  /* max-width: 100%; */
+  padding: 1rem;
 
 }
-
 
 /* ===================== ======================== */
 /*                 SCHOOL PROFILE        */
@@ -1522,7 +1511,7 @@ justify-content: center;
 
 .sprof{
       grid-column: 2 / 3;
-      margin: 1% 0;
+      /* margin: 1% 0; */
       padding: .5rem;
       /* margin-left: 3rem; */
       display: flex;

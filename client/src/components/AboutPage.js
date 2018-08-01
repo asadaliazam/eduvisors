@@ -65,7 +65,7 @@ class AboutPage extends Component {
                               </a>
                               <img src={teamMember2} alt="Team Member"/>
                               <h3>Navorse Sharma</h3>
-                              <p>Develper Lead</p>
+                              <p>Developer Lead</p>
                         </div>
 
                         <div className="teamMember t3">
@@ -89,7 +89,7 @@ class AboutPage extends Component {
                         <div className="teamMember t5">
                               <a href="https://www.linkedin.com/in/lsachdeva/" target="_blank">
                               <img src={require("./img/linkedin.svg")} alt="linkedin icon" />
-                              </a>                          
+                              </a>
                               <img src={teamMember5} alt="Team Member"/>
                               <h3>Lakshay Sachdeva</h3>
                               <p>Lead Designer</p>

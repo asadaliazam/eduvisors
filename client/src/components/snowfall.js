@@ -125,7 +125,9 @@ class Snowfall extends Component {
             options={{ responsive: true  }}
             />
             <p className="graphDescription">
-              Employment Rate in Canada remained unchanged at 61.50 percent in June from 61.50 percent in May of 2018. Employment Rate in Canada averaged 60.31 percent from 1976 until 2018, reaching an all time high of 63.70 percent in February of 2008 and a record low of 56 percent in December of 1982.
+              The major Canadian city that falls outside the continental climate schema is Vancouver, which experiences an oceanic climate with a marked summer dry season. Of the eight largest Canadian cities, Ottawa, Montreal and Toronto have the warmest summers, Winnipeg the coldest winters, while Vancouver's winters are far milder than any other large city in Canada.</p>
+
+              <p className="graphDescription">Central Canada and northern Canada experiences subarctic and Arctic climates, much of them arid. Those areas are not heavily populated due to the severe climate, where it drops below −20 °C (−4 °F) on most winter days and has a very brief summer season.
             </p>
       </div>
     );

@@ -7,6 +7,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 // import AboutPagePic from './img/aboutPagePic.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
 
 
 class Engine extends Component {
@@ -43,7 +45,11 @@ class Engine extends Component {
     return (
 
       <div className = "resultsPage">
-              <h2>Personalized Recommendations</h2>
+        <div className="CardHeader">
+          <p>Personalized Recommendations</p>
+          <Link to="/HomePage/"><FontAwesomeIcon icon={faTimes} /></Link>
+        </div>
+
               {this.state.schoolNames.map((schoolNames,index) =>
 
               <Card className="resultPageCard">
@@ -59,8 +65,8 @@ class Engine extends Component {
                               Province: {schoolNames.province}
                             </Typography>
                             <CardActions>
-                                <Button  color="primary">
-                                    <Link to={'/HomePage/schoolProf/'+schoolNames.schoolID}> View Full Details</Link>
+                                <Button  color="primary" className="btn">
+                                    <Link to={'/HomePage/schoolProf/'+schoolNames.schoolID}>Full Details</Link>
                                 </Button>
                             </CardActions>
                       </CardContent>
