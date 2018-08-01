@@ -30,14 +30,19 @@ class HomePage extends Component {
               <Menu toggle={this.toggle}/>
               <div className={"Main"+(this.state.shown ? '' : ' hideProfile')}>
                     <div>
+                      <Media query="(min-width: 999px)">
+
                           <div style={ shown }>
                           <Profile />
                           </div>
+                        </Media>
 
-                          {/* <h2 style={ hidden }></h2>
                           <Media query="(max-width: 998px)">
-                                <button onClick={this.toggle.bind(this)}>Toggle</button>
-                          </Media> */}
+                            <div style={hidden}>
+                              <Profile />
+                            </div>
+
+                          </Media>
                     </div>
                     <HomeSwitch match={this.props.match}/>
               </div>
