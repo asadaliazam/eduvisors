@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 // import deepOrange from '@material-ui/core/colors/deepOrange';
 // import deepPurple from '@material-ui/core/colors/deepPurple';
@@ -92,7 +90,7 @@ class SchoolRankGraphList extends Component {
       <div className="SchoolRankGraphList">
         <h2>Top Universities in {this.state.province}:</h2>
         {/* <p> {this.state.province}</p> */}
-        <ul class="schoolRankList">
+        <ul className="schoolRankList">
           {listItems}
         </ul>
 

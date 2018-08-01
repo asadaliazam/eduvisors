@@ -19,10 +19,7 @@ import Media from "react-media";
       };
     }
 
-
-
-
-        toggle() {
+    toggle() {
         		this.setState({
         			shown: !this.state.shown
         		});
@@ -45,10 +42,6 @@ import Media from "react-media";
 
   render() {
 
-
-
-
-
             var shown = {
             			display: this.state.shown ? "block" : "none"
             		};
@@ -63,24 +56,26 @@ import Media from "react-media";
 
         <header>
               <div className = "left-side">
-                <Link to="/HomePage"><img src={Logo} alt="Eduvisors logo"/></Link>
+                <Link to="/"><img src={Logo} alt="Eduvisors logo"/></Link>
 
               </div>
 
               <div className = "username">
                   <a href="" className="desktop">{this.state.firstName}</a>
                   <div className="mobile" id="user" >
-                      <FontAwesomeIcon icon={faUser} />
+                      <FontAwesomeIcon icon={faUser} onClick={this.props.toggle}/>
                 </div>
               </div>
 
               <div className = "right-side">
                 <nav className="desktop">
                     <ul>
+                        <li><a href="/HomePage/engine">Results</a></li>
+                        <li><Link to="/HomePage/ListOfSchools">List of Schools</Link></li>
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>
-                        <li><Link to="/HomePage/survey">Survey</Link></li>
-                        <li><Link to="/Login">Login</Link></li>
+                        <li><Link to="/HomePage/Logout">Logout</Link></li>
+
                     </ul>
                 </nav>
 
@@ -95,10 +90,11 @@ import Media from "react-media";
 
 
                       <ul>
-                          <li><a href="/HomePage/about">About</a></li>
-                          <li><a href="/HomePage/contactus">Contact Us</a></li>
-                          <li><Link to="/HomePage/survey">Survey</Link></li>
-                          <li><Link to="/Login">Login</Link></li>
+                        <li><a href="/HomePage/engine">Results</a></li>
+                        <li><Link to="/HomePage/ListOfSchools">List of Schools</Link></li>
+                        <li><a href="/HomePage/about">About</a></li>
+                        <li><a href="/HomePage/contactus">Contact Us</a></li>
+                        <li><Link to="/HomePage/Logout">Logout</Link></li>
                       </ul>
 
                 </div>

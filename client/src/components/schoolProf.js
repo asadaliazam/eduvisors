@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import BackButton from './BackButton'
 import Snowfall from './snowfall';
 import TuitionGraph from './TuitionGraph';
 import {Link} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Redirect } from 'react-router-dom';
+import { faTimes, faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
 import CostOfLivingGraph from './costOfLivingGraph';
 
 
@@ -75,7 +73,7 @@ class SchoolProf extends Component {
   render() {
     return (
 
-      <div>
+      <div className="schoolPage">
       <div className="CardHeader">
         <p>Institution Profile</p>
         <Link to="/HomePage/engine"><FontAwesomeIcon icon={faTimes} /></Link>
@@ -91,34 +89,44 @@ class SchoolProf extends Component {
                         <li className="schDet">{customer.province}, Canada</li>
                         <li className="schDet"><a href={customer.url} target="_blank">{customer.url}</a></li>
                         <br/>
-                        <li className="schRank">Canadian Ranking: <span>{customer.ca_ranking}</span></li>
-                        <li className="schRank">World Ranking: <span>{customer.wd_rank}</span></li>
+                        <li className="schRank">Canadian Ranking:
+                          <span><FontAwesomeIcon icon={faTrophy} /> {customer.ca_ranking}</span></li>
+                        <li className="schRank">World Ranking:
+                          <span><FontAwesomeIcon icon={faMedal} />  {customer.wd_rank}</span></li>
 
                       </ul>
                     )}
                 </div>
-                <CostOfLivingGraph province={this.state.province} />
-                <div className="schoolBtns">
-                      <button onClick={() => this.setState({type: 'rain'})}>
-                        Rain
-                      </button>
-                      <button onClick={() => this.setState({type: 'snow'})}>
-                        Snow
-                      </button>
-                      <button onClick={() => this.setState({type: 'temp_high'})}>
-                        High Temp
-                      </button>
-                      <button onClick={() => this.setState({type: 'temp_low'})}>
-                        Low Temp
-                      </button>
-                      <button onClick={() => this.setState({type: 'temp_avg'})}>
-                        Average Temp
-                      </button>
-              </div>
-                {/* <p> {this.state.school} </p> */}
-                <Snowfall province={this.state.province} type={this.state.type} />
-                <TuitionGraph province={this.state.province} />
-            </Card>
+
+              </Card>
+              <Card className="schoolinfo">
+                    <CostOfLivingGraph province={this.state.province} />
+              </Card>
+              <Card>
+                      <div className="schoolBtns">
+                            <button onClick={() => this.setState({type: 'rain'})}>
+                              Rain
+                            </button>
+                            <button onClick={() => this.setState({type: 'snow'})}>
+                              Snow
+                            </button>
+                            <button onClick={() => this.setState({type: 'temp_high'})}>
+                              High Temp
+                            </button>
+                            <button onClick={() => this.setState({type: 'temp_low'})}>
+                              Low Temp
+                            </button>
+                            <button onClick={() => this.setState({type: 'temp_avg'})}>
+                              Average Temp
+                            </button>
+                    </div>
+
+                      <Snowfall province={this.state.province} type={this.state.type} />
+                </Card>
+                <Card>
+                      <TuitionGraph province={this.state.province} />
+                </Card>
+
             </div>
 
     );    // end of RETURN
