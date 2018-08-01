@@ -6,7 +6,7 @@ import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
 import CostOfLivingGraph from './costOfLivingGraph';
-
+import EmploymentGraph from './employmentGraph';
 
 class SchoolProf extends Component {
   constructor(props) {
@@ -125,6 +125,10 @@ class SchoolProf extends Component {
                 </Card>
                 <Card>
                       <TuitionGraph province={this.state.province} />
+                </Card>
+
+                <Card>
+                      <EmploymentGraph province={this.state.province} />
                 </Card>
 
             </div>

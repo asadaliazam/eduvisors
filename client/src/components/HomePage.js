@@ -34,10 +34,10 @@ class HomePage extends Component {
                           <Profile />
                           </div>
 
-                          <h2 style={ hidden }></h2>
+                          {/* <h2 style={ hidden }></h2>
                           <Media query="(max-width: 998px)">
                                 <button onClick={this.toggle.bind(this)}>Toggle</button>
-                          </Media>
+                          </Media> */}
                     </div>
                     <HomeSwitch match={this.props.match}/>
               </div>
