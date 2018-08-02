@@ -34,7 +34,7 @@ class AboutPage extends Component {
                   </div>
 
                   <div class="vid">
-                          <iframe title="video" width="560" height="315" src={require("./img/video/Eduvisors_1-min.mp4")} allowfullscreen></iframe>
+                          <video title="video" width="560" height="315" src={require("./img/video/Eduvisors_1-min.mp4?rel=0")} controls allowfullscreen></video>
                   </div>
 
 
