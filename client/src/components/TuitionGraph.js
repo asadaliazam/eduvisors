@@ -79,7 +79,7 @@ options : {
           labels: ['Graduate Programs', 'Undergraduate Programs'],
           datasets: [{
               label: `Year Tuition Fee Cost: ${this.state.province}`,
-              backgroundColor: '#769A8E',
+              backgroundColor: '#D78E8C',
               // backgroundColor: 'rgba(255,99,132,0.2)',
               borderColor: '#45675C',
               // borderColor: 'rgba(255,99,132,1)',
