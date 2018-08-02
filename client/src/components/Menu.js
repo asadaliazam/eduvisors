@@ -76,6 +76,7 @@ import Media from "react-media";
 
                      <Media query="(max-width: 998px)">
                             <div>
+                              <FontAwesomeIcon icon={faBars} onClick={this.toggle.bind(this)} />
                                   <div className="mobile" id="bars" style={ shown }>
                                         <ul>
                                           <li><a href="/HomePage/">Home</a></li>
@@ -88,7 +89,7 @@ import Media from "react-media";
                                         </ul>
 
                                   </div>
-                                  <FontAwesomeIcon icon={faBars} onClick={this.toggle.bind(this)} />
+
                               </div>
                       </Media>
 
