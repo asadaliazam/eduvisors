@@ -1902,7 +1902,7 @@ list-style-type: none;
 
 .landingPage .landing-chart2 .graphContainer{
 background-color: var(--secondary-color);
-padding: 0 2rem;
+padding: 2rem;
 border-radius: 2rem;
 color: darkslategray;
 margin-bottom: 2rem;
