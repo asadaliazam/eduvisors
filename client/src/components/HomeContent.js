@@ -54,7 +54,7 @@ class HomeContent extends Component {
           <div className="Content">
             <div className="surveyLink">
                 <p>Take the survey and we will find your matchmake university:</p>
-                <Button  type="submit" variant="contained" color="primary" className="surveyButton">
+                <Button  type="submit" variant="contained" color="primary">
                     <Link to="/HomePage/survey">Take Survey</Link>
                 </Button>
             </div>

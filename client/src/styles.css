@@ -570,7 +570,8 @@ margin:1%;
 
 
 .Main .Profile .user-info  {
-  background-color: #606060;
+  /* background-color: #606060; */
+  background-color: var(--blackopacity-color);
   height:auto;
   padding:.3rem;
   box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.2);
@@ -872,23 +873,30 @@ margin:1%;
 .ResultsPageNew .userMsg{
   display: flex;
   flex-flow: row nowrap;
-  height: 500px;
+  /* height: 500px; */
   border: 1px solid lightgrey;
   border-radius: 0 0 5px 5px;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 .resultsPageNew .userMsg .awe{
+  font-size: 3rem;
+  color: var(--offwhite-color);
+  padding: 1rem;
   flex: 1 0 20%;
-
 }
 
-.resultsPageNew .userMsg div{
+.resultsPageNew .userMsg .msgTitle{
+  line-height: 5;
+  padding: 2rem;
   flex: 1 0 20%;
+  min-width: 100px;
 }
 
 .resultsPageNew .userMsg p{
-  flex: 0 0 60%;
+  flex: 0 0 40%;
+  width: 40%;
+  padding: 1rem;
 }
 
 /* .resultsPage .resultPageCard .CardContent{
@@ -1458,25 +1466,40 @@ justify-content: center;
 
   .surveyLink{
     /* background-color: var(--offwhite-color); */
-    background-color: var(--secondary-color);
+    background-color: var(--offwhite-color);
     border-radius: 5px;
-    margin-right: 2rem;
-    /* margin-left: 1rem; */
+    margin-bottom: 1.5rem;
     height: 3rem;
-    margin-top: .5rem;
     line-height: 3;
     text-align: center;
 
     padding: 0 1rem;
     color: black;
 
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid lightgrey;
+
+  }
+
+  .surveyLink p{
+    margin: 0;
+    text-align: left;
   }
 
   .surveyLink a{
-    padding: 0 .5rem;
-    color: black;
+
+    text-decoration: none;
+  }
+
+  .surveyLink button{
+    height: 1rem;
 
   }
+
 
 
   /* ===================== ======================== */
@@ -1674,7 +1697,6 @@ justify-content: center;
 } */
 
 .Main .Profile .user-info {
-  background-color: #606060;
   margin:1%;
   color:white;
 }
@@ -1845,7 +1867,7 @@ justify-content: center;
   right: 0;
   top:-2rem;
   font-size: 2rem;
-  
+
   z-index: 99;
 }
 .signupButton{
