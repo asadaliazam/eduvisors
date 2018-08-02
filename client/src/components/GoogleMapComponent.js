@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import GoogleMapReact from 'google-map-react'
+
 const AnyReactComponent = ({ text }) => <div>{ text }</div>;
+
 export default class GoogleMapComponent extends Component {
   static defaultProps = {
     center: { lat: 49.246292, lng: -123.116226 },

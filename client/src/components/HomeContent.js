@@ -5,8 +5,7 @@ import EmploymentGraph from './employmentGraph';
 import CostOfLivingGraph from './costOfLivingGraph';
 import TuitionGraph from './TuitionGraph';
 import SchoolRankGraphList from './SchoolRankGraphList';
-import Button from '@material-ui/core/Button';
-import { Link } from "react-router-dom";
+
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -57,41 +56,33 @@ class HomeContent extends Component {
                     <Link to="/HomePage/survey">Take Survey</Link>
                 </Button>
             </div> */}
-
+                <div className="CardHeader">
+                    <p>Province Facts</p>
+                </div>
                 <Card className="top-content">
-                      <div class="CardHeader">Interesting Facts</div>
                       <CardContent className="CardContent">
-
-
-
-                        <form onSubmit={this.handleSubmit}>
-                            <div class="leftContent">
-
-                            <label>
-                              <p>Choose a Province:</p>
-                              <select value={this.state.value} onChange={this.handleChange} >
-                                <option value="AB" label="Alberta">AB</option>
-                                <option value="BC" label="British Columbia">BC </option>
-                                <option value="NL" label="NewFoundLand">NL</option>
-                                <option value="MB" label="Manitoba">MB</option>
-                                <option value="ON" label="Ontario">ON</option>
-                                <option value="PE" label="Prince Ed Island">PE</option>
-                                <option value="NS" label="Nova Scotia">NS</option>
-                                <option value="NB" label="New Brunswick">NB</option>
-                                <option value="QC" label="Quebec">QC</option>
-                                <option value="SK" label="Saskatchewan">SK</option>
-                              </select>
-                            </label>
-
-
-                            </div>
-                            <InterestingFacts province={this.state.value} />
-
-                          </form>
-
-
-          </CardContent>
-    </Card>
+                          <form onSubmit={this.handleSubmit}>
+                                <div className="leftContent">
+                                        <label>
+                                          <p>Choose a Province:</p>
+                                          <select value={this.state.value} onChange={this.handleChange} >
+                                            <option value="AB" label="Alberta">AB</option>
+                                            <option value="BC" label="British Columbia">BC </option>
+                                            <option value="NL" label="NewFoundLand">NL</option>
+                                            <option value="MB" label="Manitoba">MB</option>
+                                            <option value="ON" label="Ontario">ON</option>
+                                            <option value="PE" label="Prince Ed Island">PE</option>
+                                            <option value="NS" label="Nova Scotia">NS</option>
+                                            <option value="NB" label="New Brunswick">NB</option>
+                                            <option value="QC" label="Quebec">QC</option>
+                                            <option value="SK" label="Saskatchewan">SK</option>
+                                          </select>
+                                        </label>
+                                 </div>
+                                 <InterestingFacts province={this.state.value} />
+                           </form>
+                      </CardContent>
+                    </Card>
               {/* </div>   {/* end of TOP-CONTENT */}
 
 

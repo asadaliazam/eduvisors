@@ -4,7 +4,7 @@
 /* VARIABLE DECLARATION */
 /* ===================== ======================== */
 :root{
-    /* --main-color: rgb(91, 101, 177);*/
+    --purple-color: rgb(91, 101, 177);
     --main-color: rgb(64, 83, 175);
     --secondary-color: #BFBFBF;
     --terceary-color: rgb(180, 180, 180);
@@ -373,7 +373,8 @@ footer{
 
 .surveyButton a{
   text-decoration: none;
-} */
+}
+
 
 .CardHeader{
   background-color: rgba(0,0,0,.5);
@@ -392,6 +393,7 @@ footer{
 .CardHeader p{
   margin: .2rem 0;
 }
+
 
 .aboutPage .CardHeader a{
   color: white;
@@ -1413,7 +1415,7 @@ justify-content: center;
 
   .surveyLink{
     /* background-color: var(--offwhite-color); */
-    background-color: red;
+    background-color: var(--secondary-color);
     border-radius: 5px;
     margin-right: 1rem;
     margin-left: 1rem;
@@ -1423,6 +1425,7 @@ justify-content: center;
     text-align: center;
 
     padding: 0 1rem;
+    color: black;
 
   }
 
@@ -1900,7 +1903,7 @@ list-style-type: none;
 
 .landingPage .landing-chart2 .graphContainer{
 background-color: var(--secondary-color);
-padding: 0 2rem;
+padding: 2rem;
 border-radius: 2rem;
 color: darkslategray;
 margin-bottom: 2rem;
