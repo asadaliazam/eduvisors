@@ -58,7 +58,7 @@ class HomeContent extends Component {
                 </Button>
             </div>
 
-          
+
                 <Card className="top-content">
                       <CardContent className="CardContent">
 
