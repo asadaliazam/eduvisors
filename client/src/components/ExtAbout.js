@@ -5,10 +5,7 @@ import teamMember3 from'./img/team/rod2.png';
 import teamMember4 from'./img/team/sam.png';
 import teamMember5 from'./img/team/lak2.png';
 
-import {Link, BrowserRouter as Router} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faLinkedin} from '@fortawesome/fontawesome-free-brands';
 import LoginMenu from './LoginMenu';
 import Footer from './Footer';
 

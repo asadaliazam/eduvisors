@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Snowfall from './snowfall';
 import TuitionGraph from './TuitionGraph';
-import {Link} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
+import { faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
 import CostOfLivingGraph from './costOfLivingGraph';
 import BackButton from './BackButton.js'
 import EmploymentGraph from './employmentGraph';
