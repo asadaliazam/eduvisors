@@ -345,7 +345,7 @@ footer{
 /* ===================== ======================== */
 /*              SURVEY LINK                   */
 /* ===================== ======================== */
-.surveyLink{
+/* .surveyLink{
   flex: 1 0 100%;
   display:flex;
   flex-flow: row nowrap;
@@ -359,7 +359,7 @@ footer{
 
 .surveyLink p{
   margin-right: 1rem;
-}
+} */
 
 .surveyButton{
   width:170px;
@@ -538,10 +538,12 @@ margin:1%;
   border-bottom: 1px solid white;
   margin:.5rem;
   font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .Main .Profile .user-info  h2 li:nth-of-type(even){
   margin:1rem;
+  font-size: 1rem;
 }
 
  .Main .Profile .name{
@@ -762,7 +764,6 @@ margin:1%;
   margin-bottom: 13rem;
 }
 
-/* .resultsPage h2{ */
 .resultsPage .CardHeader{
   grid-row: 1;
   margin: 0;
@@ -779,6 +780,28 @@ margin:1%;
 
 .resultsPage .btn{
   width: 110px;
+}
+
+.ResultsPageNew .userMsg{
+  display: flex;
+  flex-flow: row nowrap;
+  height: 500px;
+  border: 1px solid lightgrey;
+  border-radius: 0 0 5px 5px;
+  padding: 2rem;
+}
+
+.resultsPageNew .userMsg .awe{
+  flex: 1 0 20%;
+
+}
+
+.resultsPageNew .userMsg div{
+  flex: 1 0 20%;
+}
+
+.resultsPageNew .userMsg p{
+  flex: 0 0 60%;
 }
 
 /* .resultsPage .resultPageCard .CardContent{
@@ -1306,7 +1329,7 @@ justify-content: center;
 
    header .username{
     order: 3;
-    flex: 1 0 12%;
+    flex: 0 0 1%;
   }
 
    header .username a{
@@ -1321,13 +1344,34 @@ justify-content: center;
 
    header .left-side{
     order: 1;
-    flex: 1 0 30%;
+    flex: 1 0 15%;
   }
 
    header .right-side{
     order: 2;
     flex: 1 0 50%;
   }
+
+  .surveyLink{
+    /* background-color: var(--offwhite-color); */
+    background-color: red;
+    border-radius: 5px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    height: 3rem;
+    margin-top: .5rem;
+    line-height: 3;
+    text-align: center;
+
+    padding: 0 1rem;
+
+  }
+
+  .surveyLink a{
+    padding: 0 .5rem;
+
+  }
+
 
   /* ===================== ======================== */
   /*              LOGIN              */

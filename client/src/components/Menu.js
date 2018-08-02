@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import Media from "react-media";
+import Button from '@material-ui/core/Button';
 
 
   class LongMenu extends React.Component {
@@ -61,7 +62,6 @@ import Media from "react-media";
               </div>
 
               <div className = "username">
-                  <a href="" className="desktop">{this.state.firstName}</a>
                   <div className="mobile" id="user" >
                       <FontAwesomeIcon icon={faUser} onClick={this.props.toggle}/>
                 </div>
@@ -70,11 +70,13 @@ import Media from "react-media";
               <div className = "right-side">
                 <nav className="desktop">
                     <ul>
+
+                        <li className="surveyLink"><a href="/HomePage/survey">Take Survey</a></li>
                         <li><a href="/HomePage/Results">Results</a></li>
-                        <li><Link to="/HomePage/ListOfSchools">List of Schools</Link></li>
+                        <li><a href="/HomePage/ListOfSchools">List of Schools</a></li>
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>
-                        <li><Link to="/HomePage/Logout">Logout</Link></li>
+                        <li><a href="/HomePage/Logout">Logout</a></li>
 
                     </ul>
                 </nav>
@@ -90,11 +92,12 @@ import Media from "react-media";
 
 
                       <ul>
+                        <li><a href="/HomePage/survey">Take Survey</a></li>
                         <li><a href="/HomePage/Results">Results</a></li>
-                        <li><Link to="/HomePage/ListOfSchools">List of Schools</Link></li>
+                        <li><a href="/HomePage/ListOfSchools">List of Schools</a></li>
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>
-                        <li><Link to="/HomePage/Logout">Logout</Link></li>
+                        <li><a href="/HomePage/Logout">Logout</a></li>
                       </ul>
 
                 </div>

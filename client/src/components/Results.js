@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import {Link} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExclamationTriangle, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 class Results extends Component {
@@ -108,7 +111,18 @@ render() {
   }
   return (
       <div className = "ResultsPageNew">
-        <p> You have not completed the survey, GO BACK AND DO THE SURVEY </p>
+        <div className="CardHeader">
+          <p>List of schools</p>
+          <Link to="/HomePage/"><FontAwesomeIcon icon={faTimes} /></Link>
+        </div>
+        <div className="userMsg">
+            <div className="awe">
+            <FontAwesomeIcon icon={faExclamationTriangle} />
+            </div>
+            <div className="msgTitle">User Messager:</div>
+            <p>You have not taken the survey yet. Please take the survey before checking the results!</p>
+        </div>
+
       </div>
   );
 } // end of RENDER

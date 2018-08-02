@@ -51,14 +51,14 @@ class HomeContent extends Component {
     // const classes = this.props;
     return (
           <div className="Content">
-            <div className="surveyLink">
+            {/* <div className="surveyLink">
                 <p>Take the survey and we will find your matchmake university:</p>
                 <Button  type="submit" variant="contained" color="primary" className="surveyButton">
                     <Link to="/HomePage/survey">Take Survey</Link>
                 </Button>
-            </div>
+            </div> */}
 
-          
+
                 <Card className="top-content">
                       <CardContent className="CardContent">
 
