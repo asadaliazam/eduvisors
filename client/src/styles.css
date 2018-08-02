@@ -349,7 +349,7 @@ footer{
 /* ===================== ======================== */
 /*              SURVEY LINK                   */
 /* ===================== ======================== */
-.surveyLink{
+/* .surveyLink{
   flex: 1 0 100%;
   display:flex;
   flex-flow: row nowrap;
@@ -373,7 +373,7 @@ footer{
 
 .surveyButton a{
   text-decoration: none;
-}
+} */
 
 .CardHeader{
   background-color: rgba(0,0,0,.5);
@@ -415,15 +415,37 @@ footer{
 
 
 .Main .Content form{
-/* text-align: center; */
 flex: 1 0 90%;
+
+padding:4px;
+border-radius: 1%;
+
+}
+
+.Main .Content .leftContent{
+  background-image: url("components/img/informationImage.jpg");
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
-.Main .Content form select{
-
+.Main .Content form label{
   display: flex;
-  flex-flow:column nowrap;
+  flex-flow: column nowrap;
+  /* text-align: left;
+  margin-left:1%;
+  margin-top:1%; */
+}
+
+.Main .Content form label p{
+  margin-left: 2%;
+  margin-bottom: 1%;
+  color:white;
+}
+
+.Main .Content form select{
+  justify-content: center;
   width:200px;
   /* width:auto; */
   height:45px;
@@ -433,7 +455,7 @@ flex: 1 0 90%;
   padding:1%;;
   font-size: 20px;
   cursor: pointer;
-  margin:2%;
+  margin:1%;
 }
 
 .Main .Content form select:hover{
@@ -441,6 +463,7 @@ flex: 1 0 90%;
 }
 
 .Main .Content form select ul{
+
   display:flex;
   justify-content: space-between;
 }
@@ -450,11 +473,11 @@ text-align:center;
 
 }
 
-.Main .Content .top-content{
-  /* margin:2rem 2rem .5% .5%; */
+.Main .Content form{
+
   margin: 1% 0;
   display:flex;
-  flex-flow:row wrap;
+  flex-flow:column nowrap;
   justify-content: center;
 }
 
@@ -470,23 +493,33 @@ margin:1%;
   color:black;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  /* justify-content: space-around; */
   padding: .3rem;
 
 }
 
 .InterestingFacts  ul li{
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-  font-size: 1rem;
-  border-bottom: 2px solid black;
-  margin: auto;
-  padding: 1rem;
-  width: 15rem;
-  /* flex: 0 0 27%; */
-
+      border: 1px solid black;
+      border-radius: 5px;
+      flex: 1 0 40%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      padding: .5rem .1rem;
+      margin: 2rem 2% 0 2%;
+      text-align: center;
+      min-width: 145px;
+      max-width: 250px;
+      line-height: 1.5;
+        justify-content: space-around;
 }
+
+.InterestingFacts  ul li span{
+  font-size: 3rem;
+}
+
+
 /* ===================== ======================== */
 /*               PROFILE area */
 /* ===================== ======================== */
@@ -584,6 +617,7 @@ margin:1%;
   display:flex;
   flex-flow:row wrap;
   margin: 1rem;
+  background-color: #F4F1EF;
 }
 
 .graphDescription{
@@ -593,6 +627,7 @@ margin:1%;
 .graphContainer h2{
     margin-bottom: 2rem;
     margin-top: 0;
+    align-items: center;
 }
 
 .charts{
@@ -606,6 +641,26 @@ margin:1%;
 
 
 
+/* ===================== ======================== */
+/*               HOMEPAGE GRAPHS                     */
+/* ===================== ======================== */
+
+
+
+
+.HomeContent .homePageCard{
+  margin-bottom: 1rem;
+}
+
+.HomeContent .homePageCard .CardContent h2{
+  font-weight: bold;
+}
+
+.HomeContent .graphContainer h2 {
+    border-bottom: 2px solid white;
+    padding: 0 2rem;
+    border-radius: .5rem;
+}
 /* ===================== ======================== */
 /*                 SURVEY                         */
 /* ===================== ======================== */
