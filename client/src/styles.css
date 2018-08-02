@@ -176,6 +176,10 @@ align-self: center;
   padding: 0 3rem;
 }
 
+.LoginContent .card-content form label{
+  color: black;
+}
+
 .LoginContent .logAlternative{
     /* border-top: 2px solid lightgrey; */
     margin-top: 2rem;
@@ -1104,6 +1108,12 @@ grid-gap: 2rem;
   margin-bottom: 1rem;
 }
 
+.aboutPage .aboutEduvisors .LearnAbout{
+  column-count: 1;
+
+  box-sizing: border-box;
+}
+
 .aboutPage .teamMembersWrapper{
   display: flex;
   flex-flow: column nowrap;
@@ -1631,6 +1641,17 @@ justify-content: center;
 .aboutPage .teamMembersWrapper .t5 img{
   max-width: 230px;
 }
+
+.aboutPage .aboutEduvisors .LearnAbout{
+  column-count: 2;
+  column-gap: 40px;
+  box-sizing: border-box;
+}
+
+.aboutPage .aboutEduvisors .LearnAbout p{
+  margin-top: 0;
+}
+
 
 /* ===================== ======================== */
 /*               CONTACT US PAGE                     */
