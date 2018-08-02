@@ -1784,11 +1784,11 @@ justify-content: center;
 
 .landingPage .landing-header .right-side .mobile{
   color: white;
-  position: absolute;
+
   right: 0;
   top:-2rem;
   font-size: 2rem;
-  width: 40px;
+  
   z-index: 99;
 }
 .signupButton{
@@ -1803,7 +1803,6 @@ justify-content: center;
 }
 
 .landingPage .landing-header ul{
-  display: none;
 list-style-type: none;
 /* align-items: flex-end; */
 }
