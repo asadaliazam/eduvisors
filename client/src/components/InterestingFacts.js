@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { faUniversity } from '@fortawesome/free-solid-svg-icons'
 import { faUsers } from '@fortawesome/free-solid-svg-icons'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
@@ -70,9 +70,9 @@ class InterestingFacts extends Component {
       <div className="InterestingFacts">
         {this.state.InterestingFactsData.map((InterestingFactsData,index) =>
           <ul key= {index} >
-            <li className="InterestingDataList"> Number of Schools: <span>{InterestingFactsData.numberOfSchools}</span><FontAwesomeIcon icon={faUniversity}/></li>
-            <li className="InterestingDataList"> Total Population: <span>{InterestingFactsData.totalPopulation}</span><FontAwesomeIcon icon={faUsers} /> </li>
-            <li className="InterestingDataList"> Capital City: <span>{InterestingFactsData.capitalCity}</span><FontAwesomeIcon icon={faCoffee} /> </li>
+            <li className="InterestingDataList"> Number of Schools: <span><FontAwesomeIcon icon={faUniversity}/>{InterestingFactsData.numberOfSchools}</span></li>
+            <li className="InterestingDataList"> Total Population: <span><FontAwesomeIcon icon={faUsers} /> {InterestingFactsData.totalPopulation}</span></li>
+            <li className="InterestingDataList"> Capital City: <span><FontAwesomeIcon icon={faMapMarkerAlt} /> {InterestingFactsData.capitalCity}</span></li>
           </ul>
         )}
       </div>
