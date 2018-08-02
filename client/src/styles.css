@@ -519,11 +519,11 @@ margin:1%;
       min-width: 145px;
       max-width: 250px;
       line-height: 1.5;
-        justify-content: space-around;
+      justify-content: space-around;
 }
 
 .InterestingFacts  ul li span{
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 
@@ -1886,6 +1886,7 @@ list-style-type: none;
   flex-flow: column wrap;
 
 }
+
 
 
 
