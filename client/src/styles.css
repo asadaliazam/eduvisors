@@ -1189,7 +1189,7 @@ grid-gap: 2rem;
 	height: 0;
 }
 
-.vid iframe{
+.vid video{
 	position: absolute;
 	top: 0;
 	left: 30px;
@@ -1564,7 +1564,7 @@ justify-content: center;
   grid-row: 1;
 }
 
-.vid iframe{
+.vid video{
 	left: 100px;
 }
 
