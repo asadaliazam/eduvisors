@@ -74,27 +74,54 @@ align-self: center;
   margin: 1rem;
 }
 
-.ListOfSchoolsCard button
-{
-  background-color: blue;
+.ListOfSchoolsCardContent{
+  display: flex;
+  flex-flow: column wrap;
+
 }
 
-.ListOfSchoolsCard a
-{
-  color: black !important;
+.ListOfSchoolsCardContent .schURL{
+  margin-bottom: 1.5rem;
+}
+
+.ListOfSchoolsCard .ListOfSchoolsCardContent p a{
+  color: blue;
+}
+
+.ListOfSchoolsCard .ListOfSchoolsCardContent button a{
+  text-decoration: none;
+  font-size: .8rem;
+}
+
+.ListOfSchoolsCard .ListOfSchoolsCardContent .btnDetails{
+  align-self: flex-end;
 }
 
 .ListOfSchoolsCard .schRank{
   margin: 0;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
 
 .ListOfSchoolsCard h2{
   font-size: 1.5rem;
   font-weight: bold;
+  color: grey;
 }
 
-.ListOfSchoolsCard .btn a{
-  color: white;
+.inputFormForSearchingSchools{
+    margin: 0 1rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.inputTextFieldForSearchingSchools{
+  width: 18rem;
+  margin-bottom: 1rem;
 }
 
 /* ===================== ======================== */
@@ -140,7 +167,7 @@ align-self: center;
 }
 
 .LoginContent .logAlternative{
-    border-top: 2px solid lightgrey;
+    /* border-top: 2px solid lightgrey; */
     margin-top: 2rem;
 
     display: flex;
@@ -762,6 +789,7 @@ margin:1%;
 
   .btn a{
     text-decoration: none;
+    color: white;
   }
 
 .rangeslider__fill{
@@ -965,6 +993,10 @@ grid-gap: 2rem;
   margin: 2rem 2% 0 2%;
   text-align: center;
   min-width: 145px;
+}
+
+.ListOfSchoolsCard .schRank{
+  margin-top: 0;
 }
 
 
@@ -1220,14 +1252,27 @@ grid-gap: 2rem;
 /* ===================== ======================== */
 
 .ListOfSchoolsCard .schRank{
-    margin: 0;
     font-size: 1.5rem;
     line-height: 1.5;
-    border: none;
+    /* border: none; */
+    margin: 0;
 }
 
 .ListOfSchoolsCard .schRank span{
     font-size: 3rem;
+}
+
+/* .ListOfSchoolsCardContent{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+} */
+
+.ListOfSchoolsCardContent .btnDetails{
+    padding: 0;
+}
+
+.ListOfSchoolsCard .ListOfSchoolsCardContent div button{
+  margin: 0;
 }
 
 /* ===================== ======================== */
@@ -1417,8 +1462,8 @@ justify-content: center;
     /* background-color: var(--offwhite-color); */
     background-color: var(--secondary-color);
     border-radius: 5px;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-right: 2rem;
+    /* margin-left: 1rem; */
     height: 3rem;
     margin-top: .5rem;
     line-height: 3;
@@ -1431,6 +1476,7 @@ justify-content: center;
 
   .surveyLink a{
     padding: 0 .5rem;
+    color: black;
 
   }
 
@@ -1450,6 +1496,18 @@ justify-content: center;
   box-sizing: border-box;
 }
 
+.LoginContent .logAlternative div{
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.LoginContent .logAlternative div .fbsocial{
+  margin-right: 1rem;
+}
+
 .LoginContent img{
   width: 100%;
   height: auto;
@@ -1459,10 +1517,11 @@ justify-content: center;
 .LoginContent .sociaLogin{
   border: none;
   border-left: 2px solid grey;
+  margin-right: 1rem;
 }
 
 .LoginContent .card-content{
-  padding: 0 6rem;
+  padding: 0 3rem;
 }
 
 /* .LoginContent div, .LoginContent div form, .LoginPage .LoginContent,

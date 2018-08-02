@@ -11,6 +11,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import InterestingFacts from './InterestingFacts';
 
+import Button from '@material-ui/core/Button';
+import {Link} from 'react-router-dom'
 
 
 //
@@ -50,12 +52,12 @@ class HomeContent extends Component {
     // const classes = this.props;
     return (
           <div className="Content">
-            {/* <div className="surveyLink">
+            <div className="surveyLink">
                 <p>Take the survey and we will find your matchmake university:</p>
                 <Button  type="submit" variant="contained" color="primary" className="surveyButton">
                     <Link to="/HomePage/survey">Take Survey</Link>
                 </Button>
-            </div> */}
+            </div>
                 <div className="CardHeader">
                     <p>Province Facts</p>
                 </div>
