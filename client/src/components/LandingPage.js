@@ -38,7 +38,8 @@ class LandingPage extends Component {
 
                       <div className="videoButton">
                             <Button  type="submit" variant="contained" color="primary" className="signupButton">
-                                    <Link to="https://www.powtoon.com/embed/dJBuv5ExsKU/">Watch Video</Link>
+                                  {/* <Link to="https://www.powtoon.com/embed/dJBuv5ExsKU/">Watch Video</Link> */}
+                                    <a href="https://www.powtoon.com/embed/dJBuv5ExsKU/" target="_blank">Watch Video</a>
                             </Button>
                       </div>
                 </div>
@@ -70,7 +71,7 @@ class LandingPage extends Component {
                        <div className="landing-chart2">
                               <CostOfLivingGraph province='BC' />
                       </div>
-                              
+
                  </div>
 
                    </div>

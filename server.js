@@ -418,6 +418,26 @@ app.post('/api/employment', (req, res) => {
 /////////////////////////////////END////////////////////
 
 // ====================================================
+//               SEARCHA ACTION IN LIST OF SCHOOLS
+// ====================================================
+app.post('/api/SearchAction', (req, res) => {
+    console.log(req.body.search);
+    let sql = `SELECT * FROM institute_rank WHERE institution_name LIKE '%${req.body.search}%';`
+    console.log(sql);
+
+    db.all(`SELECT * FROM institute_rank WHERE institution_name LIKE '%${req.body.search}%';`, function(err,rows)
+    {
+          console.log(10099, rows);
+          res.json(rows);
+    });
+});
+
+/////////////////////////////////END////////////////////
+
+
+
+
+// ====================================================
 //               GETTING COST OF LIVING DATA FOR CHART
 // ====================================================
 app.post('/api/costOfLivingGraph', (req, res) => {

@@ -358,7 +358,7 @@ footer{
   border: 1px solid #606060;
   padding:.5rem;
   border-radius: 5px;
-  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .surveyLink p{
@@ -407,6 +407,13 @@ footer{
   flex-flow: column nowrap;
 
   background-color: white;
+}
+
+.HomePage,
+.landingPage,
+.LoginPage,
+.RegPage{
+  height: 100vh;
 }
 
 .Main form ul li svg{
@@ -524,11 +531,12 @@ margin:1%;
 /*               PROFILE area */
 /* ===================== ======================== */
 
- /* .Main .Profile  {
-  display: none;
+ .Main .Profile  {
+    padding: 2rem;
+    margin-bottom: 1rem;
 }
 
-.Main .hideProfile .Profile{
+/* .Main .hideProfile .Profile{
   display: block;
 } */
 
@@ -635,7 +643,7 @@ margin:1%;
   border:3px solid #B5B5B5;
   border-radius: 5px;
   margin-bottom: 2rem;
-  margin:1% 0;
+  margin: 1rem 0;
 }
 
 
