@@ -58,11 +58,6 @@ class HomeContent extends Component {
                 </Button>
             </div> */}
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 2fb74b4a92bf837e0c502997f984ecd86274e79b
                 <Card className="top-content">
                       <div class="CardHeader">Interesting Facts</div>
                       <CardContent className="CardContent">
