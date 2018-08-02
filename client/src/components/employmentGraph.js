@@ -65,8 +65,8 @@ class EmploymentGraph extends Component {
               datasets: [{
                       label: "",
                       backgroundColor: [
-                  "#FF6384",
-                  "#36A2EB",
+                  "#4EC4D5",
+                  "#65FBD2",
 
               ],
                       borderColor: 'rgb(255, 255, 255)',

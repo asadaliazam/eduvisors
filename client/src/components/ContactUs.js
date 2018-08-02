@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-// import ContactUsPic from'./img/contactUsPic.jpg';
 import TeamPic from'./img/contactUs.png';
-// import teamMember1 from'./img/teamMember1.png';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import GoogleMapComponent from './GoogleMapComponent.js';
+import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 
 class ContactUs extends Component {
   constructor(props) {
@@ -18,6 +19,10 @@ class ContactUs extends Component {
     return (
       <div className="contactUsPage">
 
+        <div className="CardHeader">
+          <p>Contact Us</p>
+          <Link to="/HomePage/"><FontAwesomeIcon icon={faTimes} /></Link>
+        </div>
         <div className="contactUsFrame">
           <h2> Reach out! We are here for you. </h2>
             <img src={TeamPic} alt="Team Eduvisors" />
@@ -25,7 +30,7 @@ class ContactUs extends Component {
 
             <div className="contactUsFormWrapper">
 
-                  <form className="contactUsForm">
+                  <form className="contactUsForm" action="/HomePage">
                   <div className="section">
                     <TextField
                       id="name"
@@ -62,6 +67,7 @@ class ContactUs extends Component {
               <h2> Our Location </h2>
               <GoogleMapComponent />
           </div> */}
+
       </div>
 
 

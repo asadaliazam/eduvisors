@@ -32,7 +32,8 @@ app.locals.data;
 
 app.locals.user = {
   id: 1,
-  email: 'bb@bb.com'
+  email: ''
+  // email: 'bb@bb.com'
 }
 
 // ====================================================
@@ -222,6 +223,29 @@ app.get('/api/field_study', (req, res) => {
 });
 
 // ====================================================
+//             ListOfSchools Component
+// ====================================================
+app.get('/api/ListOfSchools', (req, res) => {
+    let rows = "";
+
+    db.all("SELECT institution_name, ca_ranking, url, province FROM institute_rank;", function(err, rows)
+    {
+      res.json(rows);
+    });
+});
+
+// ====================================================
+//             Logout Component
+// ====================================================
+app.get('/api/logOut', (req, res) => {
+    let rows = 1;
+    app.locals.user.email = '';
+    res.json(rows);
+});
+
+
+
+// ====================================================
 //             PROFILE  Component
 // ====================================================
 
@@ -393,6 +417,26 @@ app.post('/api/employment', (req, res) => {
 });
 
 /////////////////////////////////END////////////////////
+
+// ====================================================
+//               SEARCHA ACTION IN LIST OF SCHOOLS
+// ====================================================
+app.post('/api/SearchAction', (req, res) => {
+    console.log(req.body.search);
+    let sql = `SELECT * FROM institute_rank WHERE institution_name LIKE '%${req.body.search}%';`
+    console.log(sql);
+
+    db.all(`SELECT * FROM institute_rank WHERE institution_name LIKE '%${req.body.search}%';`, function(err,rows)
+    {
+          console.log(10099, rows);
+          res.json(rows);
+    });
+});
+
+/////////////////////////////////END////////////////////
+
+
+
 
 // ====================================================
 //               GETTING COST OF LIVING DATA FOR CHART

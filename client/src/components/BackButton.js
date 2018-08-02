@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 class BackButton extends Component {
   static contextTypes = {
@@ -7,11 +9,11 @@ class BackButton extends Component {
 
   render() {
     return (
-      <button
-        className="btn"
+
+      <div
         onClick={this.context.router.history.goBack}>
-          Back
-      </button>
+          <FontAwesomeIcon icon={faTimes} />
+      </div>
     )
   }
 }

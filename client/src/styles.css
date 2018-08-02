@@ -4,16 +4,17 @@
 /* VARIABLE DECLARATION */
 /* ===================== ======================== */
 :root{
-    /* --main-color: rgb(91, 101, 177);*/
+    --purple-color: rgb(91, 101, 177);
     --main-color: rgb(64, 83, 175);
     --secondary-color: #BFBFBF;
     --terceary-color: rgb(180, 180, 180);
     --materialui-blue: rgb(64, 83, 175);
-    --offwhite-color: rgb(244, 241, 239);
+    --offwhite-color: rgb(245, 245, 245);
 
     /* --cinza-profile-color: rgb(96, 96, 96);
     --cinza-header-color: rgb(74, 74, 74); */
     --otherblue: rgb(48, 129, 247);
+    --blackopacity-color: rgba(0,0,0, .5);
 }
 
 /* ===================== ======================== */
@@ -25,6 +26,10 @@ width:200px;
 height:50px;
 align-self: center;
 }
+
+/* ===================== ======================== */
+/*              SCHOOLRANK GRAPH LIST COMPONENT              */
+/* ===================== ======================== */
 
 .avatar
 {
@@ -40,7 +45,7 @@ align-self: center;
   padding: 0;
   list-style-type: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1rem;
 }
 
@@ -57,18 +62,47 @@ align-self: center;
 }
 
 
+/* ===================== ======================== */
+/*             LIST OF SCHOOLS COMPONENT        */
+/* ===================== ======================== */
 
+.ListOfSchoolsCard
+{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 1rem;
+  margin: 1rem;
+}
 
+.ListOfSchoolsCard button
+{
+  background-color: blue;
+}
 
+.ListOfSchoolsCard a
+{
+  color: black !important;
+}
 
+.ListOfSchoolsCard .schRank{
+  margin: 0;
+}
 
+.ListOfSchoolsCard h2{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
+.ListOfSchoolsCard .btn a{
+  color: white;
+}
 
 /* ===================== ======================== */
 /*              LOGIN PAGE              */
 /* ===================== ======================== */
 
-.LoginContent, .RegContent{
+.LoginContent,
+.RegContent{
   height: auto;
   margin: 1rem;
   display: flex;
@@ -77,8 +111,12 @@ align-self: center;
   /* background-color: var(--offwhite-color); */
 }
 
-.LoginContent div, .LoginContent div form, .LoginPage .LoginContent,
-.RegContent div form, .RegPage .RegContent{
+.LoginContent div,
+.LoginContent div form,
+.LoginPage .LoginContent,
+.RegContent div form,
+.RegPage .RegContent
+{
   background-color: var(--offwhite-color);
 }
 
@@ -88,7 +126,8 @@ align-self: center;
 }
 
 .LoginPage header a,
-.RegPage header a{
+.RegPage header a,
+.External header a{
   color: white;
 }
 
@@ -115,8 +154,11 @@ align-self: center;
   /* background-color: var(--offwhite-color); */
 }
 
-.LoginContent div, .LoginContent div form, .LoginPage .LoginContent,
-.RegContent div form, .RegPage .RegContent{
+.LoginContent div,
+.LoginContent div form,
+.LoginPage .LoginContent,
+.RegContent div form,
+.RegPage .RegContent{
   background-color: var(--offwhite-color);
 }
 
@@ -143,8 +185,12 @@ align-self: center;
 .LoginPage header,
 .LoginPage footer,
 .RegPage header,
-.RegPage footer{
-  background-color: rgba(0,0,0, .5);
+.RegPage footer,
+.External header,
+.External footer,
+.landingPage footer{
+  /* background-color: rgba(0,0,0, .5); */
+  background-color: var(--blackopacity-color);
 }
 
 .LoginContent form .Input{
@@ -282,12 +328,28 @@ footer{
 }
 
  header nav ul li {
-  padding: 0 2rem;
+  padding: 0 2rem 0 0;
 }
+
+#bars ul li{
+  list-style: none;
+  padding-right: 1rem;
+  line-height: 2;
+  width: 150px;
+  /* border: 1px solid white; */
+}
+
+#bars ul li a{
+  text-decoration: none;
+}
+/* ===================== ======================== */
+/*                HOMEPAGE      */
+/* ===================== ======================== */
+
 /* ===================== ======================== */
 /*              SURVEY LINK                   */
 /* ===================== ======================== */
-.surveyLink{
+/* .surveyLink{
   flex: 1 0 100%;
   display:flex;
   flex-flow: row nowrap;
@@ -295,9 +357,13 @@ footer{
   background-color: #F4F1EF;
   border: 1px solid #606060;
   padding:.5rem;
-  border-radius:1%;
-  /* margin: 1%; */
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
+
+.surveyLink p{
+  margin-right: 1rem;
+} */
 
 .surveyButton{
   width:170px;
@@ -309,6 +375,7 @@ footer{
   text-decoration: none;
 }
 
+
 .CardHeader{
   background-color: rgba(0,0,0,.5);
   color: white;
@@ -319,12 +386,19 @@ footer{
   justify-content: space-between;
   align-items: center;
 
-  border-radius: 5px;
+  border: 1px solid grey;
+  border-radius: 5px 5px 0 0;
 }
 
 .CardHeader p{
   margin: .2rem 0;
 }
+
+
+.aboutPage .CardHeader a{
+  color: white;
+}
+
 /* ===================== ======================== */
 /*               CONTENT AREA                     */
 /* ===================== ======================== */
@@ -337,20 +411,50 @@ footer{
   background-color: white;
 }
 
+.HomePage,
+.landingPage,
+.LoginPage,
+.RegPage{
+  height: 100vh;
+}
+
 .Main form ul li svg{
   padding-right: 1.5rem;
 }
 
 
 .Main .Content form{
-/* text-align: center; */
 flex: 1 0 90%;
+
+padding:4px;
+border-radius: 1%;
+
+}
+
+.Main .Content .leftContent{
+  background-image: url("components/img/informationImage.jpg");
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
-.Main .Content form select{
+.Main .Content form label{
   display: flex;
-  flex-flow:column nowrap;
+  flex-flow: column nowrap;
+  /* text-align: left;
+  margin-left:1%;
+  margin-top:1%; */
+}
+
+.Main .Content form label p{
+  margin-left: 2%;
+  margin-bottom: 1%;
+  color:white;
+}
+
+.Main .Content form select{
+  justify-content: center;
   width:200px;
   /* width:auto; */
   height:45px;
@@ -360,7 +464,7 @@ flex: 1 0 90%;
   padding:1%;;
   font-size: 20px;
   cursor: pointer;
-  margin:2%;
+  margin:1%;
 }
 
 .Main .Content form select:hover{
@@ -368,60 +472,74 @@ flex: 1 0 90%;
 }
 
 .Main .Content form select ul{
+
   display:flex;
   justify-content: space-between;
 }
 
 .Main .Content form select option{
 text-align:center;
+
 }
 
-.Main .Content .top-content{
+.Main .Content form{
+
+  margin: 1% 0;
   display:flex;
-  flex-flow:row wrap;
+  flex-flow:column nowrap;
   justify-content: center;
 }
 
-.purpleAvatar {
-  margin:10;
-  color:#fff;
-  backgroundColor:red;
-}
 
 
-/* ============Information=============== */
-.information {
+
+/* ============InterestingFacts=============== */
+.InterestingFacts {
 margin:1%;
-
 }
 
-.information  ul{
+.InterestingFacts  ul{
   color:black;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  padding: 0;
+  flex-flow: row wrap;
+  /* justify-content: space-around; */
+  padding: .3rem;
 
 }
 
-.information  ul li{
-  list-style-type: none;
-  font-size: 1.5rem;
-  border-bottom: 2px solid black;
-  margin-bottom: 2%;
-  margin-right: 2rem;
-  flex: 1 0 30%;
+.InterestingFacts  ul li{
+      border: 1px solid black;
+      border-radius: 5px;
+      flex: 1 0 40%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      padding: .5rem .1rem;
+      margin: 2rem 2% 0 2%;
+      text-align: center;
+      min-width: 145px;
+      max-width: 250px;
+      line-height: 1.5;
+      justify-content: space-around;
 }
+
+.InterestingFacts  ul li span{
+  font-size: 2rem;
+}
+
+
 /* ===================== ======================== */
 /*               PROFILE area */
 /* ===================== ======================== */
 
- /* .Main .Profile  {
-  display: none;
-} */
+ .Main .Profile  {
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
 
 /* .Main .hideProfile .Profile{
-  display: none;
+  display: block;
 } */
 
 .Main .Profile .user-info  {
@@ -459,10 +577,12 @@ margin:1%;
   border-bottom: 1px solid white;
   margin:.5rem;
   font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .Main .Profile .user-info  h2 li:nth-of-type(even){
   margin:1rem;
+  font-size: 1rem;
 }
 
  .Main .Profile .name{
@@ -496,16 +616,10 @@ margin:1%;
 /* ===================== ======================== */
 /*              CHARTS */
 /* ===================== ======================== */
-.top-content{
-  display: flex;
-  flex-flow:column nowrap;
-  margin:1%;
-  padding: 1%;
-}
 
 .charts>div{
   /* padding: 2%; */
-  margin:2%;
+  margin:3%;
   /* background-color: #9497FF; */
   background-color: #BFBFBF;
 
@@ -515,15 +629,17 @@ margin:1%;
   display:flex;
   flex-flow:row wrap;
   margin: 1rem;
+  background-color: #F4F1EF;
 }
 
 .graphDescription{
-  margin: 3rem;
+  margin: 2rem 3rem 0 3rem;
 }
 
 .graphContainer h2{
     margin-bottom: 2rem;
     margin-top: 0;
+    align-items: center;
 }
 
 .charts{
@@ -531,23 +647,50 @@ margin:1%;
   border:3px solid #B5B5B5;
   border-radius: 5px;
   margin-bottom: 2rem;
+  margin: 1rem 0;
 }
 
 
 
 
 /* ===================== ======================== */
+/*               HOMEPAGE GRAPHS                     */
+/* ===================== ======================== */
+
+
+
+
+.HomeContent .homePageCard{
+  margin-bottom: 1rem;
+}
+
+.HomeContent .homePageCard .CardContent h2{
+  font-weight: bold;
+}
+
+.HomeContent .graphContainer h2 {
+    border-bottom: 2px solid white;
+    padding: 0 2rem;
+    border-radius: .5rem;
+}
+/* ===================== ======================== */
 /*                 SURVEY                         */
 /* ===================== ======================== */
 
-.surveyDiv{
+.HomePage .Main div .surveyDiv{
   grid-column: 2/3;
   grid-row: 1;
 
-  /* margin: 1%;
-  margin-left: 2rem; */
+  padding: 2rem;
   display: flex;
   flex-flow: column nowrap;
+
+  border-radius: 0 0 5px 5px;
+}
+
+.survey1, .survey3, .score{
+  background-color: var(--terceary-color);
+  border: 1px solid var(--blackopacity-color);
 }
 
 .question{
@@ -617,7 +760,9 @@ margin:1%;
     align-items: center;
   }
 
-
+  .btn a{
+    text-decoration: none;
+  }
 
 .rangeslider__fill{
     background: var(--main-color) !important;
@@ -675,15 +820,49 @@ margin:1%;
   display:grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 1fr ;
-  grid-gap: 1rem;
   justify-content: center;
 
   margin-bottom: 13rem;
 }
 
-.resultsPage h2{
+.resultsPage .CardHeader{
   grid-row: 1;
+  margin: 0;
+  border: 1px solid grey;
+}
 
+.resultsPage .resultPageCard{
+  margin-bottom: 1rem;
+}
+
+.resultsPage .resultPageCard .CardContent h2{
+  font-weight: bold;
+}
+
+.resultsPage .btn{
+  width: 110px;
+}
+
+.ResultsPageNew .userMsg{
+  display: flex;
+  flex-flow: row nowrap;
+  height: 500px;
+  border: 1px solid lightgrey;
+  border-radius: 0 0 5px 5px;
+  padding: 2rem;
+}
+
+.resultsPageNew .userMsg .awe{
+  flex: 1 0 20%;
+
+}
+
+.resultsPageNew .userMsg div{
+  flex: 1 0 20%;
+}
+
+.resultsPageNew .userMsg p{
+  flex: 0 0 60%;
 }
 
 /* .resultsPage .resultPageCard .CardContent{
@@ -709,6 +888,20 @@ grid-gap: 2rem;
 /* ===================== ======================== */
 /*                 SCHOOL PROFILE        */
 /* ===================== ======================== */
+
+.schoolPage{
+  overflow: hidden;
+}
+
+.resultsPage .MuiCard-root-1,
+.schoolPage .MuiCard-root-1{
+  background-color: var(--offwhite-color);
+}
+
+.schoolPage .MuiCard-root-1{
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
 
 .sValue{
   font-size: .9rem;
@@ -741,9 +934,11 @@ grid-gap: 2rem;
 
 } */
 
-/* .schoolinfo{
-  flex: 1 0 45%;
-} */
+.schoolinfo{
+  background-color: var(--offwhite-color);
+  padding: .5rem;
+
+}
 
 .schoolinfo ul{
   display: flex;
@@ -755,6 +950,7 @@ grid-gap: 2rem;
   width: 90%;
 }
 
+.ListOfSchoolsCard .schRank,
 .schoolinfo ul .schRank{
   border: 1px solid black;
   border-radius: 5px;
@@ -767,20 +963,20 @@ grid-gap: 2rem;
   padding: .5rem .1rem;
 
   margin: 2rem 2% 0 2%;
+  text-align: center;
+  min-width: 145px;
 }
 
-/* .schoolinfo ul .schRank:first-of-type{
-  margin-right: 1rem;
-} */
 
 .schoolinfo ul .schRank span{
   font-size: 3rem;
 }
 
 .schoolBtns{
-  border-top: 2px solid var(--main-color);
+  /* border-top: 2px solid var(--main-color); */
   padding-top: 1rem;
-  margin-top: 1rem;
+  margin: 0 1rem;
+
   display: flex;
   flex-flow: row wrap;
 
@@ -789,7 +985,7 @@ grid-gap: 2rem;
 }
 
 .schoolBtns button{
-      /* flex: 0 0 19%; */
+      flex: 0 0 18%;
       background-color: var(--main-color);
       height: 2.5rem;
       color: white;
@@ -844,15 +1040,15 @@ grid-gap: 2rem;
 /* ===================== ======================== */
 /*              ABOUT                */
 /* ===================== ======================== */
-.aboutPage img{
-  width: 100%;
-  height: auto;
-}
 
 .aboutPage{
   display: flex;
   flex-flow: column nowrap;
-  padding: 2%;
+}
+
+.aboutPage img{
+  width: 100%;
+  height: auto;
 }
 
 .aboutPage h2{
@@ -866,15 +1062,38 @@ grid-gap: 2rem;
 .aboutPage .aboutEduvisors,
 .aboutPage .aboutMission{
   flex: 1 0 45%;
+  padding: 2%;
+  margin-bottom: 1rem;
 }
 
-.aboutPage .teamMember a img{
-  width: 3rem;
-  position: absolute;
+.aboutPage .teamMembersWrapper{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--offwhite-color);
 
 }
 
+.aboutPage .teamMembersWrapper h2{
+  align-self: flex-start;
+  margin-bottom: 3rem;
+}
+
+.aboutPage .aboutMission{
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: var(--offwhite-color);
+  border-radius: 0 0 5px 5px;
+}
+
+.aboutMission .Mission{
+  flex: 0 0 30%;
+  /* padding: 0 1rem; */
+}
 
 .aboutMission .pCenter{
   margin: 2rem;
@@ -882,27 +1101,15 @@ grid-gap: 2rem;
   text-align: center;
 }
 
-.aboutMission{
-  /* margin: 0 1rem; */
-}
+
+
+.aboutMission .teamMembersWrapper div{
+  line-height: 1;
+  }
 
 .aboutEduvisors{
-  margin: 1rem 0;
+  margin: 0;
 }
-
-.aboutMission{
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-.aboutMission.Mission{
-  flex: 0 0 30%;
-  /* padding: 0 1rem; */
-}
-
-/* .vid{
-  flex: 1 0 60%;
-} */
 
 .aboutEduvisors p{
   text-align: left;
@@ -912,27 +1119,23 @@ grid-gap: 2rem;
   /* margin: 4% 0; */
 }
 
-.aboutPage .teamMembersWrapper{
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-
-  margin: 2rem 1rem;
-  text-align: center;
-
-}
-
-.aboutPage .teamMembersWrapper h2{
-  align-self: flex-start;
-  margin-bottom: 3rem;
-}
 
 .aboutPage .teamMember{
   /* display: inline; */
   width: 55%;
   margin-bottom: 3rem;
   line-height: .7;
+}
+
+.aboutPage .t5,
+.aboutPage .teamMember{
+  position: relative;
+}
+
+.aboutPage .teamMember a{
+  width: 3rem;
+  position: absolute;
+  left: 0;
 }
 
 .aboutPage .teamMember img{
@@ -967,10 +1170,13 @@ grid-gap: 2rem;
   flex-flow: column nowrap;
 }
 
+.contactUsPage h2{
+  margin-top: 0;
+}
+
 .contactUsPage img{
   width: 100%;
   height: auto;
-  margin-top: 3rem;
 }
 
 .contactUsPage .TxtField{
@@ -997,11 +1203,38 @@ grid-gap: 2rem;
   margin-bottom: 2rem;
 }
 
+.External .contactUsPage,
+.External .aboutPage
+{
+  margin: 2%;
+  /* padding: 4%; */
+}
+
+.contactUsFrame{
+  padding: 1rem;
+  background-color: var(--offwhite-color);
+}
+
+/* ===================== ======================== */
+/*             LIST OF SCHOOLS COMPONENT        */
+/* ===================== ======================== */
+
+.ListOfSchoolsCard .schRank{
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    border: none;
+}
+
+.ListOfSchoolsCard .schRank span{
+    font-size: 3rem;
+}
+
 /* ===================== ======================== */
 /*               FOOTER AREA                     */
 /* ===================== ======================== */
 
-footer, .landingPage footer{
+footer{
   display: flex;
   flex-flow: row nowrap;
 
@@ -1097,6 +1330,8 @@ footer a{
 /*               CONTENT AREA                     */
 /* ===================== ======================== */
 
+
+
   .Main{
     margin: 1%;
     background-color: white;
@@ -1126,6 +1361,14 @@ footer a{
   }
 
 /* ===================== ======================== */
+/*                 InterestingFacts */
+/* ===================== ======================== */
+.InterestingFacts  ul li:nth-last-of-type(3){
+justify-content: center;
+
+}
+
+/* ===================== ======================== */
 /*                 MENU / HEADER */
 /* ===================== ======================== */
 
@@ -1138,7 +1381,8 @@ footer a{
   }
 
   .LoginPage header .mobile,
-  .RegPage header .mobile{
+  .RegPage header .mobile,
+  .External header .mobile{
    display: block;
    text-align: right;
    margin-right: 2rem;
@@ -1146,7 +1390,7 @@ footer a{
 
    header .username{
     order: 3;
-    flex: 1 0 12%;
+    flex: 0 0 1%;
   }
 
    header .username a{
@@ -1161,13 +1405,35 @@ footer a{
 
    header .left-side{
     order: 1;
-    flex: 1 0 30%;
+    flex: 1 0 15%;
   }
 
    header .right-side{
     order: 2;
     flex: 1 0 50%;
   }
+
+  .surveyLink{
+    /* background-color: var(--offwhite-color); */
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    height: 3rem;
+    margin-top: .5rem;
+    line-height: 3;
+    text-align: center;
+
+    padding: 0 1rem;
+    color: black;
+
+  }
+
+  .surveyLink a{
+    padding: 0 .5rem;
+
+  }
+
 
   /* ===================== ======================== */
   /*              LOGIN              */
@@ -1214,7 +1480,6 @@ footer a{
 /* ===================== ======================== */
 
 .aboutPage{
-
   grid-column: 2 / 3;
   grid-row: 1;
 }
@@ -1228,16 +1493,14 @@ footer a{
   flex-flow: row nowrap;
 } */
 
-.aboutPage .teamMembersWrapper
-{
-  margin-top: 2rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+.aboutPage .teamMembersWrapper{
+  margin-top: 1rem;
+  padding: 2%;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: .2fr .7fr .7fr .7fr;
-  /* text-align: center; */
+
   justify-items: center;
 
   /* display: flex; */
@@ -1248,34 +1511,42 @@ footer a{
 .aboutPage .teamMembersWrapper h2{
   grid-column: 1 / 3;
   grid-row: 1;
+  justify-self: start;
+  margin-left: 1rem;
 
 }
+
 
 .aboutPage .teamMembersWrapper .t1{
   grid-column: 1 / 2;
   grid-row: 2;
 }
 
+
 .aboutPage .teamMembersWrapper .t2{
   grid-column: 2 / 3;
   grid-row: 2;
 }
+
 
 .aboutPage .teamMembersWrapper .t3{
   grid-column: 1 / 2;
   grid-row: 3;
 }
 
+
 .aboutPage .teamMembersWrapper .t4{
   grid-column: 2 / 3;
   grid-row: 3;
 }
+
 
 .aboutPage .teamMembersWrapper .t5{
   grid-column: 1 / 3;
   grid-row: 4;
 
 }
+
 
 .aboutPage .teamMembersWrapper .t5 img{
   max-width: 230px;
@@ -1296,6 +1567,10 @@ footer a{
   /* margin-left: 2rem; */
 }
 
+.contactUsPage img{
+  margin-top: 3rem;
+}
+
 .contactUsFrame{
   display: flex;
   flex-flow: row wrap;
@@ -1303,9 +1578,11 @@ footer a{
   box-sizing: border-box;
 
   border: 1px solid lightgrey;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
   padding: 1rem;
   margin-bottom: 2rem;
+
+  background-color: var(--offwhite-color);
 }
 
 .contactUsFrame h2{
@@ -1329,6 +1606,8 @@ footer a{
 }
 
 
+
+
 /* ===================== ======================== */
 /*               PROFILE area */
 /* ===================== ======================== */
@@ -1343,6 +1622,11 @@ footer a{
   color:white;
 }
 
+ .Main .hideProfile .Profile {
+   display: block;
+
+ }
+
  .Main .Profile {
   display: block;
   position: sticky;
@@ -1351,7 +1635,8 @@ footer a{
   grid-column: 1 / 2;
   grid-row: 1;
 
-  margin:1%;
+  /* margin:1%; */
+  border: 1px solid lightgrey;
   padding: 1rem;
 
   height: 85%;
@@ -1362,28 +1647,22 @@ footer a{
 /* ===================== ======================== */
 /*                 SURVEY                         */
 /* ===================== ======================== */
-.surveyDiv{
+.HomePage .Main div .surveyDiv{
 
   display: flex;
   flex-flow: column nowrap;
+  border-radius: 0 0 5px 5px;
 }
 
 .survey1, .survey3, .score{
-  background-color: var(--terceary-color);
-
   padding: 1.5rem 3rem;
-  border: 1px solid black;
-  border-radius: 5px;
 }
 
 .survey2, .survey4{
   background-color: var(--secondary-color);
 }
 
-/* .survey2
-{
-  margin-bottom: 300px;
-} */
+
 /* ===================== ======================== */
 /*                 ENGINE              */
 /* ===================== ======================== */
@@ -1393,88 +1672,49 @@ footer a{
 } */
 
 .resultsPage{
-
   grid-template-columns: 1fr 1fr;
-  grid-template-rows:auto 2fr 1fr;
+  grid-template-rows: auto 1.7fr 1fr;
+  /* grid-gap: 1rem; */
 }
 
 .resultsPage .resultPageCard {
   display:grid;
-  grid-gap: 2rem;
   grid-template-columns: 1fr 1fr;
-
+  grid-gap: 2rem;
+  margin-bottom: 1rem;
 }
 
 .resultsPage .cardPicture{
   grid-column: 1;
 }
 
-.resultsPage h2{
-  grid-row: 1;
 
-  /* grid-column: 2 / 3; */
-  /* margin: 1%;
-  margin-left: 2rem; */
-
-  /* display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: .1fr 1fr 1fr;
-} */
-
-/* .resultsPage{
-  grid-template-columns: 1fr 1fr 1fr;
-} */
-
-/* .resultsPage h2{
-  grid-column: 1/3;
-  grid-row: 1;
-} */
-
-
-
-/* .resultsPage .resultPageCard:first-of-type{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-column: 1/3;
-  grid-row: 2;
-  border-bottom: 1px solid #606060;
-  padding: 1%; */
-
+.resultsPage .CardHeader{
+  grid-column: 1/-1;
 }
 
-
-.resultsPage .resultPageCard:first-of-type{
-
+.HomePage .Main .resultsPage .resultPageCard:nth-of-type(2){
   grid-column: 1/3;
   grid-row: 2;
-  border-bottom: 1px solid #606060;
-  padding: 1%;
+  border-bottom: 1px solid lightgrey;
+  padding: 1rem;
 }
-.resultsPage .resultPageCard:nth-of-type(2){
 
+.resultsPage .resultPageCard:nth-of-type(4){
   grid-column: 1/2;
   grid-row: 3;
-  border-bottom: 1px solid #606060;
-  padding: 2%;
+  border-bottom: 1px solid lightgrey;
+  padding: 1rem;
+  margin-right: 1rem;
 }
+
 .resultsPage .resultPageCard:nth-of-type(3){
-
-
   grid-column: 2/3;
   grid-row: 3;
   border-bottom: 1px solid #606060;
-  padding: 2%;
-
-/* .resultPageCard .resultPageCard:nth-of-type(2) .resultPageCardPicture
-{
-  grid-row:3;
-  height: 0; */
-  /* padding-top: 56.25%; */
-  /* max-width: 100%; */
+  padding: 1rem;
 
 }
-
 
 /* ===================== ======================== */
 /*                 SCHOOL PROFILE        */
@@ -1482,7 +1722,7 @@ footer a{
 
 .sprof{
       grid-column: 2 / 3;
-      margin: 1% 0;
+      /* margin: 1% 0; */
       padding: .5rem;
       /* margin-left: 3rem; */
       display: flex;
@@ -1529,10 +1769,10 @@ footer a{
 .landingPage .landing-header header{
   /* display: flex; */
   width: 100%;
-  position: absolute;
+  position: relative;
   z-index: 99;
   background-color: black;
-  opacity: .5;
+  opacity: .9;
   line-height: 4;
   height: 4rem;
 }
@@ -1544,11 +1784,11 @@ footer a{
 
 .landingPage .landing-header .right-side .mobile{
   color: white;
-  position: absolute;
+
   right: 0;
   top:-2rem;
   font-size: 2rem;
-  width: 40px;
+  
   z-index: 99;
 }
 .signupButton{
@@ -1563,7 +1803,6 @@ footer a{
 }
 
 .landingPage .landing-header ul{
-  display: none;
 list-style-type: none;
 /* align-items: flex-end; */
 }
@@ -1653,6 +1892,7 @@ list-style-type: none;
 
 
 
+
 .landingPage .landing-chart1 .graphContainer{
   background-color:var(--secondary-color);
   padding: 2rem;
@@ -1662,13 +1902,14 @@ list-style-type: none;
 
 .landingPage .landing-chart2 .graphContainer{
 background-color: var(--secondary-color);
-padding: 0 2rem;
+padding: 2rem;
 border-radius: 2rem;
 color: darkslategray;
 margin-bottom: 2rem;
 }
-.landingPage .landing-chart1 .graphContainer h2{
+.landingPage .landing-chart1 .graphContainer h2, .landingPage .landing-chart2 .graphContainer h2{
   color: white;
+
 
 }
 
@@ -1699,10 +1940,10 @@ margin-bottom: 2rem;
   text-align: center;
   /* max-width: 80%;
   margin: auto; */
-  border: 4px solid darkslategray;
-    margin: 1rem 3rem;
-    background-color: rgb(64, 83, 175);
-    color: white;
+  /* border: 4px solid darkslategray; */
+    /* margin: 1rem 3rem; */
+    /* background-color: rgb(64, 83, 175); */
+    /* color: white; */
 }
 
 .landingPage .landing-features .features{
@@ -1753,6 +1994,12 @@ padding: 2rem;
 }
 @media screen and (min-width: 1000px)
 {
+
+  .landingPage .landing-header header{
+    position: absolute;
+    opacity: .5;
+
+  }
   .landingPage .landing-header .right-side .mobile{
     display: none;
   }
@@ -1776,6 +2023,12 @@ color: black;
     position: relative;
   }
 
+  .landingPage .signup-video{
+    padding-bottom: 0;
+  }
+  .landingPage .signup-video{
+    height: 0;
+  }
   .landingPage .signup-video .signupButton Button{
     position: absolute;
     top:.65rem;
@@ -1845,4 +2098,22 @@ font-size: 1rem;
   padding: 0 2rem;
   border-radius: .5rem;
 }
+
+.landingPage .landing-chart2 .graphContainer h2{
+    border-bottom: 2px solid white;
+    width: 18rem;
+    border-radius: 1rem;
+}
+
+/* ===================== ======================== */
+/*              SCHOOLRANK GRAPH LIST COMPONENT              */
+/* ===================== ======================== */
+
+
+.SchoolRankGraphList .schoolRankList
+{
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
 }

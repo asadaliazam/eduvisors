@@ -8,6 +8,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 import Media from "react-media";
 
 
+
   class LongMenu extends React.Component {
     constructor(props)
     {
@@ -19,10 +20,7 @@ import Media from "react-media";
       };
     }
 
-
-
-
-        toggle() {
+    toggle() {
         		this.setState({
         			shown: !this.state.shown
         		});
@@ -45,72 +43,55 @@ import Media from "react-media";
 
   render() {
 
-
-
-
-
-            var shown = {
-            			display: this.state.shown ? "block" : "none"
-            		};
-
-            		var hidden = {
-            			display: this.state.shown ? "none" : "block"
-            		}
-
+            var shown = { display: this.state.shown ? "block" : "none" };
 
     // const { anchorEl } = this.state;
     return (
 
         <header>
               <div className = "left-side">
-                <Link to="/HomePage"><img src={Logo} alt="Eduvisors logo"/></Link>
+                <Link to="/"><img src={Logo} alt="Eduvisors logo"/></Link>
 
               </div>
 
               <div className = "username">
-                  <a href="" className="desktop">{this.state.firstName}</a>
                   <div className="mobile" id="user" >
-                      <FontAwesomeIcon icon={faUser} />
+                      <FontAwesomeIcon icon={faUser} onClick={this.props.toggle}/>
                 </div>
               </div>
 
               <div className = "right-side">
                 <nav className="desktop">
                     <ul>
+                        <li><a href="/HomePage/">Home</a></li>
+                        <li className="surveyLink"><a href="/HomePage/survey">Take Survey</a></li>
+                        <li><a href="/HomePage/Results">Results</a></li>
+                        <li><a href="/HomePage/ListOfSchools">List of Schools</a></li>
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>
-                        <li><Link to="/HomePage/survey">Survey</Link></li>
-                        <li><Link to="/Login">Login</Link></li>
+                        <li><a href="/HomePage/Logout">Logout</a></li>
+
                     </ul>
                 </nav>
 
-
-
                      <Media query="(max-width: 998px)">
+                            <div>
+                              <FontAwesomeIcon icon={faBars} onClick={this.toggle.bind(this)} />
+                                  <div className="mobile" id="bars" style={ shown }>
+                                        <ul>
+                                          <li><a href="/HomePage/">Home</a></li>
+                                          <li><a href="/HomePage/survey">Take Survey</a></li>
+                                          <li><a href="/HomePage/Results">Results</a></li>
+                                          <li><a href="/HomePage/ListOfSchools">List of Schools</a></li>
+                                          <li><a href="/HomePage/about">About</a></li>
+                                          <li><a href="/HomePage/contactus">Contact Us</a></li>
+                                          <li><a href="/HomePage/Logout">Logout</a></li>
+                                        </ul>
 
-                <div>
+                                  </div>
 
-
-                <div className="mobile" id="bars" style={ shown }>
-
-
-                      <ul>
-                          <li><a href="/HomePage/about">About</a></li>
-                          <li><a href="/HomePage/contactus">Contact Us</a></li>
-                          <li><Link to="/HomePage/survey">Survey</Link></li>
-                          <li><Link to="/Login">Login</Link></li>
-                      </ul>
-
-                </div>
-
-                <h2 style={ hidden }></h2>
-                <FontAwesomeIcon icon={faBars} onClick={this.toggle.bind(this)} />
-
-
-              </div>
-
-              </Media>
-
+                              </div>
+                      </Media>
 
               </div>
 

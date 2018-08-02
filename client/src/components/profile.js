@@ -13,9 +13,6 @@ class Profile extends Component {
     };
   }
 
-
-
-
   componentDidMount() {
     fetch('/api/profile')
       .then(res => res.json())
@@ -24,13 +21,9 @@ class Profile extends Component {
   }
   render() {
 
-
-
-
     return (
         <Card className="Profile">
 
-          <div  >
                 {this.state.profile.map(user =>
                     <div key={user.id}>
                     <div className="name">{user.first_name} {user.last_name}</div>
@@ -51,12 +44,6 @@ class Profile extends Component {
                           </Card>
                       </div>
                 )}
-
-              </div>
-
-            
-
-
         </Card>
     );
   }

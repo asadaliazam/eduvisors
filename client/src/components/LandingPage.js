@@ -8,17 +8,7 @@ import SnowFall from './snowfall';
 import Feature1 from'./img/like.svg';
 import Feature2 from'./img/lock.svg';
 import Feature3 from'./img/map.svg';
-// import Partbg from'./img/partbg.jpg';
 import Footer from './Footer.js';
-
-
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Typography from '@material-ui/core/Typography';
-
-
-
 
 class LandingPage extends Component {
 
@@ -28,7 +18,7 @@ class LandingPage extends Component {
     <div className="landingPage">
 
           <div className="landing-header">
-                <Menu toggleProf={this.toggleProf} />
+                <Menu />
           </div>
 
           <div className="landing-image">
@@ -42,13 +32,14 @@ class LandingPage extends Component {
                 <div className="signup-video">
                       <div className="signupButton">
                             <Button  type="submit" variant="contained" color="primary" className="signupButton">
-                                    <Link to="/HomePage/signup">Signup</Link>
+                                    <Link to="/register">Signup</Link>
                             </Button>
                       </div>
 
                       <div className="videoButton">
                             <Button  type="submit" variant="contained" color="primary" className="signupButton">
-                                    <Link to="https://www.powtoon.com/embed/dJBuv5ExsKU/">Watch Video</Link>
+                                  {/* <Link to="https://www.powtoon.com/embed/dJBuv5ExsKU/">Watch Video</Link> */}
+                                    <a href="https://www.powtoon.com/embed/dJBuv5ExsKU/" target="_blank">Watch Video</a>
                             </Button>
                       </div>
                 </div>
@@ -80,21 +71,12 @@ class LandingPage extends Component {
                        <div className="landing-chart2">
                               <CostOfLivingGraph province='BC' />
                       </div>
-                              {/* </div> */}
+
                  </div>
 
                    </div>
-                   {/* <div className="team">
-                   <ul>
-                   <li><img src={Feature2} alt="Feature2"/><h3>Secured Personal Data</h3></li>
-                   <li></li>
-                   <li></li>
-                   <li></li>
-                   <li></li>
-                   </ul>
-                   </div> */}
 
-<Footer />
+            <Footer />
 </div>
     );
   }
