@@ -6,10 +6,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-// import AboutPagePic from './img/aboutPagePic.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
-
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 class Engine extends Component {
   constructor() {

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import TeamPic from'./img/contactUs.png';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import GoogleMapComponent from './GoogleMapComponent.js';
 import LoginMenu from './LoginMenu';
 import Footer from './Footer';
 
