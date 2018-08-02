@@ -6,6 +6,7 @@ import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
 import CostOfLivingGraph from './costOfLivingGraph';
+import BackButton from './BackButton.js'
 
 
 class SchoolProf extends Component {
@@ -76,7 +77,7 @@ class SchoolProf extends Component {
       <div className="schoolPage">
       <div className="CardHeader">
         <p>Institution Profile</p>
-        <Link to="/HomePage/engine"><FontAwesomeIcon icon={faTimes} /></Link>
+        <BackButton />
       </div>
             <Card className="sprof">
                 <div className="schoolImg">
