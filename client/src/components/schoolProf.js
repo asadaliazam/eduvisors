@@ -6,12 +6,8 @@ import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
 import CostOfLivingGraph from './costOfLivingGraph';
-<<<<<<< HEAD
 import BackButton from './BackButton.js'
-
-=======
 import EmploymentGraph from './employmentGraph';
->>>>>>> c1e28d0bb253707675be219db4ca4e5514e6eac7
 
 class SchoolProf extends Component {
   constructor(props) {
