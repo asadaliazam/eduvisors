@@ -6,11 +6,10 @@ import teamMember3 from'./img/team/rod2.png';
 import teamMember4 from'./img/team/sam.png';
 import teamMember5 from'./img/team/lak2.png';
 
-import {Link, BrowserRouter as Router} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faLinkedin} from '@fortawesome/fontawesome-free-brands';
-import { faTimes, faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 class AboutPage extends Component {
   constructor() {
