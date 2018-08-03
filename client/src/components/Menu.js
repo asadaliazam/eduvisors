@@ -64,9 +64,8 @@ import Media from "react-media";
                 <nav className="desktop">
                     <ul>
                         <li><a href="/HomePage/">Home</a></li>
-                        <li className="surveyLink"><a href="/HomePage/survey">Take Survey</a></li>
                         <li><a href="/HomePage/Results">Results</a></li>
-                        <li><a href="/HomePage/ListOfSchools">List of Schools</a></li>
+                        <li><a href="/HomePage/ListOfSchools">Schools</a></li>
                         <li><a href="/HomePage/about">About</a></li>
                         <li><a href="/HomePage/contactus">Contact Us</a></li>
                         <li><a href="/HomePage/Logout">Logout</a></li>
@@ -75,12 +74,11 @@ import Media from "react-media";
                 </nav>
 
                      <Media query="(max-width: 998px)">
-                            <div>
-                              <FontAwesomeIcon icon={faBars} onClick={this.toggle.bind(this)} />
+                            <div className="mobMenu">
+                                <FontAwesomeIcon icon={faBars} onClick={this.toggle.bind(this)} />
                                   <div className="mobile" id="bars" style={ shown }>
                                         <ul>
                                           <li><a href="/HomePage/">Home</a></li>
-                                          <li><a href="/HomePage/survey">Take Survey</a></li>
                                           <li><a href="/HomePage/Results">Results</a></li>
                                           <li><a href="/HomePage/ListOfSchools">List of Schools</a></li>
                                           <li><a href="/HomePage/about">About</a></li>

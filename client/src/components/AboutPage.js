@@ -34,12 +34,13 @@ class AboutPage extends Component {
                   </div>
 
                   <div class="vid">
-                          <iframe title="video" width="560" height="315" src={require("./img/video/Eduvisors_1-min.mp4")} allowfullscreen></iframe>
+                          <video title="video" width="560" height="315" src={require("./img/video/Eduvisors_1-min.mp4?rel=0")} controls allowfullscreen></video>
                   </div>
 
 
                   <div className="aboutEduvisors">
-                          <h2>About</h2>
+                          <h2>Learn About Eduvidors</h2>
+                          <div className="LearnAbout">
                           <p> It all began by reflecting a little about all the challenges we all faced as International Students in our path to study in Canada. And we felt we needed to help fellow students by building a hub of information and support services that would facilitate the journey and ease the challenges of this process.</p>
 
                           <p>In the heart of Eduvisors, we placed an engine that calculates recommendations that will help students narrow their choices and decisions. We are implementing protocols and technology to make sure that all personal data is kept secure and private. And we also offering information about the schools and provinces to support the students decision process.</p>
@@ -49,6 +50,7 @@ class AboutPage extends Component {
                           <p>And on top of all of that, we are making this free of charge to all students.
                           Welcomo to Eduvisors and see you in Canada!
                           </p>
+                          </div>
                   </div>
                 </Card>
 

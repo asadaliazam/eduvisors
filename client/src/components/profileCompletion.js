@@ -14,7 +14,7 @@ class ProfileCompletion extends Component {
         labels: ["Profile"],
         datasets: [{
         label: false,
-        backgroundColor: ['rgb(255, 255, 255)','rgb(255, 23, 23)'],
+        backgroundColor: ['rgb(66, 84, 169)','rgb(207, 207, 207)'],
         borderColor: 'rgb(255, 255, 255)',
         data: []
         }]
@@ -97,7 +97,7 @@ fetchFromDatabase(){
                 labels: ["Profile"],
                 datasets: [{
                 label: false,
-                backgroundColor: ['#6a8cff','#F4F1EF'],
+                backgroundColor: ['rgb(66, 84, 169)','rgb(207, 207, 207)'],
                 borderColor: '606060;',
                 data: []
                 }]

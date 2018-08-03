@@ -35,6 +35,7 @@ const styles = theme => ({
   formControl: {
     margin: theme.spacing.unit,
     minWidth: 120,
+    width: '-webkit-fill-available',
   },
 });
 

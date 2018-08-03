@@ -26,7 +26,7 @@ class Snowfall extends Component {
             labels: [],
             datasets: [{
                     label: "",
-                    backgroundColor: 'rgb(255, 0, 132)',
+                    backgroundColor: 'rgb(61, 141, 123)',
                     borderColor: 'rgb(255, 255, 255)',
                     data: [],
                   }] // end of datasets
@@ -48,27 +48,27 @@ class Snowfall extends Component {
                 case "snow":
                     chartData.datasets[0]['label'] = `Snowfall: ${this.state.province}`;
                     // this.setState(chartData.datasets[0]['label']: "Snowfall");
-                    chartData.datasets[0]['backgroundColor'] = '#68FBD0';
+                    chartData.datasets[0]['backgroundColor'] = 'rgb(61, 141, 123)';
                     // chartData.datasets[0]['backgroundColor'] = 'rgb(153, 51, 255)';
                     break;
                 case "rain":
                     chartData.datasets[0]['label'] = "Rainfall";
-                    chartData.datasets[0]['backgroundColor'] = '#00E4FE';
+                    chartData.datasets[0]['backgroundColor'] = 'rgb(102,94,198)';
                     // chartData.datasets[0]['backgroundColor'] = 'rgb(0, 128, 255)';
                     break;
                 case "temp_low":
                     chartData.datasets[0]['label'] = "Low Temperatures";
-                    chartData.datasets[0]['backgroundColor'] = '#00C4FF';
+                    chartData.datasets[0]['backgroundColor'] = '#3B7BB8';
                     // chartData.datasets[0]['backgroundColor'] = 'rgb(0, 204, 0)';
                     break;
                 case "temp_high":
                     chartData.datasets[0]['label'] = "High Temperatures";
-                    chartData.datasets[0]['backgroundColor'] = '#9497FF';
+                    chartData.datasets[0]['backgroundColor'] = '#7B2A49';
                     // chartData.datasets[0]['backgroundColor'] = 'rgb(255, 255, 0)';
                     break;
                 case "temp_avg":
                     chartData.datasets[0]['label'] = "Average Temperatures";
-                    chartData.datasets[0]['backgroundColor'] = 'rgb(255, 0, 0)';
+                    chartData.datasets[0]['backgroundColor'] = '#B3A4A9';
                     // chartData.datasets[0]['backgroundColor'] = 'rgb(255, 0, 0)';
                     break;
                 default:

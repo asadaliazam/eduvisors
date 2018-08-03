@@ -32,8 +32,16 @@ class SchoolProf extends Component {
   }
 
   getFile(){
+
+    if (this.state.schoolID == 80)
+    {
+      return require(`./img/langara.jpg`);
+    }
+    else {
       let fileName = Math.round(Math.random()*7)+1
       return require(`./img/${fileName}.jpg`);
+    }
+
   }
 
   schoolProfile(){
@@ -102,7 +110,7 @@ class SchoolProf extends Component {
               <Card className="schoolinfo">
                     <CostOfLivingGraph province={this.state.province} />
               </Card>
-              <Card>
+              <Card className="schoolinfo">
                       <div className="schoolBtns">
                             <button onClick={() => this.setState({type: 'rain'})}>
                               Rain
@@ -123,11 +131,11 @@ class SchoolProf extends Component {
 
                       <Snowfall province={this.state.province} type={this.state.type} />
                 </Card>
-                <Card>
+                <Card className="schoolinfo">
                       <TuitionGraph province={this.state.province} />
                 </Card>
 
-                <Card>
+                <Card className="schoolinfo">
                       <EmploymentGraph province={this.state.province} />
                 </Card>
 
