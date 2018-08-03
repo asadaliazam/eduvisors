@@ -57,6 +57,12 @@ align-self: center;
   padding: 0;
 }
 
+.Bar
+{
+  position: relative;
+  height: 250px;
+}
+
 
 
 
@@ -451,6 +457,17 @@ header .mobMenu svg{
   align-self: flex-end;
   padding: 1.4rem;
 }
+
+.HomePage header ul li:hover a{
+  /* color: rgb(66,84,139); */
+  /* font-weight: 500; */
+  text-decoration: underline;
+}
+
+.HomePage header ul li:hover{
+  /* background-color:var(--secondary-color); */
+}
+
 
 
 /* ===================== ======================== */
