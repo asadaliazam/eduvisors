@@ -72,24 +72,16 @@ class SchoolRankGraphList extends Component {
     this.setState({province: nextProps.province}, this.fetchFromDatabase);
   }
 
-  componentDidUpdate()
-  {
-
-
-  }
-
-
-
   // VIEW
   render() {
+
     const listItems = this.state.schoolRankData.map((data) =>
   <li key={data.institution_name}><Avatar className="avatar">#{data.ca_ranking}</Avatar> {data.institution_name}</li>
 
 );
     return (
-      <div className="SchoolRankGraphList">
+      <div className="SchoolRankGraphList graphContainer">
         <h2>Top Universities in {this.state.province}:</h2>
-        {/* <p> {this.state.province}</p> */}
         <ul className="schoolRankList">
           {listItems}
         </ul>

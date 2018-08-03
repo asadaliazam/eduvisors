@@ -64,7 +64,7 @@ class InterestingFacts extends Component {
         {this.state.InterestingFactsData.map((InterestingFactsData,index) =>
           <ul key= {index} >
             <li className="InterestingDataList"> Number of Schools: <span><FontAwesomeIcon icon={faUniversity}/>{InterestingFactsData.numberOfSchools}</span></li>
-            <li className="InterestingDataList"> Total Population: <span><FontAwesomeIcon icon={faUsers} /> {InterestingFactsData.totalPopulation}</span></li>
+            <li className="InterestingDataList"> Total Population: <span><FontAwesomeIcon icon={faUsers} /> {InterestingFactsData.totalPopulation}M</span></li>
             <li className="InterestingDataList"> Capital City: <span><FontAwesomeIcon icon={faMapMarkerAlt} /> {InterestingFactsData.capitalCity}</span></li>
           </ul>
         )}

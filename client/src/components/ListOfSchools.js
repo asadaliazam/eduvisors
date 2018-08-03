@@ -164,8 +164,9 @@ class ListOfSchools extends Component {
                           <Typography component="p">
                             <a href={ListOfSchoolsFromSearch.url} target="_blank">{ListOfSchoolsFromSearch.url}</a>
                           </Typography>
-                          <CardActions>
-                              <Button  color="primary" className="btn">
+                        <CardActions className="btnDetails">
+
+                                <Button  type="submit" variant="contained" color="primary" className="btn">
                                   <Link to={'/HomePage/schoolProf/'+ListOfSchoolsFromSearch.ca_ranking}> View Details</Link>
                               </Button>
                           </CardActions>
