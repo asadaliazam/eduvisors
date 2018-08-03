@@ -452,6 +452,17 @@ header .mobMenu svg{
   padding: 1.4rem;
 }
 
+.HomePage header ul li:hover a{
+  color: rgb(66,84,139);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.HomePage header ul li:hover{
+  background-color:var(--secondary-color);
+}
+
+
 
 /* ===================== ======================== */
 /*                HOMEPAGE      */
@@ -2038,7 +2049,7 @@ footer a{
   width: 100%;
   position: relative;
   z-index: 99;
-  background-color: black;
+  background-color: var(--blackopacity-color);
   opacity: .9;
   line-height: 4;
   height: 4rem;
