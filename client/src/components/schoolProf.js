@@ -32,8 +32,16 @@ class SchoolProf extends Component {
   }
 
   getFile(){
+
+    if (this.state.schoolID == 80)
+    {
+      return require(`./img/langara.jpg`);
+    }
+    else {
       let fileName = Math.round(Math.random()*7)+1
       return require(`./img/${fileName}.jpg`);
+    }
+
   }
 
   schoolProfile(){
