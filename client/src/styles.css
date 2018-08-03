@@ -885,7 +885,11 @@ margin:1%;
   /* height: 500px; */
   border: 1px solid lightgrey;
   border-radius: 0 0 5px 5px;
+  /* margin: 0; */
   /* padding: 2rem; */
+}
+.ResultsPageNew .userMsg .msgTitle p{
+  margin: 0!important;
 }
 
 .resultsPageNew .userMsg .awe{
@@ -893,6 +897,20 @@ margin:1%;
   color: var(--offwhite-color);
   padding: 1rem;
   flex: 1 0 20%;
+
+}
+
+.ResultsPageNew .userMsg .awe{
+  display: flex;
+  align-items: center;
+}
+
+.ResultsPageNew .userMsg .awe .svg-inline--fa{
+
+font-size: 4rem!important;
+margin: 1rem;
+/* height: 10rem!important; */
+
 }
 
 .resultsPageNew .userMsg .msgTitle{
@@ -900,6 +918,7 @@ margin:1%;
   padding: 2rem;
   flex: 1 0 20%;
   min-width: 100px;
+  /* margin: 0; */
 }
 
 .resultsPageNew .userMsg p{
