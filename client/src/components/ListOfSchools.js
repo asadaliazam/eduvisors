@@ -161,7 +161,7 @@ class ListOfSchools extends Component {
                           {/* <Typography component="p">
                             Canada Rank: {ListOfSchools.ca_ranking}
                           </Typography> */}
-                          <Typography component="p">
+                          <Typography component="p" className="schURL">
                             <a href={ListOfSchoolsFromSearch.url} target="_blank">{ListOfSchoolsFromSearch.url}</a>
                           </Typography>
                         <CardActions className="btnDetails">
