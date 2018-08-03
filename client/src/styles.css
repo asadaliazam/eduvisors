@@ -57,6 +57,12 @@ align-self: center;
   padding: 0;
 }
 
+.Bar
+{
+  position: relative;
+  height: 250px;
+}
+
 
 
 

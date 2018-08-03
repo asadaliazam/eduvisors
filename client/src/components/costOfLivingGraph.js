@@ -87,7 +87,9 @@ class CostOfLivingGraph extends Component {
           <div className="Bar">
                   <Doughnut
                   data = {this.state.chartData}
-                  options={{ responsive: true }}
+                  options={{ responsive: true,
+                  maintainAspectRatio: false,
+                }}
                   />
           </div>
           <p className="graphDescription">
