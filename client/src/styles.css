@@ -380,7 +380,7 @@ footer{
 
 #bars ul li{
   list-style: none;
-  padding-right: 1rem;
+  /* padding-right: 1rem; */
   line-height: 2;
   width: 150px;
   /* border: 1px solid white; */
@@ -389,6 +389,45 @@ footer{
 #bars ul li a{
   text-decoration: none;
 }
+
+/* ===================== ======================== */
+/*                MENU INTERNAL      */
+/* ===================== ======================== */
+
+header{
+  position: relative;
+}
+
+header .mobMenu{
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+}
+
+header .mobMenu li{
+  padding: .75rem 1rem;
+}
+
+header .mobMenu ul{
+  background-color: rgb(66,84,139);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header .mobMenu svg{
+  /* padding: 0 2rem; */
+  display: block;
+  align-self: flex-end;
+  padding: 1.4rem;
+}
+
+
 /* ===================== ======================== */
 /*                HOMEPAGE      */
 /* ===================== ======================== */
@@ -926,6 +965,9 @@ background-color: var(--offwhite-color);
   margin-bottom: 13rem;
 }
 
+
+
+
 .resultsPage .CardHeader{
   grid-row: 1;
   margin: 0;
@@ -935,6 +977,7 @@ background-color: var(--offwhite-color);
 .resultsPage .resultPageCard{
   margin-bottom: 1rem;
   border-radius: 0 0 5px 5px;
+  background-color: var(--offwhite-color);
 }
 
 .resultsPage .resultPageCard .CardContent h2{
@@ -1042,13 +1085,7 @@ grid-gap: 2rem;
   border-bottom: 1px solid black;
 }
 
-.sprof{
-  /* display: flex;
-  flex-flow: column nowrap;
 
-  box-sizing: border-box; */
-  padding: 1%;
-}
 
 .sprof img{
   /* flex: 1 0 95%; */
@@ -1205,6 +1242,7 @@ grid-gap: 2rem;
 }
 
 .aboutPage .teamMembersWrapper{
+  margin-top: 1rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -1280,6 +1318,7 @@ grid-gap: 2rem;
   border-radius: 50%;
   width: 100%;
   max-width: 240px;
+  background-color: white;
 }
 
 .vid{
@@ -1930,7 +1969,9 @@ footer a{
       flex-flow: row wrap;
 
       box-sizing: border-box;
+
 }
+
 
 .sprof .schoolImg{
       flex: 0 0 45%;

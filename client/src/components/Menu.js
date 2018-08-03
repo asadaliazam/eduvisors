@@ -74,8 +74,8 @@ import Media from "react-media";
                 </nav>
 
                      <Media query="(max-width: 998px)">
-                            <div>
-                              <FontAwesomeIcon icon={faBars} onClick={this.toggle.bind(this)} />
+                            <div className="mobMenu">
+                                <FontAwesomeIcon icon={faBars} onClick={this.toggle.bind(this)} />
                                   <div className="mobile" id="bars" style={ shown }>
                                         <ul>
                                           <li><a href="/HomePage/">Home</a></li>
