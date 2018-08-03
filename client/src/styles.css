@@ -49,6 +49,11 @@ align-self: center;
   align-items: center;
 }
 
+.SchoolRankGraphList{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .SchoolRankGraphList .schoolRankList
 {
   margin: 0;
@@ -449,9 +454,14 @@ footer{
   padding-right: 1.5rem;
 }
 
+.Main .Content{
+    overflow: hidden;
+}
+
 .Main .Content .CardContent{
   margin:0;
   padding:0;
+  border: 1px solid lightgrey;
 }
 
 .Main .Content form{
@@ -470,6 +480,11 @@ background-color: rgb(244,241,239);
   background-repeat: no-repeat;
   background-size: cover;
   margin:0;
+}
+
+.Main .Content .leftContent p{
+  font-weight: bold;
+  color: black;
 }
 
 .Main .Content .top-content{
@@ -529,42 +544,86 @@ text-align:center;
 }
 
 
+.surveyLink{
+  /* background-color: var(--offwhite-color); */
+  background-color: var(--offwhite-color);
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  /* height: 3rem; */
+  /* line-height: 3; */
+  text-align: center;
+
+  padding: 0 1rem;
+  color: black;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 1px solid lightgrey;
+
+}
+
+.surveyLink a{
+  text-decoration: none;
+}
+
+/* .surveyLink p{
+  margin: 0;
+  text-align: left;
+}
+
+.surveyLink button{
+  height: 1rem;
+
+} */
 
 
 /* ============InterestingFacts=============== */
 .InterestingFacts {
-margin:1%;
+/* margin:1%; */
+background-color: var(--offwhite-color);
 }
 
 .InterestingFacts  ul{
-  color:var(--darkgray-color);
+  /* color:var(--darkgray-color); */
   display: flex;
-  flex-flow: row wrap;
-  /* justify-content: space-around; */
-  padding: .3rem;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+  /* padding: .3rem; */
+  /* margin: 2rem; */
+  padding: 0;
 
 }
 
 .InterestingFacts  ul li{
-  background-color:#F4F1EF;
+  /* background-color:#F4F1EF; */
     border: 1px solid var(--darkgray-color);
     border-radius: 5px;
-    flex: 1 0 40%;
+    width: 90%;
+    /* flex: 1 0 90%; */
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     padding: .5rem .1rem;
-    margin: 2rem 2% 0 2%;
+    margin: 1rem;
     text-align: center;
-    min-width: 145px;
-    max-width: 250px;
+    /* min-width: 145px; */
+    /* max-width: 250px; */
     line-height: 1.5;
     justify-content: space-around;
+
 }
 
 .InterestingFacts  ul li span{
   font-size: 2rem;
+}
+
+.InterestingFacts button{
+  margin-left: 1rem;
 }
 
 
@@ -658,22 +717,24 @@ margin:1%;
 }
 
 .graphContainer{
-  display:flex;
-  flex-flow:row wrap;
+  /* display:flex;
+  flex-flow:row wrap; */
   margin:0;
-  background-color: #F4F1EF;
+  /* background-color: #F4F1EF; */
+  background-color: var(--offwhite-color);
   padding:1rem;
 }
 
 .graphDescription{
+  padding: 0 1rem;
+  margin-bottom: 0;
+}
 
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space;
+.employement .graphDescription{
+  padding: 3rem;
 }
 
 .graphContainer h2{
-
     align-items: center;
 }
 
@@ -692,9 +753,12 @@ margin:1%;
 /*               HOMEPAGE GRAPHS                     */
 /* ===================== ======================== */
 
+.firstCard{
+  margin-top: 1rem;
+}
 
 
-
+.homePageCard,
 .landingPage .HomeContent .homePageCard{
   margin-bottom: 1rem;
 }
@@ -869,6 +933,7 @@ margin:1%;
 
 .resultsPage .resultPageCard{
   margin-bottom: 1rem;
+  border-radius: 0 0 5px 5px;
 }
 
 .resultsPage .resultPageCard .CardContent h2{
@@ -1110,7 +1175,7 @@ grid-gap: 2rem;
 .aboutPage .aboutMission{
   flex: 1 0 45%;
   padding: 2%;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .aboutPage .aboutEduvisors .LearnAbout{
@@ -1429,10 +1494,20 @@ footer a{
 /* ===================== ======================== */
 /*                 InterestingFacts */
 /* ===================== ======================== */
-.InterestingFacts  ul li:nth-last-of-type(3){
-justify-content: center;
+/* :nth-last-of-type(3) */
 
+.InterestingFacts  ul{
+  flex-flow: row nowrap;
 }
+
+.InterestingFacts  ul li{
+    justify-content: center;
+    width: 33%;
+}
+
+
+
+
 
 /* ===================== ======================== */
 /*                 MENU / HEADER */
@@ -2201,15 +2276,24 @@ font-size: 1rem;
 }
 
  .graphContainer h2{
-  border-bottom: 2px solid white;
+  width: 18rem;
   padding: 0 2rem;
-  border-radius: .5rem;
+  /* border-radius: .5rem;
+  border-radius: 1rem;
+  border-bottom: 2px solid white; */
+
+
 }
 
 .graphContainer h2{
-    border-bottom: 2px solid white;
-    width: 18rem;
-    border-radius: 1rem;
+
+}
+
+.graphDescription{
+  /* display: flex;
+  flex-flow: column nowrap;
+  justify-content: space; */
+  /* padding: 3rem; */
 }
 
 /* ===================== ======================== */
