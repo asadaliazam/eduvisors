@@ -19,7 +19,10 @@ class Survey1 extends Component {
       at: 0,
       snow: 0,
       rain: 0,
-      obj: {0: "I don't care", 1: 'I care a lot'}
+      obj: {0: "I don't care", 1: 'I care a lot'},
+      obj1: {0: "Low", 1: "High"},
+
+
     };
   }
 
@@ -111,6 +114,7 @@ class Survey1 extends Component {
                     max={1.0}
                     step={0.1}
                     tooltip={true}
+                    labels={this.state.obj1}
                     orientation="horizontal"
                     onChange={this.handleOnChangeSnow}
                   />
@@ -125,6 +129,7 @@ class Survey1 extends Component {
                     max={1.0}
                     step={0.1}
                     tooltip={true}
+                    labels={this.state.obj1}
                     orientation="horizontal"
                     onChange={this.handleOnChangeRain}
                   />

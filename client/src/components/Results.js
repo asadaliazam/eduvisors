@@ -118,9 +118,11 @@ render() {
         <div className="userMsg">
             <div className="awe">
             <FontAwesomeIcon icon={faExclamationTriangle} />
+
+              <p>You have not taken the survey yet. Please take the survey before checking the results!</p>
             </div>
-            <div className="msgTitle">User Messager:</div>
-            <p>You have not taken the survey yet. Please take the survey before checking the results!</p>
+
+
         </div>
 
       </div>
