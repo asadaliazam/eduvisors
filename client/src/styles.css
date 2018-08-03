@@ -459,7 +459,8 @@ flex: 1 0 90%;
 margin:0;
 padding:0;
 border-radius: 1%;
-background-color: #F9F7FF;
+/* background-color: #F9F7FF; */
+background-color: rgb(244,241,239);
 }
 
 .Main .Content .leftContent{
@@ -471,6 +472,9 @@ background-color: #F9F7FF;
   margin:0;
 }
 
+.Main .Content .top-content{
+  border-radius: 0 0 5px 5px;
+}
 
 .Main .Content form label{
   display: flex;
@@ -517,10 +521,11 @@ text-align:center;
 
 .Main .Content form{
 
-  margin: 1% 0;
+  /* margin: 1% 0; */
   display:flex;
   flex-flow:column nowrap;
   justify-content: center;
+
 }
 
 
@@ -649,7 +654,7 @@ margin:1%;
 /* ===================== ======================== */
 
 .charts>div{
-  margin:1%;
+  /* margin:1%; */
 }
 
 .graphContainer{
@@ -674,7 +679,7 @@ margin:1%;
 
 .charts{
   background-color: var(--offwhite-color);
-  border:3px solid #B5B5B5;
+  border: 1px solid lightgrey; /*#B5B5B5; */
   border-radius: 5px;
   margin-bottom: 2rem;
   margin: 1rem 0;
