@@ -34,15 +34,15 @@ class AboutPage extends Component {
                   </div>
 
                   <div className="aboutEduvisors">
-                          <h2>About</h2>
+                          <h2>Learn About Eduvidors</h2>
                           <p> It all began by reflecting a little about all the challenges we all faced as International Students in our path to study in Canada. And we felt we needed to help fellow students by building a hub of information and support services that would facilitate the journey and ease the challenges of this process.</p>
 
-                          <p>In the heart of Eduvisors, we placed an engine that calculates recommendations that will help students narrow their choices and decisions. We are implementing protocols and technology to make sure that all personal data is kept secure and private. And we also offering information about the schools and provinces to support the students decision process.</p>
+                          <p>In the heart of Eduvisors, we placed an engine that calculates recommendations that will help students narrow their choices and decisions. We are implementing protocols and technology to make sure that all personal data is kept secure and private. And we also provide information on schools and provinces to help students in their research.</p>
 
-                          <p>Eduvisors is also bringing a selection of partner companies that will complement with new information and services that will support you in this journey to Canada.</p>
+                          <p>Eduvisors is also bringing a selection of partner companies that will complement our offering with new information and services that will support students in their journey to study in Canada.</p>
 
-                          <p>And on top of all of that, we are making this free of charge to all students.
-                          Welcomo to Eduvisors and see you in Canada!
+                          <p>And on top of all of that, we are making this free of charge for all students.
+                          Welcome to Eduvisors and see you in Canada!
                           </p>
                   </div>
 
@@ -51,7 +51,7 @@ class AboutPage extends Component {
                         <h2> Meet Our Team </h2>
 
                         <div className="teamMember t1">
-                              <a href="https://www.linkedin.com/in/asadaliazam/" target="_blank">
+                              <a href="https://www.linkedin.com/in/asadaliazam/" target="_blank" rel="noopener noreferrer">
                               <img src={require("./img/linkedin.svg")} alt="linkedin icon" />
                               </a>
                               <img src={teamMember1} alt="Team Member"/>
@@ -60,7 +60,7 @@ class AboutPage extends Component {
                         </div>
 
                         <div className="teamMember t2">
-                              <a href="https://www.linkedin.com/in/navrose-rikhi/" target="_blank">
+                              <a href="https://www.linkedin.com/in/navrose-rikhi/" target="_blank" rel="noopener noreferrer">
                               <img src={require("./img/linkedin.svg")} alt="linkedin icon" />
                               </a>
                               <img src={teamMember2} alt="Team Member"/>
@@ -69,7 +69,7 @@ class AboutPage extends Component {
                         </div>
 
                         <div className="teamMember t3">
-                              <a href="https://www.linkedin.com/in/rodrigoornellas/" target="_blank">
+                              <a href="https://www.linkedin.com/in/rodrigoornellas/" target="_blank" rel="noopener noreferrer">
                               <img src={require("./img/linkedin.svg")} alt="linkedin icon" />
                               </a>
                               <img src={teamMember3} alt="Team Member"/>
@@ -78,7 +78,7 @@ class AboutPage extends Component {
                         </div>
 
                         <div className="teamMember t4">
-                              <a href="https://www.linkedin.com/in/samanehhos/" target="_blank">
+                              <a href="https://www.linkedin.com/in/samanehhos/" target="_blank" rel="noopener noreferrer">
                               <img src={require("./img/linkedin.svg")} alt="linkedin icon" />
                               </a>
                               <img src={teamMember4} alt="Team Member"/>
@@ -87,7 +87,7 @@ class AboutPage extends Component {
                         </div>
 
                         <div className="teamMember t5">
-                              <a href="https://www.linkedin.com/in/lsachdeva/" target="_blank">
+                              <a href="https://www.linkedin.com/in/lsachdeva/" target="_blank" rel="noopener noreferrer">
                               <img src={require("./img/linkedin.svg")} alt="linkedin icon" />
                               </a>
                               <img src={teamMember5} alt="Team Member"/>

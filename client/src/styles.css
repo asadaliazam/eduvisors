@@ -72,9 +72,10 @@ align-self: center;
 /* ===================== ======================== */
 
 
-.avatar
-{
-  margin: 10;
+.schoolRankList .avatar{
+  width: 50px;
+  height: 50px;
+  /* margin: 10; */
   background-color: #008F7A !important;
   text-align: center;
   align-items: center;
@@ -112,18 +113,18 @@ align-self: center;
 /*             LIST OF SCHOOLS COMPONENT        */
 /* ===================== ======================== */
 
-.ListOfSchoolsCard
-{
+.ListOfSchoolsCard{
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-gap: 1rem;
-  margin: 1rem;
+  /* grid-gap: 1rem; */
+  margin: .5rem;
+  overflow: hidden;
 }
 
 .ListOfSchoolsCardContent{
   display: flex;
   flex-flow: column wrap;
-
+  padding-left: 12px;
 }
 
 .ListOfSchoolsCardContent .schURL{
@@ -184,13 +185,12 @@ align-self: center;
   margin: 1rem;
   display: flex;
   flex-flow: column nowrap;
-
-  /* background-color: var(--offwhite-color); */
 }
 
-/* .LoginContent div,
-.LoginContent div form,
-.LoginPage .LoginContent, */
+.LoginContent img{
+  display: none;
+  width: 100%;
+}
 
 .LoginPage .card-content,
 .RegContent div form,
@@ -232,10 +232,8 @@ align-self: center;
     align-items: center;
 }
 
-.LoginContent img, .RegContent img{
-  width: 100%;
-
-  /* background-color: var(--offwhite-color); */
+.RegContent img{
+  display: none;
 }
 
 
@@ -813,12 +811,16 @@ background-color: var(--offwhite-color);
 }
 
 .employement .graphDescription{
-  padding: 3rem;
+  padding: 3rem 0;
 }
 
 .graphContainer h2{
     align-items: center;
 }
+
+/* .landing-chart2 .costofliving{
+  margin-top: 2rem;
+} */
 
 .charts{
   background-color: var(--offwhite-color);
@@ -1112,7 +1114,7 @@ grid-gap: 2rem;
 }
 
 .schoolPage .MuiCard-root-1{
-  padding: 1rem;
+  /* padding: 1rem; */
   margin-bottom: 1rem;
 }
 
@@ -1127,23 +1129,18 @@ grid-gap: 2rem;
   border-bottom: 1px solid black;
 }
 
-
+.Main .schoolPage .sprof{
+  border-radius: 0 0 5px 5px;
+}
 
 .sprof img{
-  /* flex: 1 0 95%; */
   width: 100%;
 }
 
-/* .sprof div .btn{
-  position: absolute;
-  right: 5%;
-  background-color: red;
-
-} */
 
 .schoolinfo{
   background-color: var(--offwhite-color);
-  padding: .5rem;
+  padding: .7rem;
 
 }
 
@@ -1171,7 +1168,7 @@ grid-gap: 2rem;
 
   margin: 2rem 2% 0 2%;
   text-align: center;
-  min-width: 145px;
+  min-width: 100px;
 }
 
 .ListOfSchoolsCard .schRank{
@@ -1186,7 +1183,7 @@ grid-gap: 2rem;
 .schoolBtns{
   /* border-top: 2px solid var(--main-color); */
   padding-top: 1rem;
-  margin: 0 1rem;
+  /* margin: 0 1rem; */
 
   display: flex;
   flex-flow: row wrap;
@@ -1214,7 +1211,7 @@ grid-gap: 2rem;
 }
 
 .schoolinfo p{
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
 }
 
 .schoolinfo a{
@@ -1394,8 +1391,9 @@ grid-gap: 2rem;
 }
 
 .contactUsPage img{
-  width: 100%;
-  height: auto;
+  display: none;
+  /* width: 100%;
+  height: auto; */
 }
 
 .contactUsPage .TxtField{
@@ -1403,7 +1401,7 @@ grid-gap: 2rem;
 }
 
 .contactUsPage .surveyButton{
-  margin: 3rem 10rem;
+  margin: 3rem;
 }
 
 
@@ -1606,8 +1604,14 @@ footer a{
     width: 33%;
 }
 
+/* ===================== ======================== */
+/*                 LIST OF SCHOOLS */
+/* ===================== ======================== */
 
-
+.ListOfSchoolsCard{
+  grid-gap: 1rem;
+  margin: 1rem;
+}
 
 
 /* ===================== ======================== */
@@ -1708,6 +1712,11 @@ footer a{
   box-sizing: border-box;
 }
 
+.RegContent img{
+  display: block;
+  width: 100%;
+}
+
 .LoginContent .logAlternative div{
 
     display: flex;
@@ -1720,7 +1729,9 @@ footer a{
   margin-right: 1rem;
 }
 
+
 .LoginContent img{
+  display: block;
   width: 100%;
   height: auto;
   max-width: 320px;
@@ -1851,6 +1862,9 @@ footer a{
 }
 
 .contactUsPage img{
+  display: block;
+  width: 100%;
+  height: auto;
   margin-top: 3rem;
 }
 
@@ -2041,6 +2055,8 @@ footer a{
 }
 
 } /*   end of MEDIA QUERY */
+/* ====================================================================================== */
+
 
 /* ===================== ======================== */
 /*               LANDING PAGE                    */
@@ -2164,13 +2180,13 @@ list-style-type: none;
 
 }
 
-.landingPage .landing-chart1 .graphContainer, .landingPage .landing-chart2 .graphContainer{
+.landingPage .landing-chart1 .graphContainer,
+.landingPage .landing-chart2 .graphContainer{
   /* font-size: 1rem; */
   height: auto!important;
   width: 80%!important;
   margin: auto;
   flex-flow: column wrap;
-
 }
 
 
@@ -2189,16 +2205,16 @@ background-color: var(--secondary-color);
 padding: 2rem;
 border-radius: 2rem;
 color: darkslategray;
-margin-bottom: 2rem;
+margin: 2rem 0;
 }
-.landingPage .landing-chart1 .graphContainer h2, .landingPage .landing-chart2 .graphContainer h2{
+
+.landingPage .landing-chart1 .graphContainer h2,
+.landingPage .landing-chart2 .graphContainer h2{
   color: white;
-
-
 }
 
-.landingPage .landing-chart1 .graphContainer h2, .landingPage .landing-chart2 .graphContainer h2{
-  padding: 1rem 0;
+.landingPage .landing-chart1 .graphContainer h2{
+  margin-top: 0;
 }
 
 
