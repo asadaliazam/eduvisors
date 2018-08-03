@@ -2055,7 +2055,7 @@ footer a{
   width: 100%;
   position: relative;
   z-index: 99;
-  background-color: var(--blackopacity-color);
+  background-color: black;
   opacity: .9;
   line-height: 4;
   height: 4rem;
