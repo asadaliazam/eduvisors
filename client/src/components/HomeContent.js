@@ -89,10 +89,10 @@ class HomeContent extends Component {
 
 
 
-              <div className="top-chart charts">
+              {/* <div className="top-chart charts"> */}
 
 
-                <Card className="homePageCard">
+                <Card className="homePageCard firstCard">
                       <CardContent className="CardContent">
                           <Snowfall province={this.state.value} type={'snow'} />
                           {/* <Typography component="p">
@@ -100,11 +100,11 @@ class HomeContent extends Component {
                           </Typography> */}
                       </CardContent>
                 </Card>
-                </div>
+                {/* </div> */}
 
 
 
-                <div className="down-charts charts">
+                {/* <div className="down-charts charts"> */}
                   <Card className="homePageCard">
                         <CardContent className="CardContent">
                             <EmploymentGraph province={this.state.value} />
@@ -142,7 +142,7 @@ class HomeContent extends Component {
 
                         </CardContent>
                   </Card>
-                </div> {/* end of DOWN-CHARTS */}
+                {/* </div>       */}
 
           </div>
 

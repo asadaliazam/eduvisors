@@ -25,7 +25,7 @@ class TuitionGraph extends Component {
 options : {
   legend: { display: true,
             labels: {
-                fontColor: 'rgb(255, 99, 132)'}
+                fontColor: 'black'}
          },
            title: {
            display: true,
@@ -79,14 +79,14 @@ options : {
           labels: ['Graduate Programs', 'Undergraduate Programs'],
           datasets: [{
               label: `Year Tuition Fee Cost: ${this.state.province}`,
-              backgroundColor: '#D78E8C',
+              backgroundColor: '#008E9B',
               // backgroundColor: 'rgba(255,99,132,0.2)',
               borderColor: '#45675C',
               // borderColor: 'rgba(255,99,132,1)',
               borderWidth: 1,
-              hoverBackgroundColor: '#45675C',
+              hoverBackgroundColor: '#008E9B',
               // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-              hoverBorderColor: 'rgba(255,99,132,1)',
+              hoverBorderColor: '#008E9B',
               data: []
             }]}
       Object.entries(this.state.tuitionData).forEach(([key,value]) => {
