@@ -17,7 +17,8 @@ class Survey3 extends Component {
       col: 0,
       rank: 0,
       emp: 0,
-      obj: {0: 'Low', 1: 'High'}
+      obj: {0: 'Just a Little', 1: 'A lot'},
+      obj1: {0: 'Not much', 1: 'Very much'}
     };
   }
 
@@ -116,6 +117,7 @@ class Survey3 extends Component {
         max={1.0}
         step={0.1}
         tooltip={true}
+        labels={this.state.obj}
         orientation="horizontal"
         onChange={this.handleOnChangeCol}
       />
@@ -131,6 +133,7 @@ class Survey3 extends Component {
         max={1.0}
         step={0.1}
         tooltip={true}
+        labels={this.state.obj1}
         orientation="horizontal"
         onChange={this.handleOnChangeRank}
       />
@@ -146,6 +149,7 @@ class Survey3 extends Component {
         max={1.0}
         step={0.1}
         tooltip={true}
+        labels={this.state.obj}
         orientation="horizontal"
         onChange={this.handleOnChangeEmp}
       />

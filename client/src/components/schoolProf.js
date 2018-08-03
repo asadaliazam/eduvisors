@@ -110,7 +110,7 @@ class SchoolProf extends Component {
               <Card className="schoolinfo">
                     <CostOfLivingGraph province={this.state.province} />
               </Card>
-              <Card>
+              <Card className="schoolinfo">
                       <div className="schoolBtns">
                             <button onClick={() => this.setState({type: 'rain'})}>
                               Rain
@@ -131,11 +131,11 @@ class SchoolProf extends Component {
 
                       <Snowfall province={this.state.province} type={this.state.type} />
                 </Card>
-                <Card>
+                <Card className="schoolinfo">
                       <TuitionGraph province={this.state.province} />
                 </Card>
 
-                <Card>
+                <Card className="schoolinfo">
                       <EmploymentGraph province={this.state.province} />
                 </Card>
 
