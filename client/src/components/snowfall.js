@@ -26,7 +26,7 @@ class Snowfall extends Component {
             labels: [],
             datasets: [{
                     label: "",
-                    backgroundColor: 'rgb(255, 0, 132)',
+                    backgroundColor: 'rgb(61, 141, 123)',
                     borderColor: 'rgb(255, 255, 255)',
                     data: [],
                   }] // end of datasets
@@ -48,12 +48,12 @@ class Snowfall extends Component {
                 case "snow":
                     chartData.datasets[0]['label'] = `Snowfall: ${this.state.province}`;
                     // this.setState(chartData.datasets[0]['label']: "Snowfall");
-                    chartData.datasets[0]['backgroundColor'] = '#606476';
+                    chartData.datasets[0]['backgroundColor'] = 'rgb(61, 141, 123)';
                     // chartData.datasets[0]['backgroundColor'] = 'rgb(153, 51, 255)';
                     break;
                 case "rain":
                     chartData.datasets[0]['label'] = "Rainfall";
-                    chartData.datasets[0]['backgroundColor'] = '#4C9CA9';
+                    chartData.datasets[0]['backgroundColor'] = 'rgb(102,94,198)';
                     // chartData.datasets[0]['backgroundColor'] = 'rgb(0, 128, 255)';
                     break;
                 case "temp_low":
