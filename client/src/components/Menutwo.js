@@ -50,7 +50,7 @@ import Media from "react-media";
                         </ul>
                     </nav>
                     <Media query="(max-width: 998px)">
-                          <div>
+                          <div className="mobMenu">
                             <FontAwesomeIcon icon={faBars} onClick={this.toggle.bind(this)} />
                                  <div className="mobile" id="bars" style={ shown }>
                                        <ul>
