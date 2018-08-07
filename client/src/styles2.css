@@ -4,68 +4,81 @@
 /* VARIABLE DECLARATION */
 /* ===================== ======================== */
 :root{
-    --purple-color: rgb(91, 101, 177);    /* ligt purple  */
-    --main-color: rgb(64, 83, 175);        /*  Main Blue COLOR */
-    --secondary-color: #BFBFBF;      /* Light Gray: */
-    --darkgray-color: #606060;      /* Darkest Gray: */
-    --terceary-color: rgb(180, 180, 180);    /* Dark Gray: */
+    --purple-color: rgb(91, 101, 177);
+    --main-color: rgb(64, 83, 175);
+    /* Light Gray: */
+    --secondary-color: #BFBFBF;
+
+    /* Darkest Gray: */
+    --darkgray-color: #606060;
+
+      /* Dark Gray: */
+    --terceary-color: rgb(180, 180, 180);
+
+
     --materialui-blue: rgb(64, 83, 175);
-    --offwhite-color: rgb(245, 245, 245);    /* Lightest Gray: */
-    --grey-profile-color: rgb(96, 96, 96);
-    --otherblue: rgb(48, 129, 247);  /*  light blue from profile */
-    --blackopacity-color: rgba(0,0,0, .5);    /* black with opacity for EXTERNAL footer and HEADER */
+
+      /* Lightest Gray: */
+    --offwhite-color: rgb(245, 245, 245);
+
+    /* --cinza-profile-color: rgb(96, 96, 96);
+    --cinza-header-color: rgb(74, 74, 74); */
+    --otherblue: rgb(48, 129, 247);
+    --blackopacity-color: rgba(0,0,0, .5);
 }
 
 /* ===================== ======================== */
-/* PAGE LAYOUT */
+/*              HEADER SIGNUP BUTTON              */
 /* ===================== ======================== */
 
-body {
-    margin: auto;
-    font-family: "Roboto", "Source Sans", "Helvetica", "Sans Serif";
+.signupButton, .fb-button{
+width:200px;
+height:50px;
+align-self: center;
 }
 
-#root{
-  min-height: 100vh;
-}
 
-.HomePage,
-.landingPage,
-.LoginPage,
-.RegPage{
-  height: 100vh;
-}
 
 /* ===================== ======================== */
 /*              MOBILE MENU LANDING PAGE              */
 /* ===================== ======================== */
 
-.landingPage div.right-side .mobile ul li{
+.landingPage div.right-side .mobile ul li
+{
   font-size: 1rem;
   margin: 0;
   padding: 0.5rem;
 }
 
-.landingPage div.right-side .mobile ul{
+.landingPage div.right-side .mobile ul
+{
   background-color: #2c333d;
   margin: 0;
   padding: 0;
 }
 
-/* applied to all pages where the graph DOUGNUT is used */
-.Bar{
+.Bar
+{
   position: relative;
   height: 250px;
 }
 
+
+
+
+
 /* ===================== ======================== */
-/*   SCHOOLRANK GRAPH LIST COMPONENT              */
+/*              SCHOOLRANK GRAPH LIST COMPONENT              */
 /* ===================== ======================== */
+
 
 .schoolRankList .avatar{
   width: 50px;
   height: 50px;
-  background-color: #008F7A;  /* color GREEN */
+  /* margin: 10; */
+  background-color: #008F7A !important;
+  text-align: center;
+  align-items: center;
 }
 
 .SchoolRankGraphList{
@@ -73,22 +86,23 @@ body {
   flex-flow: column nowrap;
 }
 
-.SchoolRankGraphList .schoolRankList{
+.SchoolRankGraphList .schoolRankList
+{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
-
-  margin: 1.5rem 0 0 0;
-  padding: 0;
-  list-style-type: none;
 }
 
-.SchoolRankGraphList .schoolRankList li{
+.SchoolRankGraphList .schoolRankList li
+{
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0.5rem;
+  justify-content: center;
   justify-items: center;
-
   text-align: center;
   padding: 0.5rem;
   padding-bottom: 2rem;
@@ -102,11 +116,32 @@ body {
 .ListOfSchoolsCard{
   display: grid;
   grid-template-columns: 1fr 3fr;
-
+  /* grid-gap: 1rem; */
   margin: .5rem;
   overflow: hidden;
-  border-right: 1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
+}
+
+.ListOfSchoolsCardContent{
+  display: flex;
+  flex-flow: column wrap;
+  padding-left: 12px;
+}
+
+.ListOfSchoolsCardContent .schURL{
+  margin-bottom: 1.5rem;
+}
+
+.ListOfSchoolsCard .ListOfSchoolsCardContent p a{
+  color: blue;
+}
+
+.ListOfSchoolsCard .ListOfSchoolsCardContent button a{
+  text-decoration: none;
+  font-size: .8rem;
+}
+
+.ListOfSchoolsCard .ListOfSchoolsCardContent .btnDetails{
+  align-self: flex-end;
 }
 
 .ListOfSchoolsCard .schRank{
@@ -115,43 +150,20 @@ body {
   border-radius: 5px;
 }
 
-/* right SIDE of School Card */
-.ListOfSchoolsCardContent{
-  display: flex;
-  flex-flow: column wrap;
-}
-
-.ListOfSchoolsCardContent h2{
+.ListOfSchoolsCard h2{
   font-size: 1.5rem;
   font-weight: bold;
   color: grey;
 }
 
-.ListOfSchoolsCardContent .schURL{
-  margin-bottom: 1.5rem;
-}
-
-.ListOfSchoolsCardContent .schURL a{
-  color: blue;
-}
-
-.ListOfSchoolsCardContent button a{
-  text-decoration: none;
-  font-size: .875rem;
-}
-
-.ListOfSchoolsCardContent .btnDetails{
-  align-self: flex-end;
-}
-
-/* top SEARCH area */
 .inputFormForSearchingSchools{
-    margin: 0 2rem 2rem 2rem;
+    margin: 0 1rem;
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .inputTextFieldForSearchingSchools{
@@ -160,8 +172,12 @@ body {
 }
 
 /* ===================== ======================== */
-/*           LOGIN and REGISTER PAGE              */
+/*              LOGIN PAGE              */
 /* ===================== ======================== */
+
+#root{
+  min-height: 100vh;
+}
 
 .LoginContent,
 .RegContent{
@@ -176,9 +192,6 @@ body {
   width: 100%;
 }
 
-.resultsPage .resultPageCard,
-.schoolPage .schoolCards,
-.InterestingFacts,
 .LoginPage .card-content,
 .RegContent div form,
 .RegPage .RegContent{
@@ -190,6 +203,12 @@ body {
   margin-left: 10rem;
 }
 
+.LoginPage header a,
+.RegPage header a,
+.External header a{
+  color: white;
+}
+
 .LoginContent .logAlternative a{
   color: blue;
 }
@@ -197,6 +216,8 @@ body {
 .LoginContent .card-content{
   padding: 0 3rem;
 }
+
+
 
 .LoginContent .card-content form label{
   color: rgb(142,142,142);;
@@ -215,9 +236,16 @@ body {
   display: none;
 }
 
+
+
 .RegContent .btn{
   margin-top: 2rem;
   margin-left: 10rem;
+}
+
+.LoginPage header a,
+.RegPage header a{
+  color: white;
 }
 
 .LoginContent .logAlternative a{
@@ -228,6 +256,17 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+}
+
+.LoginPage header,
+.LoginPage footer,
+.RegPage header,
+.RegPage footer,
+.External header,
+.External footer,
+.landingPage footer{
+  /* background-color: rgba(0,0,0, .5); */
+  background-color: var(--blackopacity-color);
 }
 
 .LoginContent form .Input{
@@ -242,6 +281,7 @@ body {
 .LoginContent .gmail{
   background-color: rgb(234, 51, 36);
   margin: 1rem 0;
+
 }
 
 .LoginContent .logAlternative .fbsocial{
@@ -263,64 +303,87 @@ body {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-around;
+
+}
+
+/* ===================== ======================== */
+/* PAGE LAYOUT */
+/* ===================== ======================== */
+
+
+body {
+    margin: auto;
+    font-family: "Roboto", "Source Sans", "Helvetica", "Sans Serif";
+}
+
+#root{
+  /* width: 100%; */
+
 }
 
 /* ===================== ======================== */
 /*                 MENU / HEADER */
 /* ===================== ======================== */
-
-/* HEADER ALL pages */
-header,
-footer{
-    background-color: var(--main-color);   /* color BLUE */
+.HomePage a {
+  color: white;
 }
 
-header{
+ .desktop{
+  display: none;
+  font-size: 1rem;
+}
+
+ .mobile{
+  cursor: pointer;
+}
+
+ .left-side{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  color: white;
+}
+
+ .left-side,
+ .right-side,
+ .username{
+  text-align: right;
+  font-size: 1rem;
+}
+
+ header img {
+  padding-left: 2rem;
+  width: 70px;
+}
+
+header a{
+  line-height: 1;
+}
+
+header,
+footer{
+    background-color: var(--main-color);
+}
+
+ header{
   position: sticky;
   display: flex;
   flex-flow: row nowrap;
   line-height: 4;
 }
 
-header img {
-  padding-left: 2rem;
-  width: 70px;
-}
-
-.aboutPage .CardHeader a,
-.btn a,
-.CardHeader a,
-button a,
-footer a,
-header a{
-  line-height: 1;
-  color: white;
-  text-decoration: none;
-}
-
-/* .LoginPage header a,
-.RegPage header a,
-.External header a{
-  color: white;
-} */
-
-
-header .username,
-header .right-side{
+ header .username,
+ header .right-side{
   flex: 0 0 5rem;
   justify-content: center;
   text-align: center;
   color: white;
-  font-size: 1rem;
+
 }
 
-header .username{
+ header .username{
   order: 1;
   border-right: 2px solid white;
-}
-
-header .username svg:active{
-  transform: scale(1.4);
 }
 
  header .left-side{
@@ -341,45 +404,23 @@ header .username svg:active{
 }
 
  header nav ul li {
-  padding: 0 1rem;
+  padding: 0 2rem 0 0;
 }
 
- header .desktop{
-  display: none;
-  font-size: 1rem;
+#bars ul li{
+  list-style: none;
+  /* padding-right: 1rem; */
+  line-height: 2;
+  width: 150px;
+  /* border: 1px solid white; */
 }
 
-.backBtn,
-.mobile{
-  cursor: pointer;
-}
-
- .left-side{
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  color: white;
-}
-
- .left-side,
- .right-side,
- .username{
-  text-align: right;
-  font-size: 1rem;
-}
-
-.LoginPage header,
-.LoginPage footer,
-.RegPage header,
-.RegPage footer,
-.External header,
-.External footer,
-.landingPage footer{
-  background-color: var(--blackopacity-color);
+#bars ul li a{
+  text-decoration: none;
 }
 
 /* ===================== ======================== */
-/*       MENU PULL DOWN for MOBILE VIEW     */
+/*                MENU INTERNAL      */
 /* ===================== ======================== */
 
 header{
@@ -387,22 +428,18 @@ header{
 }
 
 header .mobMenu{
+
   position: absolute;
   top: 0;
-  right: 2px;
+  right: 0;
   z-index: 100;
 
   display: flex;
-  flex-flow: column nowrap;
-}
-
-header .mobMenu a{
-  display: block;
+  flex-direction: column;
 }
 
 header .mobMenu li{
-  padding: 1.5rem;
-  width: 150px;
+  padding: .75rem 1rem;
 }
 
 header .mobMenu ul{
@@ -413,34 +450,43 @@ header .mobMenu ul{
 }
 
 header .mobMenu svg{
+  /* padding: 0 2rem; */
   display: block;
   align-self: flex-end;
-  padding: 1.5rem;
+  padding: 1.4rem;
 }
 
-header .mobMenu svg:active  {
-  transform: scale(1.4);
-}
-
-#bars ul li{
-  list-style: none;
-  line-height: 2;
-  width: 150px;
-}
-
-.HomePage header .mobMenu ul li:hover a{
-  background-color:var(--secondary-color);
-  font-weight: 500;
+.HomePage header ul li:hover a{
+  /* color: rgb(66,84,139); */
+  /* font-weight: 500; */
   text-decoration: underline;
 }
 
-.HomePage header .mobMenu ul li:hover{
-  background-color:var(--secondary-color);
+.HomePage header ul li:hover{
+  /* background-color:var(--secondary-color); */
 }
 
+
+
 /* ===================== ======================== */
-/*           CARD HEADER FOR NAVIGATION           */
+/*                HOMEPAGE      */
 /* ===================== ======================== */
+
+/* ===================== ======================== */
+/*              SURVEY LINK                   */
+/* ===================== ======================== */
+
+
+.surveyButton{
+  width:170px;
+  height:50px;
+  align-self: center;
+}
+
+.surveyButton a{
+  text-decoration: none;
+}
+
 
 .CardHeader{
   background-color: rgba(0,0,0,.5);
@@ -460,15 +506,32 @@ header .mobMenu svg:active  {
   margin: .2rem 0;
 }
 
+
+.aboutPage .CardHeader a{
+  color: white;
+}
+
 /* ===================== ======================== */
 /*               CONTENT AREA                     */
 /* ===================== ======================== */
 
 .Main{
-  margin: .8rem;
+  margin: 3%;
   display: flex;
   flex-flow: column nowrap;
+
   background-color: white;
+}
+
+.HomePage,
+.landingPage,
+.LoginPage,
+.RegPage{
+  height: 100vh;
+}
+
+.Main form ul li svg{
+  padding-right: 1.5rem;
 }
 
 .Main .Content{
@@ -476,23 +539,18 @@ header .mobMenu svg:active  {
 }
 
 .Main .Content .CardContent{
+  margin:0;
   padding:0;
   border: 1px solid lightgrey;
 }
 
 .Main .Content form{
-  flex: 1 0 90%;
-  margin:0;
-  padding:0;
-  border-radius: 5px;
-
-  display:flex;
-  flex-flow:column nowrap;
-  justify-content: center;
-}
-
-.Main form ul li svg{
-  padding-right: 1.5rem;
+flex: 1 0 90%;
+margin:0;
+padding:0;
+border-radius: 1%;
+/* background-color: #F9F7FF; */
+background-color: rgb(244,241,239);
 }
 
 .Main .Content .leftContent{
@@ -506,8 +564,7 @@ header .mobMenu svg:active  {
 
 .Main .Content .leftContent p{
   font-weight: bold;
-  color: white;
-  text-shadow: 1.5px 1.5px black;
+  color: black;
 }
 
 .Main .Content .top-content{
@@ -517,6 +574,9 @@ header .mobMenu svg:active  {
 .Main .Content form label{
   display: flex;
   flex-flow: column nowrap;
+  /* text-align: left;
+  margin-left:1%;
+  margin-top:1%; */
 }
 
 .Main .Content form label p{
@@ -527,15 +587,16 @@ header .mobMenu svg:active  {
 
 .Main .Content form select{
   justify-content: center;
-  width: 200px;
-  height: 45px;
+  width:200px;
+  /* width:auto; */
+  height:45px;
+  /* background-color: #5B62B9; */
   background-color: var(--main-color);
   color: white;
-  padding:1%;
+  padding:1%;;
   font-size: 20px;
   cursor: pointer;
-  margin:1.5rem;
-  border: 1px solid lightgrey;
+  margin:1%;
 }
 
 .Main .Content form select:hover{
@@ -543,66 +604,108 @@ header .mobMenu svg:active  {
 }
 
 .Main .Content form select ul{
+
   display:flex;
   justify-content: space-between;
 }
 
-/* ===================== ======================== */
-/*              SURVEY LINK                   */
-/* ===================== ======================== */
+.Main .Content form select option{
+text-align:center;
+
+}
+
+.Main .Content form{
+
+  /* margin: 1% 0; */
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content: center;
+
+}
+
 
 .surveyLink{
+  /* background-color: var(--offwhite-color); */
   background-color: var(--offwhite-color);
-  color: black;
-
-  border: 1px solid lightgrey;
   border-radius: 5px;
+  margin-bottom: 1.5rem;
+  /* height: 3rem; */
+  /* line-height: 3; */
+  text-align: center;
 
-  margin-bottom: 1rem;
   padding: 0 1rem;
+  color: black;
 
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
+
+  border: 1px solid lightgrey;
+
+}
+
+.surveyLink a{
+  text-decoration: none;
+}
+
+/* .surveyLink p{
+  margin: 0;
+  text-align: left;
 }
 
 .surveyLink button{
-  margin-left: .5rem;
+  height: 1rem;
+
+} */
+
+
+/* ============InterestingFacts=============== */
+.InterestingFacts {
+/* margin:1%; */
+background-color: var(--offwhite-color);
 }
 
-/* ===================== ======================== */
-/*           Interesting Facts                   */
-/* ===================== ======================== */
-
 .InterestingFacts  ul{
+  /* color:var(--darkgray-color); */
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
   align-items: center;
+  /* padding: .3rem; */
+  /* margin: 2rem; */
   padding: 0;
+
 }
 
 .InterestingFacts  ul li{
+  /* background-color:#F4F1EF; */
     border: 1px solid var(--darkgray-color);
     border-radius: 5px;
     width: 90%;
-
+    /* flex: 1 0 90%; */
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-
     padding: .5rem .1rem;
     margin: 1rem;
+    text-align: center;
+    /* min-width: 145px; */
+    /* max-width: 250px; */
     line-height: 1.5;
+    justify-content: space-around;
+
 }
 
 .InterestingFacts  ul li span{
-  /* FontAwesomeIcon */
   font-size: 2rem;
 }
+
+.InterestingFacts button{
+  margin-left: 1rem;
+}
+
 
 /* ===================== ======================== */
 /*               PROFILE area */
@@ -631,7 +734,10 @@ header .mobMenu svg:active  {
   display:flex;
   flex-flow:column wrap;
   color:white;
-  padding: 1rem .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
  .Main .Profile  div h2{
@@ -651,7 +757,7 @@ header .mobMenu svg:active  {
 }
 
 .Main .Profile .user-info  h2 li:nth-of-type(even){
-  margin: .7rem 1.5rem ;
+  margin:1rem;
   font-size: 1rem;
 }
 
@@ -686,14 +792,21 @@ header .mobMenu svg:active  {
 /*              CHARTS */
 /* ===================== ======================== */
 
+.charts>div{
+  /* margin:1%; */
+}
+
 .graphContainer{
+  /* display:flex;
+  flex-flow:row wrap; */
   margin:0;
+  /* background-color: #F4F1EF; */
   background-color: var(--offwhite-color);
-  padding: 2rem;
+  padding:1rem;
 }
 
 .graphDescription{
-  padding: 0;
+  padding: 0 1rem;
   margin-bottom: 0;
 }
 
@@ -703,8 +816,11 @@ header .mobMenu svg:active  {
 
 .graphContainer h2{
     align-items: center;
-    margin: 0 0 1rem 0;
 }
+
+/* .landing-chart2 .costofliving{
+  margin-top: 2rem;
+} */
 
 .charts{
   background-color: var(--offwhite-color);
@@ -714,10 +830,32 @@ header .mobMenu svg:active  {
   margin: 1rem 0;
 }
 
-.homePageCard{
+
+
+
+/* ===================== ======================== */
+/*               HOMEPAGE GRAPHS                     */
+/* ===================== ======================== */
+
+.firstCard{
+  margin-top: 1rem;
+}
+
+
+.homePageCard,
+.landingPage .HomeContent .homePageCard{
   margin-bottom: 1rem;
 }
 
+.lamdingPage .HomeContent .homePageCard .CardContent h2{
+  font-weight: bold;
+}
+
+.Landingpage .HomeContent .graphContainer h2 {
+    border-bottom: 2px solid white;
+    padding: 0 2rem;
+    border-radius: .5rem;
+}
 /* ===================== ======================== */
 /*                 SURVEY                         */
 /* ===================== ======================== */
@@ -733,7 +871,7 @@ header .mobMenu svg:active  {
   border-radius: 0 0 5px 5px;
 }
 
-.survey1, .survey3{
+.survey1, .survey3, .score{
   background-color: var(--terceary-color);
   border: 1px solid var(--blackopacity-color);
 }
@@ -776,8 +914,39 @@ header .mobMenu svg:active  {
     flex-flow: row nowrap;
     justify-content: flex-end;
 
-    padding-top: 1rem;
+    padding: 2rem;
+
 }
+
+.surveyNav a{
+    text-decoration: none;
+}
+
+.surveyNav p{
+    padding: 0;
+}
+
+
+.btn{
+    width:150px;
+    height: 2.4rem;
+    font-size: 1rem;
+    color: white;
+    border-radius: 5px;
+    background-color: var(--materialui-blue);
+    text-align: center;
+    /* line-height: 2; */
+
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn a{
+    text-decoration: none;
+    color: white;
+  }
 
 .rangeslider__fill{
     background: var(--main-color) !important;
@@ -789,35 +958,59 @@ header .mobMenu svg:active  {
 }
 
 /* ===================== ======================== */
-/*                 BUTTON / BTN COMPONENT        */
-/* ===================== ======================== */
-
-.btn{
-    width:150px;
-    height: 2.4rem;
-    font-size: 1rem;
-    color: white;
-    border-radius: 5px;
-    background-color: var(--materialui-blue);
-    text-align: center;
-
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-
-/* ===================== ======================== */
 /*                 ENGINE PAGE        */
 /* ===================== ======================== */
 
+/* .score table{
+
+  column-width: auto;
+  padding: 1rem 0 3rem 0;
+  margin: 0 -1.5rem;
+}
+
+.score table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.score table tr:nth-child(even) {
+    background-color: var(--terceary-color);
+}
+
+.score table .col{
+  text-align: center;
+}
+
+.score table th{
+  text-align: left;
+}
+
+.score table td, .score table th{
+  padding: 8px;
+}
+
+.score h3{
+  padding-left: 0rem;
+  color: var(--main-color);
+}
+
+.score a{
+  color: black;
+} */
+
+
+
+/* ========================================================= */
 .resultsPage{
   display:grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 1fr ;
   justify-content: center;
+
+  margin-bottom: 13rem;
 }
+
+
+
 
 .resultsPage .CardHeader{
   grid-row: 1;
@@ -831,48 +1024,79 @@ header .mobMenu svg:active  {
   background-color: var(--offwhite-color);
 }
 
-.resultsPage .resultPageCard .resultPageCardPicture{
-  height: 0;
-  padding-top: 56.25%;
-  max-width: 100%;
-}
-
 .resultsPage .resultPageCard .CardContent h2{
   font-weight: bold;
 }
 
-.resultsPage .resultPageCard button{
+.resultsPage .btn{
+  width: 110px;
+}
+
+.ResultsPageNew .userMsg{
+  display: flex;
+  flex-flow: row nowrap;
+  /* height: 500px; */
+  border: 1px solid lightgrey;
+  border-radius: 0 0 5px 5px;
+  /* margin: 0; */
+  /* padding: 2rem; */
+}
+.ResultsPageNew .userMsg .msgTitle p{
+  margin: 0!important;
+}
+
+.resultsPageNew .userMsg .awe{
+  font-size: 3rem;
+  color: var(--offwhite-color);
+  padding: 1rem;
+  flex: 1 0 20%;
+
+}
+
+.ResultsPageNew .userMsg .awe{
+  display: flex;
+  align-items: center;
+}
+
+.ResultsPageNew .userMsg .awe .svg-inline--fa{
+
+font-size: 4rem!important;
+margin: 1rem;
+/* height: 10rem!important; */
+
+}
+
+.resultsPageNew .userMsg .msgTitle{
+  line-height: 5;
+  padding: 2rem;
+  flex: 1 0 20%;
+  min-width: 100px;
+  /* margin: 0; */
+}
+
+.resultsPageNew .userMsg p{
+  flex: 0 0 40%;
+  width: 40%;
+  padding: 1rem;
+}
+
+/* .resultsPage .resultPageCard .CardContent{
+  display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 2fr 1fr;
+grid-gap: 2rem;
+
+} */
+
+.resultsPage .resultPageCard button
+{
   /* grid-column: 3/4;
   grid-row: 2; */
   background-color: var(--main-color);
   height: 2.5rem;
-  font-size: .875rem;
-}
+  font-size: .75rem;
 
-/* ===================== ======================== */
-/*                 ERROR MESSAGE - SURVEY        */
-/* ===================== ======================== */
 
-.ResultsPageNew .userMsg{
-  border: 1px solid lightgrey;
-  border-radius: 0 0 5px 5px;
-
-  display: grid;
-  grid-template-columns: .15fr .85fr;
-
-  align-items: center;
-  text-align: center;
-}
-
-.ResultsPageNew .userMsg .awe{
-  font-size: 4rem;
-  color: var(--main-color);
-  padding: 2rem 0;
-}
-
-.ResultsPageNew .userMsg p{
-  align-self: center;
-  justify-self: start;
 }
 
 
@@ -884,11 +1108,17 @@ header .mobMenu svg:active  {
   overflow: hidden;
 }
 
-.schoolPage .schoolCards{
+.resultsPage .MuiCard-root-1,
+.schoolPage .MuiCard-root-1{
+  background-color: var(--offwhite-color);
+}
+
+.schoolPage .MuiCard-root-1{
+  /* padding: 1rem; */
   margin-bottom: 1rem;
 }
 
-/* .sValue{
+.sValue{
   font-size: .9rem;
   font-weight: 700;
   text-align: center;
@@ -897,35 +1127,29 @@ header .mobMenu svg:active  {
   padding-bottom: 1rem;
 
   border-bottom: 1px solid black;
-} */
-
-/* .Main .schoolPage .MuiPaper-root-95{
-  background-color: none;
-} */
-
-.schoolPage .sprof{
-  background-color: var(--offwhite-color);
-  border-radius: 0 0 5px 5px;
-  margin-bottom: 1rem;
 }
 
+.Main .schoolPage .sprof{
+  border-radius: 0 0 5px 5px;
+}
 
-.schoolPage .sprof img{
+.sprof img{
   width: 100%;
 }
 
 
-.schoolPage .schoolinfo{
+.schoolinfo{
   background-color: var(--offwhite-color);
-  margin: 0.5rem 1rem 1rem 1rem;
+  padding: .7rem;
+
 }
 
-.schoolPage .schoolinfo ul{
+.schoolinfo ul{
   display: flex;
   flex-flow: row wrap;
 }
 
-.schoolPage .schoolinfo ul .schDet{
+.schoolinfo ul .schDet{
   flex: 0 0 90%;
   width: 90%;
 }
@@ -957,7 +1181,10 @@ header .mobMenu svg:active  {
 }
 
 .schoolBtns{
-  padding: 1rem .5rem 0 .5rem;
+  /* border-top: 2px solid var(--main-color); */
+  padding-top: 1rem;
+  /* margin: 0 1rem; */
+
   display: flex;
   flex-flow: row wrap;
 
@@ -966,7 +1193,7 @@ header .mobMenu svg:active  {
 }
 
 .schoolBtns button{
-      flex: 0 0 19%;
+      flex: 0 0 18%;
       background-color: var(--main-color);
       height: 2.5rem;
       color: white;
@@ -981,6 +1208,10 @@ header .mobMenu svg:active  {
 
 .schoolinfo button{
   margin-top: 2rem;
+}
+
+.schoolinfo p{
+  /* margin-left: 2rem; */
 }
 
 .schoolinfo a{
@@ -1002,9 +1233,17 @@ header .mobMenu svg:active  {
   font-size: .8rem;
 }
 
+
 .schoolinfo ul strong{
   font-size: 1.5rem;
 }
+
+/* .schoolinfo ul{
+  display: flex;
+  flex-flow: column wrap;
+} */
+
+
 
 /* ===================== ======================== */
 /*              ABOUT                */
@@ -1037,6 +1276,7 @@ header .mobMenu svg:active  {
 
 .aboutPage .aboutEduvisors .LearnAbout{
   column-count: 1;
+
   box-sizing: border-box;
 }
 
@@ -1050,15 +1290,12 @@ header .mobMenu svg:active  {
   padding: 1rem;
   text-align: center;
   background-color: var(--offwhite-color);
+
 }
 
 .aboutPage .teamMembersWrapper h2{
   align-self: flex-start;
   margin-bottom: 3rem;
-}
-
-.aboutMission .teamMembersWrapper div{
-  line-height: 1;
 }
 
 .aboutPage .aboutMission{
@@ -1079,6 +1316,12 @@ header .mobMenu svg:active  {
   text-align: center;
 }
 
+
+
+.aboutMission .teamMembersWrapper div{
+  line-height: 1;
+  }
+
 .aboutEduvisors{
   margin: 0;
 }
@@ -1087,7 +1330,13 @@ header .mobMenu svg:active  {
   text-align: left;
 }
 
+.aboutPage .aboutMission .vid{
+  /* margin: 4% 0; */
+}
+
+
 .aboutPage .teamMember{
+  /* display: inline; */
   width: 55%;
   margin-bottom: 3rem;
   line-height: .7;
@@ -1124,6 +1373,7 @@ header .mobMenu svg:active  {
 	left: 30px;
 	width: 80%;
 	height: 80%;
+  /* margin: auto; */
 }
 
 
@@ -1142,10 +1392,12 @@ header .mobMenu svg:active  {
 
 .contactUsPage img{
   display: none;
+  /* width: 100%;
+  height: auto; */
 }
 
 .contactUsPage .TxtField{
-  width: 90%;
+  width: 100%;
 }
 
 .contactUsPage .surveyButton{
@@ -1169,13 +1421,10 @@ header .mobMenu svg:active  {
 }
 
 .External .contactUsPage,
-.External .aboutPage{
-  margin: 1rem;
-}
-
-.External .contactUsPage .CardHeader,
-.External .aboutPage .CardHeader{
-  display: none;
+.External .aboutPage
+{
+  margin: 2%;
+  /* padding: 4%; */
 }
 
 .contactUsFrame{
@@ -1190,6 +1439,7 @@ header .mobMenu svg:active  {
 .ListOfSchoolsCard .schRank{
     font-size: 1.5rem;
     line-height: 1.5;
+    /* border: none; */
     margin: 0;
 }
 
@@ -1238,8 +1488,7 @@ footer .left-side{
   display: none;
 } */
 
-footer .right-side ul,
-.landingPage footer .right-side ul{
+footer .right-side ul, .landingPage footer .right-side ul{
   display: flex;
   justify-content: flex-end;
 
@@ -1248,12 +1497,23 @@ footer .right-side ul,
   margin: 0;
 
   text-align: right;
+
 }
 
-footer li,
-.landingPage footer li{
+footer li, .landingPage footer li{
   padding-right: 2rem;
   line-height: 4;
+}
+
+footer a{
+  color: white;
+}
+
+.resultPageCard .resultPageCardPicture
+{
+  height: 0;
+  padding-top: 56.25%;
+  max-width: 100%;
 }
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -1266,22 +1526,45 @@ footer li,
 /* ===================== ======================== */
 /* PAGE LAYOUT */
 /* ===================== ======================== */
+  #root{
+    /* width: 100%;
+    margin: auto; */
+  }
 
-  /* .ResponsiveDrawer-root-1{
+  .ResponsiveDrawer-root-1{
     flex-flow: column nowrap;
-  } */
+  }
 
+  .ResponsiveDrawer-content-6,
   #root main{
     padding: 0;
     margin-top: 1%;
   }
 
+
+  /* #root header .ResponsiveDrawer-appBar-2{
+    position: static;
+    width: 100%;
+  }
+
+  .ResponsiveDrawer-drawerPaper-5{
+    position: static;
+  }
+
+  .MuiAppBar-positionFixed-8{
+    position: static;
+  } */
+
+
 /* ===================== ======================== */
 /*               CONTENT AREA                     */
 /* ===================== ======================== */
 
+
+
   .Main{
-    margin: 1rem;
+    margin: 1%;
+    background-color: white;
 
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -1380,7 +1663,7 @@ footer li,
     /* background-color: var(--offwhite-color); */
     background-color: var(--offwhite-color);
     border-radius: 5px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     height: 3rem;
     line-height: 3;
     text-align: center;
@@ -1406,6 +1689,13 @@ footer li,
 
     text-decoration: none;
   }
+
+  .surveyLink button{
+    height: 1rem;
+
+  }
+
+
 
   /* ===================== ======================== */
   /*              LOGIN              */
@@ -1463,7 +1753,7 @@ footer li,
 } */
 
 .RegContent .btn{
-  margin-top: 3rem;
+  margin-top: 9rem;
   margin-left: 2rem;
 }
 
@@ -1672,17 +1962,22 @@ footer li,
 /* ===================== ======================== */
 /*                 ENGINE              */
 /* ===================== ======================== */
-/* ornellas */
+
+/* .score table td, .score table th{
+  padding: 8px;
+} */
+
 .resultsPage{
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 2fr 1.3fr;
+  grid-template-rows: auto 1.7fr 1fr;
   /* grid-gap: 1rem; */
 }
 
 .resultsPage .resultPageCard {
   display:grid;
-  grid-template-columns: 1fr .5fr;
-
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  margin-bottom: 1rem;
 }
 
 .resultsPage .cardPicture{
@@ -1723,29 +2018,33 @@ footer li,
 
 .sprof{
       grid-column: 2 / 3;
-      padding: 1rem;
-
+      /* margin: 1% 0; */
+      padding: .5rem;
+      /* margin-left: 3rem; */
       display: flex;
       flex-flow: row wrap;
 
       box-sizing: border-box;
+
 }
+
 
 .sprof .schoolImg{
       flex: 0 0 45%;
-      margin-right: 1rem;
+      margin-right: 2rem;
 }
 
-.sprof .schoolinfo{
+.schoolinfo{
       flex: 1 0 45%;
-      margin: 0 0 1rem 0;
-      padding: 0;
+      /* margin: 2rem; */
+      margin-left: 0;
 }
 
 
-.schoolinfo .schoolBtns{
-      /* flex: 1 0 100%; */
-      padding: 0 1rem;
+
+
+.sprof .schoolBtns{
+      flex: 1 0 100%;
 }
 
 .sprof .snowfall{
@@ -1763,52 +2062,70 @@ footer li,
 /*               LANDING PAGE                    */
 /* ===================== ======================== */
 
-/* HEADER */
-.landingPage .landing-header header{
-  background-color: black;
-  opacity: .9;
+/* .landingPage .landing-header{
+  display: block;
+} */
 
+.landingPage .landing-header header{
+  /* display: flex; */
+  width: 100%;
   position: relative;
   z-index: 99;
+  background-color: black;
+  opacity: .9;
   line-height: 4;
-
   height: 4rem;
-  width: 100%;
 }
 
-/* MENU */
+.landingPage .landing-header .left-side a img{
+
+  /* max-width: 85px; */
+}
+
+.landingPage .landing-header .right-side .mobile{
+  color: white;
+
+  right: 0;
+  top:-2rem;
+  font-size: 2rem;
+
+  z-index: 99;
+}
+.signupButton{
+  /* display:none; */
+/* max-width:200px; */
+/* height:auto; */
+/* align-self: center; */
+}
+
+.landingPage .graphDescription{
+  margin: 1rem;
+}
+
 .landingPage .landing-header ul{
-  list-style-type: none;
+list-style-type: none;
+/* align-items: flex-end; */
 }
 
 .landingPage .landing-header ul li a{
   color:white;
   text-decoration: none;
 }
-
 .landingPage .landing-header ul li:hover a{
   color: darkslategray;
   font-weight: 500;
   text-decoration: underline;
 }
-
 .landingPage .landing-header ul li:hover{
   background-color:var(--secondary-color);
 }
 
-.landingPage .signup-video div a{
-  /* button for signup > i think?!?*/
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-/* TOP MAIN IMAGE */
 .landingPage .landing-image img{
   width: 100%;
   height: auto;
   position: relative;
   display: block;
+
 }
 
 .landingPage .landing-info h3{
@@ -1825,7 +2142,6 @@ footer li,
   margin-top: 0;
 }
 
-/* FIRST GRAPH */
 .landingPage .contentBody{
   margin: 1%;
 }
@@ -1837,35 +2153,59 @@ footer li,
   text-align: center;
   flex-flow: row wrap;
   padding-bottom: 1rem;
-}
 
-/* Strange ORNELLAS */
+}
 .landingPage .signup-video div{
   flex: 1 0 25px;
-  margin: .2rem;
-  /* background-color: red; */
 
+  /* max-width: 3rem; */
+  margin: .2rem;
+
+  /* margin-left: 1rem; */
+}
+.landingPage .signup-video div a{
+  color:white;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 .landingPage .landing-chart1{
   margin-top: 4rem;
 }
 
+.landingPage .landing-chart1 .Bar{
+  height: auto!important;
+  width: 100%!important;
+  margin: auto;
+
+}
+
 .landingPage .landing-chart1 .graphContainer,
 .landingPage .landing-chart2 .graphContainer{
+  /* font-size: 1rem; */
   height: auto!important;
   width: 80%!important;
   margin: auto;
   flex-flow: column wrap;
 }
 
-.landingPage .landing-chart2 .graphContainer,
+
+
+
+
 .landingPage .landing-chart1 .graphContainer{
   background-color:var(--secondary-color);
   padding: 2rem;
   border-radius: 2rem;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
+}
+
+
+.landingPage .landing-chart2 .graphContainer{
+background-color: var(--secondary-color);
+padding: 2rem;
+border-radius: 2rem;
+color: darkslategray;
+margin: 2rem 0;
 }
 
 .landingPage .landing-chart1 .graphContainer h2,
@@ -1873,47 +2213,85 @@ footer li,
   color: white;
 }
 
-.landingPage .landing-chart1 div p,
-.landingPage .landing-chart2 div p{
+.landingPage .landing-chart1 .graphContainer h2{
+  margin-top: 0;
+}
+
+
+
+
+.landingPage .landing-chart1 div p, .landingPage .landing-chart2 div p{
+  /* font-size: 1rem; */
   letter-spacing: 1px;
   font-weight: 500;
   line-height: 1.5;
   text-align: left;
   font-size: .75rem;
-  color: darkslategrey;
+}
+.landingPage .landing-chart1 div p{
+  color:darkslategrey;
 }
 
-/* FEATURES */
 .landingPage .landing-features{
+  /* display:flex; */
+  /* flex-flow: column nowrap; */
+  /* background-color: #5b62b9; */
+  /* padding: 4rem; */
   text-align: center;
+  /* max-width: 80%;
+  margin: auto; */
+  /* border: 4px solid darkslategray; */
+    /* margin: 1rem 3rem; */
+    /* background-color: rgb(64, 83, 175); */
+    /* color: white; */
 }
 
+.landingPage .landing-features .features{
+
+  /* max-width:60%; */
+
+margin-top: 2rem!important;
+  /* margin: auto; */
+
+}
 .landingPage .landing-features .feature-set{
   display: flex;
   flex-direction: column;
-  max-width: 90%;
-  margin: auto;
-}
+  /* border: 4px solid darkslategray;
+    margin: 1rem 4.5rem;
+    background-color: rgb(64, 83, 175);
+    color: white; */
+    max-width: 90%;
+    margin: auto;
 
+}
 .landingPage .landing-features .feature-set h3{
   font-weight: lighter;
 }
 
 .landingPage .landing-features .features img{
-  background-color: #9497ff;
-  height: auto;
-  max-width: 100px;
-  border-radius: 1rem;
-  padding: 2rem;
-}
+background-color: #9497ff;
+height: auto;
+max-width: 100px;
+border-radius: 1rem;
 
-/* COST OF LIVING */
+padding: 2rem;
+/* margin: 1rem; */
+}
+/* .landingPage .landing-features .landing-chart2 {
+  background-color: #9497ff;
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+
+} */
 
 .landingPage .landing-features .landing-chart2 .graphContainer h2{
-  margin: 0 auto 2rem auto;
+  margin: auto;
   letter-spacing: 1px;
 }
-
 @media screen and (min-width: 1000px)
 {
 
@@ -1941,7 +2319,6 @@ color: black;
     background-color: inherit;
     border-radius: 1rem;
   }
-
   .landingPage .signup-video .videoButton{
     position: relative;
   }
@@ -1949,17 +2326,9 @@ color: black;
   .landingPage .signup-video{
     padding-bottom: 0;
   }
-
   .landingPage .signup-video{
     height: 0;
   }
-
-  /* .signupButton{
-  width:200px;
-  height:50px;
-  align-self: center;
-  } */
-
   .landingPage .signup-video .signupButton Button{
     position: absolute;
     top:.65rem;
@@ -1967,6 +2336,9 @@ color: black;
     z-index: 99;
     height: 1rem;
     width: 7rem;
+
+
+
   }
 
   .landingPage .signup-video .videoButton Button{
@@ -2025,7 +2397,22 @@ font-size: 1rem;
  .graphContainer h2{
   width: 18rem;
   padding: 0 2rem;
-  /* margin: 0; */
+  /* border-radius: .5rem;
+  border-radius: 1rem;
+  border-bottom: 2px solid white; */
+
+
+}
+
+.graphContainer h2{
+
+}
+
+.graphDescription{
+  /* display: flex;
+  flex-flow: column nowrap;
+  justify-content: space; */
+  /* padding: 3rem; */
 }
 
 /* ===================== ======================== */
@@ -2033,7 +2420,8 @@ font-size: 1rem;
 /* ===================== ======================== */
 
 
-.SchoolRankGraphList .schoolRankList{
+.SchoolRankGraphList .schoolRankList
+{
   grid-template-columns: 1fr 1fr 1fr;
 }
 

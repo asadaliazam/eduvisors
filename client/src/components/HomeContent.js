@@ -14,28 +14,6 @@ import InterestingFacts from './InterestingFacts';
 import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom'
 
-
-//
-// const styles = {
-//   avatar: {
-//     margin: 10,
-//   },
-//   orangeAvatar: {
-//     margin: 10,
-//     color: '#fff',
-//     backgroundColor: deepOrange[500],
-//   },
-//   purpleAvatar: {
-//     margin: 10,
-//     color: '#fff',
-//     backgroundColor: deepPurple[500],
-//   },
-//   row: {
-//     display: 'flex',
-//     justifyContent: 'center',
-//   },
-// };
-
 class HomeContent extends Component {
   constructor(props) {
     super(props);
@@ -49,7 +27,7 @@ class HomeContent extends Component {
 
 
   render() {
-    // const classes = this.props;
+
     return (
           <div className="Content">
             <div className="surveyLink">
@@ -58,70 +36,52 @@ class HomeContent extends Component {
                     <Link to="/HomePage/survey">Take Survey</Link>
                 </Button>
             </div>
-                <div className="CardHeader">
-                    <p>Province Facts</p>
-                </div>
-                <Card className="top-content">
-                      <CardContent className="CardContent">
-                          <form onSubmit={this.handleSubmit}>
-                                <div className="leftContent">
-                                        <label>
-                                          <p>Choose a Province:</p>
-                                          <select value={this.state.value} onChange={this.handleChange} >
-                                            <option value="AB" label="Alberta">AB</option>
-                                            <option value="BC" label="British Columbia">BC </option>
-                                            <option value="NL" label="NewFoundLand">NL</option>
-                                            <option value="MB" label="Manitoba">MB</option>
-                                            <option value="ON" label="Ontario">ON</option>
-                                            <option value="PE" label="Prince Ed Island">PE</option>
-                                            <option value="NS" label="Nova Scotia">NS</option>
-                                            <option value="NB" label="New Brunswick">NB</option>
-                                            <option value="QC" label="Quebec">QC</option>
-                                            <option value="SK" label="Saskatchewan">SK</option>
-                                          </select>
-                                        </label>
-                                 </div>
-                                 <InterestingFacts province={this.state.value} />
-                           </form>
-                      </CardContent>
-                    </Card>
-              {/* </div>   {/* end of TOP-CONTENT */}
-
-
-
-              {/* <div className="top-chart charts"> */}
-
-
-                <Card className="homePageCard firstCard">
-                      <CardContent className="CardContent">
-                          <Snowfall province={this.state.value} type={'snow'} />
-                          {/* <Typography component="p">
-                            Snowfall: {this.state.value}
-                          </Typography> */}
-                      </CardContent>
+            <div className="CardHeader">
+                <p>Province Facts</p>
+            </div>
+            <Card className="top-content homePageCard">
+                  <CardContent className="CardContent">
+                      <form onSubmit={this.handleSubmit}>
+                          <div className="leftContent">
+                              <label>
+                                <p>Choose a Province:</p>
+                                <select value={this.state.value} onChange={this.handleChange} >
+                                  <option value="AB" label="Alberta">AB</option>
+                                  <option value="BC" label="British Columbia">BC </option>
+                                  <option value="NL" label="NewFoundLand">NL</option>
+                                  <option value="MB" label="Manitoba">MB</option>
+                                  <option value="ON" label="Ontario">ON</option>
+                                  <option value="PE" label="Prince Ed Island">PE</option>
+                                  <option value="NS" label="Nova Scotia">NS</option>
+                                  <option value="NB" label="New Brunswick">NB</option>
+                                  <option value="QC" label="Quebec">QC</option>
+                                  <option value="SK" label="Saskatchewan">SK</option>
+                                </select>
+                              </label>
+                           </div>
+                           <InterestingFacts province={this.state.value} />
+                       </form>
+                  </CardContent>
                 </Card>
-                {/* </div> */}
 
 
+                <Card className="homePageCard">
+                    <CardContent className="CardContent">
+                    <Snowfall province={this.state.value} type={'snow'} />
+                    </CardContent>
+                </Card>
 
-                {/* <div className="down-charts charts"> */}
-                  <Card className="homePageCard">
-                        <CardContent className="CardContent">
-                            <EmploymentGraph province={this.state.value} />
-                            <Typography component="p">
-                             {/* {this.state.value} */}
-                            </Typography>
-                        </CardContent>
-                  </Card>
+                <Card className="homePageCard">
+                    <CardContent className="CardContent">
+                        <EmploymentGraph province={this.state.value} />
+                    </CardContent>
+                </Card>
 
-                  <Card className="homePageCard">
-                        <CardContent className="CardContent">
-                            <CostOfLivingGraph province={this.state.value} />
-                            <Typography component="p">
-                               {/* {this.state.value} */}
-                            </Typography>
-                        </CardContent>
-                  </Card>
+                <Card className="homePageCard">
+                    <CardContent className="CardContent">
+                        <CostOfLivingGraph province={this.state.value} />
+                    </CardContent>
+                </Card>
 
                   <Card className="homePageCard">
                         <CardContent className="CardContent">

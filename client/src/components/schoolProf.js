@@ -7,6 +7,7 @@ import { faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
 import CostOfLivingGraph from './costOfLivingGraph';
 import BackButton from './BackButton.js'
 import EmploymentGraph from './employmentGraph';
+import Button from '@material-ui/core/Button';
 
 class SchoolProf extends Component {
   constructor(props) {
@@ -23,8 +24,7 @@ class SchoolProf extends Component {
         };
       } // end of CONSTRUCTOR
 
-  componentWillReceiveProps(nextProps)
-  {
+  componentWillReceiveProps(nextProps){
           // this.state.schoolID = nextProps.match.params.schoolID;
           this.setState({schoolID: nextProps.match.params.schoolID});
           // console.log(333333333, this.state.schoolID);
@@ -82,10 +82,10 @@ class SchoolProf extends Component {
     return (
 
       <div className="schoolPage">
-      <div className="CardHeader">
-        <p>Institution Profile</p>
-        <BackButton />
-      </div>
+            <div className="CardHeader">
+              <p>Institution Profile</p>
+              <BackButton />
+            </div>
             <Card className="sprof">
                 <div className="schoolImg">
                     <img src={this.state.fileName} alt="Educational Institution"/>
@@ -98,44 +98,46 @@ class SchoolProf extends Component {
                         <li className="schDet"><a href={customer.url} target="_blank">{customer.url}</a></li>
                         <br/>
                         <li className="schRank">Canadian Ranking:
-                          <span><FontAwesomeIcon icon={faTrophy} /> {customer.ca_ranking}</span></li>
+                          <span><FontAwesomeIcon icon={faTrophy} /></span><span>{customer.ca_ranking}</span></li>
                         <li className="schRank">World Ranking:
-                          <span><FontAwesomeIcon icon={faMedal} />  {customer.wd_rank}</span></li>
+                          <span><FontAwesomeIcon icon={faMedal} /></span><span>{customer.wd_rank}</span></li>
 
                       </ul>
                     )}
                 </div>
 
               </Card>
-              <Card className="schoolinfo">
+              <Card className="schoolCards">
                     <CostOfLivingGraph province={this.state.province} />
               </Card>
-              <Card className="schoolinfo">
-                      <div className="schoolBtns">
-                            <button onClick={() => this.setState({type: 'rain'})}>
-                              Rain
-                            </button>
-                            <button onClick={() => this.setState({type: 'snow'})}>
-                              Snow
-                            </button>
-                            <button onClick={() => this.setState({type: 'temp_high'})}>
-                              High Temp
-                            </button>
-                            <button onClick={() => this.setState({type: 'temp_low'})}>
-                              Low Temp
-                            </button>
-                            <button onClick={() => this.setState({type: 'temp_avg'})}>
-                              Average Temp
-                            </button>
+              <Card className="schoolCards">
+                  <div className="schoolBtns">
+
+                          <Button  type="submit" variant="contained" color="primary" onClick={() => this.setState({type: 'rain'})}>
+                            Rain
+                          </Button>
+                          <Button  type="submit" variant="contained" color="primary" onClick={() => this.setState({type: 'snow'})}>
+                            Snow
+                          </Button>
+                          <Button  type="submit" variant="contained" color="primary" onClick={() => this.setState({type: 'temp_high'})}>
+                            Highs
+                          </Button>
+                          <Button  type="submit" variant="contained" color="primary" onClick={() => this.setState({type: 'temp_low'})}>
+                            Lows
+                          </Button>
+                          <Button  type="submit" variant="contained" color="primary" onClick={() => this.setState({type: 'temp_avg'})}>
+                            Average
+                          </Button>
+
                     </div>
 
                       <Snowfall province={this.state.province} type={this.state.type} />
                 </Card>
-                <Card className="schoolinfo">
+                <Card className="schoolCards">
                       <TuitionGraph province={this.state.province} />
                 </Card>
 
-                <Card className="schoolinfo">
+                <Card className="schoolCards">
                       <EmploymentGraph province={this.state.province} />
                 </Card>
 

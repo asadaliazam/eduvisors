@@ -496,7 +496,7 @@ app.post('/api/TuitionGraph', (req, res) => {
 app.post('/api/SchoolRankGraph', (req, res) => {
 
     let sql = `SELECT institution_name, ca_ranking FROM institute_rank where two_letter = '${req.body.province}' ORDER BY ca_ranking asc LIMIT 5;`
-    console.log(sql);
+    console.log(747474,sql);
 
     db.all(sql, function(err,rows)
     {

@@ -26,7 +26,13 @@ class CostOfLivingGraph extends Component {
                                       "#36A2EB",
                                       "#36A2EB"],
                     borderColor: 'rgb(255, 255, 255)',
-                    data: []
+                    data: [],
+                    options: {
+                            legend: {
+                                  display: true,
+                                  position: 'right'
+                            }
+                    }
                   }] // end of DATASETS
           }     // end of chartData
     };    // end of STATE
@@ -66,6 +72,12 @@ class CostOfLivingGraph extends Component {
                                                                     "#D0E9F4" ],
                                                   borderColor: 'rgb(255, 255, 255)',
                                                   data: [],
+                                                  options: {
+                                                          legend: {
+                                                                display: true,
+                                                                position: 'right'
+                                                          }
+                                                  }
                                                 }] // end of DATASETS
                                         }; // end of newChartData
                                           //console.log(newChartData);
@@ -83,7 +95,7 @@ class CostOfLivingGraph extends Component {
   render() {
     return (
       <div className="costofliving graphContainer">
-          <h2>Cost of living Graph</h2>
+          <h2>Cost of Living in {this.state.province}</h2>
           <div className="Bar">
                   <Doughnut
                   data = {this.state.chartData}

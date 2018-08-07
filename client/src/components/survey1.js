@@ -6,10 +6,7 @@ import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Redirect } from 'react-router-dom';
-
-
-
-
+import Button from '@material-ui/core/Button';
 
 class Survey1 extends Component {
   constructor() {
@@ -21,8 +18,6 @@ class Survey1 extends Component {
       rain: 0,
       obj: {0: "I don't care", 1: 'I care a lot'},
       obj1: {0: "Low", 1: "High"},
-
-
     };
   }
 
@@ -137,9 +132,8 @@ class Survey1 extends Component {
             </div>
 
             <div className="surveyNav">
-                  <button className="btn" onClick={this.saveData.bind(this)} >
-                      Next
-                  </button>
+                  {/* <button onClick={this.saveData.bind(this)} >Next</button> */}
+                  <Button  type="submit" variant="contained" color="primary" className="btn" onClick={this.saveData.bind(this)}>Next</Button>
             </div>
 
       </Card>

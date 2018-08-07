@@ -31,6 +31,7 @@ class LandingPage extends Component {
           <div className="contentBody">
                 <div className="signup-video">
                       <div className="signupButton">
+
                             <Button  type="submit" variant="contained" color="primary" className="signupButton">
                                     <Link to="/register">Signup</Link>
                             </Button>
@@ -38,7 +39,6 @@ class LandingPage extends Component {
 
                       <div className="videoButton">
                             <Button  type="submit" variant="contained" color="primary" className="signupButton">
-                                  {/* <Link to="https://www.powtoon.com/embed/dJBuv5ExsKU/">Watch Video</Link> */}
                                     <a href="https://www.powtoon.com/embed/dJBuv5ExsKU/" target="_blank" rel="noopener noreferrer">Watch Video</a>
                             </Button>
                       </div>

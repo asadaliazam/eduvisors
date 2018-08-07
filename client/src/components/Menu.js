@@ -77,10 +77,19 @@ import Media from "react-media";
                             <div className="mobMenu">
                                 <FontAwesomeIcon icon={faBars} onClick={this.toggle.bind(this)} />
                                   <div className="mobile" id="bars" style={ shown }>
+
+                                          {/* <a href="/HomePage/">Home</a>
+                                          <a href="/HomePage/Results">Results</a>
+                                          <a href="/HomePage/ListOfSchools">Schools</a>
+                                          <a href="/HomePage/about">About</a>
+                                          <a href="/HomePage/contactus">Contact Us</a>
+                                          <a href="/HomePage/Logout">Logout</a> */}
+
+
                                         <ul>
                                           <li><a href="/HomePage/">Home</a></li>
                                           <li><a href="/HomePage/Results">Results</a></li>
-                                          <li><a href="/HomePage/ListOfSchools">List of Schools</a></li>
+                                          <li><a href="/HomePage/ListOfSchools">Schools</a></li>
                                           <li><a href="/HomePage/about">About</a></li>
                                           <li><a href="/HomePage/contactus">Contact Us</a></li>
                                           <li><a href="/HomePage/Logout">Logout</a></li>
