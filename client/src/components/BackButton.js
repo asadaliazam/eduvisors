@@ -10,7 +10,7 @@ class BackButton extends Component {
   render() {
     return (
 
-      <div
+      <div className="backBtn"
         onClick={this.context.router.history.goBack}>
           <FontAwesomeIcon icon={faTimes} />
       </div>

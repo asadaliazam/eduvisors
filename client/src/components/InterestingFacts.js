@@ -57,15 +57,21 @@ class InterestingFacts extends Component {
   }
 
   render() {
-    console.log(this.state.InterestingFactsData[0]);
+    // console.log(this.state.InterestingFactsData[0]);
 
     return (
       <div className="InterestingFacts">
         {this.state.InterestingFactsData.map((InterestingFactsData,index) =>
           <ul key= {index} >
-            <li className="InterestingDataList"> Number of Schools: <span><FontAwesomeIcon icon={faUniversity}/>{InterestingFactsData.numberOfSchools}</span></li>
-            <li className="InterestingDataList"> Total Population: <span><FontAwesomeIcon icon={faUsers} /> {InterestingFactsData.totalPopulation}M</span></li>
-            <li className="InterestingDataList"> Capital City: <span><FontAwesomeIcon icon={faMapMarkerAlt} /> {InterestingFactsData.capitalCity}</span></li>
+            <li className="InterestingDataList"> Number of Schools:
+              <span><FontAwesomeIcon icon={faUniversity}/>{InterestingFactsData.numberOfSchools}</span>
+            </li>
+            <li className="InterestingDataList"> Total Population:
+              <span><FontAwesomeIcon icon={faUsers} /> {InterestingFactsData.totalPopulation}M</span>
+            </li>
+            <li className="InterestingDataList"> Capital City:
+              <span><FontAwesomeIcon icon={faMapMarkerAlt} /> {InterestingFactsData.capitalCity}</span>
+            </li>
           </ul>
         )}
       </div>

@@ -5,9 +5,7 @@ import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Redirect } from 'react-router-dom';
-
-
-
+import Button from '@material-ui/core/Button';
 
 const SortableItem = SortableElement(({value}) => <li className="sortableItem">{value}</li>);
 
@@ -133,9 +131,10 @@ class Survey2 extends Component {
             <SortableList items={this.state.items} onSortEnd={this.onSortEnd} />
 
             <div className="surveyNav">
-              <button className='btn' onClick={this.saveData.bind(this)} >
+                  <Button  type="submit" variant="contained" color="primary" className="btn" onClick={this.saveData.bind(this)}>Next</Button>
+                  {/* <button className='btn' onClick={this.saveData.bind(this)} >
                   Next
-                </button>
+                  </button> */}
 
             </div>
 

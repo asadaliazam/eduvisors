@@ -30,7 +30,7 @@ class AboutPage extends Component {
             <Card className="aboutMission">
                   <div className="Mission">
                       <h2> Our Mission </h2>
-                      <p className="pCenter">Eduvisors match make you with your most compatible educational path in Canada</p>
+                      <p className="pCenter">. . . Eduvisors match make you with your most compatible educational path in Canada . . .</p>
                   </div>
 
                   <div class="vid">
@@ -39,7 +39,7 @@ class AboutPage extends Component {
 
 
                   <div className="aboutEduvisors">
-                          <h2>Learn About Eduvidors</h2>
+                          <h2>Learn About Eduvisors</h2>
                           <div className="LearnAbout">
                           <p> It all began by reflecting a little about all the challenges we all faced as International Students in our path to study in Canada. And we felt we needed to help fellow students by building a hub of information and support services that would facilitate the journey and ease the challenges of this process.</p>
 

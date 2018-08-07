@@ -91,10 +91,6 @@ fetchFromDatabase(){
               this.setState({profileComplete: 1});
             }
 
-
-
-
-
       });// end of last THEN
 }  // end of FETCH
 
@@ -112,17 +108,15 @@ render() {
   return (
       <div className = "ResultsPageNew">
         <div className="CardHeader">
-          <p>List of schools</p>
+          <p>Personalized Recommendations</p>
           <Link to="/HomePage/"><FontAwesomeIcon icon={faTimes} /></Link>
         </div>
         <div className="userMsg">
             <div className="awe">
             <FontAwesomeIcon icon={faExclamationTriangle} />
-
-              <p>You have not taken the survey yet. Please take the survey before checking the results!</p>
             </div>
 
-
+              <p>You have not taken the survey yet. Please take the survey before checking the results!</p>
         </div>
 
       </div>

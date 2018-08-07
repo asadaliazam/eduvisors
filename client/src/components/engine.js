@@ -25,8 +25,7 @@ class Engine extends Component {
       .then(schoolNames => this.setState({schoolNames}, () => console.log('SchoolNames fetched...', schoolNames)));
   }
 
-  sendValue(index)
-  {
+  sendValue(index){
     if (index === 1){
       return ( require(`./img/2.jpg`) )
     }
@@ -47,7 +46,6 @@ class Engine extends Component {
           <p>Personalized Recommendations</p>
           <Link to="/HomePage/"><FontAwesomeIcon icon={faTimes} /></Link>
         </div>
-
               {this.state.schoolNames.map((schoolNames,index) =>
 
               <Card className="resultPageCard">
@@ -63,7 +61,8 @@ class Engine extends Component {
                               Province: {schoolNames.province}
                             </Typography>
                             <CardActions>
-                                <Button  color="primary" className="btn">
+
+                                <Button  variant="contained" color="primary" className="btn">
                                     <Link to={'/HomePage/schoolProf/'+schoolNames.schoolID}>Full Details</Link>
                                 </Button>
                             </CardActions>

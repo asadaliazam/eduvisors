@@ -59,7 +59,7 @@ class ContactUs extends Component {
                       className="TxtField"
                     />
                   </div>
-                  <Button  type="submit" variant="contained" color="primary" className="surveyButton">Submit</Button>
+                  <Button  type="submit" variant="contained" color="primary" className="surveyButton btn">Submit</Button>
                   </form>
               </div>
           </div>

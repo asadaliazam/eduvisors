@@ -6,7 +6,7 @@ import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Redirect } from 'react-router-dom';
-
+import Button from '@material-ui/core/Button';
 
 class Survey3 extends Component {
   constructor() {
@@ -157,9 +157,10 @@ class Survey3 extends Component {
       </div>
 
       <div className="surveyNav">
-            <button className="btn" onClick={this.saveData.bind(this)} >
+            <Button  type="submit" variant="contained" color="primary" className="btn" onClick={this.saveData.bind(this)}>Next</Button>
+            {/* <button className="btn" onClick={this.saveData.bind(this)} >
                 Next
-            </button>
+            </button> */}
 
       </div>
 

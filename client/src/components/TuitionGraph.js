@@ -107,7 +107,6 @@ options : {
     return (
       <div className="graphContainer">
         <h2>Tuition Graph</h2>
-        {/* <p> {this.state.province}</p> */}
 
           <HorizontalBar
             data = {this.state.chartData}
