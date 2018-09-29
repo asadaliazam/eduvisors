@@ -1,0 +1,1 @@
+A student advisory system using ExpressJS and SQLite as the backend and ReactJS for the front-end. The Web App allows users to see school recommendations based on their preferences. The site can be viewed live at www.eduvisors.ca.
